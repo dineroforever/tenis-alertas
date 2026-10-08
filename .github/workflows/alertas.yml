@@ -1,0 +1,42 @@
+name: Alertas tenis Kalshi
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch: {}
+
+concurrency:
+  group: alertas-tenis
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  vigilar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Vigilar partidos y avisar por Telegram
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          BANKROLL: ${{ vars.BANKROLL || '500' }}
+          LOOP_MINUTES: "28"
+          POLL_SECONDS: "120"
+        run: python tenis_alertas.py
+      - name: Guardar registro de senales
+        if: always()
+        run: |
+          git config user.name "bot-tenis"
+          git config user.email "bot-tenis@users.noreply.github.com"
+          for f in senales_tenis.csv senales_salidas.csv estado_alertas.json; do
+            if [ -f "$f" ]; then git add "$f"; fi
+          done
+          git diff --cached --quiet || (git commit -m "Registro de senales" && git pull --rebase && git push)
