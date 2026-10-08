@@ -22,12 +22,22 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
+      - name: Mensaje de prueba a Telegram
+        if: github.event_name == 'workflow_dispatch'
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          R=$(curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" -d chat_id="${TELEGRAM_CHAT_ID}" --data-urlencode "text=✅ Bot de tenis conectado. Estoy vigilando los partidos en vivo; solo te escribo cuando haya una apuesta con edge o cuando toque vender.")
+          if echo "$R" | grep -q '"ok":true'; then echo "Telegram OK"; else echo "Telegram FALLO: $R"; exit 1; fi
       - name: Vigilar partidos y avisar por Telegram
         env:
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           BANKROLL: ${{ vars.BANKROLL || '500' }}
+          PYTHONUNBUFFERED: "1"
           LOOP_MINUTES: "28"
           POLL_SECONDS: "120"
         run: python tenis_alertas.py
