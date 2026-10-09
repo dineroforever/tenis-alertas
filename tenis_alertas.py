@@ -318,12 +318,29 @@ def mensaje(s):
 
 
 def telegram(txt):
+    """Envía a Telegram. Si falla con formato, reintenta en texto plano. Registra todo."""
     if DRY_RUN or not TG_TOKEN:
         print("---- [DRY RUN] ----\n" + txt)
-        return
-    requests.post(f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage",
-                  json={"chat_id": TG_CHAT, "text": txt, "parse_mode": "HTML",
-                        "disable_web_page_preview": True}, timeout=15)
+        return True
+    url = f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage"
+    base = {"chat_id": TG_CHAT, "disable_web_page_preview": True}
+    for intento in range(3):
+        try:
+            r = requests.post(url, json={**base, "text": txt, "parse_mode": "HTML"}, timeout=15)
+            if r.ok:
+                print("Telegram OK")
+                return True
+            print("Telegram FALLO (HTML):", r.status_code, r.text[:300])
+            plano = re.sub(r"</?[bi]>", "", txt)
+            r = requests.post(url, json={**base, "text": plano}, timeout=15)
+            if r.ok:
+                print("Telegram OK (texto plano)")
+                return True
+            print("Telegram FALLO (plano):", r.status_code, r.text[:300])
+        except Exception as e:
+            print("Telegram FALLO (red):", repr(e))
+        time.sleep(3)
+    return False
 
 
 def log(s):
@@ -485,6 +502,12 @@ def main():
     fin = time.time() + minutos * 60
     est = cargar_estado()
     fallos = 0
+    if os.getenv("PRUEBA_SENAL") == "1":
+        ej = dict(jugador="Jugador Ejemplo", rival="Rival Ejemplo", torneo="PRUEBA", superficie="Dura",
+                  sets_txt="6-4 3-3", saca="Rival Ejemplo", P=0.62, p_score=0.64, Pb=0.60, ask=0.55,
+                  bid=0.54, edge=0.07, edge_casa=0.05, ev=11.0, monto=9.90, contratos=18,
+                  ticker="KXATPMATCH-EJEMPLO-EJE")
+        telegram("🧪 <b>EJEMPLO DE SEÑAL — NO OPERAR</b>\n(así se ven las alertas reales)\n\n" + mensaje(ej))
     while True:
         try:
             ciclo(est)
