@@ -176,6 +176,16 @@ def estado(m):
     return sh, sa, gh, ga, local_saca, ph, pa
 
 
+def marcador(m, lado):
+    """Marcador visto desde el jugador recomendado (sus games primero)."""
+    a, b = ("home", "away") if lado == "home" else ("away", "home")
+    txt = " ".join(f'{st[a]}-{st[b]}' for st in m["score"].get("sets", []))
+    pa_, pb_ = m["score"].get(a + "Point"), m["score"].get(b + "Point")
+    if pa_ not in (None, "0", 0) or pb_ not in (None, "0", 0):
+        txt += f" ({pa_}-{pb_})"
+    return txt
+
+
 def mercados(m, ev):
     """Mapea los mercados Kalshi del evento a (local, visita)."""
     mk_home = mk_away = None
@@ -277,7 +287,7 @@ def evaluar(m, ev, serie):
     jug = m["homePlayerName"] if mejor["lado"] == "home" else m["awayPlayerName"]
     rival = m["awayPlayerName"] if mejor["lado"] == "home" else m["homePlayerName"]
     saca = m["homePlayerName"] if local_saca else m["awayPlayerName"]
-    sets_txt = " ".join(f'{s["home"]}-{s["away"]}' for s in m["score"]["sets"])
+    sets_txt = marcador(m, mejor["lado"])
     mejor.update(jugador=jug, rival=rival, torneo=m.get("tournamentName", ""),
                  superficie=m.get("surface", "?"), sets_txt=sets_txt, saca=saca,
                  p_score=p_score_h if mejor["lado"] == "home" else 1 - p_score_h,
@@ -291,9 +301,10 @@ def evaluar(m, ev, serie):
 def mensaje(s):
     pct = s["monto"] / BANKROLL * 100
     return (
-        f"🎾 <b>APOSTAR · {s['jugador']}</b>\n"
+        f"🎾 <b>ENTRAR A FAVOR DE: {s['jugador'].upper()}</b>\n"
+        f"👉 En Kalshi compra <b>SÍ (Yes) a que gana {s['jugador']}</b>\n\n"
         f"vs {s['rival']} · {s['torneo']} · {s['superficie']}\n"
-        f"Marcador: {s['sets_txt']} · próximo saque: {s['saca']}\n\n"
+        f"Marcador ({s['jugador']} primero): <b>{s['sets_txt']}</b> · próximo saque: {s['saca']}\n\n"
         f"1. Prob. modelo: <b>{s['P']*100:.1f}%</b> (calc. {s['p_score']*100:.1f}% · casa {s['Pb']*100:.1f}%)\n"
         f"2. Prob. mercado: {s['ask']*100:.0f}¢ (bid {s['bid']*100:.0f}¢)\n"
         f"3. EDGE: <b>+{s['edge']*100:.1f} pp</b> (casa vs Kalshi +{s['edge_casa']*100:.1f} pp)\n"
@@ -361,8 +372,8 @@ def emparejar(m, eventos):
 def mensaje_salida(pos, x):
     g = (x["neto"] - pos["ask"]) * pos["contratos"]
     return (
-        f"💰 <b>VENDER · {pos['jugador']}</b> (si compraste)\n"
-        f"vs {pos['rival']} · Marcador: {x['sets_txt']}\n\n"
+        f"💰 <b>VENDER TUS SÍ DE: {pos['jugador'].upper()}</b> (si compraste)\n"
+        f"vs {pos['rival']} · Marcador ({pos['jugador']} primero): <b>{x['sets_txt']}</b>\n\n"
         f"Kalshi paga: <b>{x['bid']*100:.0f}¢</b> (neto de comisión {x['neto']*100:.1f}¢)\n"
         f"Vale según el modelo: {x['P']*100:.1f}%\n"
         f"Entrada: {pos['ask']*100:.0f}¢ → resultado {((x['neto']/pos['ask'])-1)*100:+.1f}% (${g:+.2f})\n"
@@ -389,8 +400,7 @@ def seguir(m, ev, pos):
     P = r[0] if pos["lado"] == "home" else 1 - r[0]
     neto = bid - fee(bid, pos["contratos"]) / pos["contratos"]
     if neto >= P + 0.005:
-        sets_txt = " ".join(f'{s["home"]}-{s["away"]}' for s in m["score"]["sets"])
-        return dict(bid=bid, neto=neto, P=P, sets_txt=sets_txt)
+        return dict(bid=bid, neto=neto, P=P, sets_txt=marcador(m, pos["lado"]))
     return None
 
 
