@@ -301,7 +301,7 @@ def evaluar(m, ev, serie):
 def mensaje(s):
     pct = s["monto"] / BANKROLL * 100
     return (
-        f"🎾 <b>ENTRAR A FAVOR DE: {s['jugador'].upper()}</b>\n"
+        f"🟢 <b>ENTRAR A FAVOR DE: {s['jugador'].upper()}</b>\n"
         f"👉 En Kalshi compra <b>SÍ (Yes) a que gana {s['jugador']}</b>\n\n"
         f"vs {s['rival']} · {s['torneo']} · {s['superficie']}\n"
         f"Marcador ({s['jugador']} primero): <b>{s['sets_txt']}</b> · próximo saque: {s['saca']}\n\n"
@@ -389,7 +389,7 @@ def emparejar(m, eventos):
 def mensaje_salida(pos, x):
     g = (x["neto"] - pos["ask"]) * pos["contratos"]
     return (
-        f"💰 <b>VENDER TUS SÍ DE: {pos['jugador'].upper()}</b> (si compraste)\n"
+        f"🔴 <b>VENDER TUS SÍ DE: {pos['jugador'].upper()}</b> (si compraste)\n"
         f"vs {pos['rival']} · Marcador ({pos['jugador']} primero): <b>{x['sets_txt']}</b>\n\n"
         f"Kalshi paga: <b>{x['bid']*100:.0f}¢</b> (neto de comisión {x['neto']*100:.1f}¢)\n"
         f"Vale según el modelo: {x['P']*100:.1f}%\n"
