@@ -1,0 +1,57 @@
+name: Senales clima Kalshi
+
+on:
+  schedule:
+    - cron: "10 21 * * *"
+    - cron: "10 22 * * *"
+  workflow_dispatch: {}
+
+concurrency:
+  group: senales-clima
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  clima:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Mensaje de prueba a Telegram
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          R=$(curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" -d chat_id="${TELEGRAM_CHAT_ID}" --data-urlencode "text=✅ Señales de clima conectadas. Todos los días a las 5:10 p. m. (hora de Miami) reviso Kalshi y solo te escribo si hay señal A o B.")
+          if echo "$R" | grep -q '"ok":true'; then echo "Telegram OK"; else echo "Telegram FALLO: $R"; exit 1; fi
+      - name: Escanear clima y avisar por Telegram
+        if: github.event_name == 'schedule'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PYTHONUNBUFFERED: "1"
+        run: python clima_alertas.py
+      - name: Guardar registro de clima
+        if: always()
+        run: |
+          git config user.name "bot-clima"
+          git config user.email "bot-clima@users.noreply.github.com"
+          if [ ! -f clima_senales.csv ]; then exit 0; fi
+          cp clima_senales.csv /tmp/clima.csv
+          for i in 1 2 3; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            cp /tmp/clima.csv clima_senales.csv
+            git add clima_senales.csv
+            if git diff --cached --quiet; then break; fi
+            if git commit -q -m "Registro de clima" && git push -q; then break; fi
+            sleep 5
+          done
