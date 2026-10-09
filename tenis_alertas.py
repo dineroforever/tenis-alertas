@@ -22,6 +22,7 @@ PRECIO_MIN, PRECIO_MAX = 0.20, 0.80
 SPREAD_MAX = 0.03
 EDGE_MODELO_MIN = 0.05      # P_final − ask
 EDGE_CASA_MIN = 0.03        # P_book − ask
+EDGE_MODELO_MAX = 0.10      # edge mayor = probable error del modelo (no entrar)
 CONTRADICCION_MAX = 0.10    # |P_score − P_book|
 W_BOOK, W_SCORE = 0.40, 0.60  # casa blanda
 ANCLA = 80
@@ -268,7 +269,7 @@ def evaluar(m, ev, serie):
             continue
         if not (PRECIO_MIN <= ask <= PRECIO_MAX) or ask - bid > SPREAD_MAX:
             continue
-        if P - ask < EDGE_MODELO_MIN or Pb - ask < EDGE_CASA_MIN:
+        if P - ask < EDGE_MODELO_MIN or P - ask > EDGE_MODELO_MAX or Pb - ask < EDGE_CASA_MIN:
             continue
         kelly = (P - ask) / (1 - ask)
         monto = min(KELLY_FRAC * kelly, TOPE_OP) * BANKROLL
@@ -477,6 +478,9 @@ def ciclo(est):
         mid = str(m["id"])
         if mid in abiertas or entradas.get(mid, 0) >= 3:
             continue
+        st0 = estado(m)
+        if entradas.get(mid, 0) >= 1 and st0 and st0[0] == 1 and st0[1] == 1:
+            continue  # sin reentrada en el set decisivo
         ev = emparejar(m, eventos)
         if not ev:
             continue
