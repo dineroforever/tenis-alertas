@@ -25,6 +25,7 @@ EDGE_MODELO_MIN = 0.05      # P_final − ask
 EDGE_CASA_MIN = 0.03        # P_book − ask
 EDGE_MODELO_MAX = 0.10      # edge mayor = probable error del modelo (no entrar)
 CONTRADICCION_MAX = 0.10    # |P_score − P_book|
+MAX_ENTRADAS = 1            # sin reentradas: las 2 reentradas registradas perdieron (−$12.05)
 W_BOOK, W_SCORE = 0.40, 0.60  # casa blanda
 ANCLA = 80
 BANKROLL = float(os.getenv("BANKROLL", "500"))
@@ -397,7 +398,7 @@ def mensaje_salida(pos, x):
         f"Vale según el modelo: {x['P']*100:.1f}%\n"
         f"Entrada: {pos['ask']*100:.0f}¢ → resultado {((x['neto']/pos['ask'])-1)*100:+.1f}% (${g:+.2f})\n"
         f"Vende con orden límite al bid ({x['bid']*100:.0f}¢) o 1¢ arriba.\n"
-        f"Si el edge vuelve, el bot avisa reentrada (máx. 3 por partido)."
+        f"No hay reentrada en este partido."
     )
 
 
@@ -477,11 +478,8 @@ def ciclo(est):
     # 2) Nuevas entradas
     for m in vivos:
         mid = str(m["id"])
-        if mid in abiertas or entradas.get(mid, 0) >= 3:
+        if mid in abiertas or entradas.get(mid, 0) >= MAX_ENTRADAS:
             continue
-        st0 = estado(m)
-        if entradas.get(mid, 0) >= 1 and st0 and st0[0] == 1 and st0[1] == 1:
-            continue  # sin reentrada en el set decisivo
         ev = emparejar(m, eventos)
         if not ev:
             continue

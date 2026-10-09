@@ -13,7 +13,7 @@ El bot vigila los partidos de tenis en vivo que tienen mercado en Kalshi y **te 
    - la casa da al menos +3 pp.
 5. **Monto:** ¼ de Kelly, con un tope de 2% del bankroll.
 
-**Salida por valor justo:** después de cada alerta de compra, el bot sigue ese partido. Cuando Kalshi paga más de lo que vale la posición (bid − comisión ≥ prob. del modelo + 0.5 pp), te manda **💰 VENDER**. Si el edge vuelve a aparecer, avisa la reentrada, con un máximo de 3 por partido.
+**Salida por valor justo:** después de cada alerta de compra, el bot sigue ese partido. Cuando Kalshi paga más de lo que vale la posición (bid − comisión ≥ prob. del modelo + 0.5 pp), te manda **🔴 VENDER**. Una sola entrada por partido: no hay reentradas.
 
 **Seguimiento de marcador (nuevo):** cada partido donde entras te avisa por Telegram de ⚡ cada quiebre, 🏁 cada set y ✅/❌ el resultado final con tu ganancia o pérdida. El marcador sale de la API pública de Kalshi, la misma con la que liquida, así que no gasta Apify. Las alertas del bot se siguen solas. Las entradas que hagas tú las agregas escribiéndole al bot:
 
