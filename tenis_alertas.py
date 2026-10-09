@@ -15,6 +15,7 @@ from datetime import datetime, timezone
 import requests
 
 from tenis_prob import prob
+import seguimiento as segui
 
 # ───────────── Parámetros del filtro (skill PRO) ─────────────
 MIN_VOL_CONTRATOS = float(os.getenv("MIN_VOL_CONTRATOS", "300000"))  # ≈ $100K en la web de Kalshi
@@ -493,6 +494,13 @@ def ciclo(est):
         abiertas[mid] = dict(match_id=m["id"], ticker=s["ticker"], lado=s["lado"], ask=s["ask"],
                              contratos=s["contratos"], jugador=s["jugador"], rival=s["rival"],
                              ts=time.time())
+        try:  # seguimiento de marcador por Telegram (quiebres, sets, final)
+            pos, _ = segui.agregar(est, s["ticker"].rsplit("-", 1)[0], s["jugador"], s["ask"],
+                                   s["contratos"], origen="bot", ticker=s["ticker"])
+            if pos:
+                pos["ult"] = None
+        except Exception as e:
+            print("No pude agregar al seguimiento:", repr(e))
         n_ok += 1
     print(f"{datetime.now(timezone.utc):%H:%M:%S} vivos={len(vivos)} kalshi={len(eventos)} "
           f"entradas={n_ok} salidas={n_out} abiertas={len(abiertas)}")
@@ -505,6 +513,13 @@ def main():
     pausa = float(os.getenv("POLL_SECONDS", "120"))
     fin = time.time() + minutos * 60
     est = cargar_estado()
+    for pos in est.get("abiertas", {}).values():  # alertas previas al módulo de seguimiento
+        if pos["ticker"] not in est.get("seguir", {}):
+            try:
+                segui.agregar(est, pos["ticker"].rsplit("-", 1)[0], pos["jugador"], pos["ask"],
+                              pos["contratos"], origen="bot", ticker=pos["ticker"])
+            except Exception as e:
+                print("No pude migrar al seguimiento:", repr(e))
     fallos = 0
     if os.getenv("PRUEBA_SENAL") == "1":
         ej = dict(jugador="Jugador Ejemplo", rival="Rival Ejemplo", torneo="PRUEBA", superficie="Dura",
@@ -513,6 +528,11 @@ def main():
                   ticker="KXATPMATCH-EJEMPLO-EJE")
         telegram("🧪 <b>EJEMPLO DE SEÑAL — NO OPERAR</b>\n(así se ven las alertas reales)\n\n" + mensaje(ej))
     while True:
+        try:  # comandos de Telegram + marcador de posiciones (independiente de Apify)
+            segui.procesar_comandos(segui.leer_comandos(TG_TOKEN, TG_CHAT, est), est, telegram)
+            segui.ciclo_seguimiento(est, telegram)
+        except Exception as e:
+            print("Seguimiento error:", repr(e))
         try:
             ciclo(est)
             fallos = 0

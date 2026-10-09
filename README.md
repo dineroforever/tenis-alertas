@@ -15,6 +15,15 @@ El bot vigila los partidos de tenis en vivo que tienen mercado en Kalshi y **te 
 
 **Salida por valor justo:** después de cada alerta de compra, el bot sigue ese partido. Cuando Kalshi paga más de lo que vale la posición (bid − comisión ≥ prob. del modelo + 0.5 pp), te manda **💰 VENDER**. Si el edge vuelve a aparecer, avisa la reentrada, con un máximo de 3 por partido.
 
+**Seguimiento de marcador (nuevo):** cada partido donde entras te avisa por Telegram de ⚡ cada quiebre, 🏁 cada set y ✅/❌ el resultado final con tu ganancia o pérdida. El marcador sale de la API pública de Kalshi, la misma con la que liquida, así que no gasta Apify. Las alertas del bot se siguen solas. Las entradas que hagas tú las agregas escribiéndole al bot:
+
+- `/seguir <link de Kalshi> <jugador> [precio¢] [contratos]`, por ejemplo `/seguir https://kalshi.com/markets/.../kxatpchallengermatch-26oct09llamar Martinez 75 20`
+- `/estado`: marcador, precio y P&L de todo lo que sigues
+- `/dejar <jugador>`: deja de seguir esa posición
+- `/ayuda`
+
+El bot lee tus comandos cada 2 minutos mientras está corriendo. Ojo: el repositorio es público, así que las posiciones que sigues quedan visibles en `estado_alertas.json`.
+
 Cada compra queda en `senales_tenis.csv` y cada venta o liquidación en `senales_salidas.csv`. Así se lleva la estadística real.
 
 ## Instalación (10 minutos)
