@@ -18,6 +18,8 @@ jobs:
     timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -46,7 +48,29 @@ jobs:
         run: |
           git config user.name "bot-tenis"
           git config user.email "bot-tenis@users.noreply.github.com"
-          for f in senales_tenis.csv senales_salidas.csv estado_alertas.json; do
-            if [ -f "$f" ]; then git add "$f"; fi
+          mkdir -p /tmp/reg
+          for f in senales_tenis.csv senales_salidas.csv; do
+            if [ -f "$f" ]; then
+              base=$(git show HEAD:"$f" 2>/dev/null | wc -l)
+              tail -n +$((base+1)) "$f" > "/tmp/reg/$f"
+            fi
           done
-          git diff --cached --quiet || (git commit -m "Registro de senales" && git pull --rebase && git push)
+          if [ -f estado_alertas.json ]; then cp estado_alertas.json /tmp/reg/; fi
+          for i in 1 2 3; do
+            rm -f senales_tenis.csv senales_salidas.csv estado_alertas.json
+            git fetch -q origin main && git reset -q --hard origin/main
+            for f in senales_tenis.csv senales_salidas.csv; do
+              if [ -s "/tmp/reg/$f" ]; then
+                if [ -f "$f" ] && head -1 "/tmp/reg/$f" | grep -q '^fecha_utc'; then
+                  tail -n +2 "/tmp/reg/$f" >> "$f"
+                else
+                  cat "/tmp/reg/$f" >> "$f"
+                fi
+                git add "$f"
+              fi
+            done
+            if [ -f /tmp/reg/estado_alertas.json ]; then cp /tmp/reg/estado_alertas.json .; git add estado_alertas.json; fi
+            if git diff --cached --quiet; then break; fi
+            if git commit -q -m "Registro de senales" && git push -q; then break; fi
+            sleep 5
+          done
