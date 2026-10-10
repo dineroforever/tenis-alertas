@@ -54,6 +54,7 @@ LOG_SALIDAS = os.getenv("LOG_SALIDAS", "senales_salidas.csv")
 LOG_SOMBRA = os.getenv("LOG_SOMBRA", "sombra_entradas.csv")          # señales bloqueadas por las reglas nuevas
 LOG_SOMBRA_SAL = os.getenv("LOG_SOMBRA_SAL", "sombra_salidas.csv")  # (seguidas en paper, sin avisar)
 LOG_TRAY = os.getenv("LOG_TRAY", "trayectoria_precios.csv")  # máx/mín del bid de cada operación (solo anotación)
+LOG_CAND = os.getenv("LOG_CAND", "candidatos.csv")  # toda evaluación del modelo (para calibrarlo)
 STATE = os.getenv("STATE_FILE", "estado_alertas.json")
 
 PTS = {"0": 0, "15": 1, "30": 2, "40": 3, "A": 4, "AD": 4}
@@ -366,6 +367,7 @@ def evaluar(m, ev, serie, permitir_edge_alto=False, det=None):
     if not r:
         return None
     p_final_h, p_score_h, p_book_h, brecha = r
+    log_candidato(m, ev, st, mk_home, mk_away, r, vol)
     if abs(p_score_h - p_book_h) > CONTRADICCION_MAX:
         return None
 
@@ -467,6 +469,36 @@ def log(s, archivo=None, motivo=""):
                     s["jugador"], s["rival"], s["torneo"], s["sets_txt"], round(s["P"], 4),
                     round(s["p_score"], 4), round(s["Pb"], 4), s["ask"], s["bid"],
                     round(s["edge"] * 100, 1), round(s["ev"], 1), s["monto"], motivo])
+
+
+_CAND_VISTOS = set()
+
+
+def log_candidato(m, ev, st, mk_home, mk_away, r, vol):
+    """Anota cada evaluación (una por marcador) para medir después si el modelo
+    le gana al precio de Kalshi. No cambia ninguna decisión."""
+    sh, sa, gh, ga, local_saca = st[:5]
+    clave = f'{m["id"]}-{sh}{sa}-{gh}{ga}'
+    if clave in _CAND_VISTOS:
+        return
+    _CAND_VISTOS.add(clave)
+    try:
+        nuevo = not os.path.exists(LOG_CAND)
+        with open(LOG_CAND, "a", newline="") as fh:
+            w = csv.writer(fh)
+            if nuevo:
+                w.writerow(["fecha_utc", "match_id", "serie", "ticker_local", "ticker_visita", "local", "visita",
+                            "sets_local", "sets_visita", "games_local", "games_visita", "saca_local",
+                            "p_final_local", "p_calc_local", "p_casa_local", "brecha",
+                            "ask_local", "bid_local", "ask_visita", "bid_visita", "volumen"])
+            w.writerow([datetime.now(timezone.utc).isoformat(timespec="seconds"), m["id"], ev.get("_serie", ""),
+                        mk_home.get("ticker"), mk_away.get("ticker"), m["homePlayerName"], m["awayPlayerName"],
+                        sh, sa, gh, ga, int(bool(local_saca)),
+                        round(r[0], 4), round(r[1], 4), "" if r[2] is None else round(r[2], 4), round(r[3], 4),
+                        mk_home.get("yes_ask_dollars"), mk_home.get("yes_bid_dollars"),
+                        mk_away.get("yes_ask_dollars"), mk_away.get("yes_bid_dollars"), round(vol)])
+    except Exception as e:
+        print("No pude anotar candidato:", repr(e))
 
 
 def cargar_estado():
