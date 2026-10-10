@@ -44,6 +44,8 @@ TG_CHAT = os.getenv("TELEGRAM_CHAT_ID", "")
 DRY_RUN = os.getenv("DRY_RUN", "0") == "1"
 LOG_CSV = os.getenv("LOG_CSV", "senales_tenis.csv")
 LOG_SALIDAS = os.getenv("LOG_SALIDAS", "senales_salidas.csv")
+LOG_SOMBRA = os.getenv("LOG_SOMBRA", "sombra_entradas.csv")          # señales bloqueadas por las reglas nuevas
+LOG_SOMBRA_SAL = os.getenv("LOG_SOMBRA_SAL", "sombra_salidas.csv")  # (seguidas en paper, sin avisar)
 STATE = os.getenv("STATE_FILE", "estado_alertas.json")
 
 PTS = {"0": 0, "15": 1, "30": 2, "40": 3, "A": 4, "AD": 4}
@@ -237,7 +239,7 @@ def modelo(m, serie, st, exigir_cuota=True):
     return min(max(p_final_h, 0.03), 0.97), p_score_h, p_book_h, brecha
 
 
-def evaluar(m, ev, serie):
+def evaluar(m, ev, serie, permitir_edge_alto=False):
     """Devuelve dict de señal o None. Solo pasa si cumple TODO el filtro."""
     st = estado(m)
     if not st:
@@ -271,7 +273,9 @@ def evaluar(m, ev, serie):
             continue
         if not (PRECIO_MIN <= ask <= PRECIO_MAX) or ask - bid > SPREAD_MAX:
             continue
-        if P - ask < EDGE_MODELO_MIN or P - ask > EDGE_MODELO_MAX or Pb - ask < EDGE_CASA_MIN:
+        if P - ask < EDGE_MODELO_MIN or Pb - ask < EDGE_CASA_MIN:
+            continue
+        if P - ask > EDGE_MODELO_MAX and not permitir_edge_alto:
             continue
         kelly = (P - ask) / (1 - ask)
         monto = min(KELLY_FRAC * kelly, TOPE_OP) * BANKROLL
@@ -346,9 +350,10 @@ def telegram(txt):
     return False
 
 
-def log(s):
-    nuevo = not os.path.exists(LOG_CSV)
-    with open(LOG_CSV, "a", newline="") as fh:
+def log(s, archivo=None, motivo=""):
+    archivo = archivo or LOG_CSV
+    nuevo = not os.path.exists(archivo)
+    with open(archivo, "a", newline="") as fh:
         w = csv.writer(fh)
         if nuevo:
             w.writerow(["fecha_utc", "match_id", "ticker", "jugador", "rival", "torneo", "marcador",
@@ -357,7 +362,7 @@ def log(s):
         w.writerow([datetime.now(timezone.utc).isoformat(timespec="seconds"), s["match_id"], s["ticker"],
                     s["jugador"], s["rival"], s["torneo"], s["sets_txt"], round(s["P"], 4),
                     round(s["p_score"], 4), round(s["Pb"], 4), s["ask"], s["bid"],
-                    round(s["edge"] * 100, 1), round(s["ev"], 1), s["monto"], ""])
+                    round(s["edge"] * 100, 1), round(s["ev"], 1), s["monto"], motivo])
 
 
 def cargar_estado():
@@ -424,9 +429,10 @@ def seguir(m, ev, pos):
     return None
 
 
-def log_salida(pos, motivo, precio, neto):
-    nuevo = not os.path.exists(LOG_SALIDAS)
-    with open(LOG_SALIDAS, "a", newline="") as fh:
+def log_salida(pos, motivo, precio, neto, archivo=None):
+    archivo = archivo or LOG_SALIDAS
+    nuevo = not os.path.exists(archivo)
+    with open(archivo, "a", newline="") as fh:
         w = csv.writer(fh)
         if nuevo:
             w.writerow(["fecha_utc", "match_id", "ticker", "jugador", "entrada", "contratos",
@@ -475,16 +481,51 @@ def ciclo(est):
             del abiertas[mid]
             n_out += 1
 
+    # 1b) Señales bloqueadas por las reglas nuevas: se siguen en paper, sin avisar
+    sombra = est.setdefault("sombra", {})
+    ent_sombra = est.setdefault("entradas_sombra", {})
+    for mid, pos in list(sombra.items()):
+        m = por_id.get(int(mid))
+        if not m:
+            res = liquidacion(pos["ticker"])
+            if res in ("yes", "no"):
+                precio = 1.0 if res == "yes" else 0.0
+                log_salida(pos, "liquidacion", precio, precio, LOG_SOMBRA_SAL)
+                del sombra[mid]
+            elif time.time() - pos["ts"] > 12 * 3600:
+                del sombra[mid]
+            continue
+        ev = emparejar(m, eventos)
+        x = seguir(m, ev, pos) if ev else None
+        if x:
+            log_salida(pos, "valor_justo", x["bid"], x["neto"], LOG_SOMBRA_SAL)
+            del sombra[mid]
+    n_sombra = 0
+
     # 2) Nuevas entradas
     for m in vivos:
         mid = str(m["id"])
-        if mid in abiertas or entradas.get(mid, 0) >= MAX_ENTRADAS:
+        if mid in abiertas:
+            continue
+        reentrada = entradas.get(mid, 0) >= MAX_ENTRADAS
+        sombra_libre = mid not in sombra and ent_sombra.get(mid, 0) < 3
+        if reentrada and not sombra_libre:
             continue
         ev = emparejar(m, eventos)
         if not ev:
             continue
-        s = evaluar(m, ev, ev["_serie"])
+        s = evaluar(m, ev, ev["_serie"], permitir_edge_alto=True)
         if not s:
+            continue
+        motivos = (["edge>10"] if s["edge"] > EDGE_MODELO_MAX else []) + (["reentrada"] if reentrada else [])
+        if motivos:
+            if sombra_libre:
+                log(s, LOG_SOMBRA, "+".join(motivos))
+                ent_sombra[mid] = ent_sombra.get(mid, 0) + 1
+                sombra[mid] = dict(match_id=m["id"], ticker=s["ticker"], lado=s["lado"], ask=s["ask"],
+                                   contratos=s["contratos"], jugador=s["jugador"], rival=s["rival"],
+                                   ts=time.time())
+                n_sombra += 1
             continue
         telegram(mensaje(s))
         log(s)
@@ -501,7 +542,8 @@ def ciclo(est):
             print("No pude agregar al seguimiento:", repr(e))
         n_ok += 1
     print(f"{datetime.now(timezone.utc):%H:%M:%S} vivos={len(vivos)} kalshi={len(eventos)} "
-          f"entradas={n_ok} salidas={n_out} abiertas={len(abiertas)}")
+          f"entradas={n_ok} salidas={n_out} abiertas={len(abiertas)} "
+          f"bloqueadas={n_sombra} sombra_abiertas={len(sombra)}")
 
 
 def main():
