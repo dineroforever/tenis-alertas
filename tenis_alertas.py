@@ -4,7 +4,9 @@ Envía mensaje SOLO cuando un partido pasa el filtro completo del skill
 tennis-live-predictor-pro (versión "casa blanda + modelo").
 
 Fuentes:
-  - Apify crawlstone/tennis-scraper (liveMatches + pointByPoint)
+  - API pública de Kalshi: precios + marcador y estadísticas de saque en vivo (gratis)
+  - Apify crawlstone/tennis-scraper (liveMatches = cuotas de la casa) SOLO cuando Kalshi
+    muestra un partido candidato o hay posiciones que vigilar (modo ahorro, tope diario)
   - API pública de Kalshi (precios, volumen, profundidad) — no necesita llave
 Variables de entorno (Secrets de GitHub):
   APIFY_TOKEN, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
@@ -39,6 +41,11 @@ FEMENINO = {"KXWTAMATCH", "KXWTACHALLENGERMATCH", "KXITFWMATCH"}
 APIFY_ACTOR = "crawlstone~tennis-scraper"
 
 APIFY_TOKEN = os.getenv("APIFY_TOKEN", "")
+# Modo ahorro: Apify cobra ~$0.00736 por llamada. Primero se filtra con Kalshi (gratis)
+# y solo se llama a Apify cuando hay un partido candidato o una posición que vigilar.
+APIFY_COSTO = float(os.getenv("APIFY_COSTO", "0.00736"))
+APIFY_TOPE_DIA = float(os.getenv("APIFY_TOPE_DIA", "0.60"))   # ≈ $18/mes
+APIFY_SEG_CADA = float(os.getenv("APIFY_SEG_CADA", "240"))    # revisar posiciones cada 4 min
 TG_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
 TG_CHAT = os.getenv("TELEGRAM_CHAT_ID", "")
 DRY_RUN = os.getenv("DRY_RUN", "0") == "1"
@@ -97,11 +104,103 @@ def fee(precio, contratos, rate=FEE_TAKER):
 
 
 # ───────────── datos ─────────────
+class SinPresupuesto(Exception):
+    """Se alcanzó el tope diario de gasto en Apify."""
+
+
+class SinSaldo(Exception):
+    """Apify respondió 402: no queda saldo en el mes."""
+
+
+GASTO = {}  # se enlaza a est["apify"] en main()
+
+
+def gasto_hoy():
+    dia = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    if GASTO.get("dia") != dia:
+        GASTO.clear()
+        GASTO.update(dia=dia, usd=0.0, llamadas=0, aviso_tope=False, aviso_saldo=False)
+    return GASTO["usd"]
+
+
 def apify(inp, timeout=120):
+    if gasto_hoy() + APIFY_COSTO > APIFY_TOPE_DIA:
+        raise SinPresupuesto()
     url = f"https://api.apify.com/v2/acts/{APIFY_ACTOR}/run-sync-get-dataset-items"
     r = requests.post(url, params={"token": APIFY_TOKEN}, json=inp, timeout=timeout)
+    if r.status_code == 402:
+        raise SinSaldo()
     r.raise_for_status()
+    GASTO["usd"] += APIFY_COSTO
+    GASTO["llamadas"] = GASTO.get("llamadas", 0) + 1
     return r.json()
+
+
+_MILESTONE = {}
+
+
+def kalshi_live(ev):
+    """Marcador y estadísticas en vivo desde Kalshi (gratis). Devuelve 'details' o None."""
+    tk = ev["event_ticker"]
+    if tk not in _MILESTONE:
+        r = requests.get(f"{KALSHI}/milestones", params={"related_event_ticker": tk, "limit": 5}, timeout=15)
+        ms = r.json().get("milestones", []) if r.ok else []
+        if not ms:
+            return None
+        _MILESTONE[tk] = (ms[0]["id"], ms[0]["type"])
+    mid, mtype = _MILESTONE[tk]
+    r = requests.get(f"{KALSHI}/live_data/{mtype}/milestone/{mid}", timeout=15)
+    if not r.ok:
+        return None
+    return r.json().get("live_data", {}).get("details") or None
+
+
+def precandidato(ev):
+    """Filtro gratis con precios de Kalshi: volumen y algún lado con precio/spread válidos."""
+    mks = ev.get("markets", [])
+    if sum(f(mk.get("volume_fp")) or 0 for mk in mks) < MIN_VOL_CONTRATOS:
+        return False
+    for mk in mks:
+        ask, bid = f(mk.get("yes_ask_dollars")), f(mk.get("yes_bid_dollars"))
+        if ask is not None and bid is not None and PRECIO_MIN <= ask <= PRECIO_MAX and ask - bid <= SPREAD_MAX:
+            return True
+    return False
+
+
+def momento_kalshi(det):
+    """Filtros 1 y 2 con el marcador de Kalshi: en vivo, set a ≤1 game, entre games, sin tiebreak."""
+    if not det or det.get("status") != "live":
+        return False
+    r1, r2 = det.get("competitor1_round_scores") or [], det.get("competitor2_round_scores") or []
+    if not r1 or not r2:
+        return False
+    g1, g2 = r1[-1].get("score", 0) or 0, r2[-1].get("score", 0) or 0
+    if abs(g1 - g2) > 1 or (g1 == 6 and g2 == 6):
+        return False
+    if len(r1) == 1 and g1 + g2 == 0:
+        return False
+    p1, p2 = det.get("competitor1_current_round_score"), det.get("competitor2_current_round_score")
+    return str(p1) in ("0", "None", "") and str(p2) in ("0", "None", "")
+
+
+def stats_kalshi(det, m, ev):
+    """(spw_home, n_home, spw_away, n_away) con las estadísticas de saque de Kalshi, o None."""
+    t = (ev or {}).get("title", "")
+    if not det or " vs " not in t:
+        return None
+    home_es_c1 = apellido_match(m["homePlayerName"], t.split(" vs ", 1)[0].strip())
+
+    def spw(s):
+        w, l = (s or {}).get("service_points_won"), (s or {}).get("service_points_lost")
+        if w is None or l is None or w + l < 10:
+            return None
+        return w / (w + l), w + l
+
+    x1, x2 = spw(det.get("competitor1_statistics")), spw(det.get("competitor2_statistics"))
+    if not x1 or not x2:
+        return None
+    (sh, nh), (sa, na) = (x1, x2) if home_es_c1 else (x2, x1)
+    return sh, nh, sa, na
 
 
 def kalshi_eventos():
@@ -204,7 +303,7 @@ def mercados(m, ev):
     return mk_home, mk_away
 
 
-def modelo(m, serie, st, exigir_cuota=True):
+def modelo(m, serie, st, exigir_cuota=True, det=None, ev=None):
     """Calcula (p_final_h, p_score_h, p_book_h, brecha) para el local, o None."""
     sh, sa, gh, ga, local_saca, ph, pa = st
     o = m.get("odds") or {}
@@ -216,12 +315,16 @@ def modelo(m, serie, st, exigir_cuota=True):
         return None
     if p_pre_h is None:
         p_pre_h = 0.5
-    # Stats de hoy (pointByPoint)
-    try:
-        pbp = apify({"mode": "pointByPoint", "matchId": m["id"]}, timeout=90)
-        ss = stats_saque(pbp[0]) if pbp else None
-    except Exception:
-        ss = None
+    # Stats de saque de hoy: primero Kalshi (gratis); si faltan, pointByPoint de Apify
+    ss = stats_kalshi(det, m, ev)
+    if not ss:
+        try:
+            pbp = apify({"mode": "pointByPoint", "matchId": m["id"]}, timeout=90)
+            ss = stats_saque(pbp[0]) if pbp else None
+        except SinSaldo:
+            raise
+        except Exception:
+            ss = None
     if not ss:
         return None
     spw_h, n_h, spw_a, n_a = ss
@@ -240,7 +343,7 @@ def modelo(m, serie, st, exigir_cuota=True):
     return min(max(p_final_h, 0.03), 0.97), p_score_h, p_book_h, brecha
 
 
-def evaluar(m, ev, serie, permitir_edge_alto=False):
+def evaluar(m, ev, serie, permitir_edge_alto=False, det=None):
     """Devuelve dict de señal o None. Solo pasa si cumple TODO el filtro."""
     st = estado(m)
     if not st:
@@ -259,7 +362,7 @@ def evaluar(m, ev, serie, permitir_edge_alto=False):
     if vol < MIN_VOL_CONTRATOS:
         return None
 
-    r = modelo(m, serie, st)
+    r = modelo(m, serie, st, det=det, ev=ev)
     if not r:
         return None
     p_final_h, p_score_h, p_book_h, brecha = r
@@ -420,7 +523,11 @@ def seguir(m, ev, pos):
     bid = f(mk.get("yes_bid_dollars"))
     if not bid:
         return None
-    r = modelo(m, ev["_serie"], st, exigir_cuota=False)
+    try:
+        det = kalshi_live(ev)
+    except Exception:
+        det = None
+    r = modelo(m, ev["_serie"], st, exigir_cuota=False, det=det, ev=ev)
     if not r:
         return None
     P = r[0] if pos["lado"] == "home" else 1 - r[0]
@@ -487,12 +594,33 @@ def liquidacion(ticker):
 
 
 def ciclo(est):
-    vivos = apify({"mode": "liveMatches", "matchType": ["singles"]})
     eventos = kalshi_eventos()
-    por_id = {m["id"]: m for m in vivos}
     abiertas = est.setdefault("abiertas", {})
     entradas = est.setdefault("entradas", {})
+    sombra = est.setdefault("sombra", {})
+    ent_sombra = est.setdefault("entradas_sombra", {})
     n_ok = n_out = 0
+
+    # 0) Filtro gratis con Kalshi: ¿hay algún partido en el momento justo para entrar?
+    cands = {}
+    for ev in eventos:
+        if not precandidato(ev):
+            continue
+        try:
+            det = kalshi_live(ev)
+        except Exception:
+            det = None
+        if momento_kalshi(det):
+            cands[ev["event_ticker"]] = det
+    toca_seg = bool(abiertas or sombra) and time.time() - est.get("ult_seg", 0) >= APIFY_SEG_CADA
+    if not cands and not toca_seg:
+        print(f"{datetime.now(timezone.utc):%H:%M:%S} kalshi={len(eventos)} candidatos=0 "
+              f"abiertas={len(abiertas)} sombra_abiertas={len(sombra)} · sin llamar a Apify "
+              f"(hoy ${gasto_hoy():.2f} de ${APIFY_TOPE_DIA:.2f})")
+        return
+    vivos = apify({"mode": "liveMatches", "matchType": ["singles"]})
+    est["ult_seg"] = time.time()
+    por_id = {m["id"]: m for m in vivos}
 
     # 1) Seguimiento de posiciones abiertas (salida por valor justo)
     for mid, pos in list(abiertas.items()):
@@ -518,8 +646,6 @@ def ciclo(est):
             n_out += 1
 
     # 1b) Señales bloqueadas por las reglas nuevas: se siguen en paper, sin avisar
-    sombra = est.setdefault("sombra", {})
-    ent_sombra = est.setdefault("entradas_sombra", {})
     for mid, pos in list(sombra.items()):
         m = por_id.get(int(mid))
         if not m:
@@ -550,9 +676,9 @@ def ciclo(est):
         if reentrada and not sombra_libre:
             continue
         ev = emparejar(m, eventos)
-        if not ev:
+        if not ev or ev["event_ticker"] not in cands:
             continue
-        s = evaluar(m, ev, ev["_serie"], permitir_edge_alto=True)
+        s = evaluar(m, ev, ev["_serie"], permitir_edge_alto=True, det=cands[ev["event_ticker"]])
         if not s:
             continue
         motivos = (["edge>10"] if s["edge"] > EDGE_MODELO_MAX else []) + (["reentrada"] if reentrada else [])
@@ -581,7 +707,8 @@ def ciclo(est):
         n_ok += 1
     print(f"{datetime.now(timezone.utc):%H:%M:%S} vivos={len(vivos)} kalshi={len(eventos)} "
           f"entradas={n_ok} salidas={n_out} abiertas={len(abiertas)} "
-          f"bloqueadas={n_sombra} sombra_abiertas={len(sombra)}")
+          f"bloqueadas={n_sombra} sombra_abiertas={len(sombra)} candidatos={len(cands)} "
+          f"apify_hoy=${gasto_hoy():.2f}/{APIFY_TOPE_DIA:.2f}")
 
 
 def main():
@@ -591,6 +718,8 @@ def main():
     pausa = float(os.getenv("POLL_SECONDS", "120"))
     fin = time.time() + minutos * 60
     est = cargar_estado()
+    global GASTO
+    GASTO = est.setdefault("apify", {})
     for pos in est.get("abiertas", {}).values():  # alertas previas al módulo de seguimiento
         if pos["ticker"] not in est.get("seguir", {}):
             try:
@@ -614,6 +743,20 @@ def main():
         try:
             ciclo(est)
             fallos = 0
+        except SinPresupuesto:
+            fallos = 0
+            print(f"Tope diario de Apify alcanzado (${gasto_hoy():.2f}).")
+            if not GASTO.get("aviso_tope"):
+                GASTO["aviso_tope"] = True
+                telegram(f"💤 Bot de tenis: llegué al tope diario de Apify (${APIFY_TOPE_DIA:.2f}) para no gastar "
+                         f"de más. Pauso las señales nuevas hasta las 8 p. m. (Miami), cuando se reinicia el día.")
+        except SinSaldo:
+            fallos = 0
+            print("Apify sin saldo (402).")
+            if not GASTO.get("aviso_saldo"):
+                GASTO["aviso_saldo"] = True
+                telegram("⚠️ Bot de tenis: Apify se quedó sin saldo este mes. Pauso las señales hasta que se "
+                         "renueve; los comandos /estado y el seguimiento de marcador siguen funcionando.")
         except Exception as e:
             fallos += 1
             print("Error:", repr(e))
