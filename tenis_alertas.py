@@ -46,6 +46,7 @@ LOG_CSV = os.getenv("LOG_CSV", "senales_tenis.csv")
 LOG_SALIDAS = os.getenv("LOG_SALIDAS", "senales_salidas.csv")
 LOG_SOMBRA = os.getenv("LOG_SOMBRA", "sombra_entradas.csv")          # señales bloqueadas por las reglas nuevas
 LOG_SOMBRA_SAL = os.getenv("LOG_SOMBRA_SAL", "sombra_salidas.csv")  # (seguidas en paper, sin avisar)
+LOG_TRAY = os.getenv("LOG_TRAY", "trayectoria_precios.csv")  # máx/mín del bid de cada operación (solo anotación)
 STATE = os.getenv("STATE_FILE", "estado_alertas.json")
 
 PTS = {"0": 0, "15": 1, "30": 2, "40": 3, "A": 4, "AD": 4}
@@ -441,6 +442,40 @@ def log_salida(pos, motivo, precio, neto, archivo=None):
         w.writerow([datetime.now(timezone.utc).isoformat(timespec="seconds"), pos["match_id"],
                     pos["ticker"], pos["jugador"], pos["ask"], pos["contratos"], motivo,
                     round(precio, 4), round(neto, 4), round(g, 2), round((neto / pos["ask"] - 1) * 100, 1)])
+    log_trayectoria(pos, motivo, precio, "sombra" if archivo == LOG_SOMBRA_SAL else "real")
+
+
+def anotar_extremos(pos, m, ev):
+    """Guarda el bid más alto y más bajo que tuvo la posición (para comparar salidas a futuro)."""
+    try:
+        mk_home, mk_away = mercados(m, ev)
+        mk = mk_home if pos["lado"] == "home" else mk_away
+        bid = f(mk.get("yes_bid_dollars")) if mk else None
+        if bid is None:
+            return
+        if bid > pos.get("max_bid", -1):
+            pos["max_bid"], pos["t_max"] = bid, round((time.time() - pos["ts"]) / 60)
+        pos["min_bid"] = min(pos.get("min_bid", 2), bid)
+    except Exception:
+        pass
+
+
+def log_trayectoria(pos, motivo, precio, tipo):
+    try:
+        nuevo = not os.path.exists(LOG_TRAY)
+        with open(LOG_TRAY, "a", newline="") as fh:
+            w = csv.writer(fh)
+            if nuevo:
+                w.writerow(["fecha_utc", "tipo", "ticker", "jugador", "entrada", "contratos", "motivo_salida",
+                            "precio_salida", "max_bid", "min_bid", "min_hasta_max", "minutos_abierta",
+                            "toco_10pct", "toco_20pct", "toco_30pct"])
+            e, mx = pos["ask"], pos.get("max_bid")
+            toco = lambda k: "" if mx is None else ("si" if mx >= e * (1 + k) else "no")
+            w.writerow([datetime.now(timezone.utc).isoformat(timespec="seconds"), tipo, pos["ticker"],
+                        pos["jugador"], e, pos["contratos"], motivo, round(precio, 4), mx, pos.get("min_bid"),
+                        pos.get("t_max"), round((time.time() - pos["ts"]) / 60), toco(.10), toco(.20), toco(.30)])
+    except Exception as ex:
+        print("No pude anotar trayectoria:", repr(ex))
 
 
 def liquidacion(ticker):
@@ -474,6 +509,7 @@ def ciclo(est):
         ev = emparejar(m, eventos)
         if not ev:
             continue
+        anotar_extremos(pos, m, ev)
         x = seguir(m, ev, pos)
         if x:
             telegram(mensaje_salida(pos, x))
@@ -496,6 +532,8 @@ def ciclo(est):
                 del sombra[mid]
             continue
         ev = emparejar(m, eventos)
+        if ev:
+            anotar_extremos(pos, m, ev)
         x = seguir(m, ev, pos) if ev else None
         if x:
             log_salida(pos, "valor_justo", x["bid"], x["neto"], LOG_SOMBRA_SAL)
