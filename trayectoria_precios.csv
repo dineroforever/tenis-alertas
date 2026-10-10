@@ -1,3 +1,4 @@
 fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_bid,min_bid,min_hasta_max,minutos_abierta,toco_10pct,toco_20pct,toco_30pct
 2026-10-10T04:28:42+00:00,sombra,KXWTAMATCH-26OCT09ITOPAR-PAR,Alycia Parks,0.26,38,liquidacion,0.0,0.32,0.0,5,30,si,si,no
 2026-10-10T05:19:16+00:00,real,KXATPMATCH-26OCT10UGOAUG-AUG,Felix Auger-Aliassime,0.65,15,valor_justo,0.8,0.8,0.59,23,23,si,si,no
+2026-10-10T05:47:37+00:00,real,KXATPMATCH-26OCT08MEDSTR-STR,Jan-Lennard Struff,0.44,22,valor_justo,0.19,0.48,0.16,5,44,no,no,no
