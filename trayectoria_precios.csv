@@ -4,3 +4,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-10T05:47:37+00:00,real,KXATPMATCH-26OCT08MEDSTR-STR,Jan-Lennard Struff,0.44,22,valor_justo,0.19,0.48,0.16,5,44,no,no,no
 2026-10-10T06:24:31+00:00,sombra,KXATPMATCH-26OCT10UGOAUG-AUG,Felix Auger-Aliassime,0.6,16,valor_justo,0.73,0.82,0.53,19,34,si,si,si
 2026-10-10T07:21:34+00:00,real,KXWTAMATCH-26OCT09STESHI-STE,Peyton Stearns,0.63,15,liquidacion,0.0,0.7,0.11,4,55,si,no,no
+2026-10-10T18:06:46+00:00,real,KXATPCHALLENGERMATCH-26OCT10FORMOR-MOR,Alejandro Moro Canas,0.8,12,valor_justo,0.62,0.85,0.15,65,104,no,no,no
