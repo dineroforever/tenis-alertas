@@ -50,7 +50,7 @@ jobs:
           git config user.name "bot-tenis"
           git config user.email "bot-tenis@users.noreply.github.com"
           mkdir -p /tmp/reg
-          for f in senales_tenis.csv senales_salidas.csv; do
+          for f in senales_tenis.csv senales_salidas.csv sombra_entradas.csv sombra_salidas.csv; do
             if [ -f "$f" ]; then
               base=$(git show HEAD:"$f" 2>/dev/null | wc -l)
               tail -n +$((base+1)) "$f" > "/tmp/reg/$f"
@@ -58,9 +58,9 @@ jobs:
           done
           if [ -f estado_alertas.json ]; then cp estado_alertas.json /tmp/reg/; fi
           for i in 1 2 3; do
-            rm -f senales_tenis.csv senales_salidas.csv estado_alertas.json
+            rm -f senales_tenis.csv senales_salidas.csv sombra_entradas.csv sombra_salidas.csv estado_alertas.json
             git fetch -q origin main && git reset -q --hard origin/main
-            for f in senales_tenis.csv senales_salidas.csv; do
+            for f in senales_tenis.csv senales_salidas.csv sombra_entradas.csv sombra_salidas.csv; do
               if [ -s "/tmp/reg/$f" ]; then
                 if [ -f "$f" ] && head -1 "/tmp/reg/$f" | grep -q '^fecha_utc'; then
                   tail -n +2 "/tmp/reg/$f" >> "$f"
