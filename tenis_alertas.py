@@ -635,6 +635,10 @@ def ciclo(est):
 
     # 0) Filtro gratis con Kalshi: ¿hay algún partido en el momento justo para entrar?
     cands = {}
+    vistos = est.setdefault("vistos_kalshi", {})  # marcador ya evaluado -> no volver a pagar Apify
+    for k in [k for k, t in vistos.items() if time.time() - t > 6 * 3600]:
+        del vistos[k]
+    nuevos = []
     for ev in eventos:
         if not precandidato(ev):
             continue
@@ -643,7 +647,12 @@ def ciclo(est):
         except Exception:
             det = None
         if momento_kalshi(det):
+            r1, r2 = det.get("competitor1_round_scores") or [], det.get("competitor2_round_scores") or []
+            k = ev["event_ticker"] + ":" + ",".join(f'{x.get("score", 0)}-{y.get("score", 0)}' for x, y in zip(r1, r2))
+            if k in vistos:
+                continue
             cands[ev["event_ticker"]] = det
+            nuevos.append(k)
     toca_seg = bool(abiertas or sombra) and time.time() - est.get("ult_seg", 0) >= APIFY_SEG_CADA
     if not cands and not toca_seg:
         print(f"{datetime.now(timezone.utc):%H:%M:%S} kalshi={len(eventos)} candidatos=0 "
@@ -652,6 +661,8 @@ def ciclo(est):
         return
     vivos = apify({"mode": "liveMatches", "matchType": ["singles"]})
     est["ult_seg"] = time.time()
+    for k in nuevos:
+        vistos[k] = time.time()
     por_id = {m["id"]: m for m in vivos}
 
     # 1) Seguimiento de posiciones abiertas (salida por valor justo)
