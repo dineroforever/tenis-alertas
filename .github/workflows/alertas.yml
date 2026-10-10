@@ -42,7 +42,7 @@ jobs:
           PYTHONUNBUFFERED: "1"
           PRUEBA_SENAL: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
           LOOP_MINUTES: "28"
-          POLL_SECONDS: "120"
+          POLL_SECONDS: "30"
         run: python tenis_alertas.py
       - name: Guardar registro de senales
         if: always()
