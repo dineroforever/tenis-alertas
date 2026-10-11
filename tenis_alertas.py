@@ -21,6 +21,7 @@ import seguimiento as segui
 
 # ───────────── Parámetros del filtro (skill PRO) ─────────────
 MIN_VOL_CONTRATOS = float(os.getenv("MIN_VOL_CONTRATOS", "300000"))  # ≈ $100K en la web de Kalshi
+MIN_VOL_SOMBRA = float(os.getenv("MIN_VOL_SOMBRA", "100000"))  # 100K–300K: solo en paper (sombra), sin aviso
 PRECIO_MIN, PRECIO_MAX = 0.20, 0.80
 SPREAD_MAX = 0.03
 EDGE_MODELO_MIN = 0.05      # P_final − ask
@@ -159,7 +160,7 @@ def kalshi_live(ev):
 def precandidato(ev):
     """Filtro gratis con precios de Kalshi: volumen y algún lado con precio/spread válidos."""
     mks = ev.get("markets", [])
-    if sum(f(mk.get("volume_fp")) or 0 for mk in mks) < MIN_VOL_CONTRATOS:
+    if sum(f(mk.get("volume_fp")) or 0 for mk in mks) < MIN_VOL_SOMBRA:
         return False
     for mk in mks:
         ask, bid = f(mk.get("yes_ask_dollars")), f(mk.get("yes_bid_dollars"))
@@ -360,7 +361,7 @@ def evaluar(m, ev, serie, permitir_edge_alto=False, det=None):
     if not mk_home or not mk_away:
         return None
     vol = (f(mk_home.get("volume_fp")) or 0) + (f(mk_away.get("volume_fp")) or 0)
-    if vol < MIN_VOL_CONTRATOS:
+    if vol < MIN_VOL_SOMBRA:
         return None
 
     r = modelo(m, serie, st, det=det, ev=ev)
@@ -724,7 +725,8 @@ def ciclo(est):
         s = evaluar(m, ev, ev["_serie"], permitir_edge_alto=True, det=cands[ev["event_ticker"]])
         if not s:
             continue
-        motivos = (["edge>10"] if s["edge"] > EDGE_MODELO_MAX else []) + (["reentrada"] if reentrada else [])
+        motivos = ((["edge>10"] if s["edge"] > EDGE_MODELO_MAX else []) + (["reentrada"] if reentrada else [])
+                   + (["vol<300k"] if s["vol"] < MIN_VOL_CONTRATOS else []))
         if motivos:
             if sombra_libre:
                 log(s, LOG_SOMBRA, "+".join(motivos))
