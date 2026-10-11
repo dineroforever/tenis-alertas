@@ -44,6 +44,7 @@ jobs:
           LOOP_MINUTES: "28"
           POLL_SECONDS: "30"
           APIFY_TOPE_DIA: "2.00"
+          MODO: "kalshi"
         run: python tenis_alertas.py
       - name: Guardar registro de senales
         if: always()
