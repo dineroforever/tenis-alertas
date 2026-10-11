@@ -48,6 +48,8 @@ APIFY_TOKEN = os.getenv("APIFY_TOKEN", "")
 APIFY_COSTO = float(os.getenv("APIFY_COSTO", "0.00736"))
 APIFY_TOPE_DIA = float(os.getenv("APIFY_TOPE_DIA", "0.60"))   # ≈ $18/mes
 APIFY_SEG_CADA = float(os.getenv("APIFY_SEG_CADA", "240"))    # revisar posiciones cada 4 min
+APIFY_SOMBRA_CADA = float(os.getenv("APIFY_SOMBRA_CADA", "600"))  # solo posiciones en paper: cada 10 min
+APIFY_SOMBRA_MAX = 0.70  # pasado el 70% del tope diario, el resto se reserva para señales reales
 TG_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
 TG_CHAT = os.getenv("TELEGRAM_CHAT_ID", "")
 DRY_RUN = os.getenv("DRY_RUN", "0") == "1"
@@ -655,7 +657,9 @@ def ciclo(est):
                 continue
             cands[ev["event_ticker"]] = det
             nuevos.append(k)
-    toca_seg = bool(abiertas or sombra) and time.time() - est.get("ult_seg", 0) >= APIFY_SEG_CADA
+    desde = time.time() - est.get("ult_seg", 0)
+    toca_seg = (bool(abiertas) and desde >= APIFY_SEG_CADA) or (
+        bool(sombra) and desde >= APIFY_SOMBRA_CADA and gasto_hoy() < APIFY_SOMBRA_MAX * APIFY_TOPE_DIA)
     if not cands and not toca_seg:
         print(f"{datetime.now(timezone.utc):%H:%M:%S} kalshi={len(eventos)} candidatos=0 "
               f"abiertas={len(abiertas)} sombra_abiertas={len(sombra)} · sin llamar a Apify "
