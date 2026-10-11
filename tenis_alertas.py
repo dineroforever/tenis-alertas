@@ -165,6 +165,7 @@ def kalshi_live(ev):
 # ───────────── Modelo "solo Kalshi" (en paralelo, solo paper, costo $0) ─────────────
 # Mismo modelo y mismas reglas, pero sin Apify: cuota previa = precio de Kalshi antes del
 # inicio; marcador y saque = live_data de Kalshi. Sirve para saber si se puede prescindir de Apify.
+MODO = os.getenv("MODO", "apify")  # "kalshi" = costo $0: no usa Apify y avisa con el modelo solo-Kalshi
 LOG_KS_ENT = os.getenv("LOG_KS_ENT", "ks_entradas.csv")
 LOG_KS_SAL = os.getenv("LOG_KS_SAL", "ks_salidas.csv")
 _PRE_KS = {}
@@ -248,6 +249,47 @@ def _csv(archivo, cab, fila):
         w.writerow(fila)
 
 
+def link_ks(ticker):
+    return f"https://kalshi.com/markets/{ticker.split('-')[0].lower()}/m/{ticker.rsplit('-', 1)[0].lower()}"
+
+
+def marcador_ks(det, c1):
+    r1, r2 = det.get("competitor1_round_scores") or [], det.get("competitor2_round_scores") or []
+    pares = [(x.get("score", 0), y.get("score", 0)) for x, y in zip(r1, r2)]
+    return " ".join(f"{a}-{b}" if c1 else f"{b}-{a}" for a, b in pares) or "0-0"
+
+
+def mensaje_ks(d):
+    return (
+        f"🟢 <b>ENTRAR A FAVOR DE: {d['jugador'].upper()}</b>\n"
+        f"👉 En Kalshi compra <b>SÍ (Yes) a que gana {d['jugador']}</b>\n\n"
+        f"vs {d['rival']}\n"
+        f"Marcador ({d['jugador']} primero): <b>{d['marc']}</b>\n\n"
+        f"1. Prob. modelo: <b>{d['P']*100:.1f}%</b> (antes del partido Kalshi le daba {d['pre']*100:.0f}%)\n"
+        f"2. Prob. mercado: {d['ask']*100:.0f}¢ (bid {d['bid']*100:.0f}¢)\n"
+        f"3. EDGE: <b>+{d['edge']*100:.1f} pp</b>\n"
+        f"4. EV por $100: ${d['ev']:.1f}\n\n"
+        f"💵 Monto: <b>${d['monto']:.2f}</b> · {d['contratos']} contratos\n"
+        f"Plan: compra límite a {d['ask']*100:.0f}¢ · <b>el bot te avisa cuándo VENDER</b> (valor justo) · "
+        f"si ves lesión o MTO, vende tú de inmediato\n"
+        f"{link_ks(d['ticker'])}\n"
+        f"<i>Modelo solo-Kalshi (prueba sin costo, sin casa de apuestas). PAPER: no es obligatorio operar.</i>"
+    )
+
+
+def mensaje_salida_ks(pos, bid, neto, P, marc):
+    g = (neto - pos["ask"]) * pos["contratos"]
+    return (
+        f"🔴 <b>VENDER TUS SÍ DE: {pos['jugador'].upper()}</b> (si compraste)\n"
+        f"vs {pos.get('rival', '?')} · Marcador ({pos['jugador']} primero): <b>{marc}</b>\n\n"
+        f"Kalshi paga: <b>{bid*100:.0f}¢</b> (neto de comisión {neto*100:.1f}¢)\n"
+        f"Vale según el modelo: {P*100:.1f}%\n"
+        f"Entrada: {pos['ask']*100:.0f}¢ → resultado {((neto/pos['ask'])-1)*100:+.1f}% (${g:+.2f})\n"
+        f"Vende con orden límite al bid ({bid*100:.0f}¢) o 1¢ arriba.\n"
+        f"No hay reentrada en este partido."
+    )
+
+
 def ciclo_ks(est, eventos, dets):
     ks = est.setdefault("ks", {})
     pos_all, ent = ks.setdefault("pos", {}), ks.setdefault("ent", {})
@@ -289,6 +331,8 @@ def ciclo_ks(est, eventos, dets):
         P = p1 if pos["c1"] else 1 - p1
         neto = bid - fee(bid, pos["contratos"]) / pos["contratos"]
         if neto >= P + 0.005:
+            if pos.get("aviso"):
+                telegram(mensaje_salida_ks(pos, bid, neto, P, marcador_ks(det, pos["c1"])))
             salida(etk, pos, "valor_justo", bid, neto)
 
     for etk, det in dets.items():  # entradas
@@ -337,8 +381,21 @@ def ciclo_ks(est, eventos, dets):
               round(P, 4), round(pre1 if c1 else 1 - pre1, 4), ask, bid, round(e * 100, 1), contratos,
               round(vol), "" if vol >= MIN_VOL_CONTRATOS else "vol<300k"])
         ent[etk] = ent.get(etk, 0) + 1
-        pos_all[etk] = dict(ticker=mk["ticker"], c1=c1, jugador=a if c1 else b, ask=ask,
-                            contratos=contratos, pre1=pre1, ts=time.time())
+        aviso = MODO == "kalshi" and vol >= MIN_VOL_CONTRATOS
+        pos_all[etk] = dict(ticker=mk["ticker"], c1=c1, jugador=a if c1 else b, rival=b if c1 else a, ask=ask,
+                            contratos=contratos, pre1=pre1, ts=time.time(), aviso=aviso)
+        if aviso:
+            costo = ask + fee(ask, contratos) / contratos
+            telegram(mensaje_ks(dict(jugador=mk.get("yes_sub_title") or (a if c1 else b), rival=b if c1 else a,
+                                     marc=marcador_ks(det, c1), P=P, pre=pre1 if c1 else 1 - pre1, ask=ask,
+                                     bid=bid, edge=e, ev=100 * (P / costo - 1), monto=round(contratos * ask, 2),
+                                     contratos=contratos, ticker=mk["ticker"])))
+            try:  # seguimiento de marcador por Telegram (quiebres, sets, final)
+                sp, _ = segui.agregar(est, etk, a if c1 else b, ask, contratos, origen="bot", ticker=mk["ticker"])
+                if sp:
+                    sp["ult"] = None
+            except Exception as ex:
+                print("No pude agregar al seguimiento:", repr(ex))
 
 
 def precandidato(ev):
@@ -845,6 +902,11 @@ def ciclo(est):
         ciclo_ks(est, eventos, dets)
     except Exception as e:
         print("Solo-Kalshi error:", repr(e))
+    if MODO == "kalshi":  # modo costo $0: nunca se llama a Apify
+        ks = est.get("ks", {})
+        print(f"{datetime.now(timezone.utc):%H:%M:%S} [solo-Kalshi] kalshi={len(eventos)} en_vivo={len(dets)} "
+              f"posiciones={len(ks.get('pos', {}))}")
+        return
     desde = time.time() - est.get("ult_seg", 0)
     toca_seg = (bool(abiertas) and desde >= APIFY_SEG_CADA) or (
         bool(sombra) and desde >= APIFY_SOMBRA_CADA and gasto_hoy() < APIFY_SOMBRA_MAX * APIFY_TOPE_DIA)
@@ -950,7 +1012,7 @@ def ciclo(est):
 
 
 def main():
-    if not APIFY_TOKEN:
+    if not APIFY_TOKEN and MODO != "kalshi":
         sys.exit("Falta APIFY_TOKEN")
     minutos = float(os.getenv("LOOP_MINUTES", "28"))
     pausa = float(os.getenv("POLL_SECONDS", "120"))
