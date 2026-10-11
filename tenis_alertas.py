@@ -168,6 +168,7 @@ def kalshi_live(ev):
 MODO = os.getenv("MODO", "apify")  # "kalshi" = costo $0: no usa Apify y avisa con el modelo solo-Kalshi
 LOG_KS_ENT = os.getenv("LOG_KS_ENT", "ks_entradas.csv")
 LOG_KS_SAL = os.getenv("LOG_KS_SAL", "ks_salidas.csv")
+LOG_KS_TRAY = os.getenv("LOG_KS_TRAY", "ks_trayectoria.csv")  # qué habría pasado con +10/20/30% o sin vender
 _PRE_KS = {}
 
 
@@ -290,9 +291,45 @@ def mensaje_salida_ks(pos, bid, neto, P, marc):
     )
 
 
+def _extremos_ks(pos, ev):
+    """Anota el bid máximo y mínimo desde la entrada (sigue aunque ya se haya vendido)."""
+    if not ev:
+        return
+    m1, m2 = mercados_ks(ev)
+    b = f(((m1 if pos["c1"] else m2) or {}).get("yes_bid_dollars"))
+    if b is None or b <= 0:
+        return
+    if b > pos.get("max_bid", 0):
+        pos["max_bid"], pos["t_max"] = b, time.time()
+    pos["min_bid"] = min(pos.get("min_bid", 1.0), b)
+
+
+def tray_ks(etk, pos, gano):
+    """Compara salidas: valor justo vs +10/+20/+30% vs quedarse hasta el final."""
+    a, n, mx = pos["ask"], pos["contratos"], pos.get("max_bid", 0)
+    fin = (1 - a) * n if gano else -a * n
+
+    def objetivo(x):
+        p = round(a * (1 + x), 2)
+        if p < 1 and mx >= p:
+            return (p - fee(p, n) / n - a) * n
+        return fin
+
+    vj = pos.get("vj_neto")
+    _csv(LOG_KS_TRAY, ["fecha_utc", "event_ticker", "ticker", "jugador", "entrada", "contratos", "gano_partido",
+                       "max_bid", "min_bid", "min_hasta_max", "toco_10pct", "toco_20pct", "toco_30pct",
+                       "g_valor_justo", "g_10pct", "g_20pct", "g_30pct", "g_hasta_final"],
+         [datetime.now(timezone.utc).isoformat(timespec="seconds"), etk, pos["ticker"], pos["jugador"], a, n,
+          "si" if gano else "no", mx, pos.get("min_bid", ""),
+          round((pos["t_max"] - pos["ts"]) / 60) if pos.get("t_max") else "",
+          *["si" if mx >= round(a * (1 + x), 2) else "no" for x in (0.10, 0.20, 0.30)],
+          round(fin if vj is None else (vj - a) * n, 2), *[round(objetivo(x), 2) for x in (0.10, 0.20, 0.30)],
+          round(fin, 2)])
+
+
 def ciclo_ks(est, eventos, dets):
     ks = est.setdefault("ks", {})
-    pos_all, ent = ks.setdefault("pos", {}), ks.setdefault("ent", {})
+    pos_all, ent, obs = ks.setdefault("pos", {}), ks.setdefault("ent", {}), ks.setdefault("obs", {})
     por_tk = {ev["event_ticker"]: ev for ev in eventos}
     ahora = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
@@ -303,21 +340,39 @@ def ciclo_ks(est, eventos, dets):
              [ahora, etk, pos["ticker"], pos["jugador"], pos["ask"], pos["contratos"], motivo,
               round(precio, 4), round(neto, 4), round(g, 2), round((neto / pos["ask"] - 1) * 100, 1)])
         del pos_all[etk]
+        if motivo == "valor_justo":  # se sigue mirando hasta el final para comparar salidas
+            obs[etk] = dict(pos, vj_neto=neto)
+
+    def detalle(etk, ev):
+        d = dets.get(etk)
+        if d is None:
+            try:
+                d = kalshi_live(ev or {"event_ticker": etk})
+            except Exception:
+                d = None
+        return d
+
+    for etk, pos in list(obs.items()):  # ya vendidas: solo observar hasta que termine el partido
+        ev = por_tk.get(etk)
+        _extremos_ks(pos, ev)
+        det = detalle(etk, ev)
+        if det and det.get("winner"):
+            tray_ks(etk, pos, (det.get("winner") == det.get("competitor1_id")) == pos["c1"])
+            del obs[etk]
+        elif time.time() - pos["ts"] > 12 * 3600:
+            del obs[etk]
 
     for etk, pos in list(pos_all.items()):  # salidas (valor justo o liquidación)
         ev = por_tk.get(etk)
-        det = dets.get(etk)
-        if det is None:
-            try:
-                det = kalshi_live(ev or {"event_ticker": etk})
-            except Exception:
-                det = None
+        _extremos_ks(pos, ev)
+        det = detalle(etk, ev)
         if not det:
             if time.time() - pos["ts"] > 12 * 3600:
                 del pos_all[etk]
             continue
         if det.get("winner"):
             gano = (det.get("winner") == det.get("competitor1_id")) == pos["c1"]
+            tray_ks(etk, pos, gano)
             salida(etk, pos, "liquidacion", 1.0 if gano else 0.0, 1.0 if gano else 0.0)
             continue
         if not ev:
