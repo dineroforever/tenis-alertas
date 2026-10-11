@@ -142,6 +142,7 @@ def apify(inp, timeout=120):
 
 
 _MILESTONE = {}
+_INICIO = {}  # event_ticker -> hora de inicio (milestones de Kalshi)
 
 
 def kalshi_live(ev):
@@ -153,11 +154,191 @@ def kalshi_live(ev):
         if not ms:
             return None
         _MILESTONE[tk] = (ms[0]["id"], ms[0]["type"])
+        _INICIO[tk] = ms[0].get("start_date")
     mid, mtype = _MILESTONE[tk]
     r = requests.get(f"{KALSHI}/live_data/{mtype}/milestone/{mid}", timeout=15)
     if not r.ok:
         return None
     return r.json().get("live_data", {}).get("details") or None
+
+
+# ───────────── Modelo "solo Kalshi" (en paralelo, solo paper, costo $0) ─────────────
+# Mismo modelo y mismas reglas, pero sin Apify: cuota previa = precio de Kalshi antes del
+# inicio; marcador y saque = live_data de Kalshi. Sirve para saber si se puede prescindir de Apify.
+LOG_KS_ENT = os.getenv("LOG_KS_ENT", "ks_entradas.csv")
+LOG_KS_SAL = os.getenv("LOG_KS_SAL", "ks_salidas.csv")
+_PRE_KS = {}
+
+
+def pre_kalshi(ev, mk):
+    """Probabilidad pre-partido = punto medio de Kalshi en la última vela antes del inicio."""
+    tk = mk["ticker"]
+    if tk in _PRE_KS:
+        return _PRE_KS[tk]
+    ini = _INICIO.get(ev["event_ticker"])
+    if not ini:
+        return None
+    t0 = int(datetime.fromisoformat(ini.replace("Z", "+00:00")).timestamp())
+    r = requests.get(f"{KALSHI}/series/{ev['_serie']}/markets/{tk}/candlesticks",
+                     params={"start_ts": t0 - 6 * 3600, "end_ts": t0, "period_interval": 60}, timeout=15)
+    p = None
+    if r.ok:
+        for c in r.json().get("candlesticks", []):
+            b = f((c.get("yes_bid") or {}).get("close_dollars"))
+            a = f((c.get("yes_ask") or {}).get("close_dollars"))
+            if b is not None and a is not None and 0 < b < a < 1 and a - b <= 0.10:
+                p = (a + b) / 2
+    _PRE_KS[tk] = p
+    return p
+
+
+def mercados_ks(ev):
+    t = ev.get("title", "")
+    if " vs " not in t:
+        return None, None
+    a, b = [x.strip() for x in t.split(" vs ", 1)]
+    m1 = m2 = None
+    for mk in ev.get("markets", []):
+        nm = mk.get("yes_sub_title", "")
+        if apellido_match(nm, a):
+            m1 = mk
+        elif apellido_match(nm, b):
+            m2 = mk
+    return m1, m2
+
+
+def prob_ks(ev, det, pre1):
+    """Probabilidad de que gane competitor1 (primero del título) solo con datos de Kalshi."""
+    r1, r2 = det.get("competitor1_round_scores") or [], det.get("competitor2_round_scores") or []
+    if not r1 or len(r1) != len(r2) or not det.get("server"):
+        return None
+    s1, s2 = int(det.get("competitor1_overall_score") or 0), int(det.get("competitor2_overall_score") or 0)
+    if r1[-1].get("outcome") == "ongoing":
+        g1, g2 = r1[-1].get("score", 0) or 0, r2[-1].get("score", 0) or 0
+    else:
+        g1 = g2 = 0
+    p1, p2 = str(det.get("competitor1_current_round_score") or 0), str(det.get("competitor2_current_round_score") or 0)
+    if g1 == 6 and g2 == 6:
+        x1, x2 = (int(p1) if p1.isdigit() else 0), (int(p2) if p2.isdigit() else 0)
+    else:
+        x1, x2 = PTS.get(p1, 0), PTS.get(p2, 0)
+
+    def spw(st):
+        w, l = (st or {}).get("service_points_won"), (st or {}).get("service_points_lost")
+        if w is None or l is None or w + l < 10:
+            return None
+        return w / (w + l), w + l
+
+    a1, a2 = spw(det.get("competitor1_statistics")), spw(det.get("competitor2_statistics"))
+    if not a1 or not a2:
+        return None
+    spw_tour = 0.56 if ev.get("_serie") in FEMENINO else 0.64
+    n = (a1[1] + a2[1]) / 2
+    brecha = (n * (a1[0] - a2[0]) + ANCLA * brecha_desde_cuota(pre1) / 100) / (n + ANCLA)
+    c1_saca = det.get("server") == det.get("competitor1_id")
+    return prob(spw_tour + brecha / 2, spw_tour - brecha / 2, s1, s2, g1, g2, c1_saca, x1, x2, 3)
+
+
+def _csv(archivo, cab, fila):
+    nuevo = not os.path.exists(archivo)
+    with open(archivo, "a", newline="") as fh:
+        w = csv.writer(fh)
+        if nuevo:
+            w.writerow(cab)
+        w.writerow(fila)
+
+
+def ciclo_ks(est, eventos, dets):
+    ks = est.setdefault("ks", {})
+    pos_all, ent = ks.setdefault("pos", {}), ks.setdefault("ent", {})
+    por_tk = {ev["event_ticker"]: ev for ev in eventos}
+    ahora = datetime.now(timezone.utc).isoformat(timespec="seconds")
+
+    def salida(etk, pos, motivo, precio, neto):
+        g = (neto - pos["ask"]) * pos["contratos"]
+        _csv(LOG_KS_SAL, ["fecha_utc", "event_ticker", "ticker", "jugador", "entrada", "contratos", "motivo",
+                          "precio_salida", "neto_por_contrato", "ganancia_usd", "rend_pct"],
+             [ahora, etk, pos["ticker"], pos["jugador"], pos["ask"], pos["contratos"], motivo,
+              round(precio, 4), round(neto, 4), round(g, 2), round((neto / pos["ask"] - 1) * 100, 1)])
+        del pos_all[etk]
+
+    for etk, pos in list(pos_all.items()):  # salidas (valor justo o liquidación)
+        ev = por_tk.get(etk)
+        det = dets.get(etk)
+        if det is None:
+            try:
+                det = kalshi_live(ev or {"event_ticker": etk})
+            except Exception:
+                det = None
+        if not det:
+            if time.time() - pos["ts"] > 12 * 3600:
+                del pos_all[etk]
+            continue
+        if det.get("winner"):
+            gano = (det.get("winner") == det.get("competitor1_id")) == pos["c1"]
+            salida(etk, pos, "liquidacion", 1.0 if gano else 0.0, 1.0 if gano else 0.0)
+            continue
+        if not ev:
+            continue
+        m1, m2 = mercados_ks(ev)
+        mk = m1 if pos["c1"] else m2
+        bid = f((mk or {}).get("yes_bid_dollars"))
+        p1 = prob_ks(ev, det, pos["pre1"])
+        if not bid or p1 is None:
+            continue
+        P = p1 if pos["c1"] else 1 - p1
+        neto = bid - fee(bid, pos["contratos"]) / pos["contratos"]
+        if neto >= P + 0.005:
+            salida(etk, pos, "valor_justo", bid, neto)
+
+    for etk, det in dets.items():  # entradas
+        if etk in pos_all or ent.get(etk, 0) >= MAX_ENTRADAS or not momento_kalshi(det):
+            continue
+        ev = por_tk.get(etk)
+        m1, m2 = mercados_ks(ev or {})
+        if not m1 or not m2:
+            continue
+        vol = (f(m1.get("volume_fp")) or 0) + (f(m2.get("volume_fp")) or 0)
+        if vol < MIN_VOL_SOMBRA:
+            continue
+        pre1 = pre_kalshi(ev, m1)
+        if pre1 is None:
+            q = pre_kalshi(ev, m2)
+            pre1 = None if q is None else 1 - q
+        if pre1 is None:
+            continue
+        p1 = prob_ks(ev, det, pre1)
+        if p1 is None:
+            continue
+        mejor = None
+        for c1, mk, P in ((True, m1, p1), (False, m2, 1 - p1)):
+            ask, bid = f(mk.get("yes_ask_dollars")), f(mk.get("yes_bid_dollars"))
+            if ask is None or bid is None or not (PRECIO_MIN <= ask <= PRECIO_MAX) or ask - bid > SPREAD_MAX:
+                continue
+            e = P - ask
+            if not (EDGE_MODELO_MIN <= e <= EDGE_MODELO_MAX):
+                continue
+            kelly = e / (1 - ask)
+            contratos = max(1, int(min(KELLY_FRAC * kelly, TOPE_OP) * BANKROLL / ask))
+            if (f(mk.get("yes_ask_size_fp")) or 0) < 3 * contratos:
+                continue
+            if not mejor or e > mejor[3]:
+                mejor = (c1, mk, P, e, ask, bid, contratos)
+        if not mejor:
+            continue
+        c1, mk, P, e, ask, bid, contratos = mejor
+        t = ev.get("title", "")
+        a, b = [x.strip() for x in t.split(" vs ", 1)]
+        r1, r2 = det.get("competitor1_round_scores") or [], det.get("competitor2_round_scores") or []
+        marc = " ".join(f'{x.get("score", 0)}-{y.get("score", 0)}' for x, y in zip(r1, r2))
+        _csv(LOG_KS_ENT, ["fecha_utc", "event_ticker", "ticker", "jugador", "rival", "serie", "marcador_c1",
+                          "p_modelo", "p_pre", "ask", "bid", "edge_pp", "contratos", "volumen", "motivo"],
+             [ahora, etk, mk["ticker"], a if c1 else b, b if c1 else a, ev.get("_serie", ""), marc,
+              round(P, 4), round(pre1 if c1 else 1 - pre1, 4), ask, bid, round(e * 100, 1), contratos,
+              round(vol), "" if vol >= MIN_VOL_CONTRATOS else "vol<300k"])
+        ent[etk] = ent.get(etk, 0) + 1
+        pos_all[etk] = dict(ticker=mk["ticker"], c1=c1, jugador=a if c1 else b, ask=ask,
+                            contratos=contratos, pre1=pre1, ts=time.time())
 
 
 def precandidato(ev):
@@ -643,6 +824,7 @@ def ciclo(est):
     for k in [k for k, t in vistos.items() if time.time() - t > 6 * 3600]:
         del vistos[k]
     nuevos = []
+    dets = {}
     for ev in eventos:
         if not precandidato(ev):
             continue
@@ -650,6 +832,8 @@ def ciclo(est):
             det = kalshi_live(ev)
         except Exception:
             det = None
+        if det:
+            dets[ev["event_ticker"]] = det
         if momento_kalshi(det):
             r1, r2 = det.get("competitor1_round_scores") or [], det.get("competitor2_round_scores") or []
             k = ev["event_ticker"] + ":" + ",".join(f'{x.get("score", 0)}-{y.get("score", 0)}' for x, y in zip(r1, r2))
@@ -657,6 +841,10 @@ def ciclo(est):
                 continue
             cands[ev["event_ticker"]] = det
             nuevos.append(k)
+    try:  # modelo "solo Kalshi" en paralelo (gratis)
+        ciclo_ks(est, eventos, dets)
+    except Exception as e:
+        print("Solo-Kalshi error:", repr(e))
     desde = time.time() - est.get("ult_seg", 0)
     toca_seg = (bool(abiertas) and desde >= APIFY_SEG_CADA) or (
         bool(sombra) and desde >= APIFY_SOMBRA_CADA and gasto_hoy() < APIFY_SOMBRA_MAX * APIFY_TOPE_DIA)
