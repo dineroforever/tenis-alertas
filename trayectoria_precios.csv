@@ -9,3 +9,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-11T04:55:35+00:00,real,KXATPMATCH-26OCT10SHEGEA-SHE,Ben Shelton,0.51,19,valor_justo,0.71,0.71,0.52,6,6,si,si,si
 2026-10-11T04:59:59+00:00,sombra,KXATPMATCH-26OCT10SHEGEA-GEA,Arthur Gea,0.29,34,valor_justo,0.25,0.26,0.25,4,4,no,no,no
 2026-10-11T05:08:04+00:00,sombra,KXATPCHALLENGERMATCH-26OCT10HARKAC-KAC,Alibek Kachmazov,0.28,35,valor_justo,0.38,0.46,0.19,26,46,si,si,si
+2026-10-11T05:36:17+00:00,sombra,KXWTAMATCH-26OCT10SORKAS-SOR,Sara Sorribes Tormo,0.25,40,liquidacion,0.0,0.37,0.03,6,36,si,si,si
