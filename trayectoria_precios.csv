@@ -15,3 +15,6 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-12T13:56:21+00:00,sombra,KXWTACHALLENGERMATCH-26OCT11CAKTSY-CAK,Sara Čakarević,0.27,37,liquidacion,1.0,0.26,0.26,3,1409,no,no,no
 2026-10-12T14:20:59+00:00,real,KXATPCHALLENGERMATCH-26OCT12CARMCD-MCD,Mackenzie McDonald,0.53,18,valor_justo,0.44,0.5,0.39,5,9,no,no,no
 2026-10-12T14:51:04+00:00,real,KXATPCHALLENGERMATCH-26OCT12GOMCAT-GOM,Norbert Gombos,0.68,14,liquidacion,1.0,0.71,0.45,10,38,no,no,no
+2026-10-12T14:52:34+00:00,real,KXATPCHALLENGERMATCH-26OCT12KARKRU-KAR,Miloš Karol,0.47,21,valor_justo,0.41,0.46,0.36,9,10,no,no,no
+2026-10-12T14:52:34+00:00,sombra,KXATPCHALLENGERMATCH-26OCT12KARKRU-KAR,Miloš Karol,0.45,22,valor_justo,0.41,0.77,0.36,12,32,si,si,si
+2026-10-12T15:11:43+00:00,sombra,KXWTACHALLENGERMATCH-26OCT12GRACHI-CHI,Deborah Chiesa,0.23,43,liquidacion,0.0,0.64,0.04,39,61,si,si,si
