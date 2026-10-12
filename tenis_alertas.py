@@ -445,12 +445,6 @@ def ciclo_ks(est, eventos, dets):
                                      marc=marcador_ks(det, c1), P=P, pre=pre1 if c1 else 1 - pre1, ask=ask,
                                      bid=bid, edge=e, ev=100 * (P / costo - 1), monto=round(contratos * ask, 2),
                                      contratos=contratos, ticker=mk["ticker"])))
-            try:  # seguimiento de marcador por Telegram (quiebres, sets, final)
-                sp, _ = segui.agregar(est, etk, a if c1 else b, ask, contratos, origen="bot", ticker=mk["ticker"])
-                if sp:
-                    sp["ult"] = None
-            except Exception as ex:
-                print("No pude agregar al seguimiento:", repr(ex))
 
 
 def precandidato(ev):
@@ -1052,13 +1046,6 @@ def ciclo(est):
         abiertas[mid] = dict(match_id=m["id"], ticker=s["ticker"], lado=s["lado"], ask=s["ask"],
                              contratos=s["contratos"], jugador=s["jugador"], rival=s["rival"],
                              ts=time.time())
-        try:  # seguimiento de marcador por Telegram (quiebres, sets, final)
-            pos, _ = segui.agregar(est, s["ticker"].rsplit("-", 1)[0], s["jugador"], s["ask"],
-                                   s["contratos"], origen="bot", ticker=s["ticker"])
-            if pos:
-                pos["ult"] = None
-        except Exception as e:
-            print("No pude agregar al seguimiento:", repr(e))
         n_ok += 1
     print(f"{datetime.now(timezone.utc):%H:%M:%S} vivos={len(vivos)} kalshi={len(eventos)} "
           f"entradas={n_ok} salidas={n_out} abiertas={len(abiertas)} "
@@ -1075,13 +1062,9 @@ def main():
     est = cargar_estado()
     global GASTO
     GASTO = est.setdefault("apify", {})
-    for pos in est.get("abiertas", {}).values():  # alertas previas al módulo de seguimiento
-        if pos["ticker"] not in est.get("seguir", {}):
-            try:
-                segui.agregar(est, pos["ticker"].rsplit("-", 1)[0], pos["jugador"], pos["ask"],
-                              pos["contratos"], origen="bot", ticker=pos["ticker"])
-            except Exception as e:
-                print("No pude migrar al seguimiento:", repr(e))
+    # Roberto solo quiere señales de entrada y salida: sin avisos automáticos de marcador.
+    # (/seguir manual sigue disponible si él lo pide.)
+    est["seguir"] = {k: v for k, v in est.get("seguir", {}).items() if v.get("origen") != "bot"}
     fallos = 0
     if os.getenv("PRUEBA_SENAL") == "1":
         ej = dict(jugador="Jugador Ejemplo", rival="Rival Ejemplo", torneo="PRUEBA", superficie="Dura",
