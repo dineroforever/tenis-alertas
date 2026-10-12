@@ -14,3 +14,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-12T13:56:21+00:00,sombra,KXATPMATCH-26OCT11DAVTIA-DAV,Alejandro Davidovich Fokina,0.7,14,liquidacion,1.0,0.46,0.45,7,1413,no,no,no
 2026-10-12T13:56:21+00:00,sombra,KXWTACHALLENGERMATCH-26OCT11CAKTSY-CAK,Sara Čakarević,0.27,37,liquidacion,1.0,0.26,0.26,3,1409,no,no,no
 2026-10-12T14:20:59+00:00,real,KXATPCHALLENGERMATCH-26OCT12CARMCD-MCD,Mackenzie McDonald,0.53,18,valor_justo,0.44,0.5,0.39,5,9,no,no,no
+2026-10-12T14:51:04+00:00,real,KXATPCHALLENGERMATCH-26OCT12GOMCAT-GOM,Norbert Gombos,0.68,14,liquidacion,1.0,0.71,0.45,10,38,no,no,no
