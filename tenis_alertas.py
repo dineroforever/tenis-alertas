@@ -168,7 +168,10 @@ def kalshi_live(ev):
 MODO = os.getenv("MODO", "apify")  # "kalshi" = costo $0: no usa Apify y avisa con el modelo solo-Kalshi
 LOG_KS_ENT = os.getenv("LOG_KS_ENT", "ks_entradas.csv")
 LOG_KS_SAL = os.getenv("LOG_KS_SAL", "ks_salidas.csv")
-LOG_KS_TRAY = os.getenv("LOG_KS_TRAY", "ks_trayectoria.csv")  # qué habría pasado con +10/20/30% o sin vender
+LOG_KS_TRAY = os.getenv("LOG_KS_TRAY", "ks_trayectoria.csv")
+LOG_TPSL = os.getenv("LOG_TPSL", "salidas_tp_sl.csv")        # +10% con distintas pérdidas máximas
+LOG_JUAN = os.getenv("LOG_JUAN", "juan_entradas.csv")        # método del curso: apostar al que gana
+SL_NIVELES = (0.20, 0.30, 0.40, 0.50)  # qué habría pasado con +10/20/30% o sin vender
 _PRE_KS = {}
 
 
@@ -302,6 +305,37 @@ def _extremos_ks(pos, ev):
     if b > pos.get("max_bid", 0):
         pos["max_bid"], pos["t_max"] = b, time.time()
     pos["min_bid"] = min(pos.get("min_bid", 1.0), b)
+    hit, a = pos.setdefault("hit", {}), pos["ask"]  # primera vez que toca +10% o cada pérdida máxima
+    if "tp10" not in hit and b >= round(a * 1.10, 2):
+        hit["tp10"] = time.time()
+    for x in SL_NIVELES:
+        k = f"sl{int(x * 100)}"
+        if k not in hit and b <= round(a * (1 - x), 2):
+            hit[k] = time.time()
+
+
+def tpsl_ks(estrategia, etk, pos, gano):
+    """Resultado de salir al +10% con pérdida máxima de 20/30/40/50% (lo que ocurra primero)."""
+    a, n, hit = pos["ask"], pos["contratos"], pos.get("hit", {})
+    fin = (1 - a) * n if gano else -a * n
+
+    def neto(p):
+        return (p - fee(p, n) / n - a) * n
+
+    def combo(x):
+        t_tp, t_sl = hit.get("tp10"), (hit.get(f"sl{int(x * 100)}") if x else None)
+        if t_tp and (not t_sl or t_tp <= t_sl):
+            return neto(round(a * 1.10, 2))
+        if t_sl:
+            return neto(max(0.01, round(a * (1 - x), 2)))
+        return fin
+
+    _csv(LOG_TPSL, ["fecha_utc", "estrategia", "event_ticker", "ticker", "jugador", "entrada", "contratos",
+                    "gano_partido", "toco_10pct", "tp10_sl20", "tp10_sl30", "tp10_sl40", "tp10_sl50",
+                    "tp10_sin_sl", "hasta_final"],
+         [datetime.now(timezone.utc).isoformat(timespec="seconds"), estrategia, etk, pos["ticker"], pos["jugador"],
+          a, n, "si" if gano else "no", "si" if hit.get("tp10") else "no",
+          *[round(combo(x), 2) for x in SL_NIVELES], round(combo(None), 2), round(fin, 2)])
 
 
 def tray_ks(etk, pos, gano):
@@ -357,7 +391,9 @@ def ciclo_ks(est, eventos, dets):
         _extremos_ks(pos, ev)
         det = detalle(etk, ev)
         if det and det.get("winner"):
-            tray_ks(etk, pos, (det.get("winner") == det.get("competitor1_id")) == pos["c1"])
+            g_ = (det.get("winner") == det.get("competitor1_id")) == pos["c1"]
+            tray_ks(etk, pos, g_)
+            tpsl_ks("bot", etk, pos, g_)
             del obs[etk]
         elif time.time() - pos["ts"] > 12 * 3600:
             del obs[etk]
@@ -373,6 +409,7 @@ def ciclo_ks(est, eventos, dets):
         if det.get("winner"):
             gano = (det.get("winner") == det.get("competitor1_id")) == pos["c1"]
             tray_ks(etk, pos, gano)
+            tpsl_ks("bot", etk, pos, gano)
             salida(etk, pos, "liquidacion", 1.0 if gano else 0.0, 1.0 if gano else 0.0)
             continue
         if not ev:
@@ -389,6 +426,49 @@ def ciclo_ks(est, eventos, dets):
             if pos.get("aviso"):
                 telegram(mensaje_salida_ks(pos, bid, neto, P, marcador_ks(det, pos["c1"])))
             salida(etk, pos, "valor_justo", bid, neto)
+
+    juan = ks.setdefault("juan", {})  # método del curso (paper): seguir al que el modelo ve ganador
+    for etk, pos in list(juan.items()):
+        ev = por_tk.get(etk)
+        _extremos_ks(pos, ev)
+        det = detalle(etk, ev)
+        if det and det.get("winner"):
+            tpsl_ks("juan", etk, pos, (det.get("winner") == det.get("competitor1_id")) == pos["c1"])
+            del juan[etk]
+        elif time.time() - pos["ts"] > 12 * 3600:
+            del juan[etk]
+    for etk, det in dets.items():
+        if etk in juan or ks.setdefault("juan_ent", {}).get(etk) or not momento_kalshi(det):
+            continue
+        ev = por_tk.get(etk)
+        m1, m2 = mercados_ks(ev or {})
+        if not m1 or not m2:
+            continue
+        vol = (f(m1.get("volume_fp")) or 0) + (f(m2.get("volume_fp")) or 0)
+        if vol < MIN_VOL_CONTRATOS:
+            continue
+        pre1 = pre_kalshi(ev, m1)
+        if pre1 is None:
+            q = pre_kalshi(ev, m2)
+            pre1 = None if q is None else 1 - q
+        p1 = prob_ks(ev, det, pre1) if pre1 is not None else None
+        if p1 is None:
+            continue
+        c1 = p1 >= 0.5
+        mk, P = (m1, p1) if c1 else (m2, 1 - p1)
+        ask, bid = f(mk.get("yes_ask_dollars")), f(mk.get("yes_bid_dollars"))
+        if ask is None or bid is None or not (PRECIO_MIN <= ask <= PRECIO_MAX) or ask - bid > SPREAD_MAX:
+            continue
+        contratos = max(1, int(TOPE_OP * BANKROLL / ask))
+        t = ev.get("title", "")
+        a_, b_ = [x.strip() for x in t.split(" vs ", 1)]
+        _csv(LOG_JUAN, ["fecha_utc", "event_ticker", "ticker", "jugador", "rival", "serie", "marcador_c1",
+                        "p_modelo", "ask", "bid", "contratos", "volumen"],
+             [ahora, etk, mk["ticker"], a_ if c1 else b_, b_ if c1 else a_, ev.get("_serie", ""),
+              marcador_ks(det, True), round(P, 4), ask, bid, contratos, round(vol)])
+        ks["juan_ent"][etk] = 1
+        juan[etk] = dict(ticker=mk["ticker"], c1=c1, jugador=a_ if c1 else b_, ask=ask, contratos=contratos,
+                         ts=time.time())
 
     for etk, det in dets.items():  # entradas
         if etk in pos_all or ent.get(etk, 0) >= MAX_ENTRADAS or not momento_kalshi(det):
