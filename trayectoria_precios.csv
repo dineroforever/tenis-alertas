@@ -26,3 +26,5 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-12T16:20:43+00:00,sombra,KXATPCHALLENGERMATCH-26OCT12FORKOL-FOR,Francesco Forti,0.53,18,valor_justo,0.29,0.55,0.29,12,32,no,no,no
 2026-10-12T16:51:01+00:00,real,KXATPCHALLENGERMATCH-26OCT12CUEALM-CUE,Sean Cuenin,0.61,16,liquidacion,0.0,0.68,0.0,5,67,si,no,no
 2026-10-12T16:51:01+00:00,sombra,KXATPCHALLENGERMATCH-26OCT12CUEALM-CUE,Sean Cuenin,0.67,14,liquidacion,0.0,0.69,0.0,4,75,no,no,no
+2026-10-12T18:26:31+00:00,real,KXWTACHALLENGERMATCH-26OCT12ROMRAM-RAM,Alice Rame,0.47,21,valor_justo,0.38,0.58,0.16,4,19,si,si,no
+2026-10-12T18:26:31+00:00,sombra,KXWTACHALLENGERMATCH-26OCT12ROMRAM-RAM,Alice Rame,0.34,29,valor_justo,0.38,0.64,0.16,20,92,si,si,si
