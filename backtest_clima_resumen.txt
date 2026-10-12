@@ -1,0 +1,37 @@
+Backtest FAV-VÍSPERA-MAX · 2026-07-14 a 2026-10-12 · 1551 eventos con favorito
+
+SEÑALES (reglas completas): 141 ops · aciertos 45.4% · P/L por contrato -4.63 · ROI -6.7%
+Pasan filtro (sin tope diario): 143 ops · aciertos 45.5% · P/L por contrato -4.69 · ROI -6.7%
+Todos los favoritos (sin filtro): 1551 ops · aciertos 48.2% · P/L por contrato -73.32 · ROI -8.9%
+
+Por mes (señales):
+  2026-08: 49 ops · aciertos 36.7% · P/L por contrato -5.95 · ROI -24.8%
+  2026-09: 63 ops · aciertos 57.1% · P/L por contrato +5.67 · ROI +18.7%
+  2026-10: 29 ops · aciertos 34.5% · P/L por contrato -4.35 · ROI -30.3%
+
+Por precio de entrada (todos los favoritos):
+  40-49¢: 559 ops · aciertos 48.8% · P/L por contrato +7.66 · ROI +2.9%
+  50-60¢: 452 ops · aciertos 57.5% · P/L por contrato +3.06 · ROI +1.2%
+  <40¢: 296 ops · aciertos 32.1% · P/L por contrato -16.30 · ROI -14.6%
+  >60¢: 244 ops · aciertos 48.8% · P/L por contrato -67.74 · ROI -36.3%
+
+Por ciudad (señales):
+  Highest temperature in NYC: 26 ops · aciertos 53.8% · P/L por contrato +1.25 · ROI +9.8%
+  Highest temperature in Los Angeles: 17 ops · aciertos 52.9% · P/L por contrato +0.72 · ROI +8.6%
+  Highest temperature in Miami: 16 ops · aciertos 43.8% · P/L por contrato -0.85 · ROI -10.8%
+  Highest temperature in Chicago: 12 ops · aciertos 66.7% · P/L por contrato +2.32 · ROI +40.9%
+  Highest temperature in Austin: 9 ops · aciertos 33.3% · P/L por contrato -1.33 · ROI -30.6%
+  Oklahoma City Maximum High Temperature: 9 ops · aciertos 33.3% · P/L por contrato -1.35 · ROI -31.1%
+  Dallas Maximum Temperature: 8 ops · aciertos 12.5% · P/L por contrato -3.02 · ROI -75.1%
+  Atlanta Max Temperature: 7 ops · aciertos 28.6% · P/L por contrato -1.44 · ROI -41.9%
+  Seattle Maximum Temperature Daily: 7 ops · aciertos 57.1% · P/L por contrato +0.64 · ROI +19.0%
+  Daily High Temperature Houston: 6 ops · aciertos 33.3% · P/L por contrato -0.91 · ROI -31.4%
+  Highest temperature in Denver: 5 ops · aciertos 40.0% · P/L por contrato -0.45 · ROI -18.2%
+  San Francisco High Temperature Daily: 4 ops · aciertos 25.0% · P/L por contrato -1.09 · ROI -52.1%
+  Highest temperature in Philadelphia: 3 ops · aciertos 66.7% · P/L por contrato +0.53 · ROI +35.9%
+  Minneapolis Daily High Temperature: 3 ops · aciertos 33.3% · P/L por contrato -0.36 · ROI -26.5%
+  Washington DC Daily Max Temp: 3 ops · aciertos 66.7% · P/L por contrato +0.63 · ROI +45.8%
+  San Antonio Daily Maximum Temperature: 2 ops · aciertos 50.0% · P/L por contrato -0.06 · ROI -6.1%
+  Phoenix High Temperature Daily: 2 ops · aciertos 100.0% · P/L por contrato +1.13 · ROI +128.9%
+  Las Vegas Max Daily Temperature: 1 ops · aciertos 0.0% · P/L por contrato -0.44 · ROI -100.0%
+  Boston Maximum Daily Temperature: 1 ops · aciertos 0.0% · P/L por contrato -0.54 · ROI -100.0%
