@@ -14,6 +14,7 @@ Opcionales: BANKROLL (500), LOOP_MINUTES (28), POLL_SECONDS (120), DRY_RUN (0)
 """
 import csv, json, math, os, re, sys, time, unicodedata
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 import requests
 
 from tenis_prob import prob
@@ -294,6 +295,34 @@ def mensaje_salida_ks(pos, bid, neto, P, marc):
     )
 
 
+LOG_MARCAS = os.getenv("LOG_MARCAS", "marcas_guia_juan.csv")  # solo etiquetas: no cambia ninguna decisión
+
+
+def marcas_juan(estrategia, ev, det, ticker, vol):
+    """Anota si una entrada cumple cada punto de la guía de Juan Sánchez (solo para estadísticas)."""
+    try:
+        m1, _m2 = mercados_ks(ev or {})
+        c1 = bool(m1) and m1.get("ticker") == ticker
+        r1, r2 = det.get("competitor1_round_scores") or [], det.get("competitor2_round_scores") or []
+        s1, s2 = int(det.get("competitor1_overall_score") or 0), int(det.get("competitor2_overall_score") or 0)
+        cur = bool(r1) and r1[-1].get("outcome") == "ongoing"
+        g1, g2 = ((r1[-1].get("score", 0) or 0), (r2[-1].get("score", 0) or 0)) if cur else (0, 0)
+        so, sr, go, gr = (s1, s2, g1, g2) if c1 else (s2, s1, g2, g1)
+        terminados = s1 + s2
+        hora = datetime.now(ZoneInfo("America/New_York"))
+        fase = "set1" if terminados == 0 else ("inicio_set2" if terminados == 1 and g1 + g2 <= 4 else "otro")
+        _csv(LOG_MARCAS, ["fecha_utc", "estrategia", "ticker", "hora_miami", "volumen", "vol_500k",
+                          "horario_2a8pm", "sets", "games", "sets_1_1", "score_3_3_o_4_4_set2", "fase",
+                          "remontada_activa"],
+             [datetime.now(timezone.utc).isoformat(timespec="seconds"), estrategia, ticker, f"{hora:%H:%M}",
+              round(vol), "si" if vol >= 500000 else "no", "si" if 14 <= hora.hour < 20 else "no",
+              f"{so}-{sr}", f"{go}-{gr}", "si" if (so, sr) == (1, 1) else "no",
+              "si" if terminados == 1 and (go, gr) in ((3, 3), (4, 4)) else "no", fase,
+              "si" if so < sr and go >= gr else "no"])
+    except Exception as e:
+        print("No pude anotar marcas:", repr(e))
+
+
 def _extremos_ks(pos, ev):
     """Anota el bid máximo y mínimo desde la entrada (sigue aunque ya se haya vendido)."""
     if not ev:
@@ -467,6 +496,7 @@ def ciclo_ks(est, eventos, dets):
              [ahora, etk, mk["ticker"], a_ if c1 else b_, b_ if c1 else a_, ev.get("_serie", ""),
               marcador_ks(det, True), round(P, 4), ask, bid, contratos, round(vol)])
         ks["juan_ent"][etk] = 1
+        marcas_juan("juan", ev, det, mk["ticker"], vol)
         juan[etk] = dict(ticker=mk["ticker"], c1=c1, jugador=a_ if c1 else b_, ask=ask, contratos=contratos,
                          ts=time.time())
 
@@ -516,6 +546,7 @@ def ciclo_ks(est, eventos, dets):
               round(P, 4), round(pre1 if c1 else 1 - pre1, 4), ask, bid, round(e * 100, 1), contratos,
               round(vol), "" if vol >= MIN_VOL_CONTRATOS else "vol<300k"])
         ent[etk] = ent.get(etk, 0) + 1
+        marcas_juan("solo_kalshi", ev, det, mk["ticker"], vol)
         aviso = MODO == "kalshi" and vol >= MIN_VOL_CONTRATOS
         pos_all[etk] = dict(ticker=mk["ticker"], c1=c1, jugador=a if c1 else b, rival=b if c1 else a, ask=ask,
                             contratos=contratos, pre1=pre1, ts=time.time(), aviso=aviso)
@@ -1114,6 +1145,7 @@ def ciclo(est):
         if motivos:
             if sombra_libre:
                 log(s, LOG_SOMBRA, "+".join(motivos))
+                marcas_juan("apify_sombra", ev, cands[ev["event_ticker"]], s["ticker"], s["vol"])
                 ent_sombra[mid] = ent_sombra.get(mid, 0) + 1
                 sombra[mid] = dict(match_id=m["id"], ticker=s["ticker"], lado=s["lado"], ask=s["ask"],
                                    contratos=s["contratos"], jugador=s["jugador"], rival=s["rival"],
@@ -1122,6 +1154,7 @@ def ciclo(est):
             continue
         telegram(mensaje(s))
         log(s)
+        marcas_juan("apify_senal", ev, cands[ev["event_ticker"]], s["ticker"], s["vol"])
         entradas[mid] = entradas.get(mid, 0) + 1
         abiertas[mid] = dict(match_id=m["id"], ticker=s["ticker"], lado=s["lado"], ask=s["ask"],
                              contratos=s["contratos"], jugador=s["jugador"], rival=s["rival"],
