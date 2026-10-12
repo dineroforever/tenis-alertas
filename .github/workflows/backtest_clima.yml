@@ -1,0 +1,49 @@
+name: Backtest clima (solo lectura)
+
+on:
+  workflow_dispatch:
+    inputs:
+      dias:
+        description: "Días hacia atrás"
+        default: "90"
+
+concurrency:
+  group: backtest-clima
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Correr backtest
+        env:
+          DIAS: ${{ github.event.inputs.dias || '90' }}
+          PYTHONUNBUFFERED: "1"
+        run: python backtest_clima.py
+      - name: Guardar resultados
+        if: always()
+        run: |
+          git config user.name "bot-backtest"
+          git config user.email "bot-backtest@users.noreply.github.com"
+          mkdir -p /tmp/bt
+          for f in backtest_clima.csv backtest_clima_resumen.txt; do [ -f "$f" ] && cp "$f" /tmp/bt/; done
+          for i in 1 2 3; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            for f in backtest_clima.csv backtest_clima_resumen.txt; do
+              if [ -f "/tmp/bt/$f" ]; then cp "/tmp/bt/$f" .; git add "$f"; fi
+            done
+            if git diff --cached --quiet; then break; fi
+            if git commit -q -m "Resultados backtest clima" && git push -q; then break; fi
+            sleep 5
+          done
