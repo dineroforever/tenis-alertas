@@ -11,3 +11,6 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-11T05:08:04+00:00,sombra,KXATPCHALLENGERMATCH-26OCT10HARKAC-KAC,Alibek Kachmazov,0.28,35,valor_justo,0.38,0.46,0.19,26,46,si,si,si
 2026-10-11T05:36:17+00:00,sombra,KXWTAMATCH-26OCT10SORKAS-SOR,Sara Sorribes Tormo,0.25,40,liquidacion,0.0,0.37,0.03,6,36,si,si,si
 2026-10-11T14:11:01+00:00,sombra,KXATPMATCH-26OCT10SHEGEA-GEA,Arthur Gea,0.35,28,liquidacion,1.0,,,,497,,,
+2026-10-12T13:56:21+00:00,sombra,KXATPMATCH-26OCT11DAVTIA-DAV,Alejandro Davidovich Fokina,0.7,14,liquidacion,1.0,0.46,0.45,7,1413,no,no,no
+2026-10-12T13:56:21+00:00,sombra,KXWTACHALLENGERMATCH-26OCT11CAKTSY-CAK,Sara Čakarević,0.27,37,liquidacion,1.0,0.26,0.26,3,1409,no,no,no
+2026-10-12T14:20:59+00:00,real,KXATPCHALLENGERMATCH-26OCT12CARMCD-MCD,Mackenzie McDonald,0.53,18,valor_justo,0.44,0.5,0.39,5,9,no,no,no
