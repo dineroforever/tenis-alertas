@@ -35,3 +35,5 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-13T06:12:16+00:00,sombra,KXATPCHALLENGERMATCH-26OCT12DRAJAS-JAS,Omar Jasika,0.3,33,liquidacion,0.0,0.4,0.15,28,54,si,si,si
 2026-10-13T07:15:48+00:00,real,KXATPMATCH-26OCT11GEAMEN-GEA,Arthur Gea,0.62,16,valor_justo,0.85,0.85,0.52,17,17,si,si,si
 2026-10-13T07:52:56+00:00,real,KXWTAMATCH-26OCT11GUOCIR-CIR,Sorana Cirstea,0.71,14,valor_justo,0.78,0.78,0.37,35,35,no,no,no
+2026-10-13T08:24:31+00:00,sombra,KXWTAMATCH-26OCT11GUOCIR-CIR,Sorana Cirstea,0.79,12,liquidacion,0.0,0.78,0.25,2,21,no,no,no
+2026-10-13T08:24:31+00:00,sombra,KXATPCHALLENGERMATCH-26OCT13DIAMOC-DIA,Facundo Diaz Acosta,0.33,28,valor_justo,0.27,0.32,0.2,1,19,no,no,no
