@@ -42,3 +42,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-13T10:06:25+00:00,sombra,KXATPCHALLENGERMATCH-26OCT12WALCIL-CIL,Marin Čilić,0.71,14,valor_justo,0.98,0.98,0.36,48,48,si,si,si
 2026-10-13T10:13:57+00:00,sombra,KXWTAMATCH-26OCT11SNIMER-SNI,Daria Snigur,0.61,16,liquidacion,1.0,0.72,0.68,3,17,si,no,no
 2026-10-13T15:46:26+00:00,real,KXATPCHALLENGERMATCH-26OCT13KACHAR-KAC,Alibek Kachmazov,0.69,14,liquidacion,0.0,0.65,0.44,4,289,no,no,no
+2026-10-13T16:35:42+00:00,sombra,KXATPCHALLENGERMATCH-26OCT13WISDAM-DAM,Miguel Damas,0.38,26,valor_justo,0.26,0.26,0.23,7,7,no,no,no
