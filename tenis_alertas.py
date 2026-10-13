@@ -1058,10 +1058,11 @@ def ciclo(est):
                 continue
             cands[ev["event_ticker"]] = det
             nuevos.append(k)
-    try:  # modelo "solo Kalshi" en paralelo (gratis)
-        ciclo_ks(est, eventos, dets)
-    except Exception as e:
-        print("Solo-Kalshi error:", repr(e))
+    if MODO == "kalshi":  # solo-Kalshi y método de Juan desactivados en modo Apify (decisión de Roberto)
+        try:
+            ciclo_ks(est, eventos, dets)
+        except Exception as e:
+            print("Solo-Kalshi error:", repr(e))
     if MODO == "kalshi":  # modo costo $0: nunca se llama a Apify
         ks = est.get("ks", {})
         print(f"{datetime.now(timezone.utc):%H:%M:%S} [solo-Kalshi] kalshi={len(eventos)} en_vivo={len(dets)} "
