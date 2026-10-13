@@ -38,3 +38,5 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-13T08:24:31+00:00,sombra,KXWTAMATCH-26OCT11GUOCIR-CIR,Sorana Cirstea,0.79,12,liquidacion,0.0,0.78,0.25,2,21,no,no,no
 2026-10-13T08:24:31+00:00,sombra,KXATPCHALLENGERMATCH-26OCT13DIAMOC-DIA,Facundo Diaz Acosta,0.33,28,valor_justo,0.27,0.32,0.2,1,19,no,no,no
 2026-10-13T08:58:24+00:00,sombra,KXATPCHALLENGERMATCH-26OCT13GIUSEA-GIU,Massimo Giunta,0.46,21,valor_justo,0.68,0.68,0.41,14,14,si,si,si
+2026-10-13T10:02:06+00:00,sombra,KXATPCHALLENGERMATCH-26OCT13GENVIS-VIS,Niels Visker,0.37,27,liquidacion,0.0,0.44,0.03,4,25,si,no,no
+2026-10-13T10:06:25+00:00,sombra,KXATPCHALLENGERMATCH-26OCT12WALCIL-CIL,Marin Čilić,0.71,14,valor_justo,0.98,0.98,0.36,48,48,si,si,si
