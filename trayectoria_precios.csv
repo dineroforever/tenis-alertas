@@ -30,3 +30,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-12T18:26:31+00:00,sombra,KXWTACHALLENGERMATCH-26OCT12ROMRAM-RAM,Alice Rame,0.34,29,valor_justo,0.38,0.64,0.16,20,92,si,si,si
 2026-10-12T21:49:47+00:00,real,KXATPCHALLENGERMATCH-26OCT12DLFHUE-HUE,Arklon Huertas Del Pino Cordova,0.57,17,liquidacion,1.0,0.96,0.47,28,38,si,si,si
 2026-10-13T04:02:01+00:00,real,KXWTAMATCH-26OCT11BIRVOL-BIR,Kimberly Birrell,0.3,33,valor_justo,0.36,0.6,0.33,17,26,si,si,si
+2026-10-13T04:46:46+00:00,real,KXWTAMATCH-26OCT11SINSAM-SAM,Liudmila Samsonova,0.65,15,valor_justo,0.67,0.71,0.45,4,21,no,no,no

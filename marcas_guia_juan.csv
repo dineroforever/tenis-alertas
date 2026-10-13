@@ -61,3 +61,4 @@ fecha_utc,estrategia,ticker,hora_miami,volumen,vol_500k,horario_2a8pm,sets,games
 2026-10-13T00:38:22+00:00,juan,KXATPCHALLENGERMATCH-26OCT12COMHAR-COM,20:38,302625,no,no,0-0,2-3,no,no,set1,no
 2026-10-13T03:36:18+00:00,apify_senal,KXWTAMATCH-26OCT11BIRVOL-BIR,23:36,431709,no,no,0-0,2-3,no,no,set1,no
 2026-10-13T04:26:04+00:00,apify_senal,KXWTAMATCH-26OCT11SINSAM-SAM,00:26,1581860,si,no,1-0,5-6,no,no,otro,no
+2026-10-13T04:48:04+00:00,apify_sombra,KXWTAMATCH-26OCT11BIRVOL-BIR,00:48,3173206,si,no,1-0,3-4,no,no,otro,no
