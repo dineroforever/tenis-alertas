@@ -167,6 +167,7 @@ def kalshi_live(ev):
 # Mismo modelo y mismas reglas, pero sin Apify: cuota previa = precio de Kalshi antes del
 # inicio; marcador y saque = live_data de Kalshi. Sirve para saber si se puede prescindir de Apify.
 MODO = os.getenv("MODO", "apify")  # "kalshi" = costo $0: no usa Apify y avisa con el modelo solo-Kalshi
+AVISAR = os.getenv("AVISAR", "0") == "1"  # 0 = señales en silencio (solo paper/CSV) hasta las 50 operaciones
 LOG_KS_ENT = os.getenv("LOG_KS_ENT", "ks_entradas.csv")
 LOG_KS_SAL = os.getenv("LOG_KS_SAL", "ks_salidas.csv")
 LOG_KS_TRAY = os.getenv("LOG_KS_TRAY", "ks_trayectoria.csv")
@@ -453,7 +454,7 @@ def ciclo_ks(est, eventos, dets):
         neto = bid - fee(bid, pos["contratos"]) / pos["contratos"]
         if neto >= P + 0.005:
             if pos.get("aviso"):
-                telegram(mensaje_salida_ks(pos, bid, neto, P, marcador_ks(det, pos["c1"])))
+                senal_tg(mensaje_salida_ks(pos, bid, neto, P, marcador_ks(det, pos["c1"])))
             salida(etk, pos, "valor_justo", bid, neto)
 
     juan = ks.setdefault("juan", {})  # método del curso (paper): seguir al que el modelo ve ganador
@@ -552,7 +553,7 @@ def ciclo_ks(est, eventos, dets):
                             contratos=contratos, pre1=pre1, ts=time.time(), aviso=aviso)
         if aviso:
             costo = ask + fee(ask, contratos) / contratos
-            telegram(mensaje_ks(dict(jugador=mk.get("yes_sub_title") or (a if c1 else b), rival=b if c1 else a,
+            senal_tg(mensaje_ks(dict(jugador=mk.get("yes_sub_title") or (a if c1 else b), rival=b if c1 else a,
                                      marc=marcador_ks(det, c1), P=P, pre=pre1 if c1 else 1 - pre1, ask=ask,
                                      bid=bid, edge=e, ev=100 * (P / costo - 1), monto=round(contratos * ask, 2),
                                      contratos=contratos, ticker=mk["ticker"])))
@@ -832,6 +833,12 @@ def mensaje(s):
     )
 
 
+def senal_tg(txt):
+    """Señales de entrada/salida: solo se envían si AVISAR=1 (se registran siempre en CSV)."""
+    if AVISAR:
+        telegram(txt)
+
+
 def telegram(txt):
     """Envía a Telegram. Si falla con formato, reintenta en texto plano. Registra todo."""
     if DRY_RUN or not TG_TOKEN:
@@ -1100,7 +1107,7 @@ def ciclo(est):
         anotar_extremos(pos, m, ev)
         x = seguir(m, ev, pos)
         if x:
-            telegram(mensaje_salida(pos, x))
+            senal_tg(mensaje_salida(pos, x))
             log_salida(pos, "valor_justo", x["bid"], x["neto"])
             del abiertas[mid]
             n_out += 1
@@ -1153,7 +1160,7 @@ def ciclo(est):
                                    ts=time.time())
                 n_sombra += 1
             continue
-        telegram(mensaje(s))
+        senal_tg(mensaje(s))
         log(s)
         marcas_juan("apify_senal", ev, cands[ev["event_ticker"]], s["ticker"], s["vol"])
         entradas[mid] = entradas.get(mid, 0) + 1
