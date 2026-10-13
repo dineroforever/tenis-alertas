@@ -43,7 +43,7 @@ jobs:
           PRUEBA_SENAL: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
           LOOP_MINUTES: "28"
           POLL_SECONDS: "30"
-          APIFY_TOPE_DIA: "2.00"
+          APIFY_TOPE_DIA: "4.00"
           MODO: "apify"
         run: python tenis_alertas.py
       - name: Guardar registro de senales
