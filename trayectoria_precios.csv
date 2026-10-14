@@ -53,3 +53,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-14T04:43:39+00:00,real,KXWTAMATCH-26OCT13SVISAM-SVI,Elina Svitolina,0.78,12,valor_justo,0.68,0.97,0.68,16,33,si,si,no
 2026-10-14T04:49:10+00:00,sombra,KXWTAMATCH-26OCT12KARBEN-KAR,Sonay Kartal,0.69,14,liquidacion,1.0,0.84,0.57,19,23,si,si,no
 2026-10-14T05:48:14+00:00,real,KXATPMATCH-26OCT14VANJOD-JOD,Rafael Jodar,0.67,14,valor_justo,0.54,0.74,0.38,36,78,si,no,no
+2026-10-14T08:09:49+00:00,sombra,KXWTAMATCH-26OCT13MUCMCC-MCC,Catherine McNally,0.49,20,liquidacion,0.0,0.6,0.07,6,87,si,si,no
