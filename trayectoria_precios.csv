@@ -50,3 +50,5 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-13T21:37:16+00:00,real,KXATPCHALLENGERMATCH-26OCT13BOSMEN-BOS,Pedro Boscardin Dias,0.38,26,valor_justo,0.33,0.33,0.33,4,4,no,no,no
 2026-10-13T23:14:53+00:00,sombra,KXATPCHALLENGERMATCH-26OCT13BOSMEN-MEN,Facundo Mena,0.74,13,liquidacion,1.0,0.79,0.76,5,22,no,no,no
 2026-10-14T02:47:57+00:00,real,KXATPCHALLENGERMATCH-26OCT13VILZAR-ZAR,Carlos Maria Zarate,0.35,28,valor_justo,0.86,0.86,0.27,39,39,si,si,si
+2026-10-14T04:43:39+00:00,real,KXWTAMATCH-26OCT13SVISAM-SVI,Elina Svitolina,0.78,12,valor_justo,0.68,0.97,0.68,16,33,si,si,no
+2026-10-14T04:49:10+00:00,sombra,KXWTAMATCH-26OCT12KARBEN-KAR,Sonay Kartal,0.69,14,liquidacion,1.0,0.84,0.57,19,23,si,si,no
