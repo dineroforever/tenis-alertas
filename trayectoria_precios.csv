@@ -73,3 +73,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-14T17:57:29+00:00,sombra,KXWTACHALLENGERMATCH-26OCT14TANSTE-STE,Lucrezia Stefanini,0.67,14,liquidacion,1.0,0.96,0.75,44,88,si,si,si
 2026-10-14T18:17:06+00:00,real,KXATPCHALLENGERMATCH-26OCT14BRUBON-BRU,Mika Brunold,0.29,34,valor_justo,0.68,0.68,0.23,12,12,si,si,si
 2026-10-14T20:19:01+00:00,sombra,KXATPCHALLENGERMATCH-26OCT14OLIBAR-BAR,Alex Barrena,0.28,35,valor_justo,0.53,0.53,0.28,7,7,si,si,si
+2026-10-14T20:44:04+00:00,sombra,KXATPCHALLENGERMATCH-26OCT14OLIBAR-BAR,Alex Barrena,0.2,50,liquidacion,0.0,0.2,0.19,3,21,no,no,no
