@@ -67,3 +67,5 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-14T13:48:34+00:00,sombra,KXATPCHALLENGERMATCH-26OCT14CHIKYM-KYM,Jerome Kym,0.57,17,valor_justo,0.81,0.81,0.56,5,5,si,si,si
 2026-10-14T13:49:40+00:00,real,KXWTAMATCH-26OCT13SABANN-ANN,Ann Li,0.4,25,valor_justo,0.71,0.71,0.4,10,10,si,si,si
 2026-10-14T13:53:56+00:00,real,KXATPMATCH-26OCT12PAUBER-BER,Zizou Bergs,0.23,43,liquidacion,0.0,0.22,0.03,1,58,no,no,no
+2026-10-14T14:11:00+00:00,sombra,KXWTACHALLENGERMATCH-26OCT14KNUBAN-BAN,Susan Bandecchi,0.7,14,liquidacion,0.0,0.69,0.34,8,30,no,no,no
+2026-10-14T14:16:07+00:00,sombra,KXATPCHALLENGERMATCH-26OCT14GADDAL-DAL,Enrico Dalla Valle,0.52,19,liquidacion,0.0,0.54,0.01,1,37,no,no,no
