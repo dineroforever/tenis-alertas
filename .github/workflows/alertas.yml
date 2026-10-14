@@ -45,6 +45,7 @@ jobs:
           POLL_SECONDS: "30"
           APIFY_TOPE_DIA: "4.00"
           MODO: "apify"
+          AVISAR: "1"
         run: python tenis_alertas.py
       - name: Guardar registro de senales
         if: always()
