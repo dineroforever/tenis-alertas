@@ -49,7 +49,9 @@ APIFY_TOKEN = os.getenv("APIFY_TOKEN", "")
 # y solo se llama a Apify cuando hay un partido candidato o una posición que vigilar.
 APIFY_COSTO = float(os.getenv("APIFY_COSTO", "0.00736"))
 APIFY_TOPE_DIA = float(os.getenv("APIFY_TOPE_DIA", "0.60"))   # ≈ $18/mes
-APIFY_SEG_CADA = float(os.getenv("APIFY_SEG_CADA", "240"))    # revisar posiciones cada 4 min
+APIFY_SEG_CADA = float(os.getenv("APIFY_SEG_CADA", "900"))    # respaldo: revisar posiciones cada 15 min si el modelo gratis no puede
+PREFILTRO_EDGE = float(os.getenv("PREFILTRO_EDGE", "0.02"))  # solo se paga Apify si el modelo gratis de Kalshi ve ≥2 pp de edge
+MARGEN_SALIDA = 0.03  # se paga Apify para decidir la salida solo si el modelo gratis la ve a ≤3 pp
 APIFY_SOMBRA_CADA = float(os.getenv("APIFY_SOMBRA_CADA", "600"))  # solo posiciones en paper: cada 10 min
 APIFY_SOMBRA_MAX = 0.70  # pasado el 70% del tope diario, el resto se reserva para señales reales
 TG_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
@@ -720,16 +722,8 @@ def modelo(m, serie, st, exigir_cuota=True, det=None, ev=None):
         return None
     if p_pre_h is None:
         p_pre_h = 0.5
-    # Stats de saque de hoy: primero Kalshi (gratis); si faltan, pointByPoint de Apify
+    # Stats de saque de hoy: solo Kalshi (gratis). Sin stats no se evalúa (ahorro de Apify).
     ss = stats_kalshi(det, m, ev)
-    if not ss:
-        try:
-            pbp = apify({"mode": "pointByPoint", "matchId": m["id"]}, timeout=90)
-            ss = stats_saque(pbp[0]) if pbp else None
-        except SinSaldo:
-            raise
-        except Exception:
-            ss = None
     if not ss:
         return None
     spw_h, n_h, spw_a, n_a = ss
@@ -1035,6 +1029,70 @@ def liquidacion(ticker):
         return None
 
 
+def _pre1(ev, m1, m2):
+    p = pre_kalshi(ev, m1)
+    if p is None:
+        q = pre_kalshi(ev, m2)
+        p = None if q is None else 1 - q
+    return p
+
+
+def edge_gratis(ev, det):
+    """Mejor edge que ve el modelo gratis de Kalshi en un lado comprable (ask 20-60¢), o None."""
+    try:
+        m1, m2 = mercados_ks(ev)
+        if not m1 or not m2:
+            return None
+        pre1 = _pre1(ev, m1, m2)
+        p1 = None if pre1 is None else prob_ks(ev, det, pre1)
+    except Exception:
+        return None
+    if p1 is None:
+        return None
+    mejor = -1.0
+    for mk, P in ((m1, p1), (m2, 1 - p1)):
+        ask, bid = f(mk.get("yes_ask_dollars")), f(mk.get("yes_bid_dollars"))
+        if ask is None or bid is None or not (PRECIO_MIN <= ask <= PRECIO_REAL_MAX) or ask - bid > SPREAD_MAX:
+            continue
+        mejor = max(mejor, P - ask)
+    return mejor
+
+
+def revisar_gratis(pos, ev):
+    """Con datos gratis de Kalshi: 'fin' si el partido terminó, True si la salida está cerca,
+    False si no, None si no se puede saber."""
+    if not ev:
+        return "fin"
+    try:
+        det = kalshi_live(ev)
+    except Exception:
+        return None
+    if not det:
+        return None
+    if det.get("winner"):
+        return "fin"
+    try:
+        m1, m2 = mercados_ks(ev)
+        if not m1 or not m2 or pos["ticker"] not in (m1.get("ticker"), m2.get("ticker")):
+            return None
+        c1 = pos["ticker"] == m1.get("ticker")
+        pre1 = _pre1(ev, m1, m2)
+        p1 = None if pre1 is None else prob_ks(ev, det, pre1)
+    except Exception:
+        return None
+    if p1 is None:
+        return None
+    bid = f((m1 if c1 else m2).get("yes_bid_dollars"))
+    if not bid:
+        return False
+    if bid > pos.get("max_bid", -1):
+        pos["max_bid"], pos["t_max"] = bid, round((time.time() - pos["ts"]) / 60)
+    pos["min_bid"] = min(pos.get("min_bid", 2), bid)
+    P = p1 if c1 else 1 - p1
+    neto = bid - fee(bid, pos["contratos"]) / pos["contratos"]
+    return neto >= P + 0.005 - MARGEN_SALIDA
+
+
 def ciclo(est):
     eventos = kalshi_eventos()
     abiertas = est.setdefault("abiertas", {})
@@ -1050,6 +1108,7 @@ def ciclo(est):
         del vistos[k]
     nuevos = []
     dets = {}
+    n_pref = 0
     for ev in eventos:
         if not precandidato(ev):
             continue
@@ -1064,6 +1123,11 @@ def ciclo(est):
             k = ev["event_ticker"] + ":" + ",".join(f'{x.get("score", 0)}-{y.get("score", 0)}' for x, y in zip(r1, r2))
             if k in vistos:
                 continue
+            e = edge_gratis(ev, det)
+            if e is None or e < PREFILTRO_EDGE:
+                vistos[k] = time.time()  # el modelo gratis no ve edge: no se paga Apify
+                n_pref += 1
+                continue
             cands[ev["event_ticker"]] = det
             nuevos.append(k)
     if MODO == "kalshi":  # solo-Kalshi y método de Juan desactivados en modo Apify (decisión de Roberto)
@@ -1076,11 +1140,28 @@ def ciclo(est):
         print(f"{datetime.now(timezone.utc):%H:%M:%S} [solo-Kalshi] kalshi={len(eventos)} en_vivo={len(dets)} "
               f"posiciones={len(ks.get('pos', {}))}")
         return
+    # Seguimiento gratis con Kalshi: liquidaciones y aviso de "salida cerca"; Apify solo si hace falta
+    por_tk = {ev["event_ticker"]: ev for ev in eventos}
+    cerca = desconocido = False
+    for dic, archivo in ((abiertas, None), (sombra, LOG_SOMBRA_SAL)):
+        for mid, pos in list(dic.items()):
+            r = revisar_gratis(pos, por_tk.get(pos["ticker"].rsplit("-", 1)[0]))
+            if r == "fin":
+                res = liquidacion(pos["ticker"])
+                if res in ("yes", "no"):
+                    precio = 1.0 if res == "yes" else 0.0
+                    log_salida(pos, "liquidacion", precio, precio, archivo)
+                    del dic[mid]
+                elif time.time() - pos["ts"] > 12 * 3600:
+                    del dic[mid]
+            elif r is True:
+                cerca = True
+            elif r is None:
+                desconocido = True
     desde = time.time() - est.get("ult_seg", 0)
-    toca_seg = (bool(abiertas) and desde >= APIFY_SEG_CADA) or (
-        bool(sombra) and desde >= APIFY_SOMBRA_CADA and gasto_hoy() < APIFY_SOMBRA_MAX * APIFY_TOPE_DIA)
+    toca_seg = (cerca and desde >= 120) or (desconocido and desde >= APIFY_SEG_CADA)
     if not cands and not toca_seg:
-        print(f"{datetime.now(timezone.utc):%H:%M:%S} kalshi={len(eventos)} candidatos=0 "
+        print(f"{datetime.now(timezone.utc):%H:%M:%S} kalshi={len(eventos)} candidatos=0 prefiltrados={n_pref} "
               f"abiertas={len(abiertas)} sombra_abiertas={len(sombra)} · sin llamar a Apify "
               f"(hoy ${gasto_hoy():.2f} de ${APIFY_TOPE_DIA:.2f})")
         return
