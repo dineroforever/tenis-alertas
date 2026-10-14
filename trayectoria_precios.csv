@@ -54,3 +54,6 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-14T04:49:10+00:00,sombra,KXWTAMATCH-26OCT12KARBEN-KAR,Sonay Kartal,0.69,14,liquidacion,1.0,0.84,0.57,19,23,si,si,no
 2026-10-14T05:48:14+00:00,real,KXATPMATCH-26OCT14VANJOD-JOD,Rafael Jodar,0.67,14,valor_justo,0.54,0.74,0.38,36,78,si,no,no
 2026-10-14T08:09:49+00:00,sombra,KXWTAMATCH-26OCT13MUCMCC-MCC,Catherine McNally,0.49,20,liquidacion,0.0,0.6,0.07,6,87,si,si,no
+2026-10-14T09:00:57+00:00,real,KXWTAMATCH-26OCT13TJESNI-TJE,Janice Tjen,0.25,40,liquidacion,1.0,0.96,0.23,59,98,si,si,si
+2026-10-14T09:00:57+00:00,real,KXWTAMATCH-26OCT13VOLGUO-VOL,Katie Volynets,0.78,12,valor_justo,0.65,0.78,0.5,3,51,no,no,no
+2026-10-14T09:00:57+00:00,sombra,KXWTAMATCH-26OCT13TJESNI-TJE,Janice Tjen,0.36,27,liquidacion,1.0,0.96,0.23,64,103,si,si,si
