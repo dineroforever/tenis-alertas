@@ -59,3 +59,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-14T09:00:57+00:00,sombra,KXWTAMATCH-26OCT13TJESNI-TJE,Janice Tjen,0.36,27,liquidacion,1.0,0.96,0.23,64,103,si,si,si
 2026-10-14T10:34:43+00:00,sombra,KXWTAMATCH-26OCT13VOLGUO-VOL,Katie Volynets,0.31,32,valor_justo,0.59,0.59,0.22,6,6,si,si,si
 2026-10-14T10:46:11+00:00,real,KXWTAMATCH-26OCT13OSTPEG-OST,Jelena Ostapenko,0.52,19,valor_justo,0.96,0.96,0.62,15,15,si,si,si
+2026-10-14T10:59:23+00:00,real,KXATPCHALLENGERMATCH-26OCT14BOBHAR-BOB,Matisse Bobichon,0.38,26,valor_justo,0.6,0.6,0.6,4,4,si,si,si
