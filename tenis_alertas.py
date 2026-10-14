@@ -24,6 +24,7 @@ import seguimiento as segui
 MIN_VOL_CONTRATOS = float(os.getenv("MIN_VOL_CONTRATOS", "300000"))  # ≈ $100K en la web de Kalshi
 MIN_VOL_SOMBRA = float(os.getenv("MIN_VOL_SOMBRA", "100000"))  # 100K–300K: solo en paper (sombra), sin aviso
 PRECIO_MIN, PRECIO_MAX = 0.20, 0.80
+PRECIO_REAL_MAX = 0.60      # >60¢ va a sombra: en las 50 primeras ops perdió (18 ops, −$6.51) vs ≤60¢ +$109.58
 SPREAD_MAX = 0.03
 EDGE_MODELO_MIN = 0.05      # P_final − ask
 EDGE_CASA_MIN = 0.03        # P_book − ask
@@ -1149,7 +1150,8 @@ def ciclo(est):
         if not s:
             continue
         motivos = ((["edge>10"] if s["edge"] > EDGE_MODELO_MAX else []) + (["reentrada"] if reentrada else [])
-                   + (["vol<300k"] if s["vol"] < MIN_VOL_CONTRATOS else []))
+                   + (["vol<300k"] if s["vol"] < MIN_VOL_CONTRATOS else [])
+                   + (["precio>60"] if s["ask"] > PRECIO_REAL_MAX else []))
         if motivos:
             if sombra_libre:
                 log(s, LOG_SOMBRA, "+".join(motivos))
