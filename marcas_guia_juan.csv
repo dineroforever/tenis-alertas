@@ -84,3 +84,5 @@ fecha_utc,estrategia,ticker,hora_miami,volumen,vol_500k,horario_2a8pm,sets,games
 2026-10-14T04:25:54+00:00,apify_sombra,KXWTAMATCH-26OCT12KARBEN-KAR,00:25,1767027,si,no,1-0,4-4,no,si,otro,no
 2026-10-14T04:30:32+00:00,apify_senal,KXATPMATCH-26OCT14VANJOD-JOD,00:30,464046,no,no,0-0,3-2,no,no,set1,no
 2026-10-14T06:42:21+00:00,apify_sombra,KXWTAMATCH-26OCT13MUCMCC-MCC,02:42,1576325,si,no,1-0,5-6,no,no,otro,no
+2026-10-14T07:18:00+00:00,apify_sombra,KXWTAMATCH-26OCT13TJESNI-TJE,03:18,285598,no,no,0-0,2-2,no,no,set1,no
+2026-10-14T07:23:00+00:00,apify_senal,KXWTAMATCH-26OCT13TJESNI-TJE,03:23,304560,no,no,0-0,2-3,no,no,set1,no
