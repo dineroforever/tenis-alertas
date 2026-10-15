@@ -38,3 +38,4 @@ fecha_utc,match_id,ticker,jugador,rival,torneo,marcador,p_final,p_score,p_casa,a
 2026-10-14T16:29:39+00:00,17275097,KXWTACHALLENGERMATCH-26OCT14TANSTE-STE,Lucrezia Stefanini,Harmony Tan,"Rovereto, Italy",3-2,0.7256,0.7362,0.7096,0.67,0.66,5.6,5.8,9.38,vol<300k
 2026-10-14T20:12:29+00:00,17274775,KXATPCHALLENGERMATCH-26OCT14OLIBAR-BAR,Alex Barrena,Genaro Alberto Olivieri,"Santa Cruz 2, Bolivia",6-3 3-6 3-4,0.3997,0.4161,0.375,0.28,0.27,12.0,35.8,9.8,edge>10
 2026-10-14T20:23:00+00:00,17274775,KXATPCHALLENGERMATCH-26OCT14OLIBAR-BAR,Alex Barrena,Genaro Alberto Olivieri,"Santa Cruz 2, Bolivia",6-3 3-6 4-5,0.3637,0.3983,0.3119,0.2,0.19,16.4,72.1,10.0,edge>10
+2026-10-15T09:02:12+00:00,17274999,KXWTAMATCH-26OCT15FEROST-OST,Jelena Ostapenko,Leylah Fernandez,Wuhan,6-1 1-6 2-2,0.4726,0.4865,0.4517,0.39,0.38,8.3,16.2,9.75,vol<300k
