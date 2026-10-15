@@ -1,0 +1,27 @@
+name: Resumen diario tenis
+
+on:
+  schedule:
+    - cron: "0 1 * * *"   # 9 p. m. Miami en horario de verano (EDT)
+    - cron: "0 2 * * *"   # 9 p. m. Miami en horario de invierno (EST)
+  workflow_dispatch: {}
+
+jobs:
+  resumen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Enviar resumen a Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          FORZAR: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
+        run: python resumen.py
