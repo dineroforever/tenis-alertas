@@ -78,3 +78,6 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-15T11:06:08+00:00,real,KXWTACHALLENGERMATCH-26OCT15LAZBRA-BRA,Nuria Brancaccio,0.6,16,liquidacion,0.0,0.68,0.01,4,65,si,no,no
 2026-10-15T11:21:20+00:00,real,KXATPCHALLENGERMATCH-26OCT15GENKRA-GEN,Tom Gentzsch,0.52,19,liquidacion,1.0,0.92,0.54,5,15,si,si,si
 2026-10-15T11:21:20+00:00,sombra,KXATPCHALLENGERMATCH-26OCT15GENKRA-GEN,Tom Gentzsch,0.59,16,liquidacion,1.0,0.92,0.51,36,46,si,si,si
+2026-10-15T16:34:52+00:00,sombra,KXATPCHALLENGERMATCH-26OCT15MRVMAE-MRV,Maxim Mrva,0.5,20,valor_justo,0.98,0.98,0.45,34,35,si,si,si
+2026-10-15T16:41:18+00:00,real,KXATPCHALLENGERMATCH-26OCT15BOYGAU-BOY,Tristan Boyer,0.38,26,liquidacion,1.0,0.85,0.3,46,51,si,si,si
+2026-10-15T16:41:18+00:00,sombra,KXATPCHALLENGERMATCH-26OCT15BOYGAU-BOY,Tristan Boyer,0.45,22,liquidacion,1.0,0.85,0.15,62,67,si,si,si
