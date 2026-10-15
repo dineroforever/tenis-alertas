@@ -62,6 +62,9 @@ LOG_SALIDAS = os.getenv("LOG_SALIDAS", "senales_salidas.csv")
 LOG_SOMBRA = os.getenv("LOG_SOMBRA", "sombra_entradas.csv")          # señales bloqueadas por las reglas nuevas
 LOG_SOMBRA_SAL = os.getenv("LOG_SOMBRA_SAL", "sombra_salidas.csv")  # (seguidas en paper, sin avisar)
 LOG_TRAY = os.getenv("LOG_TRAY", "trayectoria_precios.csv")  # máx/mín del bid de cada operación (solo anotación)
+LOG_CANDADO = os.getenv("LOG_CANDADO", "candado.csv")  # salidas "candado" simuladas (solo anotación, no cambian nada)
+# candado t_l: si el bid llega a +t% sobre la entrada y luego cae a +l%, se habría vendido ahí
+CANDADOS = {"10_5": (0.10, 0.05), "10_0": (0.10, 0.0), "15_5": (0.15, 0.05), "20_10": (0.20, 0.10)}
 LOG_CAND = os.getenv("LOG_CAND", "candidatos.csv")  # toda evaluación del modelo (para calibrarlo)
 STATE = os.getenv("STATE_FILE", "estado_alertas.json")
 
@@ -986,6 +989,19 @@ def log_salida(pos, motivo, precio, neto, archivo=None):
                     pos["ticker"], pos["jugador"], pos["ask"], pos["contratos"], motivo,
                     round(precio, 4), round(neto, 4), round(g, 2), round((neto / pos["ask"] - 1) * 100, 1)])
     log_trayectoria(pos, motivo, precio, "sombra" if archivo == LOG_SOMBRA_SAL else "real")
+    try:
+        nuevo = not os.path.exists(LOG_CANDADO)
+        with open(LOG_CANDADO, "a", newline="") as fh:
+            w = csv.writer(fh)
+            if nuevo:
+                w.writerow(["fecha_utc", "tipo", "ticker", "jugador", "entrada", "contratos", "motivo",
+                            "precio_salida"] + [f"candado_{k}" for k in CANDADOS])
+            sal = pos.get("cand_sal", {})
+            w.writerow([datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                        "sombra" if archivo == LOG_SOMBRA_SAL else "real", pos["ticker"], pos["jugador"],
+                        pos["ask"], pos["contratos"], motivo, round(precio, 4)] + [sal.get(k, "") for k in CANDADOS])
+    except Exception as ex:
+        print("No pude anotar candado:", repr(ex))
 
 
 def anotar_extremos(pos, m, ev):
@@ -999,8 +1015,22 @@ def anotar_extremos(pos, m, ev):
         if bid > pos.get("max_bid", -1):
             pos["max_bid"], pos["t_max"] = bid, round((time.time() - pos["ts"]) / 60)
         pos["min_bid"] = min(pos.get("min_bid", 2), bid)
+        candado(pos, bid)
     except Exception:
         pass
+
+
+def candado(pos, bid):
+    """Anota (sin operar) en qué precio habría salido cada regla de candado de ganancia."""
+    e = pos["ask"]
+    arm, sal = pos.setdefault("cand_arm", []), pos.setdefault("cand_sal", {})
+    for k, (t, l) in CANDADOS.items():
+        if k in sal:
+            continue
+        if k not in arm and bid >= e * (1 + t):
+            arm.append(k)
+        elif k in arm and bid <= e * (1 + l):
+            sal[k] = bid
 
 
 def log_trayectoria(pos, motivo, precio, tipo):
@@ -1088,6 +1118,7 @@ def revisar_gratis(pos, ev):
     if bid > pos.get("max_bid", -1):
         pos["max_bid"], pos["t_max"] = bid, round((time.time() - pos["ts"]) / 60)
     pos["min_bid"] = min(pos.get("min_bid", 2), bid)
+    candado(pos, bid)
     P = p1 if c1 else 1 - p1
     neto = bid - fee(bid, pos["contratos"]) / pos["contratos"]
     return neto >= P + 0.005 - MARGEN_SALIDA
