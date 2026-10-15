@@ -106,3 +106,4 @@ fecha_utc,estrategia,ticker,hora_miami,volumen,vol_500k,horario_2a8pm,sets,games
 2026-10-14T20:23:00+00:00,apify_sombra,KXATPCHALLENGERMATCH-26OCT14OLIBAR-BAR,16:23,2925640,si,si,1-1,4-5,si,no,otro,no
 2026-10-15T09:02:12+00:00,apify_sombra,KXWTAMATCH-26OCT15FEROST-OST,05:02,153569,no,no,1-1,2-2,si,no,otro,no
 2026-10-15T10:01:07+00:00,apify_senal,KXWTACHALLENGERMATCH-26OCT15LAZBRA-BRA,06:01,558214,si,no,1-0,5-6,no,no,otro,no
+2026-10-15T10:35:25+00:00,apify_sombra,KXATPCHALLENGERMATCH-26OCT15GENKRA-GEN,06:35,141726,no,no,1-1,0-0,si,no,otro,no
