@@ -11,6 +11,7 @@ import requests
 MIAMI = ZoneInfo("America/New_York")
 INICIO_FASE2 = 50          # las primeras 50 operaciones son la fase 1
 META = 100
+BANCA = 500.0          # banca simulada del paper (BANKROLL)
 
 
 def leer(archivo):
@@ -82,6 +83,21 @@ def main():
     lineas += ["", "📈 " + linea("Acumulado", sal), "   " + linea("Fase 1", sal[:INICIO_FASE2]),
                "   " + linea("Fase 2", f2),
                f"🎯 Faltan {max(0, META - len(sal))} operaciones para las {META}."]
+
+    # Interés compuesto: cada ganancia se suma a la banca y la siguiente apuesta crece en proporción
+    if sal:
+        banca = BANCA
+        for s in sal:
+            banca *= 1 + num(s["ganancia_usd"]) / BANCA
+        simple = BANCA + sum(num(s["ganancia_usd"]) for s in sal)
+        fechas = [d for d in (a_miami(s["fecha_utc"]) for s in sal) if d]
+        dias = max(1.0, (fechas[-1] - fechas[0]).total_seconds() / 86400) if fechas else 1.0
+        opd = len(sal) / dias
+        m = sum(num(s["ganancia_usd"]) for s in sal) / len(sal) / BANCA   # retorno medio por op sobre la banca
+        p30, p30m = BANCA * (1 + m) ** (opd * 30), BANCA * (1 + m / 2) ** (opd * 30)
+        lineas += ["", f"💰 Con ${BANCA:.0f} e interés compuesto:",
+                   f"   • Hoy tendrías ${banca:,.2f} (sin reinvertir: ${simple:,.2f})",
+                   f"   • Proyección a 30 días ({opd:.1f} ops/día): ${p30:,.0f} · prudente (mitad de ventaja): ${p30m:,.0f}"]
 
     # Reglas que bloquean entradas (operaciones seguidas en paper sin tomar)
     ent_s = {e["ticker"]: e.get("resultado", "") for e in leer("sombra_entradas.csv")}
