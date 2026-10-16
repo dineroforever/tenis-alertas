@@ -8,3 +8,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-16T16:24:23+00:00,real,KXATPCHALLENGERMATCH-26OCT16MMONAR-NAR,Luca Nardi,0.44,22,valor_justo,0.82,,,,
 2026-10-16T19:14:45+00:00,real,KXATPCHALLENGERMATCH-26OCT16DODBOY-BOY,Tristan Boyer,0.22,45,valor_justo,0.2,0.17,0.17,0.17,0.24
 2026-10-16T19:27:30+00:00,sombra,KXATPCHALLENGERMATCH-26OCT16MARGUE-MAR,Matteo Martineau,0.38,26,valor_justo,0.98,0.39,0.38,0.39,
+2026-10-16T19:55:58+00:00,real,KXATPCHALLENGERMATCH-26OCT16COMOLI-OLI,Genaro Alberto Olivieri,0.33,30,valor_justo,0.24,,,,
