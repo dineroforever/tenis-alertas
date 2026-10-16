@@ -2,3 +2,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-15T16:34:52+00:00,sombra,KXATPCHALLENGERMATCH-26OCT15MRVMAE-MRV,Maxim Mrva,0.5,20,valor_justo,0.98,,,,
 2026-10-15T16:41:18+00:00,real,KXATPCHALLENGERMATCH-26OCT15BOYGAU-BOY,Tristan Boyer,0.38,26,liquidacion,1.0,0.39,0.38,0.39,0.39
 2026-10-15T16:41:18+00:00,sombra,KXATPCHALLENGERMATCH-26OCT15BOYGAU-BOY,Tristan Boyer,0.45,22,liquidacion,1.0,0.43,0.43,0.43,0.48
+2026-10-16T07:21:13+00:00,real,KXWTAMATCH-26OCT15SVIKAR-KAR,Sonay Kartal,0.33,30,liquidacion,1.0,0.34,0.33,0.34,0.36
