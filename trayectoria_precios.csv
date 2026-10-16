@@ -82,3 +82,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-15T16:41:18+00:00,real,KXATPCHALLENGERMATCH-26OCT15BOYGAU-BOY,Tristan Boyer,0.38,26,liquidacion,1.0,0.85,0.3,46,51,si,si,si
 2026-10-15T16:41:18+00:00,sombra,KXATPCHALLENGERMATCH-26OCT15BOYGAU-BOY,Tristan Boyer,0.45,22,liquidacion,1.0,0.85,0.15,62,67,si,si,si
 2026-10-16T07:21:13+00:00,real,KXWTAMATCH-26OCT15SVIKAR-KAR,Sonay Kartal,0.33,30,liquidacion,1.0,0.72,0.33,37,43,si,si,si
+2026-10-16T12:02:55+00:00,sombra,KXATPCHALLENGERMATCH-26OCT16GIUPIR-PIR,Zsombor Piros,0.72,13,valor_justo,0.68,0.78,0.58,3,7,no,no,no
