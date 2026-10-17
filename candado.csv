@@ -12,3 +12,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-17T07:16:09+00:00,sombra,KXWTAMATCH-26OCT16PARVAN-VAN,Jeline Vandromme,0.55,18,liquidacion,0.0,,,,
 2026-10-17T07:53:33+00:00,real,KXWTAMATCH-26OCT17YAMKEN-YAM,Mei Yamaguchi,0.23,43,liquidacion,0.0,0.23,0.23,,
 2026-10-17T10:51:55+00:00,real,KXATPMATCH-26OCT17ZVEDAV-DAV,Alejandro Davidovich Fokina,0.25,34,liquidacion,1.0,0.25,0.25,,
+2026-10-17T11:52:57+00:00,real,KXWTACHALLENGERMATCH-26OCT17ZIDSAM-SAM,Laura Samson,0.47,21,valor_justo,0.93,0.48,0.43,0.48,0.48
