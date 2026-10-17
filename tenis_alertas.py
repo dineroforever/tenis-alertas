@@ -725,8 +725,16 @@ def modelo(m, serie, st, exigir_cuota=True, det=None, ev=None):
         return None
     if p_pre_h is None:
         p_pre_h = 0.5
-    # Stats de saque de hoy: solo Kalshi (gratis). Sin stats no se evalúa (ahorro de Apify).
+    # Stats de saque de hoy: primero Kalshi (gratis); si faltan, pointByPoint de Apify
     ss = stats_kalshi(det, m, ev)
+    if not ss:
+        try:
+            pbp = apify({"mode": "pointByPoint", "matchId": m["id"]}, timeout=90)
+            ss = stats_saque(pbp[0]) if pbp else None
+        except SinSaldo:
+            raise
+        except Exception:
+            ss = None
     if not ss:
         return None
     spw_h, n_h, spw_a, n_a = ss
@@ -1155,7 +1163,7 @@ def ciclo(est):
             if k in vistos:
                 continue
             e = edge_gratis(ev, det)
-            if e is None or e < PREFILTRO_EDGE:
+            if e is not None and e < PREFILTRO_EDGE:
                 vistos[k] = time.time()  # el modelo gratis no ve edge: no se paga Apify
                 n_pref += 1
                 continue
