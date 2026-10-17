@@ -45,3 +45,4 @@ fecha_utc,match_id,ticker,jugador,rival,torneo,marcador,p_final,p_score,p_casa,a
 2026-10-16T11:56:09+00:00,17274667,KXATPCHALLENGERMATCH-26OCT16GIUPIR-PIR,Zsombor Piros,Lorenzo Giustino,"Maia, Portugal",6-3 1-6 4-3,0.8992,0.9028,0.8937,0.72,0.71,17.9,22.4,9.36,edge>10+precio>60
 2026-10-16T18:35:53+00:00,17274694,KXATPCHALLENGERMATCH-26OCT16MARGUE-MAR,Matteo Martineau,Sascha Gueymard Wayenburg,"Roanne, France,",2-2,0.4605,0.4935,0.411,0.38,0.37,8.0,16.1,9.88,vol<300k
 2026-10-17T06:43:48+00:00,17343231,KXWTAMATCH-26OCT16PARVAN-VAN,Jeline Vandromme,Alycia Parks,"Ningbo, China",6-4 4-4,0.8328,0.8478,0.8104,0.55,0.54,28.3,46.7,9.9,edge>10
+2026-10-17T12:40:31+00:00,17275095,KXWTACHALLENGERMATCH-26OCT17KUBSAL-KUB,Martyna Kubka,Dominika Salkova,"Rovereto, Italy",6-1 5-7 1-1,0.6261,0.6595,0.5759,0.54,0.53,8.6,12.2,9.72,vol<300k
