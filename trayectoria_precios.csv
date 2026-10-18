@@ -105,3 +105,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-18T11:32:03+00:00,real,KXATPMATCH-26OCT18RODHER-ROD,Jurij Rodionov,0.46,21,liquidacion,0.0,0.45,0.0,1,30,no,no,no
 2026-10-18T11:51:37+00:00,real,KXATPCHALLENGERMATCH-26OCT18CADPAP-PAP,Radu Mihai Papoe,0.42,23,liquidacion,0.0,0.53,0.1,3,23,si,si,no
 2026-10-18T12:30:24+00:00,sombra,KXATPMATCH-26OCT18BERCIN-BER,Remy Bertola,0.41,24,valor_justo,0.41,0.62,0.32,14,19,si,si,si
+2026-10-18T12:59:49+00:00,real,KXATPMATCH-26OCT18MRVLAJ-LAJ,Dušan Lajović,0.24,41,liquidacion,0.0,0.56,0.23,9,27,si,si,si
