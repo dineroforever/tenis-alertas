@@ -27,3 +27,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-18T11:51:37+00:00,real,KXATPCHALLENGERMATCH-26OCT18CADPAP-PAP,Radu Mihai Papoe,0.42,23,liquidacion,0.0,0.44,0.39,0.44,0.44
 2026-10-18T12:30:24+00:00,sombra,KXATPMATCH-26OCT18BERCIN-BER,Remy Bertola,0.41,24,valor_justo,0.41,0.43,0.41,0.43,0.45
 2026-10-18T12:59:49+00:00,real,KXATPMATCH-26OCT18MRVLAJ-LAJ,Dušan Lajović,0.24,41,liquidacion,0.0,0.24,0.24,0.24,0.26
+2026-10-18T14:16:55+00:00,sombra,KXWTAMATCH-26OCT18PRORAK-PRO,Tatiana Prozorova,0.46,21,liquidacion,0.0,,,,
