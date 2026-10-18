@@ -18,3 +18,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-17T14:14:32+00:00,real,KXATPCHALLENGERMATCH-26OCT17PASDOD-PAS,Francesco Passaro,0.53,18,valor_justo,0.7,,,,
 2026-10-17T14:34:35+00:00,sombra,KXATPCHALLENGERMATCH-26OCT17PASDOD-PAS,Francesco Passaro,0.48,20,valor_justo,0.93,,,,
 2026-10-17T23:23:58+00:00,real,KXATPCHALLENGERMATCH-26OCT17COMSEY-SEY,Thiago Seyboth Wild,0.52,19,valor_justo,0.54,0.54,0.52,,
+2026-10-18T07:07:06+00:00,real,KXWTAMATCH-26OCT17DARITO-ITO,Aoi Ito,0.44,22,valor_justo,0.15,,,,
