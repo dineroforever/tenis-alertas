@@ -115,3 +115,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-19T01:32:25+00:00,sombra,KXATPCHALLENGERMATCH-26OCT18JOHARU-JOH,Spencer Johnson,0.36,27,valor_justo,0.98,0.98,0.26,71,71,si,si,si
 2026-10-19T05:12:59+00:00,real,KXWTAMATCH-26OCT18MCCKRA-KRA,Sinja Kraus,0.29,34,valor_justo,0.84,0.84,0.16,50,50,si,si,si
 2026-10-19T05:58:25+00:00,real,KXATPCHALLENGERMATCH-26OCT19JASMAT-MAT,Koki Matsuda,0.56,17,liquidacion,1.0,0.71,0.5,9,50,si,si,no
+2026-10-19T11:36:57+00:00,real,KXWTAMATCH-26OCT19RAKBOU-BOU,Marie Bouzkova,0.59,16,valor_justo,0.98,0.98,0.58,70,70,si,si,si
