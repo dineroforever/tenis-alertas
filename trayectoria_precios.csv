@@ -112,3 +112,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-18T16:53:39+00:00,real,KXATPCHALLENGERMATCH-26OCT18SCHROC-ROC,Francisco Rocha,0.24,41,valor_justo,0.73,0.73,0.17,58,58,si,si,si
 2026-10-18T22:25:49+00:00,sombra,KXATPCHALLENGERMATCH-26OCT18VANANT-ANT,Michael Antonius,0.54,18,valor_justo,0.97,0.99,0.41,48,48,si,si,si
 2026-10-18T22:44:36+00:00,sombra,KXATPCHALLENGERMATCH-26OCT18PEDOST-OST,Daniil Ostapenkov,0.5,20,valor_justo,0.13,0.5,0.08,2,33,no,no,no
+2026-10-19T01:32:25+00:00,sombra,KXATPCHALLENGERMATCH-26OCT18JOHARU-JOH,Spencer Johnson,0.36,27,valor_justo,0.98,0.98,0.26,71,71,si,si,si
