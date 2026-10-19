@@ -124,3 +124,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-19T16:04:47+00:00,real,KXATPCHALLENGERMATCH-26OCT19SANWEH-WEH,Kai Wehnelt,0.41,24,valor_justo,0.35,0.42,0.34,6,7,no,no,no
 2026-10-19T16:15:58+00:00,sombra,KXATPCHALLENGERMATCH-26OCT19SANWEH-WEH,Kai Wehnelt,0.42,23,valor_justo,0.32,0.39,0.28,3,7,no,no,no
 2026-10-19T17:16:21+00:00,real,KXATPMATCH-26OCT18FARBAL-BAL,Felix Balshaw,0.46,21,liquidacion,1.0,,,,162,,,
+2026-10-19T21:56:30+00:00,sombra,KXATPCHALLENGERMATCH-26OCT19ANTPED-ANT,Michael Antonius,0.72,13,liquidacion,0.0,0.74,0.29,27,38,no,no,no
