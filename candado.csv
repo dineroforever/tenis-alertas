@@ -41,3 +41,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-19T13:39:57+00:00,sombra,KXATPCHALLENGERMATCH-26OCT19TABKRU-TAB,Carlos Taberner,0.43,23,valor_justo,0.48,0.42,0.42,0.42,0.42
 2026-10-19T14:19:30+00:00,real,KXATPCHALLENGERMATCH-26OCT19DAMPIE-DAM,Miguel Damas,0.43,23,valor_justo,0.41,0.43,0.43,0.43,
 2026-10-19T14:19:30+00:00,sombra,KXATPCHALLENGERMATCH-26OCT19DAMPIE-DAM,Miguel Damas,0.33,30,valor_justo,0.41,0.33,0.33,0.33,
+2026-10-19T15:04:45+00:00,real,KXATPCHALLENGERMATCH-26OCT19AGAHOU-AGA,Franco Agamenone,0.3,30,liquidacion,0.0,,,,
