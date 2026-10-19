@@ -58,3 +58,4 @@ fecha_utc,match_id,ticker,jugador,rival,torneo,marcador,p_final,p_score,p_casa,a
 2026-10-19T13:12:59+00:00,17357264,KXATPCHALLENGERMATCH-26OCT19TABKRU-TAB,Carlos Taberner,Oleksii Krutykh,"Lisbon, Portugal",6-3 4-6 2-3,0.5005,0.5142,0.48,0.43,0.42,7.1,11.9,9.89,vol<300k
 2026-10-19T13:22:18+00:00,17357264,KXATPCHALLENGERMATCH-26OCT19TABKRU-TAB,Carlos Taberner,Oleksii Krutykh,"Lisbon, Portugal",6-3 4-6 3-4,0.5018,0.5163,0.48,0.43,0.42,7.2,12.2,9.89,vol<300k
 2026-10-19T13:22:18+00:00,17351680,KXATPCHALLENGERMATCH-26OCT19DAMPIE-DAM,Miguel Damas,Samuele Pieri,"Florence, Italy",4-6 2-1,0.4487,0.4738,0.411,0.33,0.32,11.9,29.8,9.9,edge>10
+2026-10-19T16:09:14+00:00,17357573,KXATPCHALLENGERMATCH-26OCT19SANWEH-WEH,Kai Wehnelt,Alejo Sanchez Quilez,"Lisbon, Portugal",6-7 6-3 1-1,0.498,0.5278,0.4533,0.42,0.41,7.8,13.9,9.66,reentrada
