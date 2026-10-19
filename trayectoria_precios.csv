@@ -118,3 +118,5 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-19T11:36:57+00:00,real,KXWTAMATCH-26OCT19RAKBOU-BOU,Marie Bouzkova,0.59,16,valor_justo,0.98,0.98,0.58,70,70,si,si,si
 2026-10-19T13:19:33+00:00,sombra,KXATPCHALLENGERMATCH-26OCT19TABKRU-TAB,Carlos Taberner,0.43,23,valor_justo,0.75,0.75,0.42,6,7,si,si,si
 2026-10-19T13:39:57+00:00,sombra,KXATPCHALLENGERMATCH-26OCT19TABKRU-TAB,Carlos Taberner,0.43,23,valor_justo,0.48,0.64,0.28,15,18,si,si,si
+2026-10-19T14:19:30+00:00,real,KXATPCHALLENGERMATCH-26OCT19DAMPIE-DAM,Miguel Damas,0.43,23,valor_justo,0.41,0.51,0.41,4,7,si,no,no
+2026-10-19T14:19:30+00:00,sombra,KXATPCHALLENGERMATCH-26OCT19DAMPIE-DAM,Miguel Damas,0.33,30,valor_justo,0.41,0.57,0.27,47,57,si,si,si
