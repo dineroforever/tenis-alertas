@@ -50,3 +50,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-20T02:08:53+00:00,real,KXATPCHALLENGERMATCH-26OCT19JARBAR-JAR,Nicolas Jarry,0.35,28,valor_justo,0.98,,,,
 2026-10-20T04:37:05+00:00,sombra,KXWTAMATCH-26OCT18LIULIN-LIN,Magda Linette,0.44,22,valor_justo,0.99,0.46,,0.46,0.46
 2026-10-20T05:56:58+00:00,real,KXATPCHALLENGERMATCH-26OCT19MILHAR-HAR,Jay Friend,0.31,32,liquidacion,1.0,0.29,0.29,0.27,0.33
+2026-10-20T06:48:41+00:00,real,KXATPCHALLENGERMATCH-26OCT20SAMNOG-SAM,Kasidit Samrej,0.39,25,valor_justo,0.34,,,,
