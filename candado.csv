@@ -58,3 +58,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-20T10:24:50+00:00,sombra,KXATPCHALLENGERMATCH-26OCT20DEMSAN-SAN,Akira Santillan,0.5,20,valor_justo,0.44,0.52,0.48,,
 2026-10-20T10:57:20+00:00,real,KXATPMATCH-26OCT18NAVCER-CER,Juan Manuel Cerundolo,0.27,33,valor_justo,0.23,,,,
 2026-10-20T12:05:34+00:00,sombra,KXATPMATCH-26OCT18STRGIR-GIR,Marcos Giron,0.41,24,valor_justo,0.35,,,,
+2026-10-20T12:41:04+00:00,real,KXATPCHALLENGERMATCH-26OCT20SAKCLA-SAK,Dimitris Sakellaridis,0.34,29,liquidacion,1.0,,,,
