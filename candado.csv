@@ -64,3 +64,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-20T15:59:31+00:00,sombra,KXATPMATCH-26OCT18HUMMOU-MOU,Corentin Moutet,0.57,17,liquidacion,1.0,0.59,0.57,0.59,0.6
 2026-10-20T17:31:44+00:00,real,KXATPCHALLENGERMATCH-26OCT20HEIHER-HER,Alex Hernandez,0.2,50,liquidacion,0.0,0.18,0.18,0.18,0.18
 2026-10-20T17:56:21+00:00,real,KXATPMATCH-26OCT18BONNOR-BON,Benjamin Bonzi,0.52,19,liquidacion,1.0,,,,
+2026-10-20T18:51:34+00:00,real,KXATPMATCH-26OCT20VANTAB-TAB,Clement Tabur,0.42,23,valor_justo,0.06,0.44,0.42,0.44,0.44
