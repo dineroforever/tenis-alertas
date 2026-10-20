@@ -61,3 +61,4 @@ fecha_utc,match_id,ticker,jugador,rival,torneo,marcador,p_final,p_score,p_casa,a
 2026-10-19T16:09:14+00:00,17357573,KXATPCHALLENGERMATCH-26OCT19SANWEH-WEH,Kai Wehnelt,Alejo Sanchez Quilez,"Lisbon, Portugal",6-7 6-3 1-1,0.498,0.5278,0.4533,0.42,0.41,7.8,13.9,9.66,reentrada
 2026-10-19T21:18:12+00:00,17359353,KXATPCHALLENGERMATCH-26OCT19ANTPED-ANT,Michael Antonius,Albert Pedrico Kravtsov,"Fort Worth, USA",6-7 6-3 3-2,0.8386,0.8695,0.7923,0.72,0.71,11.9,14.2,9.36,edge>10+precio>60
 2026-10-20T03:35:29+00:00,17355499,KXWTAMATCH-26OCT18LIULIN-LIN,Magda Linette,Claire Liu,Osaka,5-4,0.606,0.6445,0.5483,0.44,0.43,16.6,32.5,9.68,edge>10
+2026-10-20T06:08:50+00:00,17356098,KXWTAMATCH-26OCT19PUTSHN-PUT,Yulia Putintseva,Diana Shnaider,"Ningbo, China",5-5,0.4663,0.4613,0.4737,0.31,0.3,15.6,43.5,9.92,edge>10
