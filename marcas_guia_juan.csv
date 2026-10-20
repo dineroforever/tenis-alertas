@@ -170,3 +170,4 @@ fecha_utc,estrategia,ticker,hora_miami,volumen,vol_500k,horario_2a8pm,sets,games
 2026-10-20T12:02:10+00:00,apify_sombra,KXATPMATCH-26OCT18STRGIR-GIR,08:02,196359,no,no,0-0,2-2,no,no,set1,no
 2026-10-20T13:29:30+00:00,apify_sombra,KXATPMATCH-26OCT18HUMMOU-MOU,09:29,178724,no,no,1-0,3-4,no,no,otro,no
 2026-10-20T13:31:56+00:00,apify_senal,KXATPMATCH-26OCT20FERGOJ-GOJ,09:31,687109,si,no,1-0,5-6,no,no,otro,no
+2026-10-20T15:17:49+00:00,apify_senal,KXATPMATCH-26OCT18HUMMOU-MOU,11:17,4963860,si,no,1-1,5-5,si,no,otro,no
