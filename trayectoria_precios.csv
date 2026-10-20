@@ -138,3 +138,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-20T10:57:20+00:00,real,KXATPMATCH-26OCT18NAVCER-CER,Juan Manuel Cerundolo,0.27,33,valor_justo,0.23,0.26,0.23,1,4,no,no,no
 2026-10-20T12:05:34+00:00,sombra,KXATPMATCH-26OCT18STRGIR-GIR,Marcos Giron,0.41,24,valor_justo,0.35,0.4,0.35,1,3,no,no,no
 2026-10-20T12:41:04+00:00,real,KXATPCHALLENGERMATCH-26OCT20SAKCLA-SAK,Dimitris Sakellaridis,0.34,29,liquidacion,1.0,0.97,0.33,27,44,si,si,si
+2026-10-20T14:04:39+00:00,real,KXATPMATCH-26OCT20FERGOJ-GOJ,Borna Gojo,0.59,16,liquidacion,1.0,0.8,0.51,10,33,si,si,si
