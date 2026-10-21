@@ -71,3 +71,5 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-21T06:41:20+00:00,real,KXATPCHALLENGERMATCH-26OCT21HARMCC-MCC,James McCabe,0.38,26,liquidacion,0.0,0.34,0.34,,
 2026-10-21T12:34:33+00:00,real,KXWTAMATCH-26OCT21CIRBEJ-CIR,Sorana Cirstea,0.3,30,valor_justo,0.15,0.3,0.3,0.3,0.33
 2026-10-21T15:16:11+00:00,real,KXATPCHALLENGERMATCH-26OCT20MILGIU-MIL,Yanaki Milev,0.51,19,liquidacion,1.0,0.51,0.51,0.51,0.56
+2026-10-21T19:25:02+00:00,real,KXATPMATCH-26OCT21KOUMUS-KOU,Moise Kouame,0.22,45,liquidacion,0.0,,,,
+2026-10-21T19:25:02+00:00,sombra,KXATPMATCH-26OCT21KOUMUS-KOU,Moise Kouame,0.28,35,liquidacion,0.0,,,,
