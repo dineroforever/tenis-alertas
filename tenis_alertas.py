@@ -1270,7 +1270,7 @@ def ciclo(est):
         if not s:
             continue
         motivos = ((["edge>10"] if s["edge"] > EDGE_MODELO_MAX else []) + (["reentrada"] if reentrada else [])
-                   + (["vol<300k"] if s["vol"] < MIN_VOL_CONTRATOS else [])
+                   + (["set2"] if len((m.get("score") or {}).get("sets", [])) == 2 else [])  # 2.º set: perdió en las 100 ops
                    + (["precio>60"] if s["ask"] > PRECIO_REAL_MAX else []))
         if motivos:
             if sombra_libre:
