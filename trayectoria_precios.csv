@@ -153,3 +153,5 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-21T19:25:02+00:00,real,KXATPMATCH-26OCT21KOUMUS-KOU,Moise Kouame,0.22,45,liquidacion,0.0,0.15,0.0,3,89,no,no,no
 2026-10-21T19:25:02+00:00,sombra,KXATPMATCH-26OCT21KOUMUS-KOU,Moise Kouame,0.28,35,liquidacion,0.0,0.28,0.0,13,103,no,no,no
 2026-10-22T05:00:44+00:00,sombra,KXATPCHALLENGERMATCH-26OCT22SMISUN-SMI,Keegan Smith,0.43,23,valor_justo,0.24,0.44,0.24,2,34,no,no,no
+2026-10-22T05:58:09+00:00,real,KXATPCHALLENGERMATCH-26OCT22SMISUN-SUN,Fajing Sun,0.36,27,valor_justo,0.46,0.46,0.32,35,35,si,si,no
+2026-10-22T05:58:09+00:00,sombra,KXATPCHALLENGERMATCH-26OCT22SMISUN-SUN,Fajing Sun,0.45,22,valor_justo,0.46,0.46,0.32,47,47,no,no,no
