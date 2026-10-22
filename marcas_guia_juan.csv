@@ -186,3 +186,4 @@ fecha_utc,estrategia,ticker,hora_miami,volumen,vol_500k,horario_2a8pm,sets,games
 2026-10-22T05:11:10+00:00,apify_sombra,KXATPCHALLENGERMATCH-26OCT22SMISUN-SUN,01:11,862709,si,no,1-0,3-4,no,no,otro,no
 2026-10-22T05:22:48+00:00,apify_senal,KXATPCHALLENGERMATCH-26OCT22SMISUN-SUN,01:22,1323746,si,no,1-1,0-0,si,no,otro,no
 2026-10-22T11:13:49+00:00,apify_senal,KXATPMATCH-26OCT22MACKHA-KHA,07:13,1049138,si,no,1-1,0-0,si,no,otro,no
+2026-10-22T11:42:06+00:00,apify_senal,KXATPCHALLENGERMATCH-26OCT21RIBHOU-RIB,07:42,497014,no,no,1-1,0-0,si,no,otro,no
