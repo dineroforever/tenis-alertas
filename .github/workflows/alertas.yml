@@ -43,7 +43,7 @@ jobs:
           PRUEBA_SENAL: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
           LOOP_MINUTES: "28"
           POLL_SECONDS: "30"
-          APIFY_TOPE_DIA: "2.50"
+          APIFY_TOPE_DIA: "0.15"
           MODO: "apify"
           AVISAR: "0"
           PREFILTRO_EDGE: "0.0"
