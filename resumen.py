@@ -106,7 +106,7 @@ def main():
         por_motivo[ent_s.get(s["ticker"], "?")].append(s)
     if por_motivo:
         lineas += ["", "🛡 Bloqueadas por reglas (si se hubieran tomado):"]
-        for k in ("edge>10", "vol<300k", "reentrada", "precio>60"):
+        for k in ("edge>10", "vol<300k", "reentrada", "precio>60", "set2"):
             if por_motivo.get(k):
                 n, g, pl, _ = resumen_ops(por_motivo[k])
                 lineas.append(f"   • {html.escape(k)}: {n} casos · {g} ganadas · {usd(pl)}")
