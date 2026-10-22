@@ -73,3 +73,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-21T15:16:11+00:00,real,KXATPCHALLENGERMATCH-26OCT20MILGIU-MIL,Yanaki Milev,0.51,19,liquidacion,1.0,0.51,0.51,0.51,0.56
 2026-10-21T19:25:02+00:00,real,KXATPMATCH-26OCT21KOUMUS-KOU,Moise Kouame,0.22,45,liquidacion,0.0,,,,
 2026-10-21T19:25:02+00:00,sombra,KXATPMATCH-26OCT21KOUMUS-KOU,Moise Kouame,0.28,35,liquidacion,0.0,,,,
+2026-10-22T05:00:44+00:00,sombra,KXATPCHALLENGERMATCH-26OCT22SMISUN-SMI,Keegan Smith,0.43,23,valor_justo,0.24,,,,
