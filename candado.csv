@@ -79,3 +79,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-22T11:19:19+00:00,real,KXATPMATCH-26OCT22MACKHA-KHA,Karen Khachanov,0.58,17,valor_justo,0.57,0.59,0.57,0.59,0.63
 2026-10-22T12:17:51+00:00,real,KXATPCHALLENGERMATCH-26OCT21RIBHOU-RIB,Michele Ribecai,0.46,21,valor_justo,0.99,,,,
 2026-10-23T01:34:29+00:00,real,KXATPCHALLENGERMATCH-26OCT22TOBMEJ-TOB,Miguel Tobon,0.46,21,valor_justo,0.99,0.48,,0.48,0.5
+2026-10-23T10:01:42+00:00,real,KXWTAMATCH-26OCT22BOURUZ-RUZ,Antonia Ružić,0.27,37,liquidacion,0.0,,,,
