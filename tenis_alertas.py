@@ -1271,7 +1271,8 @@ def ciclo(est):
             continue
         motivos = ((["edge>10"] if s["edge"] > EDGE_MODELO_MAX else []) + (["reentrada"] if reentrada else [])
                    + (["set2"] if len((m.get("score") or {}).get("sets", [])) == 2 else [])  # 2.º set: perdió en las 100 ops
-                   + (["precio>60"] if s["ask"] > PRECIO_REAL_MAX else []))
+                   + (["precio>60"] if s["ask"] > PRECIO_REAL_MAX else [])
+                   + (["p>65"] if s["P"] >= 0.65 else []))  # favorito claro: −5% en las 100 ops (F1 y F2)
         if motivos:
             if sombra_libre:
                 log(s, LOG_SOMBRA, "+".join(motivos))
