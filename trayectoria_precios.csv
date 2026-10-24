@@ -169,3 +169,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-24T07:23:03+00:00,sombra,KXATPCHALLENGERMATCH-26OCT24SCHCUI-CUI,Jie Cui,0.44,22,valor_justo,0.34,0.49,0.33,62,73,si,no,no
 2026-10-24T08:56:32+00:00,sombra,KXWTAMATCH-26OCT23BIRITO-ITO,Aoi Ito,0.37,27,liquidacion,0.0,0.4,0.01,2,59,no,no,no
 2026-10-24T09:07:18+00:00,real,KXWTAMATCH-26OCT23JOIGOL-JOI,Maya Joint,0.42,23,valor_justo,0.78,0.79,0.08,107,113,si,si,si
+2026-10-24T12:26:58+00:00,sombra,KXATPMATCH-26OCT24BASTSI-BAS,Nikoloz Basilashvili,0.43,23,liquidacion,1.0,0.99,0.32,25,27,si,si,si
