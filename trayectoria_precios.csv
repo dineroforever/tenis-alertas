@@ -164,3 +164,6 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-24T05:45:27+00:00,real,KXWTAMATCH-26OCT23SHIPAR-SHI,Ena Shibahara,0.43,23,valor_justo,0.35,0.53,0.04,31,45,si,si,no
 2026-10-24T05:45:27+00:00,sombra,KXWTAMATCH-26OCT23SHIPAR-SHI,Ena Shibahara,0.52,19,valor_justo,0.35,0.53,0.04,36,50,no,no,no
 2026-10-24T06:23:54+00:00,real,KXWTAMATCH-26OCT23SAMWAT-WAT,Heather Watson,0.37,27,valor_justo,0.87,0.87,0.35,20,20,si,si,si
+2026-10-24T07:10:01+00:00,sombra,KXWTAMATCH-26OCT23ANNKRU-KRU,Ashlyn Krueger,0.49,20,valor_justo,0.71,0.75,0.4,14,49,si,si,si
+2026-10-24T07:23:03+00:00,real,KXATPCHALLENGERMATCH-26OCT24SCHCUI-CUI,Jie Cui,0.35,28,valor_justo,0.34,0.49,0.34,40,51,si,si,si
+2026-10-24T07:23:03+00:00,sombra,KXATPCHALLENGERMATCH-26OCT24SCHCUI-CUI,Jie Cui,0.44,22,valor_justo,0.34,0.49,0.33,62,73,si,no,no
