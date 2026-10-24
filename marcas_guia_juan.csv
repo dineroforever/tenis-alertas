@@ -193,3 +193,6 @@ fecha_utc,estrategia,ticker,hora_miami,volumen,vol_500k,horario_2a8pm,sets,games
 2026-10-23T20:00:12+00:00,apify_sombra,KXATPMATCH-26OCT23STRBER-STR,16:00,1653307,si,si,1-0,3-3,no,si,otro,no
 2026-10-24T04:55:56+00:00,apify_sombra,KXWTAMATCH-26OCT23SHIPAR-SHI,00:55,2347464,si,no,1-1,0-0,si,no,otro,no
 2026-10-24T05:00:19+00:00,apify_senal,KXWTAMATCH-26OCT23SHIPAR-SHI,01:00,2496386,si,no,1-1,0-1,si,no,otro,no
+2026-10-24T06:03:46+00:00,apify_senal,KXWTAMATCH-26OCT23SAMWAT-WAT,02:03,1772640,si,no,1-1,5-5,si,no,otro,no
+2026-10-24T06:10:33+00:00,apify_sombra,KXATPCHALLENGERMATCH-26OCT24SCHCUI-CUI,02:10,675839,si,no,1-0,2-3,no,no,otro,no
+2026-10-24T06:21:24+00:00,apify_sombra,KXWTAMATCH-26OCT23ANNKRU-KRU,02:21,2569557,si,no,1-0,2-3,no,no,otro,no
