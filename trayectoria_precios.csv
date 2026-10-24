@@ -161,3 +161,5 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-23T10:01:42+00:00,real,KXWTAMATCH-26OCT22BOURUZ-RUZ,Antonia Ružić,0.27,37,liquidacion,0.0,0.26,0.15,1,38,no,no,no
 2026-10-23T17:02:01+00:00,real,KXATPMATCH-26OCT23BUBKHA-KHA,Karen Khachanov,0.46,21,valor_justo,0.36,0.57,0.35,15,55,si,si,no
 2026-10-23T20:37:18+00:00,sombra,KXATPMATCH-26OCT23STRBER-STR,Jan-Lennard Struff,0.57,17,liquidacion,1.0,0.9,0.46,32,37,si,si,si
+2026-10-24T05:45:27+00:00,real,KXWTAMATCH-26OCT23SHIPAR-SHI,Ena Shibahara,0.43,23,valor_justo,0.35,0.53,0.04,31,45,si,si,no
+2026-10-24T05:45:27+00:00,sombra,KXWTAMATCH-26OCT23SHIPAR-SHI,Ena Shibahara,0.52,19,valor_justo,0.35,0.53,0.04,36,50,no,no,no
