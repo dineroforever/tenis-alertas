@@ -84,3 +84,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-23T20:37:18+00:00,sombra,KXATPMATCH-26OCT23STRBER-STR,Jan-Lennard Struff,0.57,17,liquidacion,1.0,0.57,0.57,0.57,0.61
 2026-10-24T05:45:27+00:00,real,KXWTAMATCH-26OCT23SHIPAR-SHI,Ena Shibahara,0.43,23,valor_justo,0.35,0.4,0.4,0.4,0.4
 2026-10-24T05:45:27+00:00,sombra,KXWTAMATCH-26OCT23SHIPAR-SHI,Ena Shibahara,0.52,19,valor_justo,0.35,,,,
+2026-10-24T06:23:54+00:00,real,KXWTAMATCH-26OCT23SAMWAT-WAT,Heather Watson,0.37,27,valor_justo,0.87,0.35,0.35,0.36,0.4
