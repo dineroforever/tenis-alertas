@@ -7,7 +7,7 @@ REAL_MODO:
   real    -> envía órdenes reales
 
 Reglas autorizadas:
-  - apuesta fija REAL_APUESTA ($2.50) por operación, una sola orden por partido;
+  - apuesta = 5% del saldo real en cada operación (interés compuesto; ≈$2.50 al inicio), una orden por partido;
   - tope de pérdida diaria $7.50 (cuenta también lo que está en juego en posiciones abiertas);
   - se detiene si pierde $15 desde el máximo o acumula 8 operaciones negativas;
   - se detiene al completar 25 operaciones.
@@ -19,7 +19,8 @@ from zoneinfo import ZoneInfo
 import requests
 
 MODO = os.getenv("REAL_MODO", "off")
-APUESTA = float(os.getenv("REAL_APUESTA", "2.50"))
+PCT = float(os.getenv("REAL_PCT", "0.05"))  # interés compuesto: 5% del saldo real (≈$2.50 con $49)
+APUESTA_MIN = 1.0
 TOPE_DIA = float(os.getenv("REAL_TOPE_DIA", "7.50"))
 FRENO_DD = float(os.getenv("REAL_FRENO_DD", "15"))
 MAX_NEG = int(os.getenv("REAL_MAX_NEG", "8"))
@@ -94,6 +95,11 @@ def _orden(ticker, accion, contratos, precio):
     return _api("POST", "/portfolio/orders", cuerpo).get("order", {})
 
 
+def apuesta(s):
+    """Monto por operación: % del saldo actual (interés compuesto)."""
+    return max(APUESTA_MIN, PCT * (s or 0))
+
+
 def mercado(ticker):
     r = requests.get(f"{BASE}/markets/{ticker}", timeout=15)
     return r.json().get("market", {})
@@ -154,8 +160,8 @@ def entrada(est, mid, pos, aviso):
         r = _estado(est)
         tk, jug, ask = pos["ticker"], pos["jugador"], float(pos["ask"])
         if MODO == "ensayo":
-            n = max(1, math.floor(APUESTA / ask))
             s = saldo()
+            n = max(1, round(apuesta(s) / (ask + DESLIZ)))
             r["ensayo"][mid] = dict(ticker=tk, jugador=jug, contratos=n, ask=ask, ts=time.time())
             _log("ensayo_compra", tk, jug, n, ask, round(ask + DESLIZ, 2), round(n * ask, 2), "", s,
                  "orden NO enviada")
@@ -168,7 +174,7 @@ def entrada(est, mid, pos, aviso):
             motivo = f"bot detenido ({r['parado']})"
         elif mid in r["partidos"]:
             motivo = "ya hubo una orden en este partido"
-        elif r["pnl_dia"] - expuesto - APUESTA < -TOPE_DIA - 0.01:
+        elif r["pnl_dia"] - expuesto - apuesta(saldo()) < -TOPE_DIA - 0.01:
             motivo = f"tope de pérdida diaria (${TOPE_DIA:.2f})"
         elif ask + DESLIZ >= 1:
             motivo = "precio inválido"
@@ -176,8 +182,8 @@ def entrada(est, mid, pos, aviso):
             _log("omitida", tk, jug, "", ask, "", "", "", "", motivo)
             return
         lim = round(ask + DESLIZ, 2)
-        n = max(1, math.floor(APUESTA / lim))
         s0 = saldo()
+        n = max(1, round(apuesta(s0) / lim)) if s0 else 0
         if s0 is None or s0 < n * lim + 0.10:
             _log("omitida", tk, jug, n, ask, lim, "", "", s0, "saldo insuficiente")
             aviso(f"⚠️ Bot real: saldo insuficiente (${s0}) para comprar {jug}.")
