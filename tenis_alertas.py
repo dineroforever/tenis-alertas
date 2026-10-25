@@ -19,6 +19,7 @@ import requests
 
 from tenis_prob import prob
 import seguimiento as segui
+import kalshi_real as real  # modo dinero real (REAL_MODO: off / ensayo / real)
 
 # ───────────── Parámetros del filtro (skill PRO) ─────────────
 MIN_VOL_CONTRATOS = float(os.getenv("MIN_VOL_CONTRATOS", "300000"))  # ≈ $100K en la web de Kalshi
@@ -1230,6 +1231,7 @@ def ciclo(est):
         if x:
             senal_tg(mensaje_salida(pos, x))
             log_salida(pos, "valor_justo", x["bid"], x["neto"])
+            real.salida(est, mid, x["bid"], telegram)
             del abiertas[mid]
             n_out += 1
 
@@ -1290,6 +1292,7 @@ def ciclo(est):
         abiertas[mid] = dict(match_id=m["id"], ticker=s["ticker"], lado=s["lado"], ask=s["ask"],
                              contratos=s["contratos"], jugador=s["jugador"], rival=s["rival"],
                              ts=time.time())
+        real.entrada(est, mid, abiertas[mid], telegram)
         n_ok += 1
     print(f"{datetime.now(timezone.utc):%H:%M:%S} vivos={len(vivos)} kalshi={len(eventos)} "
           f"entradas={n_ok} salidas={n_out} abiertas={len(abiertas)} "
@@ -1310,6 +1313,7 @@ def main():
     # (/seguir manual sigue disponible si él lo pide.)
     est["seguir"] = {k: v for k, v in est.get("seguir", {}).items() if v.get("origen") != "bot"}
     fallos = 0
+    real.comprobar(telegram)
     if os.getenv("PRUEBA_SENAL") == "1":
         ej = dict(jugador="Jugador Ejemplo", rival="Rival Ejemplo", torneo="PRUEBA", superficie="Dura",
                   sets_txt="6-4 3-3", saca="Rival Ejemplo", P=0.62, p_score=0.64, Pb=0.60, ask=0.55,
@@ -1322,6 +1326,10 @@ def main():
             segui.ciclo_seguimiento(est, telegram)
         except Exception as e:
             print("Seguimiento error:", repr(e))
+        try:
+            real.mantener(est, telegram)
+        except Exception as e:
+            print("Real error:", repr(e))
         try:
             ciclo(est)
             fallos = 0
