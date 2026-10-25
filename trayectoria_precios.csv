@@ -178,3 +178,5 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-25T08:16:30+00:00,real,KXATPCHALLENGERMATCH-26OCT24LANTAK-TAK,Yusuke Takahashi,0.39,25,liquidacion,0.0,0.43,0.06,3,13,si,no,no
 2026-10-25T08:16:30+00:00,sombra,KXATPCHALLENGERMATCH-26OCT24DELSHI-DEL,Jesse Delaney,0.38,26,liquidacion,0.0,0.36,0.0,1,60,no,no,no
 2026-10-25T13:26:34+00:00,real,KXWTACHALLENGERMATCH-26OCT25MORSEN-MOR,Tayisiya Morderger,0.54,18,valor_justo,0.88,0.96,0.53,23,45,si,si,si
+2026-10-25T14:55:41+00:00,real,KXATPMATCH-26OCT25MANMOL-MOL,Alex Molčan,0.55,18,valor_justo,0.47,0.52,0.47,1,2,no,no,no
+2026-10-25T14:55:41+00:00,sombra,KXATPMATCH-26OCT25MANMOL-MOL,Alex Molčan,0.59,16,valor_justo,0.47,0.58,0.47,1,12,no,no,no
