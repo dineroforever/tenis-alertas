@@ -171,3 +171,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-24T09:07:18+00:00,real,KXWTAMATCH-26OCT23JOIGOL-JOI,Maya Joint,0.42,23,valor_justo,0.78,0.79,0.08,107,113,si,si,si
 2026-10-24T12:26:58+00:00,sombra,KXATPMATCH-26OCT24BASTSI-BAS,Nikoloz Basilashvili,0.43,23,liquidacion,1.0,0.99,0.32,25,27,si,si,si
 2026-10-24T13:17:19+00:00,real,KXWTAMATCH-26OCT23YASYOU-YOU,Xiaodi You,0.32,31,liquidacion,0.0,0.92,0.01,43,83,si,si,si
+2026-10-25T02:22:38+00:00,sombra,KXATPCHALLENGERMATCH-26OCT24KACKIM-KAC,Alibek Kachmazov,0.64,15,valor_justo,0.59,0.72,0.59,5,12,si,no,no
