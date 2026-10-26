@@ -111,3 +111,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-26T11:39:25+00:00,real,KXATPCHALLENGERMATCH-26OCT26GEEMCD-MCD,Niels McDonald,0.35,28,valor_justo,0.34,,,,
 2026-10-26T16:25:33+00:00,real,KXWTACHALLENGERMATCH-26OCT26SAKCHI-CHI,Enola Chiesa,0.49,20,valor_justo,0.92,,,,
 2026-10-26T16:26:40+00:00,sombra,KXATPMATCH-26OCT26MACDE-MAC,Tomaš Machač,0.4,25,valor_justo,0.14,0.05,0.05,0.05,
+2026-10-26T20:52:03+00:00,real,KXATPCHALLENGERMATCH-26OCT26LEGFEN-FEN,Andrew Fenty,0.45,22,valor_justo,0.18,0.39,0.39,0.39,0.39
