@@ -9,7 +9,7 @@ import time
 from .common import (SERIES, kalshi_events, kalshi_markets, load, market_side_team, parse_suffix, save,
                      strike_of, tip_time)
 
-FILE = "games.json"
+FILE = "partidos.json"
 
 
 def _bounds(constraints):
@@ -76,7 +76,10 @@ def update(max_secs=None):
     have = {g["id"] for g in db["games"]} | set(db.get("skip", []))
     sufs = lambda ser: {e["event_ticker"].split("-", 1)[1] for e in kalshi_events(ser, "settled")}
     totals = sufs(SERIES["TOTAL"])
-    new = sorted(s for s in totals - have if parse_suffix(s))
+    def regular(s):  # fuera pretemporada (septiembre y antes del 20 de octubre)
+        p = parse_suffix(s)
+        return p and not (p[0].month == 9 or (p[0].month == 10 and p[0].day < 20))
+    new = sorted(s for s in totals - have if regular(s))
     if not new:
         print(f"games: sin novedades, total {len(db['games'])}")
         return db["games"]

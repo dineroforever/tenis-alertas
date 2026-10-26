@@ -65,7 +65,7 @@ def upcoming(now):
         p = parse_suffix(suf)
         if not p or p[0] not in days:
             continue
-        ms = kalshi_markets(ev["event_ticker"])
+        ms = kalshi_markets(ev["event_ticker"], historical_ok=False)
         tip = tip_time(ms[0]) if ms else None
         if not tip:
             continue

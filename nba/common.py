@@ -150,9 +150,14 @@ def kalshi_events(series, status=None, max_pages=50):
     return out
 
 
-def kalshi_markets(event_ticker):
+def kalshi_markets(event_ticker, historical_ok=True):
+    """Mercados de un evento. Los liquidados antes del corte de Kalshi están en /historical."""
     j = get_json(f"{KALSHI}/markets", {"event_ticker": event_ticker, "limit": 200}, pause=0.05)
-    return (j or {}).get("markets", [])
+    ms = (j or {}).get("markets", [])
+    if not ms and historical_ok:
+        j = get_json(f"{KALSHI}/historical/markets", {"event_ticker": event_ticker, "limit": 200}, pause=0.05)
+        ms = (j or {}).get("markets", [])
+    return ms
 
 
 def kalshi_market(ticker):
@@ -198,17 +203,22 @@ def tip_time(m):
     return iso_to_dt(s) - timedelta(hours=3) if s else None
 
 
+def _close(d):
+    d = d or {}
+    v = d.get("close_dollars", d.get("close"))
+    return fnum(v)
+
+
 def candle_quote(series, ticker, ts):
     """Ask/bid YES de la última vela horaria cerrada antes de ts (epoch)."""
-    j = get_json(
-        f"{KALSHI}/series/{series}/markets/{ticker}/candlesticks",
-        {"start_ts": int(ts - 6 * 3600), "end_ts": int(ts), "period_interval": 60},
-        pause=0.05,
-    )
+    params = {"start_ts": int(ts - 6 * 3600), "end_ts": int(ts), "period_interval": 60}
+    j = get_json(f"{KALSHI}/series/{series}/markets/{ticker}/candlesticks", params, pause=0.05, tries=2)
     cs = (j or {}).get("candlesticks") or []
+    if not cs:
+        j = get_json(f"{KALSHI}/historical/markets/{ticker}/candlesticks", params, pause=0.05, tries=2)
+        cs = (j or {}).get("candlesticks") or []
     for c in reversed(cs):
-        ya = fnum((c.get("yes_ask") or {}).get("close_dollars"))
-        yb = fnum((c.get("yes_bid") or {}).get("close_dollars"))
+        ya, yb = _close(c.get("yes_ask")), _close(c.get("yes_bid"))
         if ya is not None and yb is not None and 0 < ya < 1:
             return ya, yb
     return None, None
