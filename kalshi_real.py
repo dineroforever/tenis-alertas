@@ -33,12 +33,38 @@ _KEY = None
 
 
 # ---------- API firmada ----------
+def _pem():
+    """Normaliza la clave privada aunque se haya pegado en una sola línea o sin encabezados."""
+    import re
+    raw = os.getenv("KALSHI_PRIVATE_KEY", "").replace("\\n", "\n").replace("\r", "").strip().strip('"')
+    m = re.search(r"-----BEGIN ([A-Z ]+)-----(.*?)-----END \1-----", raw, re.S)
+    tipo, cuerpo = (m.group(1), m.group(2)) if m else ("PRIVATE KEY", raw)
+    cuerpo = re.sub(r"\s+", "", cuerpo)
+    lineas = "\n".join(cuerpo[i:i + 64] for i in range(0, len(cuerpo), 64))
+    return f"-----BEGIN {tipo}-----\n{lineas}\n-----END {tipo}-----\n"
+
+
+def diagnostico_clave():
+    """Describe el formato del secreto SIN revelar su contenido."""
+    raw = os.getenv("KALSHI_PRIVATE_KEY", "")
+    kid = os.getenv("KALSHI_KEY_ID", "").strip()
+    return (f"clave: {len(raw)} caracteres, {raw.count(chr(10)) + 1} líneas, "
+            f"encabezado BEGIN={'sí' if '-----BEGIN' in raw else 'no'}, "
+            f"tipo={'RSA' if 'RSA PRIVATE' in raw else ('PKCS8' if 'BEGIN PRIVATE' in raw else ('PUBLICA' if 'PUBLIC' in raw else '?'))}; "
+            f"key_id: {len(kid)} caracteres")
+
+
 def _clave():
     global _KEY
     if _KEY is None:
         from cryptography.hazmat.primitives import serialization
-        pem = os.getenv("KALSHI_PRIVATE_KEY", "").replace("\\n", "\n").strip()
-        _KEY = serialization.load_pem_private_key(pem.encode(), password=None)
+        pem = _pem()
+        try:
+            _KEY = serialization.load_pem_private_key(pem.encode(), password=None)
+        except ValueError:  # sin encabezados: probar el formato RSA (PKCS#1)
+            _KEY = serialization.load_pem_private_key(
+                pem.replace("BEGIN PRIVATE KEY", "BEGIN RSA PRIVATE KEY")
+                   .replace("END PRIVATE KEY", "END RSA PRIVATE KEY").encode(), password=None)
     return _KEY
 
 
@@ -160,13 +186,17 @@ def entrada(est, mid, pos, aviso):
         r = _estado(est)
         tk, jug, ask = pos["ticker"], pos["jugador"], float(pos["ask"])
         if MODO == "ensayo":
-            s = saldo()
-            n = max(1, round(apuesta(s) / (ask + DESLIZ)))
+            try:
+                s = saldo()
+            except Exception as e:
+                s = None
+                print("Ensayo: no pude leer el saldo:", repr(e)[:120])
+            n = max(1, round(apuesta(s if s else 49.06) / (ask + DESLIZ)))
             r["ensayo"][mid] = dict(ticker=tk, jugador=jug, contratos=n, ask=ask, ts=time.time())
             _log("ensayo_compra", tk, jug, n, ask, round(ask + DESLIZ, 2), round(n * ask, 2), "", s,
                  "orden NO enviada")
             aviso(f"🧪 ENSAYO (no se envió): compraría {n} contratos de {jug} a {ask * 100:.0f}¢ "
-                  f"(${n * ask:.2f}). Saldo leído: ${s:.2f}")
+                  f"(${n * ask:.2f}). Saldo leído: {f'${s:.2f}' if s is not None else 'ERROR (clave)'}")
             return
         motivo = ""
         expuesto = sum(p["costo"] for p in r["pos"].values())
@@ -306,5 +336,5 @@ def comprobar(aviso):
         return s
     except Exception as e:
         print("Kalshi real: no pude leer el saldo:", repr(e))
-        _log("error", nota="saldo: " + repr(e)[:200])
-        aviso(f"⚠️ Bot real ({MODO}): no pude leer el saldo de Kalshi. Revisa la clave. {repr(e)[:150]}")
+        _log("error", nota="saldo: " + repr(e)[:120] + " | " + diagnostico_clave())
+        aviso(f"⚠️ Bot real ({MODO}): no pude leer el saldo de Kalshi. Revisa la clave. {repr(e)[:120]}")
