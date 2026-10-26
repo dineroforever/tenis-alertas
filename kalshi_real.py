@@ -73,9 +73,13 @@ def _api(metodo, ruta, cuerpo=None, params=None):
     from cryptography.hazmat.primitives.asymmetric import padding
     ts = str(int(time.time() * 1000))
     path = "/trade-api/v2" + ruta
-    firma = _clave().sign((ts + metodo + path).encode(),
-                          padding.PSS(mgf=padding.MGF1(hashes.SHA256()), salt_length=padding.PSS.DIGEST_LENGTH),
-                          hashes.SHA256())
+    from cryptography.hazmat.primitives.asymmetric import ed25519
+    clave, msj = _clave(), (ts + metodo + path).encode()
+    if isinstance(clave, ed25519.Ed25519PrivateKey):  # Kalshi recomienda Ed25519: firma directa del mensaje
+        firma = clave.sign(msj)
+    else:  # RSA-PSS SHA-256
+        firma = clave.sign(msj, padding.PSS(mgf=padding.MGF1(hashes.SHA256()), salt_length=padding.PSS.DIGEST_LENGTH),
+                           hashes.SHA256())
     h = {"KALSHI-ACCESS-KEY": os.getenv("KALSHI_KEY_ID", "").strip(),
          "KALSHI-ACCESS-TIMESTAMP": ts,
          "KALSHI-ACCESS-SIGNATURE": base64.b64encode(firma).decode(),
