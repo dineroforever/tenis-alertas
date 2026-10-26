@@ -351,6 +351,28 @@
     "h1_total": 111.5,
     "q1_total": 55.7
    }
+  },
+  {
+   "id": "KXNBA1HSPREAD-26OCT26ATLHOU-HOU13|NO",
+   "ticker": "KXNBA1HSPREAD-26OCT26ATLHOU-HOU13",
+   "fam": "1HSPREAD",
+   "game": "ATL @ HOU",
+   "tip": "2026-10-27T00:30:00+00:00",
+   "label": "Houston wins by over 12.5 points",
+   "side": "NO",
+   "price": 0.83,
+   "p": 0.8946,
+   "edge": 0.0546,
+   "contracts": 12,
+   "status": "abierta",
+   "opened": "2026-10-26T22:57:54.056861+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 3.6,
+    "total": 229.8,
+    "h1_total": 116.1,
+    "q1_total": 58.1
+   }
   }
  ],
  "scanned": {
@@ -359,7 +381,8 @@
   "26OCT26CHIBOS": "2026-10-26T21:56:04.645342+00:00",
   "26OCT26DALMIA": "2026-10-26T21:56:04.645342+00:00",
   "26OCT26INDMIL": "2026-10-26T22:20:32.898034+00:00",
-  "26OCT26PHXOKC": "2026-10-26T22:20:32.898034+00:00"
+  "26OCT26PHXOKC": "2026-10-26T22:20:32.898034+00:00",
+  "26OCT26ATLHOU": "2026-10-26T22:57:54.056861+00:00"
  },
  "milestones": []
 }
