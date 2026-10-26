@@ -104,3 +104,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-25T18:06:42+00:00,real,KXATPCHALLENGERMATCH-26OCT25PARFAU-PAR,Tom Paris,0.54,18,liquidacion,1.0,0.55,0.52,0.53,0.59
 2026-10-26T01:36:58+00:00,real,KXATPCHALLENGERMATCH-26OCT25BOUDOM-BOU,Justin Boulais,0.37,27,valor_justo,0.09,0.33,0.33,0.33,0.39
 2026-10-26T02:06:12+00:00,sombra,KXATPCHALLENGERMATCH-26OCT25WILCHA-WIL,Benjamin Willwerth,0.56,17,liquidacion,1.0,,,,
+2026-10-26T04:12:32+00:00,real,KXWTAMATCH-26OCT25TIMKOS-KOS,Teodora Kostović,0.41,24,valor_justo,0.16,,,,
