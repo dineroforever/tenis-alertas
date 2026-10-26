@@ -1,0 +1,34 @@
+name: NBA papel Kalshi
+on:
+  schedule:
+    - cron: "*/15 15-23 * * *"
+    - cron: "*/15 0-4 * * *"
+  workflow_dispatch:
+concurrency:
+  group: nba-data
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r nba/requirements.txt
+      - name: Bot papel
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python -m nba.bot
+      - name: Guardar datos
+        run: |
+          git config user.name "nba-bot"
+          git config user.email "nba-bot@users.noreply.github.com"
+          git add nba/data
+          git diff --cached --quiet && exit 0
+          git commit -m "nba: datos papel"
+          for i in 1 2 3; do git pull --rebase -X theirs && git push && break; sleep 5; done
