@@ -23,8 +23,10 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PYTHONUNBUFFERED: "1"
         run: python -m nba.bot
       - name: Guardar datos
+        if: always()
         run: |
           git config user.name "nba-bot"
           git config user.email "nba-bot@users.noreply.github.com"
