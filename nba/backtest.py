@@ -37,6 +37,9 @@ def run(desde, hasta, max_secs):
     todo = [g for g in games if desde <= date.fromisoformat(g["day"]) <= hasta and g["id"] not in done
             and "T" in g["tip"]]
     print(f"partidos por procesar: {len(todo)}")
+    if not todo:
+        print("backtest completo: no hay partidos nuevos; no se reenvía el informe")
+        return
     for i, g in enumerate(todo):
         if time.time() - t0 > max_secs:
             print("límite de tiempo; se guarda y se retoma en la próxima corrida")
@@ -86,11 +89,15 @@ def run(desde, hasta, max_secs):
     save("backtest.json", bt)
     pend = sum(1 for g in todo if g["id"] not in set(bt["done"]))
     rep = summarize(bt["trades"], f"🧪 NBA BACKTEST Kalshi ({desde} a {hasta}) — {len(bt['done'])} partidos"
-                                   + (f", faltan {pend} (volver a correr)" if pend else ""))
+                                   + (f", faltan {pend} (sigue solo en la próxima corrida)" if pend else ""))
     rep += f"\nPartidos sin línea implícita (sin liquidez): {bt['sin_linea']}"
     with open(os.path.join(common.DATA_DIR, "backtest_report.txt"), "w", encoding="utf-8") as f:
         f.write(rep)
-    telegram(rep)
+    if pend:
+        telegram(f"⏳ NBA backtest: {len(bt['done'])} partidos hechos, faltan {pend}. Continúa solo; "
+                 f"el informe completo llega al terminar.")
+    else:
+        telegram(rep)
     print(rep)
 
 
