@@ -19,6 +19,7 @@ KALSHI_TO_ESPN = {v: k for k, v in ESPN_TO_KALSHI.items()}
 
 SESSION = requests.Session()
 SESSION.headers["User-Agent"] = "nba-paper-bot/1.0"
+_ERRORS = {"n": 0}
 
 
 def k_abbr(espn_abbr):
@@ -38,7 +39,10 @@ def get_json(url, params=None, tries=4, pause=0.0):
             if pause:
                 time.sleep(pause)
             return r.json()
-        except (requests.RequestException, ValueError):
+        except (requests.RequestException, ValueError) as e:
+            if _ERRORS["n"] < 15:
+                _ERRORS["n"] += 1
+                print(f"[http] fallo {url} {params} -> {e}")
             time.sleep(1 + 2 * i)
     return None
 
