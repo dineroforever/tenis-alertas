@@ -1,0 +1,3 @@
+fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero_usd,pnl_usd,saldo_usd,nota
+2026-10-25T23:46:43+00:00,ensayo,error,,,,,,,,,"saldo: ValueError('Could not deserialize key data. The data may be in an incorrect format, the provided password may be incorrect, it may be encrypted with an unsupported algorithm, or it may be an unsupport"
+2026-10-26T00:10:10+00:00,ensayo,error,KXATPCHALLENGERMATCH-26OCT25BOUDOM-BOU,Justin Boulais,,,,,,,"ValueError('Could not deserialize key data. The data may be in an incorrect format, the provided password may be incorrect, it may be encrypted with an unsupported algorithm, or it may be an unsupport"
