@@ -65,11 +65,211 @@
     "h1_total": 116.6,
     "q1_total": 58.3
    }
+  },
+  {
+   "id": "KXNBASPREAD-26OCT26CHIBOS-BOS24|NO",
+   "ticker": "KXNBASPREAD-26OCT26CHIBOS-BOS24",
+   "fam": "SPREAD",
+   "game": "CHI @ BOS",
+   "tip": "2026-10-26T23:30:00+00:00",
+   "label": "Boston wins by over 23.5 points",
+   "side": "NO",
+   "price": 0.75,
+   "p": 0.8129,
+   "edge": 0.0429,
+   "contracts": 13,
+   "status": "abierta",
+   "opened": "2026-10-26T21:56:04.645342+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 12.8,
+    "total": 231.9,
+    "h1_total": 117.2,
+    "q1_total": 58.6
+   }
+  },
+  {
+   "id": "KXNBA1HSPREAD-26OCT26CHIBOS-BOS13|NO",
+   "ticker": "KXNBA1HSPREAD-26OCT26CHIBOS-BOS13",
+   "fam": "1HSPREAD",
+   "game": "CHI @ BOS",
+   "tip": "2026-10-26T23:30:00+00:00",
+   "label": "Boston wins by over 12.5 points",
+   "side": "NO",
+   "price": 0.65,
+   "p": 0.7534,
+   "edge": 0.0834,
+   "contracts": 15,
+   "status": "abierta",
+   "opened": "2026-10-26T21:56:04.645342+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 12.8,
+    "total": 231.9,
+    "h1_total": 117.2,
+    "q1_total": 58.6
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26OCT26CHIBOS-116|SI",
+   "ticker": "KXNBA1HTOTAL-26OCT26CHIBOS-116",
+   "fam": "1HTOTAL",
+   "game": "CHI @ BOS",
+   "tip": "2026-10-26T23:30:00+00:00",
+   "label": "Over 115.5 points",
+   "side": "SI",
+   "price": 0.44,
+   "p": 0.5549,
+   "edge": 0.0949,
+   "contracts": 22,
+   "status": "abierta",
+   "opened": "2026-10-26T21:56:04.645342+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 12.8,
+    "total": 231.9,
+    "h1_total": 117.2,
+    "q1_total": 58.6
+   }
+  },
+  {
+   "id": "KXNBA1QSPREAD-26OCT26CHIBOS-BOS11|NO",
+   "ticker": "KXNBA1QSPREAD-26OCT26CHIBOS-BOS11",
+   "fam": "1QSPREAD",
+   "game": "CHI @ BOS",
+   "tip": "2026-10-26T23:30:00+00:00",
+   "label": "Boston wins by over 10.5 points",
+   "side": "NO",
+   "price": 0.78,
+   "p": 0.8604,
+   "edge": 0.0604,
+   "contracts": 12,
+   "status": "abierta",
+   "opened": "2026-10-26T21:56:04.645342+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 12.8,
+    "total": 231.9,
+    "h1_total": 117.2,
+    "q1_total": 58.6
+   }
+  },
+  {
+   "id": "KXNBASPREAD-26OCT26DALMIA-MIA5|NO",
+   "ticker": "KXNBASPREAD-26OCT26DALMIA-MIA5",
+   "fam": "SPREAD",
+   "game": "DAL @ MIA",
+   "tip": "2026-10-26T23:30:00+00:00",
+   "label": "Miami wins by over 4.5 points",
+   "side": "NO",
+   "price": 0.39,
+   "p": 0.4648,
+   "edge": 0.0548,
+   "contracts": 25,
+   "status": "abierta",
+   "opened": "2026-10-26T21:56:04.645342+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 5.6,
+    "total": 239.2,
+    "h1_total": 120.8,
+    "q1_total": 60.4
+   }
+  },
+  {
+   "id": "KXNBATEAMTOTAL-26OCT26DALMIA-MIA129|NO",
+   "ticker": "KXNBATEAMTOTAL-26OCT26DALMIA-MIA129",
+   "fam": "TEAMTOTAL",
+   "game": "DAL @ MIA",
+   "tip": "2026-10-26T23:30:00+00:00",
+   "label": "Miami over 128.5 points",
+   "side": "NO",
+   "price": 0.63,
+   "p": 0.7028,
+   "edge": 0.0528,
+   "contracts": 15,
+   "status": "abierta",
+   "opened": "2026-10-26T21:56:04.645342+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 5.6,
+    "total": 239.2,
+    "h1_total": 120.8,
+    "q1_total": 60.4
+   }
+  },
+  {
+   "id": "KXNBA1HSPREAD-26OCT26DALMIA-MIA9|NO",
+   "ticker": "KXNBA1HSPREAD-26OCT26DALMIA-MIA9",
+   "fam": "1HSPREAD",
+   "game": "DAL @ MIA",
+   "tip": "2026-10-26T23:30:00+00:00",
+   "label": "Miami wins by over 8.5 points",
+   "side": "NO",
+   "price": 0.67,
+   "p": 0.7453,
+   "edge": 0.0553,
+   "contracts": 14,
+   "status": "abierta",
+   "opened": "2026-10-26T21:56:04.645342+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 5.6,
+    "total": 239.2,
+    "h1_total": 120.8,
+    "q1_total": 60.4
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26OCT26DALMIA-124|NO",
+   "ticker": "KXNBA1HTOTAL-26OCT26DALMIA-124",
+   "fam": "1HTOTAL",
+   "game": "DAL @ MIA",
+   "tip": "2026-10-26T23:30:00+00:00",
+   "label": "Over 123.5 points",
+   "side": "NO",
+   "price": 0.51,
+   "p": 0.5876,
+   "edge": 0.0576,
+   "contracts": 19,
+   "status": "abierta",
+   "opened": "2026-10-26T21:56:04.645342+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 5.6,
+    "total": 239.2,
+    "h1_total": 120.8,
+    "q1_total": 60.4
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26OCT26DALMIA-64|NO",
+   "ticker": "KXNBA1QTOTAL-26OCT26DALMIA-64",
+   "fam": "1QTOTAL",
+   "game": "DAL @ MIA",
+   "tip": "2026-10-26T23:30:00+00:00",
+   "label": "Over 63.5 points",
+   "side": "NO",
+   "price": 0.56,
+   "p": 0.6491,
+   "edge": 0.0691,
+   "contracts": 17,
+   "status": "abierta",
+   "opened": "2026-10-26T21:56:04.645342+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 5.6,
+    "total": 239.2,
+    "h1_total": 120.8,
+    "q1_total": 60.4
+   }
   }
  ],
  "scanned": {
   "26OCT26MINCLE": "2026-10-26T21:24:27.039368+00:00",
-  "26OCT26WASCHA": "2026-10-26T21:24:27.039368+00:00"
+  "26OCT26WASCHA": "2026-10-26T21:24:27.039368+00:00",
+  "26OCT26CHIBOS": "2026-10-26T21:56:04.645342+00:00",
+  "26OCT26DALMIA": "2026-10-26T21:56:04.645342+00:00"
  },
  "milestones": []
 }
