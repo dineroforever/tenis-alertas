@@ -6,3 +6,4 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-10-26T01:47:57+00:00,ensayo,error,,,,,,,,,"saldo: TypeError('Ed25519PrivateKey.sign() takes 1 positional arguments but 3 were given') | clave: 119 caracteres, 4 líneas, encabezado BEGIN=sí, tipo=PKCS8; key_id: 36 caracteres"
 2026-10-26T03:26:44+00:00,ensayo,ensayo_compra,KXWTAMATCH-26OCT25TIMKOS-KOS,Teodora Kostović,6,0.41,0.42,2.46,,49.06,orden NO enviada
 2026-10-26T04:12:32+00:00,ensayo,ensayo_venta,KXWTAMATCH-26OCT25TIMKOS-KOS,Teodora Kostović,6,0.16,0.15,0.96,-1.5,,orden NO enviada
+2026-10-26T07:07:11+00:00,ensayo,ensayo_compra,KXATPCHALLENGERMATCH-26OCT25BINHUR-HUR,Millen Hurrion,5,0.52,0.53,2.6,,49.06,orden NO enviada
