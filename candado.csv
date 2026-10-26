@@ -108,3 +108,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-26T07:56:31+00:00,real,KXATPCHALLENGERMATCH-26OCT25BINHUR-HUR,Millen Hurrion,0.52,19,liquidacion,0.0,,,,
 2026-10-26T07:56:31+00:00,sombra,KXATPCHALLENGERMATCH-26OCT25BINHUR-HUR,Millen Hurrion,0.49,20,liquidacion,0.0,0.51,0.09,0.51,0.53
 2026-10-26T09:57:38+00:00,sombra,KXWTAMATCH-26OCT26BADLEE-BAD,Paula Badosa,0.6,16,valor_justo,0.98,,,,
+2026-10-26T11:39:25+00:00,real,KXATPCHALLENGERMATCH-26OCT26GEEMCD-MCD,Niels McDonald,0.35,28,valor_justo,0.34,,,,
