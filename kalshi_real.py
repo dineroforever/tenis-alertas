@@ -24,6 +24,7 @@ APUESTA_MIN = 1.0
 TOPE_DIA = float(os.getenv("REAL_TOPE_DIA", "7.50"))
 FRENO_DD = float(os.getenv("REAL_FRENO_DD", "15"))
 MAX_NEG = int(os.getenv("REAL_MAX_NEG", "8"))
+VOL_MIN = float(os.getenv("REAL_VOL_MIN", "300000"))  # real solo en partidos con ≥$300k de volumen (decisión de Roberto 26-oct)
 META_OPS = int(os.getenv("REAL_META_OPS", "25"))
 DESLIZ = 0.01  # se acepta pagar hasta 1¢ más que el ask del paper (o vender 1¢ bajo el bid)
 BASE = "https://api.elections.kalshi.com/trade-api/v2"
@@ -182,13 +183,16 @@ def _cerrar(r, mid, g, aviso, texto):
 
 
 # ---------- ganchos llamados desde tenis_alertas.py ----------
-def entrada(est, mid, pos, aviso):
+def entrada(est, mid, pos, aviso, vol=None):
     """Se llama cuando el paper abre una operación (no sombra)."""
     if MODO not in ("ensayo", "real"):
         return
     try:
         r = _estado(est)
         tk, jug, ask = pos["ticker"], pos["jugador"], float(pos["ask"])
+        if vol is not None and float(vol) < VOL_MIN:
+            _log("omitida", tk, jug, "", ask, "", "", "", "", f"volumen ${float(vol):,.0f} < ${VOL_MIN:,.0f} (solo paper)")
+            return
         if MODO == "ensayo":
             try:
                 s = saldo()

@@ -1292,7 +1292,7 @@ def ciclo(est):
         abiertas[mid] = dict(match_id=m["id"], ticker=s["ticker"], lado=s["lado"], ask=s["ask"],
                              contratos=s["contratos"], jugador=s["jugador"], rival=s["rival"],
                              ts=time.time())
-        real.entrada(est, mid, abiertas[mid], telegram)
+        real.entrada(est, mid, abiertas[mid], telegram, vol=s.get("vol"))
         n_ok += 1
     print(f"{datetime.now(timezone.utc):%H:%M:%S} vivos={len(vivos)} kalshi={len(eventos)} "
           f"entradas={n_ok} salidas={n_out} abiertas={len(abiertas)} "
