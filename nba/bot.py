@@ -138,7 +138,7 @@ def scan(db, games):
 
 def main():
     db = load("paper.json", {"trades": [], "scanned": {}, "milestones": []})
-    games = G.update()
+    games = G.update(max_secs=900)
     msgs = resolve(db)
     if msgs:
         telegram("🏀 NBA PAPEL — resultados\n" + "\n".join(msgs))

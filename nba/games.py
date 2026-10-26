@@ -28,14 +28,17 @@ def _record(ev):
     }
 
 
-def update(max_days=400):
+def update(max_days=400, max_secs=None):
+    import time
+    t0 = time.time()
     db = load(FILE, {"last_day": None, "games": []})
     have = {g["id"] for g in db["games"]}
     start = date.fromisoformat(db["last_day"]) - timedelta(days=1) if db["last_day"] else FIRST_DAY
     end = et_date(now_utc()) - timedelta(days=1)
     n_new = 0
     for i, d in enumerate(daterange(start, end)):
-        if i >= max_days:
+        if i >= max_days or (max_secs and time.time() - t0 > max_secs):
+            print("límite de tiempo en la carga de partidos; se continúa en la próxima corrida")
             break
         for ev in espn_scoreboard(d):
             if ev["id"] in have:
