@@ -1,3 +1,14 @@
-🧪 NBA BACKTEST Kalshi (2025-11-10 a 2026-06-30) — 0 partidos
-Sin operaciones cerradas.
-Partidos sin línea implícita (sin liquidez): 0
+🧪 NBA BACKTEST Kalshi (2025-11-10 a 2026-06-30) — 992 partidos, faltan 183 (volver a correr)
+🔴 TOTAL: 586 ops | aciertos 254 (43%, esperado 53%) | P&L -382.49$ | ROI -6.7%
+
+🔴 Hándicap: 335 ops | aciertos 151 (45%, esperado 53%) | P&L -90.97$ | ROI -2.8%
+🔴 Total 1H: 112 ops | aciertos 55 (49%, esperado 62%) | P&L -59.39$ | ROI -5.4%
+🔴 Ganador: 71 ops | aciertos 20 (28%, esperado 40%) | P&L -136.37$ | ROI -19.5%
+🔴 Total partido: 31 ops | aciertos 12 (39%, esperado 47%) | P&L -33.39$ | ROI -11.0%
+🔴 Hándicap 1H: 24 ops | aciertos 10 (42%, esperado 60%) | P&L -41.21$ | ROI -17.7%
+🔴 Total equipo: 13 ops | aciertos 6 (46%, esperado 60%) | P&L -21.16$ | ROI -16.6%
+
+🔴 Edge 4-6: 285 ops | aciertos 115 (40%, esperado 50%) | P&L -354.06$ | ROI -12.7%
+🔴 Edge 6-9: 184 ops | aciertos 84 (46%, esperado 53%) | P&L -15.80$ | ROI -0.9%
+🔴 Edge 9-15: 117 ops | aciertos 55 (47%, esperado 59%) | P&L -12.63$ | ROI -1.1%
+Partidos sin línea implícita (sin liquidez): 62
