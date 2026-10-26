@@ -1,5 +1,75 @@
 {
- "trades": [],
- "scanned": {},
+ "trades": [
+  {
+   "id": "KXNBASPREAD-26OCT26MINCLE-CLE4|NO",
+   "ticker": "KXNBASPREAD-26OCT26MINCLE-CLE4",
+   "fam": "SPREAD",
+   "game": "MIN @ CLE",
+   "tip": "2026-10-26T23:00:00+00:00",
+   "label": "Cleveland wins by over 3.5 points",
+   "side": "NO",
+   "price": 0.47,
+   "p": 0.5498,
+   "edge": 0.0598,
+   "contracts": 21,
+   "status": "abierta",
+   "opened": "2026-10-26T21:24:27.039368+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 2.0,
+    "total": 230.7,
+    "h1_total": 116.6,
+    "q1_total": 58.3
+   }
+  },
+  {
+   "id": "KXNBA1HSPREAD-26OCT26MINCLE-CLE8|NO",
+   "ticker": "KXNBA1HSPREAD-26OCT26MINCLE-CLE8",
+   "fam": "1HSPREAD",
+   "game": "MIN @ CLE",
+   "tip": "2026-10-26T23:00:00+00:00",
+   "label": "Cleveland wins by over 7.5 points",
+   "side": "NO",
+   "price": 0.7,
+   "p": 0.7764,
+   "edge": 0.0564,
+   "contracts": 14,
+   "status": "abierta",
+   "opened": "2026-10-26T21:24:27.039368+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 2.0,
+    "total": 230.7,
+    "h1_total": 116.6,
+    "q1_total": 58.3
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26OCT26MINCLE-114|SI",
+   "ticker": "KXNBA1HTOTAL-26OCT26MINCLE-114",
+   "fam": "1HTOTAL",
+   "game": "MIN @ CLE",
+   "tip": "2026-10-26T23:00:00+00:00",
+   "label": "Over 113.5 points",
+   "side": "SI",
+   "price": 0.49,
+   "p": 0.6007,
+   "edge": 0.0907,
+   "contracts": 20,
+   "status": "abierta",
+   "opened": "2026-10-26T21:24:27.039368+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 2.0,
+    "total": 230.7,
+    "h1_total": 116.6,
+    "q1_total": 58.3
+   }
+  }
+ ],
+ "scanned": {
+  "26OCT26MINCLE": "2026-10-26T21:24:27.039368+00:00",
+  "26OCT26WASCHA": "2026-10-26T21:24:27.039368+00:00"
+ },
  "milestones": []
 }
