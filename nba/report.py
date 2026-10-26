@@ -30,10 +30,10 @@ def summarize(trades, title):
         lines.append(row(FAM_ES.get(fam, fam), by[fam]))
     # por tramo de edge
     lines.append("")
-    for lo, hi in ((0.04, 0.06), (0.06, 0.09), (0.09, 1)):
+    for lo, hi in ((0.04, 0.06), (0.06, 0.09), (0.09, 0.151)):
         ts = [t for t in closed if lo <= t["edge"] < hi]
         if ts:
-            lines.append(row(f"Edge {lo*100:.0f}-{min(hi,0.99)*100:.0f}", ts))
+            lines.append(row(f"Edge {lo*100:.0f}-{hi*100:.0f}", ts))
     return "\n".join(lines)
 
 
