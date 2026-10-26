@@ -186,3 +186,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-26T04:12:32+00:00,real,KXWTAMATCH-26OCT25TIMKOS-KOS,Teodora Kostović,0.41,24,valor_justo,0.16,0.4,0.08,1,46,no,no,no
 2026-10-26T07:56:31+00:00,real,KXATPCHALLENGERMATCH-26OCT25BINHUR-HUR,Millen Hurrion,0.52,19,liquidacion,0.0,0.5,0.02,1,49,no,no,no
 2026-10-26T07:56:31+00:00,sombra,KXATPCHALLENGERMATCH-26OCT25BINHUR-HUR,Millen Hurrion,0.49,20,liquidacion,0.0,0.59,0.02,10,64,si,si,no
+2026-10-26T09:57:38+00:00,sombra,KXWTAMATCH-26OCT26BADLEE-BAD,Paula Badosa,0.6,16,valor_justo,0.98,0.98,0.53,14,14,si,si,si
