@@ -192,3 +192,5 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-26T16:26:40+00:00,sombra,KXATPMATCH-26OCT26MACDE-MAC,Tomaš Machač,0.4,25,valor_justo,0.14,0.46,0.04,5,37,si,no,no
 2026-10-26T20:52:03+00:00,real,KXATPCHALLENGERMATCH-26OCT26LEGFEN-FEN,Andrew Fenty,0.45,22,valor_justo,0.18,0.84,0.17,16,42,si,si,si
 2026-10-26T21:59:15+00:00,real,KXWTACHALLENGERMATCH-26OCT26GIOBRO-GIO,Luisina Giovannini,0.23,43,valor_justo,0.97,0.97,0.13,36,36,si,si,si
+2026-10-27T05:13:22+00:00,real,KXATPCHALLENGERMATCH-26OCT26HSUSMI-SMI,Keegan Smith,0.51,19,valor_justo,0.42,0.57,0.42,1,5,si,no,no
+2026-10-27T05:21:01+00:00,sombra,KXATPCHALLENGERMATCH-26OCT26HSUSMI-SMI,Keegan Smith,0.51,19,valor_justo,0.42,0.53,0.42,2,4,no,no,no

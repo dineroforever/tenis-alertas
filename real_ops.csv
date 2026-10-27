@@ -15,3 +15,5 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-10-26T20:09:38+00:00,ensayo,omitida,KXATPCHALLENGERMATCH-26OCT26LEGFEN-FEN,Andrew Fenty,,0.45,,,,,"volumen $203,521 < $300,000 (solo paper)"
 2026-10-26T21:23:40+00:00,ensayo,ensayo_compra,KXWTACHALLENGERMATCH-26OCT26GIOBRO-GIO,Luisina Giovannini,10,0.23,0.24,2.3,,49.06,orden NO enviada
 2026-10-26T21:59:15+00:00,ensayo,ensayo_venta,KXWTACHALLENGERMATCH-26OCT26GIOBRO-GIO,Luisina Giovannini,10,0.97,0.96,9.7,7.4,,orden NO enviada
+2026-10-27T05:08:48+00:00,ensayo,ensayo_compra,KXATPCHALLENGERMATCH-26OCT26HSUSMI-SMI,Keegan Smith,5,0.51,0.52,2.55,,49.06,orden NO enviada
+2026-10-27T05:13:22+00:00,ensayo,ensayo_venta,KXATPCHALLENGERMATCH-26OCT26HSUSMI-SMI,Keegan Smith,5,0.42,0.41,2.1,-0.45,,orden NO enviada
