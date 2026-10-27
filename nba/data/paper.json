@@ -455,6 +455,50 @@
    },
    "pnl": 5.81,
    "won": true
+  },
+  {
+   "id": "KXNBA1HSPREAD-26OCT27BKNBOS-BOS19|NO",
+   "ticker": "KXNBA1HSPREAD-26OCT27BKNBOS-BOS19",
+   "fam": "1HSPREAD",
+   "game": "BKN @ BOS",
+   "tip": "2026-10-27T23:30:00+00:00",
+   "label": "Boston wins by over 18.5 points",
+   "side": "NO",
+   "price": 0.85,
+   "p": 0.9214,
+   "edge": 0.0614,
+   "contracts": 11,
+   "status": "abierta",
+   "opened": "2026-10-27T21:56:59.326917+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 12.5,
+    "total": 223.4,
+    "h1_total": 112.8,
+    "q1_total": 56.1
+   }
+  },
+  {
+   "id": "KXNBA1QSPREAD-26OCT27BKNBOS-BOS8|NO",
+   "ticker": "KXNBA1QSPREAD-26OCT27BKNBOS-BOS8",
+   "fam": "1QSPREAD",
+   "game": "BKN @ BOS",
+   "tip": "2026-10-27T23:30:00+00:00",
+   "label": "Boston wins by over 7.5 points",
+   "side": "NO",
+   "price": 0.66,
+   "p": 0.7378,
+   "edge": 0.0578,
+   "contracts": 15,
+   "status": "abierta",
+   "opened": "2026-10-27T21:56:59.326917+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 12.5,
+    "total": 223.4,
+    "h1_total": 112.8,
+    "q1_total": 56.1
+   }
   }
  ],
  "scanned": {
@@ -466,7 +510,8 @@
   "26OCT26PHXOKC": "2026-10-26T22:20:32.898034+00:00",
   "26OCT26ATLHOU": "2026-10-26T22:57:54.056861+00:00",
   "26OCT26MEMUTA": "2026-10-26T23:52:33.651963+00:00",
-  "26OCT26GSWDEN": "2026-10-27T00:25:46.745243+00:00"
+  "26OCT26GSWDEN": "2026-10-27T00:25:46.745243+00:00",
+  "26OCT27BKNBOS": "2026-10-27T21:56:59.326917+00:00"
  },
  "milestones": []
 }
