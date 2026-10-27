@@ -144,7 +144,7 @@
    "p": 0.8604,
    "edge": 0.0604,
    "contracts": 12,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-26T21:56:04.645342+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -152,7 +152,9 @@
     "total": 231.9,
     "h1_total": 117.2,
     "q1_total": 58.6
-   }
+   },
+   "pnl": -9.51,
+   "won": false
   },
   {
    "id": "KXNBASPREAD-26OCT26DALMIA-MIA5|NO",
@@ -373,6 +375,50 @@
     "h1_total": 116.1,
     "q1_total": 58.1
    }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26OCT26GSWDEN-116|SI",
+   "ticker": "KXNBA1HTOTAL-26OCT26GSWDEN-116",
+   "fam": "1HTOTAL",
+   "game": "GSW @ DEN",
+   "tip": "2026-10-27T02:00:00+00:00",
+   "label": "Over 115.5 points",
+   "side": "SI",
+   "price": 0.48,
+   "p": 0.6132,
+   "edge": 0.1132,
+   "contracts": 20,
+   "status": "abierta",
+   "opened": "2026-10-27T00:25:46.745243+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 6.8,
+    "total": 235.4,
+    "h1_total": 119.0,
+    "q1_total": 59.5
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26OCT26GSWDEN-56|SI",
+   "ticker": "KXNBA1QTOTAL-26OCT26GSWDEN-56",
+   "fam": "1QTOTAL",
+   "game": "GSW @ DEN",
+   "tip": "2026-10-27T02:00:00+00:00",
+   "label": "Over 55.5 points",
+   "side": "SI",
+   "price": 0.62,
+   "p": 0.6911,
+   "edge": 0.0511,
+   "contracts": 16,
+   "status": "abierta",
+   "opened": "2026-10-27T00:25:46.745243+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 6.8,
+    "total": 235.4,
+    "h1_total": 119.0,
+    "q1_total": 59.5
+   }
   }
  ],
  "scanned": {
@@ -383,7 +429,8 @@
   "26OCT26INDMIL": "2026-10-26T22:20:32.898034+00:00",
   "26OCT26PHXOKC": "2026-10-26T22:20:32.898034+00:00",
   "26OCT26ATLHOU": "2026-10-26T22:57:54.056861+00:00",
-  "26OCT26MEMUTA": "2026-10-26T23:52:33.651963+00:00"
+  "26OCT26MEMUTA": "2026-10-26T23:52:33.651963+00:00",
+  "26OCT26GSWDEN": "2026-10-27T00:25:46.745243+00:00"
  },
  "milestones": []
 }
