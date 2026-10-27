@@ -499,6 +499,160 @@
     "h1_total": 112.8,
     "q1_total": 56.1
    }
+  },
+  {
+   "id": "KXNBASPREAD-26OCT27DETNYK-NYK4|NO",
+   "ticker": "KXNBASPREAD-26OCT27DETNYK-NYK4",
+   "fam": "SPREAD",
+   "game": "DET @ NYK",
+   "tip": "2026-10-28T00:00:00+00:00",
+   "label": "New York wins by over 3.5 points",
+   "side": "NO",
+   "price": 0.48,
+   "p": 0.5631,
+   "edge": 0.0631,
+   "contracts": 20,
+   "status": "abierta",
+   "opened": "2026-10-27T22:25:21.137884+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 1.6,
+    "total": 219.4,
+    "h1_total": 110.8,
+    "q1_total": 55.1
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26OCT27DETNYK-57|NO",
+   "ticker": "KXNBA1QTOTAL-26OCT27DETNYK-57",
+   "fam": "1QTOTAL",
+   "game": "DET @ NYK",
+   "tip": "2026-10-28T00:00:00+00:00",
+   "label": "Over 56.5 points",
+   "side": "NO",
+   "price": 0.49,
+   "p": 0.5679,
+   "edge": 0.0579,
+   "contracts": 20,
+   "status": "abierta",
+   "opened": "2026-10-27T22:25:21.137884+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 1.6,
+    "total": 219.4,
+    "h1_total": 110.8,
+    "q1_total": 55.1
+   }
+  },
+  {
+   "id": "KXNBASPREAD-26OCT27SACSAS-SAS29|NO",
+   "ticker": "KXNBASPREAD-26OCT27SACSAS-SAS29",
+   "fam": "SPREAD",
+   "game": "SAC @ SAS",
+   "tip": "2026-10-28T00:00:00+00:00",
+   "label": "San Antonio wins by over 28.5 points",
+   "side": "NO",
+   "price": 0.76,
+   "p": 0.8399,
+   "edge": 0.0599,
+   "contracts": 13,
+   "status": "abierta",
+   "opened": "2026-10-27T22:25:21.137884+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 16.6,
+    "total": 231.1,
+    "h1_total": 116.7,
+    "q1_total": 58.1
+   }
+  },
+  {
+   "id": "KXNBA1HSPREAD-26OCT27SACSAS-SAS11|NO",
+   "ticker": "KXNBA1HSPREAD-26OCT27SACSAS-SAS11",
+   "fam": "1HSPREAD",
+   "game": "SAC @ SAS",
+   "tip": "2026-10-28T00:00:00+00:00",
+   "label": "San Antonio wins by over 10.5 points",
+   "side": "NO",
+   "price": 0.47,
+   "p": 0.5876,
+   "edge": 0.0976,
+   "contracts": 21,
+   "status": "abierta",
+   "opened": "2026-10-27T22:25:21.137884+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 16.6,
+    "total": 231.1,
+    "h1_total": 116.7,
+    "q1_total": 58.1
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26OCT27SACSAS-119|NO",
+   "ticker": "KXNBA1HTOTAL-26OCT27SACSAS-119",
+   "fam": "1HTOTAL",
+   "game": "SAC @ SAS",
+   "tip": "2026-10-28T00:00:00+00:00",
+   "label": "Over 118.5 points",
+   "side": "NO",
+   "price": 0.44,
+   "p": 0.5599,
+   "edge": 0.0999,
+   "contracts": 22,
+   "status": "abierta",
+   "opened": "2026-10-27T22:25:21.137884+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 16.6,
+    "total": 231.1,
+    "h1_total": 116.7,
+    "q1_total": 58.1
+   }
+  },
+  {
+   "id": "KXNBA1QSPREAD-26OCT27SACSAS-SAS7|NO",
+   "ticker": "KXNBA1QSPREAD-26OCT27SACSAS-SAS7",
+   "fam": "1QSPREAD",
+   "game": "SAC @ SAS",
+   "tip": "2026-10-28T00:00:00+00:00",
+   "label": "San Antonio wins by over 6.5 points",
+   "side": "NO",
+   "price": 0.52,
+   "p": 0.6223,
+   "edge": 0.0823,
+   "contracts": 19,
+   "status": "abierta",
+   "opened": "2026-10-27T22:25:21.137884+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 16.6,
+    "total": 231.1,
+    "h1_total": 116.7,
+    "q1_total": 58.1
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26OCT27SACSAS-60|NO",
+   "ticker": "KXNBA1QTOTAL-26OCT27SACSAS-60",
+   "fam": "1QTOTAL",
+   "game": "SAC @ SAS",
+   "tip": "2026-10-28T00:00:00+00:00",
+   "label": "Over 59.5 points",
+   "side": "NO",
+   "price": 0.45,
+   "p": 0.5713,
+   "edge": 0.1013,
+   "contracts": 22,
+   "status": "abierta",
+   "opened": "2026-10-27T22:25:21.137884+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 16.6,
+    "total": 231.1,
+    "h1_total": 116.7,
+    "q1_total": 58.1
+   }
   }
  ],
  "scanned": {
@@ -511,7 +665,9 @@
   "26OCT26ATLHOU": "2026-10-26T22:57:54.056861+00:00",
   "26OCT26MEMUTA": "2026-10-26T23:52:33.651963+00:00",
   "26OCT26GSWDEN": "2026-10-27T00:25:46.745243+00:00",
-  "26OCT27BKNBOS": "2026-10-27T21:56:59.326917+00:00"
+  "26OCT27BKNBOS": "2026-10-27T21:56:59.326917+00:00",
+  "26OCT27DETNYK": "2026-10-27T22:25:21.137884+00:00",
+  "26OCT27SACSAS": "2026-10-27T22:25:21.137884+00:00"
  },
  "milestones": []
 }
