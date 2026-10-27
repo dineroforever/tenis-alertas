@@ -122,3 +122,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-27T10:32:41+00:00,real,KXWTAMATCH-26OCT25RUZLIU-RUZ,Antonia Ružić,0.3,33,liquidacion,0.0,0.3,0.3,0.3,0.3
 2026-10-27T11:59:53+00:00,real,KXATPCHALLENGERMATCH-26OCT27MCCMOR-MOR,Hiroki Moriya,0.31,32,valor_justo,0.93,0.29,0.29,0.29,0.34
 2026-10-27T13:53:41+00:00,real,KXATPCHALLENGERMATCH-26OCT27HONPEL-HON,Naoya Honda,0.45,22,valor_justo,0.74,,,,
+2026-10-27T14:38:07+00:00,sombra,KXATPCHALLENGERMATCH-26OCT27HONPEL-HON,Naoya Honda,0.47,21,liquidacion,1.0,0.44,0.44,0.44,0.39
