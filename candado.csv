@@ -120,3 +120,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-27T05:43:07+00:00,real,KXWTAMATCH-26OCT25QUEKEN-KEN,Sofia Kenin,0.27,37,valor_justo,0.52,0.16,0.16,0.16,0.29
 2026-10-27T06:51:48+00:00,real,KXATPCHALLENGERMATCH-26OCT27DELBIN-DEL,Jake Delaney,0.48,20,valor_justo,0.79,,,,0.52
 2026-10-27T10:32:41+00:00,real,KXWTAMATCH-26OCT25RUZLIU-RUZ,Antonia Ružić,0.3,33,liquidacion,0.0,0.3,0.3,0.3,0.3
+2026-10-27T11:59:53+00:00,real,KXATPCHALLENGERMATCH-26OCT27MCCMOR-MOR,Hiroki Moriya,0.31,32,valor_justo,0.93,0.29,0.29,0.29,0.34
