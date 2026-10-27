@@ -180,7 +180,7 @@
    "p": 0.4648,
    "edge": 0.0548,
    "contracts": 25,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-26T21:56:04.645342+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -188,7 +188,9 @@
     "total": 239.2,
     "h1_total": 120.8,
     "q1_total": 60.4
-   }
+   },
+   "pnl": 14.83,
+   "won": true
   },
   {
    "id": "KXNBATEAMTOTAL-26OCT26DALMIA-MIA129|NO",
@@ -202,7 +204,7 @@
    "p": 0.7028,
    "edge": 0.0528,
    "contracts": 15,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-26T21:56:04.645342+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -210,7 +212,9 @@
     "total": 239.2,
     "h1_total": 120.8,
     "q1_total": 60.4
-   }
+   },
+   "pnl": 5.3,
+   "won": true
   },
   {
    "id": "KXNBA1HSPREAD-26OCT26DALMIA-MIA9|NO",
@@ -296,7 +300,7 @@
    "p": 0.5617,
    "edge": 0.0517,
    "contracts": 20,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-26T22:20:32.898034+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -304,7 +308,9 @@
     "total": 238.2,
     "h1_total": 120.3,
     "q1_total": 60.2
-   }
+   },
+   "pnl": 9.85,
+   "won": true
   },
   {
    "id": "KXNBA1HTOTAL-26OCT26INDMIL-119|SI",
