@@ -118,3 +118,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-27T05:37:00+00:00,sombra,KXWTAMATCH-26OCT26PUTSAK-PUT,Yulia Putintseva,0.56,17,valor_justo,0.94,,,,
 2026-10-27T05:37:38+00:00,sombra,KXATPCHALLENGERMATCH-26OCT27ATMMAT-ATM,Terence Atmane,0.56,17,valor_justo,0.47,0.54,0.54,0.54,0.54
 2026-10-27T05:43:07+00:00,real,KXWTAMATCH-26OCT25QUEKEN-KEN,Sofia Kenin,0.27,37,valor_justo,0.52,0.16,0.16,0.16,0.29
+2026-10-27T06:51:48+00:00,real,KXATPCHALLENGERMATCH-26OCT27DELBIN-DEL,Jake Delaney,0.48,20,valor_justo,0.79,,,,0.52
