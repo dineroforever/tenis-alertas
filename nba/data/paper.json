@@ -671,6 +671,182 @@
    },
    "pnl": -10.29,
    "won": false
+  },
+  {
+   "id": "KXNBATOTAL-26OCT28CHADET-229|SI",
+   "ticker": "KXNBATOTAL-26OCT28CHADET-229",
+   "fam": "TOTAL",
+   "game": "CHA @ DET",
+   "tip": "2026-10-28T23:00:00+00:00",
+   "label": "Over 228.5 points",
+   "side": "SI",
+   "price": 0.17,
+   "p": 0.2309,
+   "edge": 0.0509,
+   "contracts": 58,
+   "status": "abierta",
+   "opened": "2026-10-28T21:44:35.140513+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 6.8,
+    "total": 215.3,
+    "h1_total": 108.7,
+    "q1_total": 54.4
+   }
+  },
+  {
+   "id": "KXNBAGAME-26OCT28MIAATL-MIA|NO",
+   "ticker": "KXNBAGAME-26OCT28MIAATL-MIA",
+   "fam": "GAME",
+   "game": "MIA @ ATL",
+   "tip": "2026-10-28T23:00:00+00:00",
+   "label": "Miami",
+   "side": "NO",
+   "price": 0.56,
+   "p": 0.6454,
+   "edge": 0.0654,
+   "contracts": 17,
+   "status": "abierta",
+   "opened": "2026-10-28T21:44:35.140513+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 4.5,
+    "total": 239.2,
+    "h1_total": 120.8,
+    "q1_total": 60.4
+   }
+  },
+  {
+   "id": "KXNBASPREAD-26OCT28MIAATL-MIA3|NO",
+   "ticker": "KXNBASPREAD-26OCT28MIAATL-MIA3",
+   "fam": "SPREAD",
+   "game": "MIA @ ATL",
+   "tip": "2026-10-28T23:00:00+00:00",
+   "label": "Miami wins by over 2.5 points",
+   "side": "NO",
+   "price": 0.6,
+   "p": 0.7195,
+   "edge": 0.0995,
+   "contracts": 16,
+   "status": "abierta",
+   "opened": "2026-10-28T21:44:35.140513+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 4.5,
+    "total": 239.2,
+    "h1_total": 120.8,
+    "q1_total": 60.4
+   }
+  },
+  {
+   "id": "KXNBATOTAL-26OCT28MIAATL-240|NO",
+   "ticker": "KXNBATOTAL-26OCT28MIAATL-240",
+   "fam": "TOTAL",
+   "game": "MIA @ ATL",
+   "tip": "2026-10-28T23:00:00+00:00",
+   "label": "Over 239.5 points",
+   "side": "NO",
+   "price": 0.44,
+   "p": 0.5067,
+   "edge": 0.0467,
+   "contracts": 22,
+   "status": "abierta",
+   "opened": "2026-10-28T21:44:35.140513+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 4.5,
+    "total": 239.2,
+    "h1_total": 120.8,
+    "q1_total": 60.4
+   }
+  },
+  {
+   "id": "KXNBATEAMTOTAL-26OCT28MIAATL-MIA125|NO",
+   "ticker": "KXNBATEAMTOTAL-26OCT28MIAATL-MIA125",
+   "fam": "TEAMTOTAL",
+   "game": "MIA @ ATL",
+   "tip": "2026-10-28T23:00:00+00:00",
+   "label": "Miami over 124.5 points",
+   "side": "NO",
+   "price": 0.64,
+   "p": 0.7326,
+   "edge": 0.0726,
+   "contracts": 15,
+   "status": "abierta",
+   "opened": "2026-10-28T21:44:35.140513+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 4.5,
+    "total": 239.2,
+    "h1_total": 120.8,
+    "q1_total": 60.4
+   }
+  },
+  {
+   "id": "KXNBASPREAD-26OCT28PHIIND-PHI5|NO",
+   "ticker": "KXNBASPREAD-26OCT28PHIIND-PHI5",
+   "fam": "SPREAD",
+   "game": "PHI @ IND",
+   "tip": "2026-10-28T23:00:00+00:00",
+   "label": "Philadelphia wins by over 4.5 points",
+   "side": "NO",
+   "price": 0.4,
+   "p": 0.4793,
+   "edge": 0.0593,
+   "contracts": 25,
+   "status": "abierta",
+   "opened": "2026-10-28T21:44:35.140513+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -5.1,
+    "total": 231.0,
+    "h1_total": 116.7,
+    "q1_total": 58.4
+   }
+  },
+  {
+   "id": "KXNBATOTAL-26OCT28PHIIND-244|NO",
+   "ticker": "KXNBATOTAL-26OCT28PHIIND-244",
+   "fam": "TOTAL",
+   "game": "PHI @ IND",
+   "tip": "2026-10-28T23:00:00+00:00",
+   "label": "Over 243.5 points",
+   "side": "NO",
+   "price": 0.67,
+   "p": 0.7568,
+   "edge": 0.0668,
+   "contracts": 14,
+   "status": "abierta",
+   "opened": "2026-10-28T21:44:35.140513+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -5.1,
+    "total": 231.0,
+    "h1_total": 116.7,
+    "q1_total": 58.4
+   }
+  },
+  {
+   "id": "KXNBATEAMTOTAL-26OCT28PHIIND-PHI121|NO",
+   "ticker": "KXNBATEAMTOTAL-26OCT28PHIIND-PHI121",
+   "fam": "TEAMTOTAL",
+   "game": "PHI @ IND",
+   "tip": "2026-10-28T23:00:00+00:00",
+   "label": "Philadelphia over 120.5 points",
+   "side": "NO",
+   "price": 0.47,
+   "p": 0.5845,
+   "edge": 0.0945,
+   "contracts": 21,
+   "status": "abierta",
+   "opened": "2026-10-28T21:44:35.140513+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -5.1,
+    "total": 231.0,
+    "h1_total": 116.7,
+    "q1_total": 58.4
+   }
   }
  ],
  "scanned": {
@@ -686,7 +862,11 @@
   "26OCT27BKNBOS": "2026-10-27T21:56:59.326917+00:00",
   "26OCT27DETNYK": "2026-10-27T22:25:21.137884+00:00",
   "26OCT27SACSAS": "2026-10-27T22:25:21.137884+00:00",
-  "26OCT27PORLAL": "2026-10-28T01:37:43.083582+00:00"
+  "26OCT27PORLAL": "2026-10-28T01:37:43.083582+00:00",
+  "26OCT28CHADET": "2026-10-28T21:44:35.140513+00:00",
+  "26OCT28MIAATL": "2026-10-28T21:44:35.140513+00:00",
+  "26OCT28PHIIND": "2026-10-28T21:44:35.140513+00:00",
+  "26OCT28WASCLE": "2026-10-28T21:44:35.140513+00:00"
  },
  "milestones": [
   25
@@ -739,6 +919,182 @@
    },
    "pnl": -10.06,
    "won": false
+  },
+  {
+   "id": "KXNBA1HTOTAL-26OCT28CHADET-103|SI",
+   "ticker": "KXNBA1HTOTAL-26OCT28CHADET-103",
+   "fam": "1HTOTAL",
+   "game": "CHA @ DET",
+   "tip": "2026-10-28T23:00:00+00:00",
+   "label": "Over 102.5 points",
+   "side": "SI",
+   "price": 0.55,
+   "p": 0.6982,
+   "edge": 0.1282,
+   "contracts": 18,
+   "status": "abierta",
+   "opened": "2026-10-28T21:44:35.140513+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 6.8,
+    "total": 215.3,
+    "h1_total": 108.7,
+    "q1_total": 54.4
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26OCT28CHADET-51|SI",
+   "ticker": "KXNBA1QTOTAL-26OCT28CHADET-51",
+   "fam": "1QTOTAL",
+   "game": "CHA @ DET",
+   "tip": "2026-10-28T23:00:00+00:00",
+   "label": "Over 50.5 points",
+   "side": "SI",
+   "price": 0.6,
+   "p": 0.6865,
+   "edge": 0.0665,
+   "contracts": 16,
+   "status": "abierta",
+   "opened": "2026-10-28T21:44:35.140513+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 6.8,
+    "total": 215.3,
+    "h1_total": 108.7,
+    "q1_total": 54.4
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26OCT28MIAATL-124|NO",
+   "ticker": "KXNBA1HTOTAL-26OCT28MIAATL-124",
+   "fam": "1HTOTAL",
+   "game": "MIA @ ATL",
+   "tip": "2026-10-28T23:00:00+00:00",
+   "label": "Over 123.5 points",
+   "side": "NO",
+   "price": 0.5,
+   "p": 0.5882,
+   "edge": 0.0682,
+   "contracts": 20,
+   "status": "abierta",
+   "opened": "2026-10-28T21:44:35.140513+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 4.5,
+    "total": 239.2,
+    "h1_total": 120.8,
+    "q1_total": 60.4
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26OCT28MIAATL-65|NO",
+   "ticker": "KXNBA1QTOTAL-26OCT28MIAATL-65",
+   "fam": "1QTOTAL",
+   "game": "MIA @ ATL",
+   "tip": "2026-10-28T23:00:00+00:00",
+   "label": "Over 64.5 points",
+   "side": "NO",
+   "price": 0.6,
+   "p": 0.6942,
+   "edge": 0.0742,
+   "contracts": 16,
+   "status": "abierta",
+   "opened": "2026-10-28T21:44:35.140513+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 4.5,
+    "total": 239.2,
+    "h1_total": 120.8,
+    "q1_total": 60.4
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26OCT28PHIIND-121|NO",
+   "ticker": "KXNBA1HTOTAL-26OCT28PHIIND-121",
+   "fam": "1HTOTAL",
+   "game": "PHI @ IND",
+   "tip": "2026-10-28T23:00:00+00:00",
+   "label": "Over 120.5 points",
+   "side": "NO",
+   "price": 0.48,
+   "p": 0.6253,
+   "edge": 0.1253,
+   "contracts": 20,
+   "status": "abierta",
+   "opened": "2026-10-28T21:44:35.140513+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -5.1,
+    "total": 231.0,
+    "h1_total": 116.7,
+    "q1_total": 58.4
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26OCT28PHIIND-64|NO",
+   "ticker": "KXNBA1QTOTAL-26OCT28PHIIND-64",
+   "fam": "1QTOTAL",
+   "game": "PHI @ IND",
+   "tip": "2026-10-28T23:00:00+00:00",
+   "label": "Over 63.5 points",
+   "side": "NO",
+   "price": 0.6,
+   "p": 0.7398,
+   "edge": 0.1198,
+   "contracts": 16,
+   "status": "abierta",
+   "opened": "2026-10-28T21:44:35.140513+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -5.1,
+    "total": 231.0,
+    "h1_total": 116.7,
+    "q1_total": 58.4
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26OCT28WASCLE-134|NO",
+   "ticker": "KXNBA1HTOTAL-26OCT28WASCLE-134",
+   "fam": "1HTOTAL",
+   "game": "WAS @ CLE",
+   "tip": "2026-10-28T23:00:00+00:00",
+   "label": "Over 133.5 points",
+   "side": "NO",
+   "price": 0.77,
+   "p": 0.8607,
+   "edge": 0.0707,
+   "contracts": 12,
+   "status": "abierta",
+   "opened": "2026-10-28T21:44:35.140513+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 8.5,
+    "total": 238.5,
+    "h1_total": 120.5,
+    "q1_total": 60.3
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26OCT28WASCLE-67|NO",
+   "ticker": "KXNBA1QTOTAL-26OCT28WASCLE-67",
+   "fam": "1QTOTAL",
+   "game": "WAS @ CLE",
+   "tip": "2026-10-28T23:00:00+00:00",
+   "label": "Over 66.5 points",
+   "side": "NO",
+   "price": 0.69,
+   "p": 0.7818,
+   "edge": 0.0718,
+   "contracts": 14,
+   "status": "abierta",
+   "opened": "2026-10-28T21:44:35.140513+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 8.5,
+    "total": 238.5,
+    "h1_total": 120.5,
+    "q1_total": 60.3
+   }
   }
  ]
 }
