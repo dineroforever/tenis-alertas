@@ -913,6 +913,28 @@
     "h1_total": 115.6,
     "q1_total": 57.8
    }
+  },
+  {
+   "id": "KXNBASPREAD-26OCT28SASUTA-SAS13|NO",
+   "ticker": "KXNBASPREAD-26OCT28SASUTA-SAS13",
+   "fam": "SPREAD",
+   "game": "SAS @ UTA",
+   "tip": "2026-10-29T01:00:00+00:00",
+   "label": "San Antonio wins by over 12.5 points",
+   "side": "NO",
+   "price": 0.44,
+   "p": 0.5374,
+   "edge": 0.0774,
+   "contracts": 22,
+   "status": "abierta",
+   "opened": "2026-10-28T23:26:41.705231+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -11.4,
+    "total": 233.4,
+    "h1_total": 117.9,
+    "q1_total": 59.0
+   }
   }
  ],
  "scanned": {
@@ -937,7 +959,8 @@
   "26OCT28DENNOP": "2026-10-28T22:59:10.223892+00:00",
   "26OCT28GSWMIN": "2026-10-28T22:59:10.223892+00:00",
   "26OCT28HOUMIL": "2026-10-28T22:59:10.223892+00:00",
-  "26OCT28NYKCHI": "2026-10-28T22:59:10.223892+00:00"
+  "26OCT28NYKCHI": "2026-10-28T22:59:10.223892+00:00",
+  "26OCT28SASUTA": "2026-10-28T23:26:41.705231+00:00"
  },
  "milestones": [
   25
@@ -1363,6 +1386,72 @@
     "total": 229.9,
     "h1_total": 116.1,
     "q1_total": 58.1
+   }
+  },
+  {
+   "id": "KXNBA1HSPREAD-26OCT28SASUTA-SAS20|NO",
+   "ticker": "KXNBA1HSPREAD-26OCT28SASUTA-SAS20",
+   "fam": "1HSPREAD",
+   "game": "SAS @ UTA",
+   "tip": "2026-10-29T01:00:00+00:00",
+   "label": "San Antonio wins by over 19.5 points",
+   "side": "NO",
+   "price": 0.86,
+   "p": 0.945,
+   "edge": 0.075,
+   "contracts": 11,
+   "status": "abierta",
+   "opened": "2026-10-28T23:26:41.705231+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -11.4,
+    "total": 233.4,
+    "h1_total": 117.9,
+    "q1_total": 59.0
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26OCT28SASUTA-127|NO",
+   "ticker": "KXNBA1HTOTAL-26OCT28SASUTA-127",
+   "fam": "1HTOTAL",
+   "game": "SAS @ UTA",
+   "tip": "2026-10-29T01:00:00+00:00",
+   "label": "Over 126.5 points",
+   "side": "NO",
+   "price": 0.69,
+   "p": 0.763,
+   "edge": 0.053,
+   "contracts": 14,
+   "status": "abierta",
+   "opened": "2026-10-28T23:26:41.705231+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -11.4,
+    "total": 233.4,
+    "h1_total": 117.9,
+    "q1_total": 59.0
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26OCT28SASUTA-63|NO",
+   "ticker": "KXNBA1QTOTAL-26OCT28SASUTA-63",
+   "fam": "1QTOTAL",
+   "game": "SAS @ UTA",
+   "tip": "2026-10-29T01:00:00+00:00",
+   "label": "Over 62.5 points",
+   "side": "NO",
+   "price": 0.58,
+   "p": 0.6701,
+   "edge": 0.0701,
+   "contracts": 17,
+   "status": "abierta",
+   "opened": "2026-10-28T23:26:41.705231+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -11.4,
+    "total": 233.4,
+    "h1_total": 117.9,
+    "q1_total": 59.0
    }
   }
  ]
