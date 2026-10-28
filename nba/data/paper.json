@@ -866,7 +866,8 @@
   "26OCT28CHADET": "2026-10-28T21:44:35.140513+00:00",
   "26OCT28MIAATL": "2026-10-28T21:44:35.140513+00:00",
   "26OCT28PHIIND": "2026-10-28T21:44:35.140513+00:00",
-  "26OCT28WASCLE": "2026-10-28T21:44:35.140513+00:00"
+  "26OCT28WASCLE": "2026-10-28T21:44:35.140513+00:00",
+  "26OCT28ORLTOR": "2026-10-28T22:19:04.088943+00:00"
  },
  "milestones": [
   25
@@ -1094,6 +1095,28 @@
     "total": 238.5,
     "h1_total": 120.5,
     "q1_total": 60.3
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26OCT28ORLTOR-124|NO",
+   "ticker": "KXNBA1HTOTAL-26OCT28ORLTOR-124",
+   "fam": "1HTOTAL",
+   "game": "ORL @ TOR",
+   "tip": "2026-10-28T23:30:00+00:00",
+   "label": "Over 123.5 points",
+   "side": "NO",
+   "price": 0.73,
+   "p": 0.8056,
+   "edge": 0.0556,
+   "contracts": 13,
+   "status": "abierta",
+   "opened": "2026-10-28T22:19:04.088943+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 5.4,
+    "total": 224.0,
+    "h1_total": 113.2,
+    "q1_total": 56.6
    }
   }
  ]
