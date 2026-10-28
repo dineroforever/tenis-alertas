@@ -935,6 +935,28 @@
     "h1_total": 117.9,
     "q1_total": 59.0
    }
+  },
+  {
+   "id": "KXNBASPREAD-26OCT28OKCDAL-DAL4|NO",
+   "ticker": "KXNBASPREAD-26OCT28OKCDAL-DAL4",
+   "fam": "SPREAD",
+   "game": "OKC @ DAL",
+   "tip": "2026-10-29T01:30:00+00:00",
+   "label": "Dallas wins by over 3.5 points",
+   "side": "NO",
+   "price": 0.72,
+   "p": 0.78,
+   "edge": 0.04,
+   "contracts": 13,
+   "status": "abierta",
+   "opened": "2026-10-28T23:57:53.275781+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -5.8,
+    "total": 226.6,
+    "h1_total": 114.5,
+    "q1_total": 57.3
+   }
   }
  ],
  "scanned": {
@@ -960,7 +982,8 @@
   "26OCT28GSWMIN": "2026-10-28T22:59:10.223892+00:00",
   "26OCT28HOUMIL": "2026-10-28T22:59:10.223892+00:00",
   "26OCT28NYKCHI": "2026-10-28T22:59:10.223892+00:00",
-  "26OCT28SASUTA": "2026-10-28T23:26:41.705231+00:00"
+  "26OCT28SASUTA": "2026-10-28T23:26:41.705231+00:00",
+  "26OCT28OKCDAL": "2026-10-28T23:57:53.275781+00:00"
  },
  "milestones": [
   25
@@ -1092,7 +1115,7 @@
    "p": 0.6942,
    "edge": 0.0742,
    "contracts": 16,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-28T21:44:35.140513+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1100,7 +1123,9 @@
     "total": 239.2,
     "h1_total": 120.8,
     "q1_total": 60.4
-   }
+   },
+   "pnl": 6.13,
+   "won": true
   },
   {
    "id": "KXNBA1HTOTAL-26OCT28PHIIND-121|NO",
@@ -1452,6 +1477,28 @@
     "total": 233.4,
     "h1_total": 117.9,
     "q1_total": 59.0
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26OCT28OKCDAL-63|NO",
+   "ticker": "KXNBA1QTOTAL-26OCT28OKCDAL-63",
+   "fam": "1QTOTAL",
+   "game": "OKC @ DAL",
+   "tip": "2026-10-29T01:30:00+00:00",
+   "label": "Over 62.5 points",
+   "side": "NO",
+   "price": 0.67,
+   "p": 0.744,
+   "edge": 0.054,
+   "contracts": 14,
+   "status": "abierta",
+   "opened": "2026-10-28T23:57:53.275781+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -5.8,
+    "total": 226.6,
+    "h1_total": 114.5,
+    "q1_total": 57.3
    }
   }
  ]
