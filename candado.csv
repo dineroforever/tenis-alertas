@@ -132,3 +132,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-28T14:42:28+00:00,sombra,KXATPMATCH-26OCT25GRINAK-GRI,Tallon Griekspoor,0.54,18,valor_justo,0.64,0.54,0.54,,
 2026-10-28T17:37:00+00:00,sombra,KXATPMATCH-26OCT28MENMAN-MEN,Jakub Menšik,0.55,18,valor_justo,0.44,,,,
 2026-10-28T18:12:56+00:00,sombra,KXATPMATCH-26OCT28MENMAN-MAN,Adrian Mannarino,0.53,18,valor_justo,0.8,,,,
+2026-10-28T22:05:23+00:00,sombra,KXATPCHALLENGERMATCH-26OCT28MAEDIA-MAE,Francesco Maestrelli,0.59,16,liquidacion,1.0,,,,
