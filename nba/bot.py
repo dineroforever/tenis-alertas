@@ -17,6 +17,8 @@ FAM_ES = {"GAME": "Ganador", "SPREAD": "Hándicap", "TOTAL": "Total partido", "T
           "1HSPREAD": "Hándicap 1.ª mitad", "1HTOTAL": "Total 1.ª mitad",
           "1QSPREAD": "Hándicap 1.er cuarto", "1QTOTAL": "Total 1.er cuarto"}
 FAM_OFF = {"1HSPREAD", "1HTOTAL", "1QSPREAD", "1QTOTAL"}  # mercados que NO se operan
+# Los mercados de FAM_OFF se siguen registrando como SOMBRA en db["sombra"]: misma lógica,
+# pero no mandan señal, no cuentan en el P&L ni en los informes. Solo para medirlos aparte.
 
 
 def mid(m):
@@ -54,6 +56,24 @@ def resolve(db):
             settle(tr, m["result"])
             icon = "✅" if tr["won"] else "❌"
             msgs.append(f"{icon} {tr['game']} · {FAM_ES[tr['fam']]} · {tr['label']} ({tr['side']}) → {tr['pnl']:+.2f}$")
+    return msgs
+
+
+def resolve_sombra(db):
+    msgs = []
+    for tr in db["sombra"]:
+        if tr["status"] != "abierta":
+            continue
+        m = kalshi_market(tr["ticker"])
+        if m and m.get("status") in ("finalized", "settled") and m.get("result") in ("yes", "no"):
+            settle(tr, m["result"])
+            icon = "✅" if tr["won"] else "❌"
+            msgs.append(f"{icon} {tr['game']} · {FAM_ES[tr['fam']]} · {tr['label']} ({tr['side']}) → {tr['pnl']:+.2f}$")
+    if msgs:
+        cerr = [t for t in db["sombra"] if t["status"] == "cerrada"]
+        gan = sum(1 for t in cerr if t["won"])
+        pnl = sum(t["pnl"] for t in cerr)
+        msgs.append(f"Acumulado sombra: {len(cerr)} ops | {gan} aciertos | P&L {pnl:+.2f}$")
     return msgs
 
 
@@ -101,8 +121,7 @@ def scan(db, games):
         proj = project(G.before(games, tip.strftime("%Y-%m-%dT%H:%MZ")), home, away, day, line_m, line_t)
         sigs = []
         for fam, ms in mk.items():
-            if fam in FAM_OFF:  # desactivados por backtest negativo (1.ª mitad y 1.er cuarto)
-                continue
+            sombra = fam in FAM_OFF  # desactivados por backtest negativo: solo registro aparte
             best = None
             for m in ms:
                 if m.get("status") not in ("active", "open"):
@@ -124,7 +143,10 @@ def scan(db, games):
                       "side": ev_["side"], "price": ev_["price"], "p": ev_["p"], "edge": ev_["edge"],
                       "contracts": c, "status": "abierta", "opened": now.isoformat(), "line_src": src,
                       "proj": {k: round(proj[k], 1) for k in ("margin", "total", "h1_total", "q1_total")}}
-                if tr["id"] not in {t["id"] for t in db["trades"]}:
+                if sombra:
+                    if tr["id"] not in {t["id"] for t in db["sombra"]}:
+                        db["sombra"].append(tr)
+                elif tr["id"] not in {t["id"] for t in db["trades"]}:
                     db["trades"].append(tr)
                     sigs.append(tr)
         hora = tip.astimezone(ET).strftime("%I:%M %p ET")
@@ -147,10 +169,14 @@ def scan(db, games):
 
 def main():
     db = load("paper.json", {"trades": [], "scanned": {}, "milestones": []})
+    db.setdefault("sombra", [])
     games = G.update(max_secs=900)
     msgs = resolve(db)
     if msgs:
         telegram("🏀 NBA PAPEL — resultados\n" + "\n".join(msgs))
+    sm = resolve_sombra(db)
+    if sm:
+        telegram("👻 NBA SOMBRA (mercados desactivados, no cuentan)\n" + "\n".join(sm))
     for m in scan(db, games):
         telegram(m)
     rep = milestone_report(db)
