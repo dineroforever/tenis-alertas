@@ -47,7 +47,7 @@ jobs:
           MODO: "apify"
           AVISAR: "0"
           PREFILTRO_EDGE: "0.0"
-          REAL_MODO: "ensayo"   # off / ensayo / real (prueba de 25 ops autorizada por Roberto)
+          REAL_MODO: "real"   # off / ensayo / real (prueba de 25 ops autorizada por Roberto)
           KALSHI_KEY_ID: ${{ secrets.KALSHI_KEY_ID }}
           KALSHI_PRIVATE_KEY: ${{ secrets.KALSHI_PRIVATE_KEY }}
         run: python tenis_alertas.py
