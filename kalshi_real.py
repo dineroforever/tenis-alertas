@@ -69,7 +69,29 @@ def _clave():
     return _KEY
 
 
+_ESPERAS_429 = (2, 4, 8, 15)  # reintentos si Kalshi responde 429 (demasiadas peticiones)
+
+
 def _api(metodo, ruta, cuerpo=None, params=None):
+    """Llamada firmada a Kalshi. Si responde 429 reintenta con espera creciente.
+    Un 429 significa que Kalshi NO procesó la petición, así que reintentar una orden es seguro
+    (además la orden lleva el mismo client_order_id en cada intento y Kalshi la deduplica)."""
+    for i, espera in enumerate(_ESPERAS_429 + (None,)):
+        r = _api_una(metodo, ruta, cuerpo, params)
+        if r.status_code == 429 and espera is not None:
+            try:
+                espera = max(espera, float(r.headers.get("Retry-After", 0)))
+            except (TypeError, ValueError):
+                pass
+            print(f"Kalshi 429 en {metodo} {ruta}: reintento {i + 1} en {espera:.0f}s")
+            time.sleep(espera)
+            continue
+        if r.status_code >= 300:
+            raise RuntimeError(f"Kalshi {metodo} {ruta} -> {r.status_code}: {r.text[:300]}")
+        return r.json() if r.text else {}
+
+
+def _api_una(metodo, ruta, cuerpo=None, params=None):
     from cryptography.hazmat.primitives import hashes
     from cryptography.hazmat.primitives.asymmetric import padding
     ts = str(int(time.time() * 1000))
@@ -85,10 +107,7 @@ def _api(metodo, ruta, cuerpo=None, params=None):
          "KALSHI-ACCESS-TIMESTAMP": ts,
          "KALSHI-ACCESS-SIGNATURE": base64.b64encode(firma).decode(),
          "Content-Type": "application/json"}
-    r = requests.request(metodo, BASE + ruta, headers=h, json=cuerpo, params=params, timeout=20)
-    if r.status_code >= 300:
-        raise RuntimeError(f"Kalshi {metodo} {ruta} -> {r.status_code}: {r.text[:300]}")
-    return r.json() if r.text else {}
+    return requests.request(metodo, BASE + ruta, headers=h, json=cuerpo, params=params, timeout=20)
 
 
 def _num(d, *claves):
@@ -207,12 +226,13 @@ def entrada(est, mid, pos, aviso, vol=None):
                   f"(${n * ask:.2f}). Saldo leído: {f'${s:.2f}' if s is not None else 'ERROR (clave)'}")
             return
         motivo = ""
+        s0 = saldo()  # una sola lectura del saldo para los controles y el tamaño de la orden
         expuesto = sum(p["costo"] for p in r["pos"].values())
         if r["parado"]:
             motivo = f"bot detenido ({r['parado']})"
         elif mid in r["partidos"]:
             motivo = "ya hubo una orden en este partido"
-        elif r["pnl_dia"] - expuesto - apuesta(saldo()) < -TOPE_DIA - 0.01:
+        elif r["pnl_dia"] - expuesto - apuesta(s0) < -TOPE_DIA - 0.01:
             motivo = f"tope de pérdida diaria (${TOPE_DIA:.2f})"
         elif ask + DESLIZ >= 1:
             motivo = "precio inválido"
@@ -220,7 +240,6 @@ def entrada(est, mid, pos, aviso, vol=None):
             _log("omitida", tk, jug, "", ask, "", "", "", "", motivo)
             return
         lim = round(ask + DESLIZ, 2)
-        s0 = saldo()
         n = max(1, round(apuesta(s0) / lim)) if s0 else 0
         if s0 is None or s0 < n * lim + 0.10:
             _log("omitida", tk, jug, n, ask, lim, "", "", s0, "saldo insuficiente")
