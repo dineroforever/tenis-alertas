@@ -131,3 +131,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-28T09:35:06+00:00,real,KXWTAMATCH-26OCT27SASSHN-SAS,Aliaksandra Sasnovich,0.36,27,liquidacion,0.0,,,,
 2026-10-28T14:42:28+00:00,sombra,KXATPMATCH-26OCT25GRINAK-GRI,Tallon Griekspoor,0.54,18,valor_justo,0.64,0.54,0.54,,
 2026-10-28T17:37:00+00:00,sombra,KXATPMATCH-26OCT28MENMAN-MEN,Jakub Menšik,0.55,18,valor_justo,0.44,,,,
+2026-10-28T18:12:56+00:00,sombra,KXATPMATCH-26OCT28MENMAN-MAN,Adrian Mannarino,0.53,18,valor_justo,0.8,,,,
