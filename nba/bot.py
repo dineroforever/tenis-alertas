@@ -16,6 +16,7 @@ WINDOW_MIN = (15, 100)      # escanear partidos que empiezan entre 15 y 100 min
 FAM_ES = {"GAME": "Ganador", "SPREAD": "Hándicap", "TOTAL": "Total partido", "TEAMTOTAL": "Total equipo",
           "1HSPREAD": "Hándicap 1.ª mitad", "1HTOTAL": "Total 1.ª mitad",
           "1QSPREAD": "Hándicap 1.er cuarto", "1QTOTAL": "Total 1.er cuarto"}
+FAM_OFF = {"1HSPREAD", "1HTOTAL", "1QSPREAD", "1QTOTAL"}  # mercados que NO se operan
 
 
 def mid(m):
@@ -100,6 +101,8 @@ def scan(db, games):
         proj = project(G.before(games, tip.strftime("%Y-%m-%dT%H:%MZ")), home, away, day, line_m, line_t)
         sigs = []
         for fam, ms in mk.items():
+            if fam in FAM_OFF:  # desactivados por backtest negativo (1.ª mitad y 1.er cuarto)
+                continue
             best = None
             for m in ms:
                 if m.get("status") not in ("active", "open"):
