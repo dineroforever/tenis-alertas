@@ -129,3 +129,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-28T04:31:42+00:00,sombra,KXWTAMATCH-26OCT27RAKALE-RAK,Kamilla Rakhimova,0.51,19,liquidacion,1.0,,,,
 2026-10-28T06:22:49+00:00,real,KXWTAMATCH-26OCT27BUCJOI-JOI,Maya Joint,0.38,26,valor_justo,0.72,0.13,0.13,0.13,0.13
 2026-10-28T09:35:06+00:00,real,KXWTAMATCH-26OCT27SASSHN-SAS,Aliaksandra Sasnovich,0.36,27,liquidacion,0.0,,,,
+2026-10-28T14:42:28+00:00,sombra,KXATPMATCH-26OCT25GRINAK-GRI,Tallon Griekspoor,0.54,18,valor_justo,0.64,0.54,0.54,,
