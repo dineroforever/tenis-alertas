@@ -704,7 +704,7 @@
    "p": 0.5571,
    "edge": 0.0771,
    "contracts": 21,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-28T01:37:43.083582+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -712,7 +712,9 @@
     "total": 233.2,
     "h1_total": 117.8,
     "q1_total": 58.6
-   }
+   },
+   "pnl": -10.03,
+   "won": false
   },
   {
    "id": "KXNBA1QTOTAL-26OCT27PORLAL-60|NO",
