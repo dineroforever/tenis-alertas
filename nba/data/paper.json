@@ -584,7 +584,7 @@
    "p": 0.5876,
    "edge": 0.0976,
    "contracts": 21,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-27T22:25:21.137884+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -592,7 +592,9 @@
     "total": 231.1,
     "h1_total": 116.7,
     "q1_total": 58.1
-   }
+   },
+   "pnl": -10.24,
+   "won": false
   },
   {
    "id": "KXNBA1HTOTAL-26OCT27SACSAS-119|NO",
@@ -606,7 +608,7 @@
    "p": 0.5599,
    "edge": 0.0999,
    "contracts": 22,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-27T22:25:21.137884+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -614,7 +616,9 @@
     "total": 231.1,
     "h1_total": 116.7,
     "q1_total": 58.1
-   }
+   },
+   "pnl": -10.06,
+   "won": false
   },
   {
    "id": "KXNBA1QSPREAD-26OCT27SACSAS-SAS7|NO",
@@ -680,7 +684,9 @@
   "26OCT27SACSAS": "2026-10-27T22:25:21.137884+00:00",
   "26OCT27PORLAL": "2026-10-28T01:37:43.083582+00:00"
  },
- "milestones": [],
+ "milestones": [
+  25
+ ],
  "sombra": [
   {
    "id": "KXNBA1HTOTAL-26OCT27PORLAL-120|NO",
