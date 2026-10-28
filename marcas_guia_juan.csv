@@ -235,3 +235,4 @@ fecha_utc,estrategia,ticker,hora_miami,volumen,vol_500k,horario_2a8pm,sets,games
 2026-10-27T15:56:16+00:00,apify_senal,KXATPCHALLENGERMATCH-26OCT27FELBUD-FEL,11:56,455871,no,no,1-1,0-0,si,no,otro,no
 2026-10-27T17:38:19+00:00,apify_senal,KXATPMATCH-26OCT25MICVAN-VAN,13:38,4242983,si,no,1-1,2-1,si,no,otro,no
 2026-10-27T17:57:57+00:00,apify_senal,KXATPMATCH-26OCT25NORCER-CER,13:57,948298,si,no,0-0,3-4,no,no,set1,no
+2026-10-28T02:53:37+00:00,apify_sombra,KXWTAMATCH-26OCT27RAKALE-RAK,22:53,1584785,si,no,1-0,3-4,no,no,otro,no
