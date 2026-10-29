@@ -242,3 +242,4 @@ fecha_utc,estrategia,ticker,hora_miami,volumen,vol_500k,horario_2a8pm,sets,games
 2026-10-28T17:31:49+00:00,apify_sombra,KXATPMATCH-26OCT28MENMAN-MEN,13:31,365545,no,no,0-0,4-5,no,no,set1,no
 2026-10-28T18:10:41+00:00,apify_sombra,KXATPMATCH-26OCT28MENMAN-MAN,14:10,1543722,si,si,1-0,4-4,no,si,otro,no
 2026-10-28T21:34:58+00:00,apify_sombra,KXATPCHALLENGERMATCH-26OCT28MAEDIA-MAE,17:34,933084,si,si,1-0,2-2,no,no,inicio_set2,no
+2026-10-29T00:44:11+00:00,apify_senal,KXATPCHALLENGERMATCH-26OCT28BRODIE-BRO,20:44,166236,no,no,0-0,2-3,no,no,set1,no

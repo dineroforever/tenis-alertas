@@ -34,3 +34,4 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-10-27T18:02:12+00:00,ensayo,ensayo_venta,KXATPMATCH-26OCT25NORCER-CER,Francisco Cerundolo,5,0.44,0.43,2.2,-0.25,,orden NO enviada
 2026-10-28T05:53:13+00:00,real,error,KXWTAMATCH-26OCT27BUCJOI-JOI,Maya Joint,,,,,,,"RuntimeError('Kalshi GET /portfolio/balance -> 429: {""error"":{""code"":""too_many_requests"",""message"":""too many requests""}}')"
 2026-10-28T09:03:03+00:00,real,error,KXWTAMATCH-26OCT27SASSHN-SAS,Aliaksandra Sasnovich,,,,,,,"RuntimeError('Kalshi GET /portfolio/balance -> 429: {""error"":{""code"":""too_many_requests"",""message"":""too many requests""}}')"
+2026-10-29T00:44:11+00:00,real,omitida,KXATPCHALLENGERMATCH-26OCT28BRODIE-BRO,Jenson Brooksby,,0.43,,,,,"volumen $166,236 < $300,000 (solo paper)"

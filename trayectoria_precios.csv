@@ -212,3 +212,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-28T17:37:00+00:00,sombra,KXATPMATCH-26OCT28MENMAN-MEN,Jakub Menšik,0.55,18,valor_justo,0.44,0.54,0.44,1,5,no,no,no
 2026-10-28T18:12:56+00:00,sombra,KXATPMATCH-26OCT28MENMAN-MAN,Adrian Mannarino,0.53,18,valor_justo,0.8,0.8,0.53,2,2,si,si,si
 2026-10-28T22:05:23+00:00,sombra,KXATPCHALLENGERMATCH-26OCT28MAEDIA-MAE,Francesco Maestrelli,0.59,16,liquidacion,1.0,0.55,0.55,1,30,no,no,no
+2026-10-29T00:58:37+00:00,real,KXATPCHALLENGERMATCH-26OCT28BRODIE-BRO,Jenson Brooksby,0.43,23,valor_justo,0.28,0.44,0.26,9,14,no,no,no
