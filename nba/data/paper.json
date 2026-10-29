@@ -1010,8 +1010,6 @@
   }
  ],
  "scanned": {
-  "26OCT26MINCLE": "2026-10-26T21:24:27.039368+00:00",
-  "26OCT26WASCHA": "2026-10-26T21:24:27.039368+00:00",
   "26OCT26CHIBOS": "2026-10-26T21:56:04.645342+00:00",
   "26OCT26DALMIA": "2026-10-26T21:56:04.645342+00:00",
   "26OCT26INDMIL": "2026-10-26T22:20:32.898034+00:00",
@@ -1034,7 +1032,8 @@
   "26OCT28NYKCHI": "2026-10-28T22:59:10.223892+00:00",
   "26OCT28SASUTA": "2026-10-28T23:26:41.705231+00:00",
   "26OCT28OKCDAL": "2026-10-28T23:57:53.275781+00:00",
-  "26OCT28LALLAC": "2026-10-29T01:38:51.245639+00:00"
+  "26OCT28LALLAC": "2026-10-29T01:38:51.245639+00:00",
+  "26OCT29CLEATL": "2026-10-29T21:45:54.205015+00:00"
  },
  "milestones": [
   25
@@ -1591,6 +1590,50 @@
    },
    "pnl": -9.6,
    "won": false
+  },
+  {
+   "id": "KXNBA1HSPREAD-26OCT29CLEATL-CLE11|NO",
+   "ticker": "KXNBA1HSPREAD-26OCT29CLEATL-CLE11",
+   "fam": "1HSPREAD",
+   "game": "CLE @ ATL",
+   "tip": "2026-10-29T23:00:00+00:00",
+   "label": "Cleveland wins by over 10.5 points",
+   "side": "NO",
+   "price": 0.84,
+   "p": 0.9083,
+   "edge": 0.0583,
+   "contracts": 11,
+   "status": "abierta",
+   "opened": "2026-10-29T21:45:54.205015+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 1.6,
+    "total": 236.9,
+    "h1_total": 119.7,
+    "q1_total": 59.8
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26OCT29CLEATL-113|SI",
+   "ticker": "KXNBA1HTOTAL-26OCT29CLEATL-113",
+   "fam": "1HTOTAL",
+   "game": "CLE @ ATL",
+   "tip": "2026-10-29T23:00:00+00:00",
+   "label": "Over 112.5 points",
+   "side": "SI",
+   "price": 0.59,
+   "p": 0.7247,
+   "edge": 0.1147,
+   "contracts": 16,
+   "status": "abierta",
+   "opened": "2026-10-29T21:45:54.205015+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 1.6,
+    "total": 236.9,
+    "h1_total": 119.7,
+    "q1_total": 59.8
+   }
   }
  ]
 }
