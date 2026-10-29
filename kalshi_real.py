@@ -139,10 +139,18 @@ def posicion(ticker):
 
 
 def _orden(ticker, accion, contratos, precio):
-    cuerpo = {"ticker": ticker, "action": accion, "side": "yes", "type": "limit",
-              "count": int(contratos), "yes_price": int(round(precio * 100)),
-              "time_in_force": "immediate_or_cancel", "client_order_id": str(uuid.uuid4())}
-    return _api("POST", "/portfolio/orders", cuerpo).get("order", {})
+    """Orden IOC por el endpoint V2 de Kalshi (el V1 /portfolio/orders fue retirado: error 410).
+    V2: side 'bid' = comprar YES, 'ask' = vender YES; count y price van como texto (precio en dólares).
+    Las ventas van con reduce_only para que nunca puedan abrir una posición en contra."""
+    cuerpo = {"ticker": ticker, "side": "bid" if accion == "buy" else "ask",
+              "count": str(int(contratos)), "price": f"{precio:.2f}",
+              "time_in_force": "immediate_or_cancel", "self_trade_prevention_type": "taker_at_cross",
+              "client_order_id": str(uuid.uuid4())}
+    if accion == "sell":
+        cuerpo["reduce_only"] = True
+    d = _api("POST", "/portfolio/events/orders", cuerpo)
+    d["status"] = f"llenos={d.get('fill_count')} resto={d.get('remaining_count')}"
+    return d
 
 
 def apuesta(s):
