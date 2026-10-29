@@ -706,7 +706,7 @@
    "p": 0.6454,
    "edge": 0.0654,
    "contracts": 17,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-28T21:44:35.140513+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -714,7 +714,9 @@
     "total": 239.2,
     "h1_total": 120.8,
     "q1_total": 60.4
-   }
+   },
+   "pnl": -9.82,
+   "won": false
   },
   {
    "id": "KXNBASPREAD-26OCT28MIAATL-MIA3|NO",
@@ -728,7 +730,7 @@
    "p": 0.7195,
    "edge": 0.0995,
    "contracts": 16,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-28T21:44:35.140513+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -736,7 +738,9 @@
     "total": 239.2,
     "h1_total": 120.8,
     "q1_total": 60.4
-   }
+   },
+   "pnl": -9.87,
+   "won": false
   },
   {
    "id": "KXNBATOTAL-26OCT28MIAATL-240|NO",
@@ -750,7 +754,7 @@
    "p": 0.5067,
    "edge": 0.0467,
    "contracts": 22,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-28T21:44:35.140513+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -758,7 +762,9 @@
     "total": 239.2,
     "h1_total": 120.8,
     "q1_total": 60.4
-   }
+   },
+   "pnl": -10.06,
+   "won": false
   },
   {
    "id": "KXNBATEAMTOTAL-26OCT28MIAATL-MIA125|NO",
@@ -772,7 +778,7 @@
    "p": 0.7326,
    "edge": 0.0726,
    "contracts": 15,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-28T21:44:35.140513+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -780,7 +786,9 @@
     "total": 239.2,
     "h1_total": 120.8,
     "q1_total": 60.4
-   }
+   },
+   "pnl": -9.85,
+   "won": false
   },
   {
    "id": "KXNBASPREAD-26OCT28PHIIND-PHI5|NO",
@@ -957,6 +965,28 @@
     "h1_total": 114.5,
     "q1_total": 57.3
    }
+  },
+  {
+   "id": "KXNBASPREAD-26OCT28LALLAC-LAL5|NO",
+   "ticker": "KXNBASPREAD-26OCT28LALLAC-LAL5",
+   "fam": "SPREAD",
+   "game": "LAL @ LAC",
+   "tip": "2026-10-29T02:30:00+00:00",
+   "label": "Los Angeles L wins by over 4.5 points",
+   "side": "NO",
+   "price": 0.62,
+   "p": 0.6879,
+   "edge": 0.0479,
+   "contracts": 16,
+   "status": "abierta",
+   "opened": "2026-10-29T01:38:51.245639+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 1.4,
+    "total": 227.2,
+    "h1_total": 114.8,
+    "q1_total": 57.6
+   }
   }
  ],
  "scanned": {
@@ -983,7 +1013,8 @@
   "26OCT28HOUMIL": "2026-10-28T22:59:10.223892+00:00",
   "26OCT28NYKCHI": "2026-10-28T22:59:10.223892+00:00",
   "26OCT28SASUTA": "2026-10-28T23:26:41.705231+00:00",
-  "26OCT28OKCDAL": "2026-10-28T23:57:53.275781+00:00"
+  "26OCT28OKCDAL": "2026-10-28T23:57:53.275781+00:00",
+  "26OCT28LALLAC": "2026-10-29T01:38:51.245639+00:00"
  },
  "milestones": [
   25
@@ -1049,7 +1080,7 @@
    "p": 0.6982,
    "edge": 0.1282,
    "contracts": 18,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-28T21:44:35.140513+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1057,7 +1088,9 @@
     "total": 215.3,
     "h1_total": 108.7,
     "q1_total": 54.4
-   }
+   },
+   "pnl": -10.22,
+   "won": false
   },
   {
    "id": "KXNBA1QTOTAL-26OCT28CHADET-51|SI",
@@ -1143,7 +1176,7 @@
    "p": 0.6253,
    "edge": 0.1253,
    "contracts": 20,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-28T21:44:35.140513+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1151,7 +1184,9 @@
     "total": 231.0,
     "h1_total": 116.7,
     "q1_total": 58.4
-   }
+   },
+   "pnl": 10.05,
+   "won": true
   },
   {
    "id": "KXNBA1QTOTAL-26OCT28PHIIND-64|NO",
@@ -1189,7 +1224,7 @@
    "p": 0.8607,
    "edge": 0.0707,
    "contracts": 12,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-28T21:44:35.140513+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1197,7 +1232,9 @@
     "total": 238.5,
     "h1_total": 120.5,
     "q1_total": 60.3
-   }
+   },
+   "pnl": 2.61,
+   "won": true
   },
   {
    "id": "KXNBA1QTOTAL-26OCT28WASCLE-67|NO",
@@ -1235,7 +1272,7 @@
    "p": 0.8056,
    "edge": 0.0556,
    "contracts": 13,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-28T22:19:04.088943+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1243,7 +1280,9 @@
     "total": 224.0,
     "h1_total": 113.2,
     "q1_total": 56.6
-   }
+   },
+   "pnl": 3.33,
+   "won": true
   },
   {
    "id": "KXNBA1HTOTAL-26OCT28DENNOP-117|SI",
@@ -1279,7 +1318,7 @@
    "p": 0.7111,
    "edge": 0.0811,
    "contracts": 16,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-28T22:59:10.223892+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1287,7 +1326,9 @@
     "total": 241.2,
     "h1_total": 121.9,
     "q1_total": 61.0
-   }
+   },
+   "pnl": -10.03,
+   "won": false
   },
   {
    "id": "KXNBA1HTOTAL-26OCT28GSWMIN-109|SI",
@@ -1323,7 +1364,7 @@
    "p": 0.7064,
    "edge": 0.0864,
    "contracts": 16,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-28T22:59:10.223892+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1331,7 +1372,9 @@
     "total": 228.9,
     "h1_total": 115.6,
     "q1_total": 57.8
-   }
+   },
+   "pnl": -9.87,
+   "won": false
   },
   {
    "id": "KXNBA1HTOTAL-26OCT28HOUMIL-113|SI",
@@ -1345,7 +1388,7 @@
    "p": 0.5796,
    "edge": 0.1196,
    "contracts": 22,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-28T22:59:10.223892+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1353,7 +1396,9 @@
     "total": 227.5,
     "h1_total": 114.9,
     "q1_total": 57.5
-   }
+   },
+   "pnl": -10.06,
+   "won": false
   },
   {
    "id": "KXNBA1QTOTAL-26OCT28HOUMIL-52|SI",
@@ -1367,7 +1412,7 @@
    "p": 0.7726,
    "edge": 0.0726,
    "contracts": 14,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-28T22:59:10.223892+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1375,7 +1420,9 @@
     "total": 227.5,
     "h1_total": 114.9,
     "q1_total": 57.5
-   }
+   },
+   "pnl": -9.74,
+   "won": false
   },
   {
    "id": "KXNBA1HTOTAL-26OCT28NYKCHI-123|NO",
@@ -1411,7 +1458,7 @@
    "p": 0.709,
    "edge": 0.099,
    "contracts": 16,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-28T22:59:10.223892+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1419,7 +1466,9 @@
     "total": 229.9,
     "h1_total": 116.1,
     "q1_total": 58.1
-   }
+   },
+   "pnl": -9.72,
+   "won": false
   },
   {
    "id": "KXNBA1HSPREAD-26OCT28SASUTA-SAS20|NO",
