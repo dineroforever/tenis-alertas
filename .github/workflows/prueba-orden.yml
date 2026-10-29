@@ -1,0 +1,84 @@
+name: Prueba de orden Kalshi (1 contrato a 1 centavo)
+
+# Solo corre cuando Roberto pulsa "Run workflow". Envía una compra IOC de 1 contrato a $0.01
+# en un partido de tenis abierto: no se llena (nadie vende a 1¢ en un partido parejo) y se cancela sola.
+# Sirve para confirmar que el envío de órdenes V2 funciona, sin gastar dinero.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  probar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Enviar orden de prueba
+        env:
+          KALSHI_KEY_ID: ${{ secrets.KALSHI_KEY_ID }}
+          KALSHI_PRIVATE_KEY: ${{ secrets.KALSHI_PRIVATE_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          REAL_MODO: "real"
+          LOG_REAL: "/tmp/prueba_ops.csv"
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python - <<'PY'
+          import os, requests
+          import kalshi_real as k
+
+          def tg(t):
+              try:
+                  requests.post(f"https://api.telegram.org/bot{os.environ['TELEGRAM_BOT_TOKEN']}/sendMessage",
+                                data={"chat_id": os.environ["TELEGRAM_CHAT_ID"], "text": t}, timeout=20)
+              except Exception as e:
+                  print("Telegram falló:", repr(e))
+
+          try:
+              s = k.saldo()
+              elegido = None
+              for serie in ("KXATPMATCH", "KXWTAMATCH", "KXATPCHALLENGERMATCH"):
+                  d = requests.get(f"{k.BASE}/markets", params={"series_ticker": serie, "status": "open", "limit": 200},
+                                   timeout=20).json()
+                  for m in d.get("markets", []) or []:
+                      ask = k._num(m, "yes_ask_dollars")
+                      if ask is None:
+                          c = k._num(m, "yes_ask")
+                          ask = c / 100 if c is not None else None
+                      if ask and 0.10 <= ask <= 0.90:
+                          elegido = (m["ticker"], ask)
+                          break
+                  if elegido:
+                      break
+              if not elegido:
+                  raise RuntimeError("no encontré un partido de tenis abierto con precio entre 10¢ y 90¢")
+              tk, ask = elegido
+              antes = k.posicion(tk)
+              o = k._orden(tk, "buy", 1, 0.01)
+              despues = k.posicion(tk)
+              s2 = k.saldo()
+              llenos = float(o.get("fill_count") or 0)
+              ok = llenos == 0 and despues == antes
+              msg = (("✅ Prueba de orden V2 OK: Kalshi aceptó la orden y no se llenó (costo $0)."
+                      if ok else "⚠️ Prueba de orden V2: respuesta inesperada, revisar.")
+                     + f"\nMercado: {tk} (ask {ask * 100:.0f}¢)\nOrden: 1 contrato a 1¢, {o.get('status')}"
+                     + f"\nSaldo antes ${s:.2f} / después ${s2:.2f}")
+              print(msg)
+              print("Respuesta completa:", o)
+              tg(msg)
+              if not ok:
+                  raise SystemExit(1)
+          except SystemExit:
+              raise
+          except Exception as e:
+              msg = f"❌ Prueba de orden V2 FALLÓ: {repr(e)[:350]}"
+              print(msg)
+              tg(msg)
+              raise SystemExit(1)
+          PY
