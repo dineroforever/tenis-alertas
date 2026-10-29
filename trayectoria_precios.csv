@@ -215,3 +215,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-29T00:58:37+00:00,real,KXATPCHALLENGERMATCH-26OCT28BRODIE-BRO,Jenson Brooksby,0.43,23,valor_justo,0.28,0.44,0.26,9,14,no,no,no
 2026-10-29T09:02:14+00:00,real,KXATPCHALLENGERMATCH-26OCT28KACHON-HON,Seongchan Hong,0.47,21,liquidacion,1.0,0.6,0.28,6,201,si,si,no
 2026-10-29T09:59:26+00:00,sombra,KXWTAMATCH-26OCT29TIMSUN-SUN,Xinran Sun,0.39,25,valor_justo,0.96,0.96,0.16,15,16,si,si,si
+2026-10-29T11:55:43+00:00,real,KXATPCHALLENGERMATCH-26OCT27SCHCUI-CUI,Jie Cui,0.34,29,valor_justo,0.85,0.86,0.33,21,24,si,si,si
