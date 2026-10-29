@@ -95,3 +95,4 @@ fecha_utc,match_id,ticker,jugador,rival,torneo,marcador,p_final,p_score,p_casa,a
 2026-10-28T17:31:49+00:00,17377282,KXATPMATCH-26OCT28MENMAN-MEN,Jakub Menšik,Adrian Mannarino,Vienna,4-5,0.6556,0.6381,0.6818,0.55,0.54,10.6,15.5,9.9,edge>10+p>65
 2026-10-28T18:10:41+00:00,17377282,KXATPMATCH-26OCT28MENMAN-MAN,Adrian Mannarino,Jakub Menšik,Vienna,6-4 4-4,0.599,0.6194,0.5685,0.53,0.52,6.9,9.4,9.54,set2
 2026-10-28T21:34:58+00:00,17377331,KXATPCHALLENGERMATCH-26OCT28MAEDIA-MAE,Francesco Maestrelli,Gabriel Diallo,"Brest, France",6-4 2-2,0.7536,0.7688,0.7307,0.59,0.58,16.4,24.0,9.44,edge>10+set2+p>65
+2026-10-29T09:43:56+00:00,17377217,KXWTAMATCH-26OCT29TIMSUN-SUN,Xinran Sun,Maria Timofeeva,Guangzhou,6-3 4-6 5-5,0.4905,0.4841,0.5,0.39,0.38,10.0,20.6,9.75,edge>10
