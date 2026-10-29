@@ -137,3 +137,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-29T09:02:14+00:00,real,KXATPCHALLENGERMATCH-26OCT28KACHON-HON,Seongchan Hong,0.47,21,liquidacion,1.0,0.48,0.47,0.47,0.5
 2026-10-29T09:59:26+00:00,sombra,KXWTAMATCH-26OCT29TIMSUN-SUN,Xinran Sun,0.39,25,valor_justo,0.96,,,,
 2026-10-29T11:55:43+00:00,real,KXATPCHALLENGERMATCH-26OCT27SCHCUI-CUI,Jie Cui,0.34,29,valor_justo,0.85,,,,
+2026-10-29T15:40:12+00:00,sombra,KXATPMATCH-26OCT29NORMED-NOR,Cameron Norrie,0.39,25,liquidacion,0.0,,,,
