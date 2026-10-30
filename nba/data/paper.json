@@ -1670,7 +1670,7 @@
    "p": 0.9196,
    "edge": 0.0596,
    "contracts": 11,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-30T00:34:42.578386+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1678,7 +1678,9 @@
     "total": 232.5,
     "h1_total": 117.4,
     "q1_total": 58.7
-   }
+   },
+   "pnl": 1.55,
+   "won": true
   },
   {
    "id": "KXNBA1HTOTAL-26OCT29MEMPOR-119|NO",
@@ -1692,7 +1694,7 @@
    "p": 0.5352,
    "edge": 0.0752,
    "contracts": 22,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-30T00:34:42.578386+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1700,7 +1702,9 @@
     "total": 232.5,
     "h1_total": 117.4,
     "q1_total": 58.7
-   }
+   },
+   "pnl": 11.94,
+   "won": true
   },
   {
    "id": "KXNBA1QTOTAL-26OCT29MEMPOR-66|NO",
