@@ -1007,10 +1007,75 @@
    },
    "pnl": -10.19,
    "won": false
+  },
+  {
+   "id": "KXNBATOTAL-26OCT30NYKPHI-209|NO",
+   "ticker": "KXNBATOTAL-26OCT30NYKPHI-209",
+   "fam": "TOTAL",
+   "game": "NYK @ PHI",
+   "tip": "2026-10-30T23:30:00+00:00",
+   "label": "Over 208.5 points",
+   "side": "NO",
+   "price": 0.14,
+   "p": 0.2008,
+   "edge": 0.0508,
+   "contracts": 71,
+   "status": "abierta",
+   "opened": "2026-10-30T22:15:05.602113+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -1.7,
+    "total": 223.6,
+    "h1_total": 112.9,
+    "q1_total": 56.1
+   }
+  },
+  {
+   "id": "KXNBAGAME-26OCT30ORLTOR-ORL|NO",
+   "ticker": "KXNBAGAME-26OCT30ORLTOR-ORL",
+   "fam": "GAME",
+   "game": "ORL @ TOR",
+   "tip": "2026-10-30T23:30:00+00:00",
+   "label": "Orlando",
+   "side": "NO",
+   "price": 0.66,
+   "p": 0.739,
+   "edge": 0.059,
+   "contracts": 15,
+   "status": "abierta",
+   "opened": "2026-10-30T22:15:05.602113+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 7.7,
+    "total": 225.3,
+    "h1_total": 113.8,
+    "q1_total": 56.5
+   }
+  },
+  {
+   "id": "KXNBASPREAD-26OCT30ORLTOR-ORL3|NO",
+   "ticker": "KXNBASPREAD-26OCT30ORLTOR-ORL3",
+   "fam": "SPREAD",
+   "game": "ORL @ TOR",
+   "tip": "2026-10-30T23:30:00+00:00",
+   "label": "Orlando wins by over 2.5 points",
+   "side": "NO",
+   "price": 0.72,
+   "p": 0.802,
+   "edge": 0.062,
+   "contracts": 13,
+   "status": "abierta",
+   "opened": "2026-10-30T22:15:05.602113+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 7.7,
+    "total": 225.3,
+    "h1_total": 113.8,
+    "q1_total": 56.5
+   }
   }
  ],
  "scanned": {
-  "26OCT27BKNBOS": "2026-10-27T21:56:59.326917+00:00",
   "26OCT27DETNYK": "2026-10-27T22:25:21.137884+00:00",
   "26OCT27SACSAS": "2026-10-27T22:25:21.137884+00:00",
   "26OCT27PORLAL": "2026-10-28T01:37:43.083582+00:00",
@@ -1029,7 +1094,11 @@
   "26OCT29CLEATL": "2026-10-29T21:45:54.205015+00:00",
   "26OCT29SACNOP": "2026-10-29T22:25:55.659160+00:00",
   "26OCT29MEMPOR": "2026-10-30T00:34:42.578386+00:00",
-  "26OCT30CHAWAS": "2026-10-30T21:42:16.009603+00:00"
+  "26OCT30CHAWAS": "2026-10-30T21:42:16.009603+00:00",
+  "26OCT30CHIBOS": "2026-10-30T22:15:05.602113+00:00",
+  "26OCT30DETBKN": "2026-10-30T22:15:05.602113+00:00",
+  "26OCT30NYKPHI": "2026-10-30T22:15:05.602113+00:00",
+  "26OCT30ORLTOR": "2026-10-30T22:15:05.602113+00:00"
  },
  "milestones": [
   25
@@ -1730,6 +1799,226 @@
    },
    "pnl": 3.99,
    "won": true
+  },
+  {
+   "id": "KXNBA1HSPREAD-26OCT30CHIBOS-BOS13|NO",
+   "ticker": "KXNBA1HSPREAD-26OCT30CHIBOS-BOS13",
+   "fam": "1HSPREAD",
+   "game": "CHI @ BOS",
+   "tip": "2026-10-30T23:30:00+00:00",
+   "label": "Boston wins by over 12.5 points",
+   "side": "NO",
+   "price": 0.63,
+   "p": 0.7201,
+   "edge": 0.0701,
+   "contracts": 15,
+   "status": "abierta",
+   "opened": "2026-10-30T22:15:05.602113+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 14.5,
+    "total": 234.9,
+    "h1_total": 118.6,
+    "q1_total": 58.9
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26OCT30CHIBOS-110|SI",
+   "ticker": "KXNBA1HTOTAL-26OCT30CHIBOS-110",
+   "fam": "1HTOTAL",
+   "game": "CHI @ BOS",
+   "tip": "2026-10-30T23:30:00+00:00",
+   "label": "Over 109.5 points",
+   "side": "SI",
+   "price": 0.66,
+   "p": 0.7763,
+   "edge": 0.0963,
+   "contracts": 15,
+   "status": "abierta",
+   "opened": "2026-10-30T22:15:05.602113+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 14.5,
+    "total": 234.9,
+    "h1_total": 118.6,
+    "q1_total": 58.9
+   }
+  },
+  {
+   "id": "KXNBA1QSPREAD-26OCT30CHIBOS-BOS13|NO",
+   "ticker": "KXNBA1QSPREAD-26OCT30CHIBOS-BOS13",
+   "fam": "1QSPREAD",
+   "game": "CHI @ BOS",
+   "tip": "2026-10-30T23:30:00+00:00",
+   "label": "Boston wins by over 12.5 points",
+   "side": "NO",
+   "price": 0.81,
+   "p": 0.9067,
+   "edge": 0.0767,
+   "contracts": 12,
+   "status": "abierta",
+   "opened": "2026-10-30T22:15:05.602113+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 14.5,
+    "total": 234.9,
+    "h1_total": 118.6,
+    "q1_total": 58.9
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26OCT30DETBKN-114|NO",
+   "ticker": "KXNBA1HTOTAL-26OCT30DETBKN-114",
+   "fam": "1HTOTAL",
+   "game": "DET @ BKN",
+   "tip": "2026-10-30T23:30:00+00:00",
+   "label": "Over 113.5 points",
+   "side": "NO",
+   "price": 0.48,
+   "p": 0.5535,
+   "edge": 0.0535,
+   "contracts": 20,
+   "status": "abierta",
+   "opened": "2026-10-30T22:15:05.602113+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -8.3,
+    "total": 221.6,
+    "h1_total": 111.9,
+    "q1_total": 55.6
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26OCT30DETBKN-58|NO",
+   "ticker": "KXNBA1QTOTAL-26OCT30DETBKN-58",
+   "fam": "1QTOTAL",
+   "game": "DET @ BKN",
+   "tip": "2026-10-30T23:30:00+00:00",
+   "label": "Over 57.5 points",
+   "side": "NO",
+   "price": 0.5,
+   "p": 0.5944,
+   "edge": 0.0744,
+   "contracts": 20,
+   "status": "abierta",
+   "opened": "2026-10-30T22:15:05.602113+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -8.3,
+    "total": 221.6,
+    "h1_total": 111.9,
+    "q1_total": 55.6
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26OCT30NYKPHI-116|NO",
+   "ticker": "KXNBA1HTOTAL-26OCT30NYKPHI-116",
+   "fam": "1HTOTAL",
+   "game": "NYK @ PHI",
+   "tip": "2026-10-30T23:30:00+00:00",
+   "label": "Over 115.5 points",
+   "side": "NO",
+   "price": 0.46,
+   "p": 0.586,
+   "edge": 0.106,
+   "contracts": 21,
+   "status": "abierta",
+   "opened": "2026-10-30T22:15:05.602113+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -1.7,
+    "total": 223.6,
+    "h1_total": 112.9,
+    "q1_total": 56.1
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26OCT30NYKPHI-60|NO",
+   "ticker": "KXNBA1QTOTAL-26OCT30NYKPHI-60",
+   "fam": "1QTOTAL",
+   "game": "NYK @ PHI",
+   "tip": "2026-10-30T23:30:00+00:00",
+   "label": "Over 59.5 points",
+   "side": "NO",
+   "price": 0.54,
+   "p": 0.665,
+   "edge": 0.105,
+   "contracts": 18,
+   "status": "abierta",
+   "opened": "2026-10-30T22:15:05.602113+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -1.7,
+    "total": 223.6,
+    "h1_total": 112.9,
+    "q1_total": 56.1
+   }
+  },
+  {
+   "id": "KXNBA1HSPREAD-26OCT30ORLTOR-ORL6|NO",
+   "ticker": "KXNBA1HSPREAD-26OCT30ORLTOR-ORL6",
+   "fam": "1HSPREAD",
+   "game": "ORL @ TOR",
+   "tip": "2026-10-30T23:30:00+00:00",
+   "label": "Orlando wins by over 5.5 points",
+   "side": "NO",
+   "price": 0.78,
+   "p": 0.868,
+   "edge": 0.068,
+   "contracts": 12,
+   "status": "abierta",
+   "opened": "2026-10-30T22:15:05.602113+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 7.7,
+    "total": 225.3,
+    "h1_total": 113.8,
+    "q1_total": 56.5
+   }
+  },
+  {
+   "id": "KXNBA1QSPREAD-26OCT30ORLTOR-ORL5|NO",
+   "ticker": "KXNBA1QSPREAD-26OCT30ORLTOR-ORL5",
+   "fam": "1QSPREAD",
+   "game": "ORL @ TOR",
+   "tip": "2026-10-30T23:30:00+00:00",
+   "label": "Orlando wins by over 4.5 points",
+   "side": "NO",
+   "price": 0.75,
+   "p": 0.8441,
+   "edge": 0.0741,
+   "contracts": 13,
+   "status": "abierta",
+   "opened": "2026-10-30T22:15:05.602113+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 7.7,
+    "total": 225.3,
+    "h1_total": 113.8,
+    "q1_total": 56.5
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26OCT30ORLTOR-62|NO",
+   "ticker": "KXNBA1QTOTAL-26OCT30ORLTOR-62",
+   "fam": "1QTOTAL",
+   "game": "ORL @ TOR",
+   "tip": "2026-10-30T23:30:00+00:00",
+   "label": "Over 61.5 points",
+   "side": "NO",
+   "price": 0.65,
+   "p": 0.733,
+   "edge": 0.063,
+   "contracts": 15,
+   "status": "abierta",
+   "opened": "2026-10-30T22:15:05.602113+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 7.7,
+    "total": 225.3,
+    "h1_total": 113.8,
+    "q1_total": 56.5
+   }
   }
  ]
 }
