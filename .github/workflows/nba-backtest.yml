@@ -27,8 +27,8 @@ jobs:
       - run: pip install -r nba/requirements.txt
       - name: Backtest
         env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          # Telegram APAGADO a pedido de Roberto (30-oct-2026) hasta que el NBA tenga resultados positivos.
+          # Para reactivarlo, restaurar TELEGRAM_BOT_TOKEN y TELEGRAM_CHAT_ID desde secrets.
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
           PYTHONUNBUFFERED: "1"
         run: python -m nba.backtest --desde "${{ inputs.desde || '2025-11-10' }}" --hasta "${{ inputs.hasta || '2026-06-30' }}" --max-mins 320
