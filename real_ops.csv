@@ -39,3 +39,4 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-10-29T11:31:58+00:00,real,error,KXATPCHALLENGERMATCH-26OCT27SCHCUI-CUI,Jie Cui,,,,,,,"RuntimeError('Kalshi POST /portfolio/orders -> 410: {""error"":{""code"":""deprecated_v1_order_endpoint"",""message"":""Please switch to the V2 endpoints"",""details"":""https://docs.kalshi.com/api-reference/order"
 2026-10-30T01:08:47+00:00,real,error,KXATPCHALLENGERMATCH-26OCT29KRUBLA-KRU,Mitchell Krueger,,,,,,,"RuntimeError('Kalshi POST /portfolio/events/orders -> 400: {""error"":{""code"":""insufficient_balance"",""message"":""insufficient balance""}}')"
 2026-10-30T02:07:36+00:00,real,omitida,KXWTACHALLENGERMATCH-26OCT29ZIDHER-HER,Alicia Herrero Linana,,0.34,,,,,"volumen $123,431 < $300,000 (solo paper)"
+2026-10-30T17:12:03+00:00,real,compra,KXWTACHALLENGERMATCH-26OCT30ROMGRA-ROM,Leyre Romero Gormaz,5,0.47,0.48,2.44,,46.6222,pedidos=5 estado=llenos=5.00 resto=0.00
