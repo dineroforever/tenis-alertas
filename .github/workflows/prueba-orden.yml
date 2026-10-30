@@ -42,6 +42,15 @@ jobs:
 
           try:
               s = k.saldo()
+              bal = k._api("GET", "/portfolio/balance")  # diagnóstico: respuesta completa del saldo
+              try:
+                  pos = k._api("GET", "/portfolio/positions", params={"count_filter": "position", "limit": 100})
+                  abiertas = [(p.get("ticker"), p.get("position_fp", p.get("position")), p.get("market_exposure_dollars", p.get("market_exposure")))
+                              for p in pos.get("market_positions", []) or []]
+              except Exception as e:
+                  abiertas = f"error: {repr(e)[:80]}"
+              print("BALANCE:", bal)
+              print("POSICIONES:", abiertas)
               elegido = None
               for serie in ("KXATPMATCH", "KXWTAMATCH", "KXATPCHALLENGERMATCH"):
                   d = requests.get(f"{k.BASE}/markets", params={"series_ticker": serie, "status": "open", "limit": 200},
@@ -68,7 +77,8 @@ jobs:
               msg = (("✅ Prueba de orden V2 OK: Kalshi aceptó la orden y no se llenó (costo $0)."
                       if ok else "⚠️ Prueba de orden V2: respuesta inesperada, revisar.")
                      + f"\nMercado: {tk} (ask {ask * 100:.0f}¢)\nOrden: 1 contrato a 1¢, {o.get('status')}"
-                     + f"\nSaldo antes ${s:.2f} / después ${s2:.2f}")
+                     + f"\nSaldo antes ${s:.2f} / después ${s2:.2f}"
+                     + f"\nBalance completo: {str(bal)[:300]}\nPosiciones abiertas: {str(abiertas)[:400]}")
               print(msg)
               print("Respuesta completa:", o)
               tg(msg)
