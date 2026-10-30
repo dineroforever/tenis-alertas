@@ -224,3 +224,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-30T13:27:15+00:00,sombra,KXWTAMATCH-26OCT29EALSHN-EAL,Alexandra Eala,0.59,16,liquidacion,0.0,0.69,0.05,9,216,si,no,no
 2026-10-30T13:27:15+00:00,sombra,KXWTAMATCH-26OCT30SUNLIU-SUN,Xinran Sun,0.56,17,liquidacion,1.0,0.65,0.39,5,109,si,no,no
 2026-10-30T18:05:19+00:00,real,KXWTACHALLENGERMATCH-26OCT30ROMGRA-ROM,Leyre Romero Gormaz,0.47,21,valor_justo,0.58,0.58,0.14,53,53,si,si,no
+2026-10-30T23:40:58+00:00,real,KXATPCHALLENGERMATCH-26OCT30ABOHAR-ABO,Valerio Aboian,0.38,26,liquidacion,1.0,0.76,0.18,57,60,si,si,si
