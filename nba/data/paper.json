@@ -1010,7 +1010,6 @@
   }
  ],
  "scanned": {
-  "26OCT26GSWDEN": "2026-10-27T00:25:46.745243+00:00",
   "26OCT27BKNBOS": "2026-10-27T21:56:59.326917+00:00",
   "26OCT27DETNYK": "2026-10-27T22:25:21.137884+00:00",
   "26OCT27SACSAS": "2026-10-27T22:25:21.137884+00:00",
@@ -1028,7 +1027,8 @@
   "26OCT28OKCDAL": "2026-10-28T23:57:53.275781+00:00",
   "26OCT28LALLAC": "2026-10-29T01:38:51.245639+00:00",
   "26OCT29CLEATL": "2026-10-29T21:45:54.205015+00:00",
-  "26OCT29SACNOP": "2026-10-29T22:25:55.659160+00:00"
+  "26OCT29SACNOP": "2026-10-29T22:25:55.659160+00:00",
+  "26OCT29MEMPOR": "2026-10-30T00:34:42.578386+00:00"
  },
  "milestones": [
   25
@@ -1650,6 +1650,72 @@
     "total": 235.2,
     "h1_total": 118.8,
     "q1_total": 59.4
+   }
+  },
+  {
+   "id": "KXNBA1HSPREAD-26OCT29MEMPOR-POR16|NO",
+   "ticker": "KXNBA1HSPREAD-26OCT29MEMPOR-POR16",
+   "fam": "1HSPREAD",
+   "game": "MEM @ POR",
+   "tip": "2026-10-30T02:00:00+00:00",
+   "label": "Portland wins by over 15.5 points",
+   "side": "NO",
+   "price": 0.85,
+   "p": 0.9196,
+   "edge": 0.0596,
+   "contracts": 11,
+   "status": "abierta",
+   "opened": "2026-10-30T00:34:42.578386+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 6.9,
+    "total": 232.5,
+    "h1_total": 117.4,
+    "q1_total": 58.7
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26OCT29MEMPOR-119|NO",
+   "ticker": "KXNBA1HTOTAL-26OCT29MEMPOR-119",
+   "fam": "1HTOTAL",
+   "game": "MEM @ POR",
+   "tip": "2026-10-30T02:00:00+00:00",
+   "label": "Over 118.5 points",
+   "side": "NO",
+   "price": 0.44,
+   "p": 0.5352,
+   "edge": 0.0752,
+   "contracts": 22,
+   "status": "abierta",
+   "opened": "2026-10-30T00:34:42.578386+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 6.9,
+    "total": 232.5,
+    "h1_total": 117.4,
+    "q1_total": 58.7
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26OCT29MEMPOR-66|NO",
+   "ticker": "KXNBA1QTOTAL-26OCT29MEMPOR-66",
+   "fam": "1QTOTAL",
+   "game": "MEM @ POR",
+   "tip": "2026-10-30T02:00:00+00:00",
+   "label": "Over 65.5 points",
+   "side": "NO",
+   "price": 0.7,
+   "p": 0.8022,
+   "edge": 0.0822,
+   "contracts": 14,
+   "status": "abierta",
+   "opened": "2026-10-30T00:34:42.578386+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 6.9,
+    "total": 232.5,
+    "h1_total": 117.4,
+    "q1_total": 58.7
    }
   }
  ]
