@@ -139,3 +139,5 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-29T11:55:43+00:00,real,KXATPCHALLENGERMATCH-26OCT27SCHCUI-CUI,Jie Cui,0.34,29,valor_justo,0.85,,,,
 2026-10-29T15:40:12+00:00,sombra,KXATPMATCH-26OCT29NORMED-NOR,Cameron Norrie,0.39,25,liquidacion,0.0,,,,
 2026-10-29T16:56:30+00:00,sombra,KXWTACHALLENGERMATCH-26OCT29BANJAC-JAC,Elsa Jacquemot,0.6,16,valor_justo,0.99,,,,
+2026-10-30T02:01:11+00:00,real,KXATPCHALLENGERMATCH-26OCT29KRUBLA-KRU,Mitchell Krueger,0.35,28,liquidacion,0.0,0.3,0.3,0.3,0.38
+2026-10-30T02:01:11+00:00,sombra,KXATPCHALLENGERMATCH-26OCT29KRUBLA-KRU,Mitchell Krueger,0.43,23,liquidacion,0.0,0.41,0.41,,
