@@ -21,8 +21,9 @@ jobs:
       - run: pip install -r nba/requirements.txt
       - name: Bot papel
         env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          # Telegram APAGADO a pedido de Roberto (30-oct-2026): el paper NBA sigue corriendo y registrando,
+          # pero no envía avisos hasta que los resultados sean positivos. Para reactivarlo, restaurar:
+          #   TELEGRAM_BOT_TOKEN y TELEGRAM_CHAT_ID desde secrets.
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
           PYTHONUNBUFFERED: "1"
         run: python -m nba.bot
