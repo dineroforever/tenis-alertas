@@ -1073,11 +1073,31 @@
     "h1_total": 113.8,
     "q1_total": 56.5
    }
+  },
+  {
+   "id": "KXNBASPREAD-26OCT30INDMIA-MIA8|NO",
+   "ticker": "KXNBASPREAD-26OCT30INDMIA-MIA8",
+   "fam": "SPREAD",
+   "game": "IND @ MIA",
+   "tip": "2026-10-31T00:00:00+00:00",
+   "label": "Miami wins by over 7.5 points",
+   "side": "NO",
+   "price": 0.46,
+   "p": 0.5455,
+   "edge": 0.0655,
+   "contracts": 21,
+   "status": "abierta",
+   "opened": "2026-10-30T22:47:57.509001+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 6.1,
+    "total": 235.4,
+    "h1_total": 118.9,
+    "q1_total": 59.1
+   }
   }
  ],
  "scanned": {
-  "26OCT27DETNYK": "2026-10-27T22:25:21.137884+00:00",
-  "26OCT27SACSAS": "2026-10-27T22:25:21.137884+00:00",
   "26OCT27PORLAL": "2026-10-28T01:37:43.083582+00:00",
   "26OCT28CHADET": "2026-10-28T21:44:35.140513+00:00",
   "26OCT28MIAATL": "2026-10-28T21:44:35.140513+00:00",
@@ -1098,7 +1118,10 @@
   "26OCT30CHIBOS": "2026-10-30T22:15:05.602113+00:00",
   "26OCT30DETBKN": "2026-10-30T22:15:05.602113+00:00",
   "26OCT30NYKPHI": "2026-10-30T22:15:05.602113+00:00",
-  "26OCT30ORLTOR": "2026-10-30T22:15:05.602113+00:00"
+  "26OCT30ORLTOR": "2026-10-30T22:15:05.602113+00:00",
+  "26OCT30HOUDAL": "2026-10-30T22:47:57.509001+00:00",
+  "26OCT30INDMIA": "2026-10-30T22:47:57.509001+00:00",
+  "26OCT30LACMIN": "2026-10-30T22:47:57.509001+00:00"
  },
  "milestones": [
   25
@@ -2018,6 +2041,160 @@
     "total": 225.3,
     "h1_total": 113.8,
     "q1_total": 56.5
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26OCT30HOUDAL-111|SI",
+   "ticker": "KXNBA1HTOTAL-26OCT30HOUDAL-111",
+   "fam": "1HTOTAL",
+   "game": "HOU @ DAL",
+   "tip": "2026-10-31T00:00:00+00:00",
+   "label": "Over 110.5 points",
+   "side": "SI",
+   "price": 0.45,
+   "p": 0.6063,
+   "edge": 0.1363,
+   "contracts": 22,
+   "status": "abierta",
+   "opened": "2026-10-30T22:47:57.509001+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -5.7,
+    "total": 225.3,
+    "h1_total": 113.7,
+    "q1_total": 56.5
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26OCT30HOUDAL-54|SI",
+   "ticker": "KXNBA1QTOTAL-26OCT30HOUDAL-54",
+   "fam": "1QTOTAL",
+   "game": "HOU @ DAL",
+   "tip": "2026-10-31T00:00:00+00:00",
+   "label": "Over 53.5 points",
+   "side": "SI",
+   "price": 0.57,
+   "p": 0.6466,
+   "edge": 0.0566,
+   "contracts": 17,
+   "status": "abierta",
+   "opened": "2026-10-30T22:47:57.509001+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -5.7,
+    "total": 225.3,
+    "h1_total": 113.7,
+    "q1_total": 56.5
+   }
+  },
+  {
+   "id": "KXNBA1HSPREAD-26OCT30INDMIA-MIA11|NO",
+   "ticker": "KXNBA1HSPREAD-26OCT30INDMIA-MIA11",
+   "fam": "1HSPREAD",
+   "game": "IND @ MIA",
+   "tip": "2026-10-31T00:00:00+00:00",
+   "label": "Miami wins by over 10.5 points",
+   "side": "NO",
+   "price": 0.71,
+   "p": 0.8052,
+   "edge": 0.0752,
+   "contracts": 14,
+   "status": "abierta",
+   "opened": "2026-10-30T22:47:57.509001+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 6.1,
+    "total": 235.4,
+    "h1_total": 118.9,
+    "q1_total": 59.1
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26OCT30INDMIA-118|SI",
+   "ticker": "KXNBA1HTOTAL-26OCT30INDMIA-118",
+   "fam": "1HTOTAL",
+   "game": "IND @ MIA",
+   "tip": "2026-10-31T00:00:00+00:00",
+   "label": "Over 117.5 points",
+   "side": "SI",
+   "price": 0.43,
+   "p": 0.5451,
+   "edge": 0.0951,
+   "contracts": 23,
+   "status": "abierta",
+   "opened": "2026-10-30T22:47:57.509001+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 6.1,
+    "total": 235.4,
+    "h1_total": 118.9,
+    "q1_total": 59.1
+   }
+  },
+  {
+   "id": "KXNBA1QSPREAD-26OCT30INDMIA-MIA9|NO",
+   "ticker": "KXNBA1QSPREAD-26OCT30INDMIA-MIA9",
+   "fam": "1QSPREAD",
+   "game": "IND @ MIA",
+   "tip": "2026-10-31T00:00:00+00:00",
+   "label": "Miami wins by over 8.5 points",
+   "side": "NO",
+   "price": 0.78,
+   "p": 0.8538,
+   "edge": 0.0538,
+   "contracts": 12,
+   "status": "abierta",
+   "opened": "2026-10-30T22:47:57.509001+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 6.1,
+    "total": 235.4,
+    "h1_total": 118.9,
+    "q1_total": 59.1
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26OCT30LACMIN-110|SI",
+   "ticker": "KXNBA1HTOTAL-26OCT30LACMIN-110",
+   "fam": "1HTOTAL",
+   "game": "LAC @ MIN",
+   "tip": "2026-10-31T00:00:00+00:00",
+   "label": "Over 109.5 points",
+   "side": "SI",
+   "price": 0.45,
+   "p": 0.6095,
+   "edge": 0.1395,
+   "contracts": 22,
+   "status": "abierta",
+   "opened": "2026-10-30T22:47:57.509001+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 7.3,
+    "total": 223.5,
+    "h1_total": 112.8,
+    "q1_total": 56.1
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26OCT30LACMIN-55|SI",
+   "ticker": "KXNBA1QTOTAL-26OCT30LACMIN-55",
+   "fam": "1QTOTAL",
+   "game": "LAC @ MIN",
+   "tip": "2026-10-31T00:00:00+00:00",
+   "label": "Over 54.5 points",
+   "side": "SI",
+   "price": 0.5,
+   "p": 0.5774,
+   "edge": 0.0574,
+   "contracts": 20,
+   "status": "abierta",
+   "opened": "2026-10-30T22:47:57.509001+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 7.3,
+    "total": 223.5,
+    "h1_total": 112.8,
+    "q1_total": 56.1
    }
   }
  ]
