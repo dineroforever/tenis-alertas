@@ -121,8 +121,19 @@ def _num(d, *claves):
     return None
 
 
+EXCHANGE = int(os.getenv("REAL_EXCHANGE", "3"))  # Kalshi separa el saldo por exchange; el tenis vive en el 3
+
+
 def saldo():
+    """Saldo disponible en el exchange del tenis (3). Kalshi guarda el dinero por exchange y las órdenes
+    de tenis solo pueden usar el de ese exchange. Si la respuesta no trae desglose, usa el total."""
     d = _api("GET", "/portfolio/balance")
+    for b in d.get("balance_breakdown", []) or []:
+        try:
+            if int(b.get("exchange_index", -1)) == EXCHANGE:
+                return _num(b, "balance")
+        except (TypeError, ValueError):
+            pass
     c = _num(d, "balance")
     if c is not None:
         return c / 100
