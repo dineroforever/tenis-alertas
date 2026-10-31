@@ -1130,7 +1130,8 @@
   "26OCT30INDMIA": "2026-10-30T22:47:57.509001+00:00",
   "26OCT30LACMIN": "2026-10-30T22:47:57.509001+00:00",
   "26OCT30DENPHX": "2026-10-31T00:39:37.843078+00:00",
-  "26OCT30LALGSW": "2026-10-31T00:39:37.843078+00:00"
+  "26OCT30LALGSW": "2026-10-31T00:39:37.843078+00:00",
+  "26OCT31PORUTA": "2026-10-31T17:23:23.259782+00:00"
  },
  "milestones": [
   25
@@ -2287,6 +2288,28 @@
    },
    "pnl": 4.86,
    "won": true
+  },
+  {
+   "id": "KXNBA1QTOTAL-26OCT31PORUTA-67|NO",
+   "ticker": "KXNBA1QTOTAL-26OCT31PORUTA-67",
+   "fam": "1QTOTAL",
+   "game": "POR @ UTA",
+   "tip": "2026-10-31T19:00:00+00:00",
+   "label": "Over 66.5 points",
+   "side": "NO",
+   "price": 0.76,
+   "p": 0.8335,
+   "edge": 0.0535,
+   "contracts": 13,
+   "status": "abierta",
+   "opened": "2026-10-31T17:23:23.259782+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -7.8,
+    "total": 233.5,
+    "h1_total": 117.9,
+    "q1_total": 58.8
+   }
   }
  ]
 }
