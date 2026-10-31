@@ -48,3 +48,4 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-10-31T11:31:20+00:00,real,omitida,KXATPMATCH-26OCT31GASKOP-GAS,Hugo Gaston,,0.47,,,,,"volumen $242,156 < $300,000 (solo paper)"
 2026-10-31T14:28:20+00:00,real,omitida,KXATPMATCH-26OCT31BAEDZU-BAE,Sebastián Báez,,0.36,,,,,"volumen $222,908 < $300,000 (solo paper)"
 2026-10-31T18:00:01+00:00,real,compra,KXATPMATCH-26OCT31ZVEDE-DE,Alex de Minaur,6,0.39,0.4,2.44,,49.2935,pedidos=6 estado=llenos=6.00 resto=0.00
+2026-10-31T18:36:17+00:00,real,venta,KXATPMATCH-26OCT31ZVEDE-DE,Alex de Minaur,6,0.69,0.68,4.05,,53.3436,quedan=0 estado=llenos=6.00 resto=0.00
