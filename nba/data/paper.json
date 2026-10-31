@@ -1092,7 +1092,7 @@
    "p": 0.5455,
    "edge": 0.0655,
    "contracts": 21,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-30T22:47:57.509001+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1100,7 +1100,9 @@
     "total": 235.4,
     "h1_total": 118.9,
     "q1_total": 59.1
-   }
+   },
+   "pnl": -10.03,
+   "won": false
   }
  ],
  "scanned": {
@@ -2272,7 +2274,7 @@
    "p": 0.7635,
    "edge": 0.0835,
    "contracts": 15,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-31T00:39:37.843078+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -2280,7 +2282,9 @@
     "total": 234.2,
     "h1_total": 118.3,
     "q1_total": 58.8
-   }
+   },
+   "pnl": 4.86,
+   "won": true
   }
  ]
 }
