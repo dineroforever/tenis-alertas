@@ -702,8 +702,28 @@ def marcador(m, lado):
     return txt
 
 
-def mercados(m, ev):
-    """Mapea los mercados Kalshi del evento a (local, visita)."""
+def refrescar(mk):
+    """Actualiza en el momento el precio de un mercado (bid/ask/profundidad) pidiéndolo a Kalshi.
+    La lista de eventos se baja al inicio del ciclo y la llamada a Apify puede tardar 30-120 s, así que
+    sin esto el paper decidía con precios atrasados (ej. anotó vender a 58¢ cuando Kalshi pagaba 47¢)."""
+    if not mk or not mk.get("ticker"):
+        return mk
+    try:
+        r = requests.get(f"{KALSHI}/markets/{mk['ticker']}", timeout=10)
+        if r.ok:
+            nuevo = r.json().get("market", {})
+            for k in ("yes_bid_dollars", "yes_ask_dollars", "yes_bid_size_fp", "yes_ask_size_fp",
+                      "volume_fp", "status", "result"):
+                if k in nuevo:
+                    mk[k] = nuevo[k]
+            mk["_fresco"] = time.time()
+    except Exception as e:
+        print("No pude refrescar", mk.get("ticker"), repr(e)[:80])
+    return mk
+
+
+def mercados(m, ev, fresco=False):
+    """Mapea los mercados Kalshi del evento a (local, visita). fresco=True pide el precio actual a Kalshi."""
     mk_home = mk_away = None
     for mk in ev.get("markets", []):
         nm = mk.get("yes_sub_title", "")
@@ -711,6 +731,10 @@ def mercados(m, ev):
             mk_home = mk
         elif apellido_match(m["awayPlayerName"], nm.split()[-1] if nm else "") or apellido_match(m["awayPlayerName"], nm):
             mk_away = mk
+    if fresco:
+        for mk in (mk_home, mk_away):
+            if mk and time.time() - mk.get("_fresco", 0) > 5:
+                refrescar(mk)
     return mk_home, mk_away
 
 
@@ -766,7 +790,7 @@ def evaluar(m, ev, serie, permitir_edge_alto=False, det=None):
     if gh == 6 and ga == 6:
         return None  # no entrar en tiebreak
 
-    mk_home, mk_away = mercados(m, ev)
+    mk_home, mk_away = mercados(m, ev, fresco=True)
     if not mk_home or not mk_away:
         return None
     vol = (f(mk_home.get("volume_fp")) or 0) + (f(mk_away.get("volume_fp")) or 0)
@@ -966,6 +990,7 @@ def seguir(m, ev, pos):
         return None
     mk_home, mk_away = mercados(m, ev)
     mk = mk_home if pos["lado"] == "home" else mk_away
+    refrescar(mk)  # precio de salida al momento, no el de inicio del ciclo
     if not mk:
         return None
     bid = f(mk.get("yes_bid_dollars"))
