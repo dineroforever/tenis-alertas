@@ -10,6 +10,8 @@ import requests
 
 MIAMI = ZoneInfo("America/New_York")
 INICIO_FASE2 = 50          # las primeras 50 operaciones son la fase 1
+# Fase 3: salidas desde que el paper pide el precio de Kalshi al momento (commit 727827f, 30-oct-2026 10:05 p. m.)
+INICIO_FASE3 = "2026-10-31T02:05:00+00:00"
 META = 100
 BANCA = 500.0          # banca simulada del paper (BANKROLL)
 
@@ -74,7 +76,8 @@ def main():
         return
     sal = leer("senales_salidas.csv")
     hoy = [s for s in sal if (a_miami(s["fecha_utc"]) or ahora).date() == ahora.date()]
-    f2 = sal[INICIO_FASE2:]
+    f2 = [s for s in sal[INICIO_FASE2:] if s["fecha_utc"] < INICIO_FASE3]
+    f3 = [s for s in sal if s["fecha_utc"] >= INICIO_FASE3]
 
     lineas = [f"📊 <b>Resumen bot de tenis (paper)</b> · {ahora:%d-%m-%Y}", ""]
     lineas.append("🗓 " + linea("Hoy", hoy))
@@ -82,6 +85,7 @@ def main():
         lineas.append(f"   • {html.escape(s['jugador'])} {num(s['entrada']) * 100:.0f}¢ → {usd(num(s['ganancia_usd']))}")
     lineas += ["", "📈 " + linea("Acumulado", sal), "   " + linea("Fase 1", sal[:INICIO_FASE2]),
                "   " + linea("Fase 2", f2),
+               "   " + (linea("Fase 3 · precios reales", f3) if f3 else "Fase 3 · precios reales: aún sin operaciones"),
                f"🎯 Faltan {max(0, META - len(sal))} operaciones para las {META}."]
 
     # Interés compuesto: cada ganancia se suma a la banca y la siguiente apuesta crece en proporción
