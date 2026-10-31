@@ -1,0 +1,40 @@
+name: Auditoria paper tenis (solo lectura)
+
+# Compara los precios de salida que anotó el paper con el bid real de Kalshi en ese minuto.
+# Solo lee datos públicos de Kalshi: no usa llaves ni envía órdenes.
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - auditoria_paper.py
+      - .github/workflows/auditoria.yml
+
+permissions:
+  contents: write
+
+jobs:
+  auditar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: Auditar salidas del paper
+        run: python auditoria_paper.py
+      - name: Guardar resultado
+        run: |
+          git config user.name "bot-tenis"
+          git config user.email "bot-tenis@users.noreply.github.com"
+          cp auditoria_paper.csv auditoria_resumen.txt /tmp/
+          for i in 1 2 3; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            cp /tmp/auditoria_paper.csv /tmp/auditoria_resumen.txt .
+            git add auditoria_paper.csv auditoria_resumen.txt
+            if git diff --cached --quiet; then break; fi
+            if git commit -q -m "Auditoria paper tenis" && git push -q; then break; fi
+            sleep 5
+          done
