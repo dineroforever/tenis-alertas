@@ -230,3 +230,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-10-31T09:26:07+00:00,real,KXATPCHALLENGERMATCH-26OCT31DEMHSU-HSU,Yu Hsiou Hsu,0.55,18,valor_justo,0.43,0.74,0.11,86,105,si,si,si
 2026-10-31T11:39:35+00:00,real,KXATPMATCH-26OCT31GASKOP-GAS,Hugo Gaston,0.47,21,valor_justo,0.36,0.5,0.36,5,8,no,no,no
 2026-10-31T14:58:46+00:00,real,KXATPMATCH-26OCT31BAEDZU-BAE,Sebastián Báez,0.36,27,valor_justo,0.68,0.65,0.3,30,30,si,si,si
+2026-10-31T17:21:11+00:00,sombra,KXATPCHALLENGERMATCH-26OCT31DAMPRI-DAM,Martin Damm Jr,0.57,17,liquidacion,1.0,0.92,0.51,58,61,si,si,si
