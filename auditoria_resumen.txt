@@ -1,0 +1,15 @@
+Auditoría paper tenis — 2026-10-31 02:01 UTC
+Salidas valor_justo: 86  ->  ok 42 · optimistas 40 · imposibles 4 · sin datos 0
+Valor justo con datos: paper $263.78  vs  ejecutable $181.19  (dif $-82.59)
+Valor justo sin datos (se dejan como paper): $0.00
+Liquidaciones (no cambian): $41.51
+TOTAL paper $305.29  ->  TOTAL ajustado $222.70
+Peores diferencias:
+  2026-10-18T16:53 Francisco Rocha: anotó 73¢, bid real 50¢ (máx 74¢) -> -9.58
+  2026-10-14T13:49 Ann Li: anotó 71¢, bid real 52¢ (máx 72¢) -> -4.82
+  2026-10-24T06:23 Heather Watson: anotó 87¢, bid real 71¢ (máx 95¢) -> -4.49
+  2026-10-24T09:07 Maya Joint: anotó 78¢, bid real 59¢ (máx 78¢) -> -4.48
+  2026-10-14T02:47 Carlos Maria Zarate: anotó 86¢, bid real 74¢ (máx 86¢) -> -3.50
+  2026-10-28T06:22 Maya Joint: anotó 72¢, bid real 59¢ (máx 72¢) -> -3.46
+  2026-10-27T06:51 Jake Delaney: anotó 79¢, bid real 65¢ (máx 83¢) -> -2.88
+  2026-10-16T19:14 Tristan Boyer: anotó 20¢, bid real 14¢ (máx 22¢) -> -2.57
