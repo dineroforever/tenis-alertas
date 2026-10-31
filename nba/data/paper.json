@@ -1020,7 +1020,7 @@
    "p": 0.2008,
    "edge": 0.0508,
    "contracts": 71,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-30T22:15:05.602113+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1028,7 +1028,9 @@
     "total": 223.6,
     "h1_total": 112.9,
     "q1_total": 56.1
-   }
+   },
+   "pnl": 60.46,
+   "won": true
   },
   {
    "id": "KXNBAGAME-26OCT30ORLTOR-ORL|NO",
@@ -1042,7 +1044,7 @@
    "p": 0.739,
    "edge": 0.059,
    "contracts": 15,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-30T22:15:05.602113+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1050,7 +1052,9 @@
     "total": 225.3,
     "h1_total": 113.8,
     "q1_total": 56.5
-   }
+   },
+   "pnl": -10.14,
+   "won": false
   },
   {
    "id": "KXNBASPREAD-26OCT30ORLTOR-ORL3|NO",
@@ -1064,7 +1068,7 @@
    "p": 0.802,
    "edge": 0.062,
    "contracts": 13,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-30T22:15:05.602113+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1072,7 +1076,9 @@
     "total": 225.3,
     "h1_total": 113.8,
     "q1_total": 56.5
-   }
+   },
+   "pnl": -9.55,
+   "won": false
   },
   {
    "id": "KXNBASPREAD-26OCT30INDMIA-MIA8|NO",
@@ -2124,7 +2130,7 @@
    "p": 0.8052,
    "edge": 0.0752,
    "contracts": 14,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-30T22:47:57.509001+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -2132,7 +2138,9 @@
     "total": 235.4,
     "h1_total": 118.9,
     "q1_total": 59.1
-   }
+   },
+   "pnl": 3.85,
+   "won": true
   },
   {
    "id": "KXNBA1HTOTAL-26OCT30INDMIA-118|SI",
@@ -2146,7 +2154,7 @@
    "p": 0.5451,
    "edge": 0.0951,
    "contracts": 23,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-30T22:47:57.509001+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -2154,7 +2162,9 @@
     "total": 235.4,
     "h1_total": 118.9,
     "q1_total": 59.1
-   }
+   },
+   "pnl": 12.71,
+   "won": true
   },
   {
    "id": "KXNBA1QSPREAD-26OCT30INDMIA-MIA9|NO",
