@@ -1131,7 +1131,8 @@
   "26OCT30LACMIN": "2026-10-30T22:47:57.509001+00:00",
   "26OCT30DENPHX": "2026-10-31T00:39:37.843078+00:00",
   "26OCT30LALGSW": "2026-10-31T00:39:37.843078+00:00",
-  "26OCT31PORUTA": "2026-10-31T17:23:23.259782+00:00"
+  "26OCT31PORUTA": "2026-10-31T17:23:23.259782+00:00",
+  "26OCT31PHICHA": "2026-10-31T20:39:50.274962+00:00"
  },
  "milestones": [
   25
@@ -2312,6 +2313,50 @@
    },
    "pnl": 2.95,
    "won": true
+  },
+  {
+   "id": "KXNBA1HSPREAD-26OCT31PHICHA-CHA7|NO",
+   "ticker": "KXNBA1HSPREAD-26OCT31PHICHA-CHA7",
+   "fam": "1HSPREAD",
+   "game": "PHI @ CHA",
+   "tip": "2026-10-31T22:00:00+00:00",
+   "label": "Charlotte wins by over 6.5 points",
+   "side": "NO",
+   "price": 0.73,
+   "p": 0.803,
+   "edge": 0.053,
+   "contracts": 13,
+   "status": "abierta",
+   "opened": "2026-10-31T20:39:50.274962+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -1.4,
+    "total": 211.5,
+    "h1_total": 106.8,
+    "q1_total": 53.2
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26OCT31PHICHA-59|NO",
+   "ticker": "KXNBA1QTOTAL-26OCT31PHICHA-59",
+   "fam": "1QTOTAL",
+   "game": "PHI @ CHA",
+   "tip": "2026-10-31T22:00:00+00:00",
+   "label": "Over 58.5 points",
+   "side": "NO",
+   "price": 0.62,
+   "p": 0.7452,
+   "edge": 0.1052,
+   "contracts": 16,
+   "status": "abierta",
+   "opened": "2026-10-31T20:39:50.274962+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -1.4,
+    "total": 211.5,
+    "h1_total": 106.8,
+    "q1_total": 53.2
+   }
   }
  ]
 }
