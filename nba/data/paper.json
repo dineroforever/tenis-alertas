@@ -1132,7 +1132,8 @@
   "26OCT30DENPHX": "2026-10-31T00:39:37.843078+00:00",
   "26OCT30LALGSW": "2026-10-31T00:39:37.843078+00:00",
   "26OCT31PORUTA": "2026-10-31T17:23:23.259782+00:00",
-  "26OCT31PHICHA": "2026-10-31T20:39:50.274962+00:00"
+  "26OCT31PHICHA": "2026-10-31T20:39:50.274962+00:00",
+  "26OCT31ATLNOP": "2026-10-31T21:41:43.977836+00:00"
  },
  "milestones": [
   25
@@ -2356,6 +2357,50 @@
     "total": 211.5,
     "h1_total": 106.8,
     "q1_total": 53.2
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26OCT31ATLNOP-124|NO",
+   "ticker": "KXNBA1HTOTAL-26OCT31ATLNOP-124",
+   "fam": "1HTOTAL",
+   "game": "ATL @ NOP",
+   "tip": "2026-10-31T23:00:00+00:00",
+   "label": "Over 123.5 points",
+   "side": "NO",
+   "price": 0.5,
+   "p": 0.5839,
+   "edge": 0.0639,
+   "contracts": 20,
+   "status": "abierta",
+   "opened": "2026-10-31T21:41:43.977836+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -3.7,
+    "total": 239.5,
+    "h1_total": 121.0,
+    "q1_total": 60.2
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26OCT31ATLNOP-67|NO",
+   "ticker": "KXNBA1QTOTAL-26OCT31ATLNOP-67",
+   "fam": "1QTOTAL",
+   "game": "ATL @ NOP",
+   "tip": "2026-10-31T23:00:00+00:00",
+   "label": "Over 66.5 points",
+   "side": "NO",
+   "price": 0.66,
+   "p": 0.7831,
+   "edge": 0.1031,
+   "contracts": 15,
+   "status": "abierta",
+   "opened": "2026-10-31T21:41:43.977836+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -3.7,
+    "total": 239.5,
+    "h1_total": 121.0,
+    "q1_total": 60.2
    }
   }
  ]
