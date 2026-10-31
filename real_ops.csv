@@ -43,3 +43,4 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-10-30T18:05:20+00:00,real,venta,KXWTACHALLENGERMATCH-26OCT30ROMGRA-ROM,Leyre Romero Gormaz,5,0.58,0.46,2.26,,48.885,quedan=0 estado=llenos=5.00 resto=0.00
 2026-10-30T22:40:53+00:00,real,compra,KXATPCHALLENGERMATCH-26OCT30ABOHAR-ABO,Valerio Aboian,6,0.38,0.39,2.38,,46.506,pedidos=6 estado=llenos=6.00 resto=0.00
 2026-10-30T23:40:57+00:00,real,liquidacion,KXATPCHALLENGERMATCH-26OCT30ABOHAR-ABO,Valerio Aboian,6,,,6.0,3.62,,yes
+2026-10-31T07:41:00+00:00,real,compra,KXATPCHALLENGERMATCH-26OCT31DEMHSU-HSU,Yu Hsiou Hsu,5,0.55,0.56,2.84,,49.6693,pedidos=5 estado=llenos=5.00 resto=0.00
