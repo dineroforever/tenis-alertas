@@ -148,3 +148,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-30T23:40:58+00:00,real,KXATPCHALLENGERMATCH-26OCT30ABOHAR-ABO,Valerio Aboian,0.38,26,liquidacion,1.0,0.39,0.37,0.39,0.39
 2026-10-31T00:43:04+00:00,sombra,KXWTACHALLENGERMATCH-26OCT30PODMON-POD,Nadia Podoroska,0.44,22,liquidacion,0.0,0.45,0.44,,
 2026-10-31T01:52:53+00:00,sombra,KXATPCHALLENGERMATCH-26OCT30DRABLA-DRA,Liam Draxl,0.57,17,valor_justo,0.94,,,,
+2026-10-31T09:26:07+00:00,real,KXATPCHALLENGERMATCH-26OCT31DEMHSU-HSU,Yu Hsiou Hsu,0.55,18,valor_justo,0.43,0.57,0.55,0.57,0.57
