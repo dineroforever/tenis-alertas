@@ -59,3 +59,4 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-01T15:58:27+00:00,real,omitida,KXATPCHALLENGERMATCH-26NOV01CERSOR-CER,Matyaš Černy,,0.37,,,,,"volumen $284,804 < $300,000 (solo paper)"
 2026-11-01T17:23:28+00:00,real,compra,KXWTACHALLENGERMATCH-26NOV01TUBGRA-TUB,Alice Tubello,6,0.39,0.4,2.38,,48.785,pedidos=6 estado=llenos=6.00 resto=0.00
 2026-11-01T17:56:11+00:00,real,liquidacion,KXWTACHALLENGERMATCH-26NOV01TUBGRA-TUB,Alice Tubello,6,,,6.0,3.62,,yes
+2026-11-01T20:43:43+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV01DIEDRA-DRA,Liam Draxl,7,0.37,0.38,2.63,,52.1521,pedidos=7 estado=llenos=7.00 resto=0.00
