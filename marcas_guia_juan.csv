@@ -265,3 +265,4 @@ fecha_utc,estrategia,ticker,hora_miami,volumen,vol_500k,horario_2a8pm,sets,games
 2026-11-01T05:03:47+00:00,apify_senal,KXWTAMATCH-26OCT31SAKPRI-PRI,01:03,674283,si,no,1-1,0-0,si,no,otro,no
 2026-11-01T10:28:39+00:00,apify_sombra,KXATPCHALLENGERMATCH-26NOV01DHAMAS-MAS,05:28,446791,no,no,1-1,0-0,si,no,otro,no
 2026-11-01T10:32:06+00:00,apify_senal,KXATPCHALLENGERMATCH-26NOV01DHAMAS-MAS,05:32,488663,no,no,1-1,0-1,si,no,otro,no
+2026-11-01T11:30:16+00:00,apify_senal,KXWTAMATCH-26NOV01FALZOL-ZOL,06:30,585240,si,no,1-1,5-5,si,no,otro,no
