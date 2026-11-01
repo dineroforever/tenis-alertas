@@ -153,3 +153,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-31T14:58:46+00:00,real,KXATPMATCH-26OCT31BAEDZU-BAE,Sebastián Báez,0.36,27,valor_justo,0.68,,,,
 2026-10-31T17:21:11+00:00,sombra,KXATPCHALLENGERMATCH-26OCT31DAMPRI-DAM,Martin Damm Jr,0.57,17,liquidacion,1.0,,,,
 2026-10-31T18:36:16+00:00,real,KXATPMATCH-26OCT31ZVEDE-DE,Alex de Minaur,0.39,25,valor_justo,0.69,0.4,0.39,0.4,0.42
+2026-11-01T05:51:58+00:00,real,KXWTAMATCH-26OCT31SAKPRI-PRI,Elena Pridankina,0.42,23,liquidacion,0.0,,,,
