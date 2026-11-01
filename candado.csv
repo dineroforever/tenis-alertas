@@ -154,3 +154,5 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-10-31T17:21:11+00:00,sombra,KXATPCHALLENGERMATCH-26OCT31DAMPRI-DAM,Martin Damm Jr,0.57,17,liquidacion,1.0,,,,
 2026-10-31T18:36:16+00:00,real,KXATPMATCH-26OCT31ZVEDE-DE,Alex de Minaur,0.39,25,valor_justo,0.69,0.4,0.39,0.4,0.42
 2026-11-01T05:51:58+00:00,real,KXWTAMATCH-26OCT31SAKPRI-PRI,Elena Pridankina,0.42,23,liquidacion,0.0,,,,
+2026-11-01T10:42:27+00:00,real,KXATPCHALLENGERMATCH-26NOV01DHAMAS-MAS,Loann Massard,0.22,45,valor_justo,0.55,0.22,0.22,,
+2026-11-01T10:42:29+00:00,sombra,KXATPCHALLENGERMATCH-26NOV01DHAMAS-MAS,Loann Massard,0.29,34,valor_justo,0.55,,,,
