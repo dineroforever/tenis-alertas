@@ -156,3 +156,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-11-01T05:51:58+00:00,real,KXWTAMATCH-26OCT31SAKPRI-PRI,Elena Pridankina,0.42,23,liquidacion,0.0,,,,
 2026-11-01T10:42:27+00:00,real,KXATPCHALLENGERMATCH-26NOV01DHAMAS-MAS,Loann Massard,0.22,45,valor_justo,0.55,0.22,0.22,,
 2026-11-01T10:42:29+00:00,sombra,KXATPCHALLENGERMATCH-26NOV01DHAMAS-MAS,Loann Massard,0.29,34,valor_justo,0.55,,,,
+2026-11-01T11:58:05+00:00,real,KXWTAMATCH-26NOV01FALZOL-ZOL,Rada Zolotareva,0.46,21,liquidacion,0.0,,,,
