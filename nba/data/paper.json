@@ -1116,7 +1116,7 @@
    "p": 0.2421,
    "edge": 0.0421,
    "contracts": 55,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-31T22:41:12.771502+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1124,7 +1124,9 @@
     "total": 228.3,
     "h1_total": 115.3,
     "q1_total": 57.4
-   }
+   },
+   "pnl": -10.47,
+   "won": false
   },
   {
    "id": "KXNBASPREAD-26OCT31MINSAS-SAS12|NO",
@@ -1138,7 +1140,7 @@
    "p": 0.6021,
    "edge": 0.1121,
    "contracts": 21,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-31T22:41:12.771502+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1146,7 +1148,9 @@
     "total": 228.3,
     "h1_total": 115.3,
     "q1_total": 57.4
-   }
+   },
+   "pnl": 10.76,
+   "won": true
   },
   {
    "id": "KXNBATEAMTOTAL-26OCT31MINSAS-SAS119|NO",
@@ -1160,7 +1164,7 @@
    "p": 0.5053,
    "edge": 0.0553,
    "contracts": 23,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-10-31T22:41:12.771502+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1168,7 +1172,9 @@
     "total": 228.3,
     "h1_total": 115.3,
     "q1_total": 57.4
-   }
+   },
+   "pnl": -10.29,
+   "won": false
   }
  ],
  "scanned": {
