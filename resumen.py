@@ -69,6 +69,21 @@ def gasto_apify():
         return None
 
 
+META_F3 = 50  # operaciones de la Fase 3 para evaluar el modelo con precios reales
+
+
+def evaluar_f3(f3):
+    """Veredicto de la Fase 3 al llegar a 50 operaciones (criterio acordado con Roberto el 1-nov-2026)."""
+    n, g, pl, roi = resumen_ops(f3)
+    if n < META_F3:
+        return f"🎯 Fase 3: {n}/{META_F3} operaciones para evaluar el modelo con precios reales."
+    if roi >= 15:
+        return f"✅ EVALUACIÓN Fase 3 ({n} ops): {roi:+.1f}% · el edge se confirma con precios reales."
+    if roi >= 5:
+        return f"🟡 EVALUACIÓN Fase 3 ({n} ops): {roi:+.1f}% · positivo pero bajo lo esperado (+15%); seguir observando."
+    return f"🔴 EVALUACIÓN Fase 3 ({n} ops): {roi:+.1f}% · por debajo de +5%: hay que revisar el modelo."
+
+
 def main():
     ahora = datetime.now(MIAMI)
     if os.getenv("FORZAR") != "1" and ahora.hour != 21:
@@ -86,7 +101,7 @@ def main():
     lineas += ["", "📈 " + linea("Acumulado", sal), "   " + linea("Fase 1", sal[:INICIO_FASE2]),
                "   " + linea("Fase 2", f2),
                "   " + (linea("Fase 3 · precios reales", f3) if f3 else "Fase 3 · precios reales: aún sin operaciones"),
-               f"🎯 Faltan {max(0, META - len(sal))} operaciones para las {META}."]
+               evaluar_f3(f3)]
 
     # Interés compuesto: cada ganancia se suma a la banca y la siguiente apuesta crece en proporción
     if sal:
