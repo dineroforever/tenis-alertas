@@ -61,3 +61,4 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-01T17:56:11+00:00,real,liquidacion,KXWTACHALLENGERMATCH-26NOV01TUBGRA-TUB,Alice Tubello,6,,,6.0,3.62,,yes
 2026-11-01T20:43:43+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV01DIEDRA-DRA,Liam Draxl,7,0.37,0.38,2.63,,52.1521,pedidos=7 estado=llenos=7.00 resto=0.00
 2026-11-01T21:07:59+00:00,real,venta,KXATPCHALLENGERMATCH-26NOV01DIEDRA-DRA,Liam Draxl,7,0.14,0.13,0.85,,53.0067,quedan=0 estado=llenos=7.00 resto=0.00
+2026-11-01T22:10:31+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV01BROHUD-BRO,Stiles Brockett,6,0.4,0.41,2.5,,50.5059,pedidos=6 estado=llenos=6.00 resto=0.00
