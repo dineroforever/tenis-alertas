@@ -57,3 +57,4 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-01T11:58:03+00:00,real,liquidacion,KXWTAMATCH-26NOV01FALZOL-ZOL,Rada Zolotareva,6,,,0.0,-2.86,,no
 2026-11-01T13:58:28+00:00,real,omitida,KXATPMATCH-26NOV01VALSON-VAL,Adolfo Daniel Vallejo,,0.41,,,,,"volumen $218,548 < $300,000 (solo paper)"
 2026-11-01T15:58:27+00:00,real,omitida,KXATPCHALLENGERMATCH-26NOV01CERSOR-CER,Matyaš Černy,,0.37,,,,,"volumen $284,804 < $300,000 (solo paper)"
+2026-11-01T17:23:28+00:00,real,compra,KXWTACHALLENGERMATCH-26NOV01TUBGRA-TUB,Alice Tubello,6,0.39,0.4,2.38,,48.785,pedidos=6 estado=llenos=6.00 resto=0.00
