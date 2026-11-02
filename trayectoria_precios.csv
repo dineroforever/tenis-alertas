@@ -246,3 +246,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-11-02T05:48:41+00:00,real,KXATPCHALLENGERMATCH-26NOV01SAMJAS-SAM,Kasidit Samrej,0.41,24,valor_justo,0.21,0.38,0.21,2,35,no,no,no
 2026-11-02T05:48:43+00:00,sombra,KXATPCHALLENGERMATCH-26NOV01SAMJAS-SAM,Kasidit Samrej,0.21,47,valor_justo,0.21,0.39,0.21,3,39,si,si,si
 2026-11-02T11:01:58+00:00,sombra,KXATPCHALLENGERMATCH-26NOV02SCHKUM-SCH,Joel Schwaerzler,0.29,34,valor_justo,0.4,0.61,0.27,72,87,si,si,si
+2026-11-02T11:41:00+00:00,sombra,KXATPMATCH-26NOV01BUSBER-BUS,Ignacio Buse,0.55,18,liquidacion,1.0,0.98,0.42,23,49,si,si,si
