@@ -112,3 +112,4 @@ fecha_utc,match_id,ticker,jugador,rival,torneo,marcador,p_final,p_score,p_casa,a
 2026-11-02T17:18:06+00:00,17377245,KXATPCHALLENGERMATCH-26NOV01AGUDEL-AGU,Joaquin Aguilar Cardozo,Hugo Dellien,"Guayaquil, Ecuador",3-2,0.4514,0.4697,0.4241,0.34,0.33,11.1,26.9,9.86,edge>10
 2026-11-02T18:03:32+00:00,17468323,KXATPMATCH-26NOV02MOLDRO-DRO,Titouan Droguet,Alex Molčan,Paris,3-2,0.608,0.6478,0.5483,0.45,0.44,15.8,30.0,9.9,edge>10
 2026-11-02T20:46:38+00:00,17471474,KXATPCHALLENGERMATCH-26NOV02RIBMIG-MIG,Luis Felipe Miguel,Eduardo Ribeiro,"Costa do Sauipe, Brazil",5-5,0.4869,0.5092,0.4533,0.38,0.37,10.7,22.8,9.88,edge>10
+2026-11-02T23:20:09+00:00,17456582,KXATPCHALLENGERMATCH-26NOV02HEIJUS-HEI,Gustavo Heide,Guido Ivan Justo,"Costa do Sauipe, Brazil",5-5,0.6405,0.6617,0.6087,0.53,0.52,11.0,16.9,9.54,edge>10
