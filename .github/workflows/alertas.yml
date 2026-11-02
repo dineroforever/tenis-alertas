@@ -43,7 +43,7 @@ jobs:
           PRUEBA_SENAL: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
           LOOP_MINUTES: "28"
           POLL_SECONDS: "30"
-          APIFY_TOPE_DIA: "1.75"  # subido para el fin de semana (31-oct); volver a 1.25 el lunes
+          APIFY_TOPE_DIA: "1.25"  # entre semana; Claude lo sube a 1.75 los fines de semana si hace falta
           MODO: "apify"
           AVISAR: "0"
           PREFILTRO_EDGE: "0.0"
