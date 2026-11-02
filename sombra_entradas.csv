@@ -108,3 +108,4 @@ fecha_utc,match_id,ticker,jugador,rival,torneo,marcador,p_final,p_score,p_casa,a
 2026-11-01T15:10:14+00:00,17455985,KXATPCHALLENGERMATCH-26NOV01VERKLO-KLO,Denys Klok,Ian Luca Vertberger,"Villa Maria, Argentina",4-3,0.4587,0.4533,0.4667,0.31,0.3,14.9,41.1,9.92,edge>10
 2026-11-02T05:10:11+00:00,17466793,KXATPCHALLENGERMATCH-26NOV01SAMJAS-SAM,Kasidit Samrej,Omar Jasika,"Taipei, Chinese Taipei Men Singles",3-4,0.3211,0.3415,0.2904,0.21,0.2,11.1,44.8,9.87,edge>10
 2026-11-02T09:34:54+00:00,17453197,KXATPCHALLENGERMATCH-26NOV02SCHKUM-SCH,Joel Schwaerzler,Jan Kumstat,"Taipei, Chinese Taipei Men Singles",5-7 0-0,0.3607,0.3762,0.3373,0.29,0.28,7.1,18.4,9.86,set2
+2026-11-02T10:51:40+00:00,17449510,KXATPMATCH-26NOV01BUSBER-BUS,Ignacio Buse,Zizou Bergs,Paris,6-2 0-1,0.6518,0.6618,0.6368,0.55,0.54,10.2,14.8,9.9,edge>10+set2+p>65
