@@ -68,3 +68,4 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-02T05:13:22+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV01SAMJAS-SAM,Kasidit Samrej,7,0.41,0.42,2.99,,55.2301,pedidos=7 estado=llenos=7.00 resto=0.00
 2026-11-02T05:48:43+00:00,real,venta,KXATPCHALLENGERMATCH-26NOV01SAMJAS-SAM,Kasidit Samrej,7,0.21,0.2,1.39,,56.6188,quedan=0 estado=llenos=7.00 resto=0.00
 2026-11-02T15:51:07+00:00,real,omitida,KXATPCHALLENGERMATCH-26NOV02MILMIT-MIL,Daniel Milavsky,,0.43,,,,,"volumen $180,807 < $300,000 (solo paper)"
+2026-11-02T16:58:15+00:00,real,omitida,KXWTACHALLENGERMATCH-26NOV02JEABRO-JEA,Leolia Jeanjean,,0.37,,,,,"volumen $164,937 < $300,000 (solo paper)"

@@ -169,3 +169,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-11-02T11:01:58+00:00,sombra,KXATPCHALLENGERMATCH-26NOV02SCHKUM-SCH,Joel Schwaerzler,0.29,34,valor_justo,0.4,0.27,0.27,0.27,0.31
 2026-11-02T11:41:00+00:00,sombra,KXATPMATCH-26NOV01BUSBER-BUS,Ignacio Buse,0.55,18,liquidacion,1.0,,,,
 2026-11-02T16:13:01+00:00,real,KXATPCHALLENGERMATCH-26NOV02MILMIT-MIL,Daniel Milavsky,0.43,23,valor_justo,0.7,0.44,0.41,0.44,0.44
+2026-11-02T17:11:37+00:00,real,KXWTACHALLENGERMATCH-26NOV02JEABRO-JEA,Leolia Jeanjean,0.37,27,valor_justo,0.28,0.35,0.35,0.35,0.35
