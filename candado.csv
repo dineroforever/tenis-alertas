@@ -171,3 +171,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-11-02T16:13:01+00:00,real,KXATPCHALLENGERMATCH-26NOV02MILMIT-MIL,Daniel Milavsky,0.43,23,valor_justo,0.7,0.44,0.41,0.44,0.44
 2026-11-02T17:11:37+00:00,real,KXWTACHALLENGERMATCH-26NOV02JEABRO-JEA,Leolia Jeanjean,0.37,27,valor_justo,0.28,0.35,0.35,0.35,0.35
 2026-11-02T17:46:46+00:00,sombra,KXATPCHALLENGERMATCH-26NOV01AGUDEL-AGU,Joaquin Aguilar Cardozo,0.34,29,valor_justo,0.27,,,,
+2026-11-02T18:58:34+00:00,sombra,KXATPMATCH-26NOV02MOLDRO-DRO,Titouan Droguet,0.45,22,valor_justo,0.43,0.47,0.45,0.47,0.49
