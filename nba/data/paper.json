@@ -1188,7 +1188,7 @@
    "p": 0.7042,
    "edge": 0.0542,
    "contracts": 15,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-01T23:54:23.063661+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1196,7 +1196,9 @@
     "total": 221.8,
     "h1_total": 112.0,
     "q1_total": 55.6
-   }
+   },
+   "pnl": 5.3,
+   "won": true
   }
  ],
  "scanned": {
@@ -1223,7 +1225,8 @@
   "26NOV01TORLAL": "2026-11-02T00:40:53.997925+00:00"
  },
  "milestones": [
-  25
+  25,
+  50
  ],
  "sombra": [
   {
