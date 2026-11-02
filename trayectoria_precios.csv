@@ -243,3 +243,5 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-11-01T21:07:58+00:00,real,KXATPCHALLENGERMATCH-26NOV01DIEDRA-DRA,Liam Draxl,0.37,27,valor_justo,0.14,0.45,0.07,12,24,si,si,no
 2026-11-01T22:30:25+00:00,real,KXATPCHALLENGERMATCH-26NOV01BROHUD-BRO,Stiles Brockett,0.4,25,valor_justo,0.56,0.48,0.29,12,20,si,si,no
 2026-11-02T00:05:34+00:00,real,KXWTACHALLENGERMATCH-26NOV01MARAND-AND,Bianca Andreescu,0.3,30,valor_justo,0.83,0.83,0.3,9,9,si,si,si
+2026-11-02T05:48:41+00:00,real,KXATPCHALLENGERMATCH-26NOV01SAMJAS-SAM,Kasidit Samrej,0.41,24,valor_justo,0.21,0.38,0.21,2,35,no,no,no
+2026-11-02T05:48:43+00:00,sombra,KXATPCHALLENGERMATCH-26NOV01SAMJAS-SAM,Kasidit Samrej,0.21,47,valor_justo,0.21,0.39,0.21,3,39,si,si,si

@@ -66,3 +66,4 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-01T23:56:35+00:00,real,compra,KXWTACHALLENGERMATCH-26NOV01MARAND-AND,Bianca Andreescu,9,0.3,0.31,2.92,,50.8376,pedidos=9 estado=llenos=9.00 resto=0.00
 2026-11-02T00:05:35+00:00,real,venta,KXWTACHALLENGERMATCH-26NOV01MARAND-AND,Bianca Andreescu,9,0.83,0.82,7.38,,58.2187,quedan=0 estado=llenos=9.00 resto=0.00
 2026-11-02T05:13:22+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV01SAMJAS-SAM,Kasidit Samrej,7,0.41,0.42,2.99,,55.2301,pedidos=7 estado=llenos=7.00 resto=0.00
+2026-11-02T05:48:43+00:00,real,venta,KXATPCHALLENGERMATCH-26NOV01SAMJAS-SAM,Kasidit Samrej,7,0.21,0.2,1.39,,56.6188,quedan=0 estado=llenos=7.00 resto=0.00
