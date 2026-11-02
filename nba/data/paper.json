@@ -1202,10 +1202,6 @@
   }
  ],
  "scanned": {
-  "26OCT30CHIBOS": "2026-10-30T22:15:05.602113+00:00",
-  "26OCT30DETBKN": "2026-10-30T22:15:05.602113+00:00",
-  "26OCT30NYKPHI": "2026-10-30T22:15:05.602113+00:00",
-  "26OCT30ORLTOR": "2026-10-30T22:15:05.602113+00:00",
   "26OCT30HOUDAL": "2026-10-30T22:47:57.509001+00:00",
   "26OCT30INDMIA": "2026-10-30T22:47:57.509001+00:00",
   "26OCT30LACMIN": "2026-10-30T22:47:57.509001+00:00",
@@ -1221,7 +1217,8 @@
   "26NOV01BOSORL": "2026-11-01T19:10:47.992366+00:00",
   "26NOV01BKNIND": "2026-11-01T20:42:47.383570+00:00",
   "26NOV01LACGSW": "2026-11-01T23:54:23.063661+00:00",
-  "26NOV01TORLAL": "2026-11-02T00:40:53.997925+00:00"
+  "26NOV01TORLAL": "2026-11-02T00:40:53.997925+00:00",
+  "26NOV02OKCCLE": "2026-11-02T22:46:26.561875+00:00"
  },
  "milestones": [
   25,
@@ -2811,6 +2808,50 @@
    },
    "pnl": -9.87,
    "won": false
+  },
+  {
+   "id": "KXNBA1HTOTAL-26NOV02OKCCLE-114|SI",
+   "ticker": "KXNBA1HTOTAL-26NOV02OKCCLE-114",
+   "fam": "1HTOTAL",
+   "game": "OKC @ CLE",
+   "tip": "2026-11-03T00:00:00+00:00",
+   "label": "Over 113.5 points",
+   "side": "SI",
+   "price": 0.47,
+   "p": 0.5481,
+   "edge": 0.0581,
+   "contracts": 21,
+   "status": "abierta",
+   "opened": "2026-11-02T22:46:26.561875+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 3.4,
+    "total": 227.7,
+    "h1_total": 115.0,
+    "q1_total": 57.1
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26NOV02OKCCLE-58|NO",
+   "ticker": "KXNBA1QTOTAL-26NOV02OKCCLE-58",
+   "fam": "1QTOTAL",
+   "game": "OKC @ CLE",
+   "tip": "2026-11-03T00:00:00+00:00",
+   "label": "Over 57.5 points",
+   "side": "NO",
+   "price": 0.44,
+   "p": 0.5196,
+   "edge": 0.0596,
+   "contracts": 22,
+   "status": "abierta",
+   "opened": "2026-11-02T22:46:26.561875+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 3.4,
+    "total": 227.7,
+    "h1_total": 115.0,
+    "q1_total": 57.1
+   }
   }
  ]
 }
