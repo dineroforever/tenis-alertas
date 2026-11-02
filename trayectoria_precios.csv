@@ -253,3 +253,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-11-02T18:58:34+00:00,sombra,KXATPMATCH-26NOV02MOLDRO-DRO,Titouan Droguet,0.45,22,valor_justo,0.43,0.61,0.34,39,55,si,si,si
 2026-11-02T19:43:18+00:00,real,KXATPCHALLENGERMATCH-26NOV02FERKIC-FER,Bruno Fernandez,0.35,28,liquidacion,0.0,0.45,0.09,5,55,si,si,no
 2026-11-02T19:46:39+00:00,real,KXATPCHALLENGERMATCH-26NOV02KRUFEN-FEN,Andrew Fenty,0.37,27,liquidacion,1.0,0.45,0.25,8,44,si,si,no
+2026-11-02T21:43:47+00:00,sombra,KXATPCHALLENGERMATCH-26NOV02RIBMIG-MIG,Luis Felipe Miguel,0.38,26,valor_justo,0.25,0.45,0.1,12,57,si,no,no
