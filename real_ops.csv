@@ -71,3 +71,4 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-02T16:58:15+00:00,real,omitida,KXWTACHALLENGERMATCH-26NOV02JEABRO-JEA,Leolia Jeanjean,,0.37,,,,,"volumen $164,937 < $300,000 (solo paper)"
 2026-11-02T18:47:48+00:00,real,omitida,KXATPCHALLENGERMATCH-26NOV02FERKIC-FER,Bruno Fernandez,,0.35,,,,,"volumen $240,826 < $300,000 (solo paper)"
 2026-11-02T19:02:57+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV02KRUFEN-FEN,Andrew Fenty,7,0.37,0.38,2.7,,53.9145,pedidos=7 estado=llenos=7.00 resto=0.00
+2026-11-02T19:46:37+00:00,real,liquidacion,KXATPCHALLENGERMATCH-26NOV02KRUFEN-FEN,Andrew Fenty,7,,,7.0,4.3,,yes
