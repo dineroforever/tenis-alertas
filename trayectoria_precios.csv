@@ -267,3 +267,5 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-11-03T15:12:22+00:00,real,KXWTAMATCH-26NOV02FALLIN-FAL,Aliona Falei,0.39,25,valor_justo,0.27,0.54,0.2,37,52,si,si,si
 2026-11-03T15:38:14+00:00,sombra,KXATPCHALLENGERMATCH-26NOV03DJEBUT-DJE,Laslo Djere,0.42,23,valor_justo,0.62,0.61,0.15,29,31,si,si,si
 2026-11-03T16:52:12+00:00,sombra,KXATPCHALLENGERMATCH-26NOV03LADEL-LA,Juan Manuel La Serna,0.45,22,valor_justo,0.63,0.52,0.32,4,5,si,no,no
+2026-11-03T17:39:56+00:00,sombra,KXWTAMATCH-26NOV02FALLIN-FAL,Aliona Falei,0.54,18,liquidacion,0.0,0.53,0.35,1,37,no,no,no
+2026-11-03T17:55:44+00:00,real,KXATPMATCH-26NOV01MICLEH-MIC,Alex Michelsen,0.46,21,valor_justo,0.83,0.83,0.45,6,6,si,si,si
