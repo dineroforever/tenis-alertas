@@ -1332,7 +1332,7 @@
    "p": 0.6683,
    "edge": 0.0483,
    "contracts": 16,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-03T01:45:25.184373+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1340,7 +1340,9 @@
     "total": 229.0,
     "h1_total": 115.7,
     "q1_total": 57.5
-   }
+   },
+   "pnl": 6.13,
+   "won": true
   }
  ],
  "scanned": {
