@@ -181,3 +181,5 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-11-03T05:48:16+00:00,real,KXATPCHALLENGERMATCH-26NOV02HSUJAS-HSU,Yu Hsiou Hsu,0.27,37,valor_justo,0.12,,,,
 2026-11-03T08:01:58+00:00,real,KXWTAMATCH-26NOV01GIBOLI-OLI,Oleksandra Oliynykova,0.24,35,liquidacion,0.0,0.24,0.24,,
 2026-11-03T10:45:40+00:00,sombra,KXWTAMATCH-26NOV01CIRTIM-CIR,Sorana Cirstea,0.58,17,valor_justo,0.6,0.59,0.56,0.59,0.63
+2026-11-03T11:40:10+00:00,sombra,KXWTAMATCH-26NOV02FRUFAL-FAL,Weronika Falkowska,0.46,21,liquidacion,1.0,,,,
+2026-11-03T12:06:12+00:00,real,KXATPMATCH-26NOV01RUBETC-ETC,Tomas Martin Etcheverry,0.35,28,valor_justo,0.4,,,,
