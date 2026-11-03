@@ -114,3 +114,4 @@ fecha_utc,match_id,ticker,jugador,rival,torneo,marcador,p_final,p_score,p_casa,a
 2026-11-02T20:46:38+00:00,17471474,KXATPCHALLENGERMATCH-26NOV02RIBMIG-MIG,Luis Felipe Miguel,Eduardo Ribeiro,"Costa do Sauipe, Brazil",5-5,0.4869,0.5092,0.4533,0.38,0.37,10.7,22.8,9.88,edge>10
 2026-11-02T23:20:09+00:00,17456582,KXATPCHALLENGERMATCH-26NOV02HEIJUS-HEI,Gustavo Heide,Guido Ivan Justo,"Costa do Sauipe, Brazil",5-5,0.6405,0.6617,0.6087,0.53,0.52,11.0,16.9,9.54,edge>10
 2026-11-03T09:14:16+00:00,17452326,KXWTAMATCH-26NOV01CIRTIM-CIR,Sorana Cirstea,Maria Timofeeva,Hong Kong,5-5,0.6519,0.6319,0.6818,0.58,0.57,7.2,9.2,9.86,p>65
+2026-11-03T11:08:23+00:00,17467967,KXWTAMATCH-26NOV02FRUFAL-FAL,Weronika Falkowska,Linda Fruhvirtova,Chennai,7-6 3-4,0.5298,0.5321,0.5263,0.46,0.45,7.0,10.9,9.66,set2
