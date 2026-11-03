@@ -78,3 +78,4 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-03T05:43:49+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV02HSUJAS-HSU,Yu Hsiou Hsu,11,0.27,0.28,3.24,,60.6342,pedidos=11 estado=llenos=11.00 resto=0.00
 2026-11-03T05:48:18+00:00,real,venta,KXATPCHALLENGERMATCH-26NOV02HSUJAS-HSU,Yu Hsiou Hsu,0,0.12,0.11,0.0,,60.6342,quedan=11 estado=llenos=0.00 resto=0.00
 2026-11-03T05:48:50+00:00,real,venta,KXATPCHALLENGERMATCH-26NOV02HSUJAS-HSU,Yu Hsiou Hsu,11,0.12,0.14,1.45,,62.0814,quedan=0 estado=llenos=11.00 resto=0.00
+2026-11-03T07:08:48+00:00,real,omitida,KXWTAMATCH-26NOV01GIBOLI-OLI,Oleksandra Oliynykova,,0.24,,,,,"volumen $183,785 < $300,000 (solo paper)"
