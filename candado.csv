@@ -186,3 +186,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-11-03T14:53:29+00:00,real,KXATPCHALLENGERMATCH-26NOV02PENWAL-WAL,Marcus Walters,0.47,21,liquidacion,1.0,,,,
 2026-11-03T14:53:29+00:00,sombra,KXWTAMATCH-26NOV02BURADK-BUR,Jodie Burrage,0.78,12,liquidacion,0.0,0.78,0.78,0.78,
 2026-11-03T15:12:22+00:00,real,KXWTAMATCH-26NOV02FALLIN-FAL,Aliona Falei,0.39,25,valor_justo,0.27,0.37,0.37,0.36,0.42
+2026-11-03T15:38:14+00:00,sombra,KXATPCHALLENGERMATCH-26NOV03DJEBUT-DJE,Laslo Djere,0.42,23,valor_justo,0.62,0.42,0.42,0.42,0.46
