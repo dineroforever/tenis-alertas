@@ -1212,7 +1212,7 @@
    "p": 0.9185,
    "edge": 0.0485,
    "contracts": 11,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-02T23:25:50.427840+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1220,7 +1220,9 @@
     "total": 228.7,
     "h1_total": 115.5,
     "q1_total": 57.4
-   }
+   },
+   "pnl": 1.44,
+   "won": true
   },
   {
    "id": "KXNBATOTAL-26NOV02CHIPHI-236|NO",
@@ -1234,7 +1236,7 @@
    "p": 0.5078,
    "edge": 0.0578,
    "contracts": 23,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-02T23:25:50.427840+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1242,7 +1244,9 @@
     "total": 235.1,
     "h1_total": 118.7,
     "q1_total": 59.0
-   }
+   },
+   "pnl": 12.71,
+   "won": true
   },
   {
    "id": "KXNBASPREAD-26NOV02MILMIN-MIN12|SI",
@@ -3274,7 +3278,7 @@
    "p": 0.7422,
    "edge": 0.0622,
    "contracts": 15,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-02T23:55:43.141903+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -3282,7 +3286,9 @@
     "total": 229.1,
     "h1_total": 115.7,
     "q1_total": 57.5
-   }
+   },
+   "pnl": 4.86,
+   "won": true
   },
   {
    "id": "KXNBA1HTOTAL-26NOV02UTASAS-113|SI",
@@ -3296,7 +3302,7 @@
    "p": 0.6053,
    "edge": 0.1153,
    "contracts": 21,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-02T23:55:43.141903+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -3304,7 +3310,9 @@
     "total": 229.1,
     "h1_total": 115.7,
     "q1_total": 57.5
-   }
+   },
+   "pnl": -10.24,
+   "won": false
   },
   {
    "id": "KXNBA1QSPREAD-26NOV02UTASAS-SAS12|NO",
@@ -3318,7 +3326,7 @@
    "p": 0.8712,
    "edge": 0.0512,
    "contracts": 12,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-02T23:55:43.141903+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -3326,7 +3334,9 @@
     "total": 229.1,
     "h1_total": 115.7,
     "q1_total": 57.5
-   }
+   },
+   "pnl": 2.26,
+   "won": true
   },
   {
    "id": "KXNBA1QTOTAL-26NOV02PORDEN-62|NO",
@@ -3340,7 +3350,7 @@
    "p": 0.6672,
    "edge": 0.0772,
    "contracts": 17,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-03T00:41:24.905344+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -3348,7 +3358,9 @@
     "total": 231.4,
     "h1_total": 116.8,
     "q1_total": 58.0
-   }
+   },
+   "pnl": 7.01,
+   "won": true
   },
   {
    "id": "KXNBA1HTOTAL-26NOV02MIALAL-129|NO",
