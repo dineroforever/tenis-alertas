@@ -183,3 +183,6 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-11-03T10:45:40+00:00,sombra,KXWTAMATCH-26NOV01CIRTIM-CIR,Sorana Cirstea,0.58,17,valor_justo,0.6,0.59,0.56,0.59,0.63
 2026-11-03T11:40:10+00:00,sombra,KXWTAMATCH-26NOV02FRUFAL-FAL,Weronika Falkowska,0.46,21,liquidacion,1.0,,,,
 2026-11-03T12:06:12+00:00,real,KXATPMATCH-26NOV01RUBETC-ETC,Tomas Martin Etcheverry,0.35,28,valor_justo,0.4,,,,
+2026-11-03T14:53:29+00:00,real,KXATPCHALLENGERMATCH-26NOV02PENWAL-WAL,Marcus Walters,0.47,21,liquidacion,1.0,,,,
+2026-11-03T14:53:29+00:00,sombra,KXWTAMATCH-26NOV02BURADK-BUR,Jodie Burrage,0.78,12,liquidacion,0.0,0.78,0.78,0.78,
+2026-11-03T15:12:22+00:00,real,KXWTAMATCH-26NOV02FALLIN-FAL,Aliona Falei,0.39,25,valor_justo,0.27,0.37,0.37,0.36,0.42

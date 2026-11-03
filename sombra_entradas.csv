@@ -116,3 +116,4 @@ fecha_utc,match_id,ticker,jugador,rival,torneo,marcador,p_final,p_score,p_casa,a
 2026-11-03T09:14:16+00:00,17452326,KXWTAMATCH-26NOV01CIRTIM-CIR,Sorana Cirstea,Maria Timofeeva,Hong Kong,5-5,0.6519,0.6319,0.6818,0.58,0.57,7.2,9.2,9.86,p>65
 2026-11-03T11:08:23+00:00,17467967,KXWTAMATCH-26NOV02FRUFAL-FAL,Weronika Falkowska,Linda Fruhvirtova,Chennai,7-6 3-4,0.5298,0.5321,0.5263,0.46,0.45,7.0,10.9,9.66,set2
 2026-11-03T14:02:29+00:00,17453789,KXWTAMATCH-26NOV02BURADK-BUR,Jodie Burrage,Vaishnavi Adkar,Chennai,6-3 3-6 5-4,0.8474,0.8721,0.8104,0.78,0.77,6.7,6.9,9.36,precio>60+p>65
+2026-11-03T15:06:46+00:00,17455493,KXATPCHALLENGERMATCH-26NOV03DJEBUT-DJE,Laslo Djere,Edas Butvilas,"Bratislava, Slovakia",4-6 4-3,0.4794,0.4878,0.4667,0.42,0.41,5.9,9.6,9.66,set2
