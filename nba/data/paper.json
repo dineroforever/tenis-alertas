@@ -1287,11 +1287,31 @@
     "h1_total": 110.4,
     "q1_total": 54.8
    }
+  },
+  {
+   "id": "KXNBASPREAD-26NOV02PORDEN-DEN2|NO",
+   "ticker": "KXNBASPREAD-26NOV02PORDEN-DEN2",
+   "fam": "SPREAD",
+   "game": "POR @ DEN",
+   "tip": "2026-11-03T02:00:00+00:00",
+   "label": "Denver wins by over 1.5 points",
+   "side": "NO",
+   "price": 0.4,
+   "p": 0.4689,
+   "edge": 0.0489,
+   "contracts": 25,
+   "status": "abierta",
+   "opened": "2026-11-03T00:41:24.905344+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 2.4,
+    "total": 231.4,
+    "h1_total": 116.8,
+    "q1_total": 58.0
+   }
   }
  ],
  "scanned": {
-  "26OCT30DENPHX": "2026-10-31T00:39:37.843078+00:00",
-  "26OCT30LALGSW": "2026-10-31T00:39:37.843078+00:00",
   "26OCT31PORUTA": "2026-10-31T17:23:23.259782+00:00",
   "26OCT31PHICHA": "2026-10-31T20:39:50.274962+00:00",
   "26OCT31ATLNOP": "2026-10-31T21:41:43.977836+00:00",
@@ -1313,7 +1333,8 @@
   "26NOV02NOPMEM": "2026-11-02T23:25:50.427840+00:00",
   "26NOV02SACDAL": "2026-11-02T23:25:50.427840+00:00",
   "26NOV02BOSHOU": "2026-11-02T23:55:43.141903+00:00",
-  "26NOV02UTASAS": "2026-11-02T23:55:43.141903+00:00"
+  "26NOV02UTASAS": "2026-11-02T23:55:43.141903+00:00",
+  "26NOV02PORDEN": "2026-11-03T00:41:24.905344+00:00"
  },
  "milestones": [
   25,
@@ -3254,6 +3275,28 @@
     "total": 229.1,
     "h1_total": 115.7,
     "q1_total": 57.5
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26NOV02PORDEN-62|NO",
+   "ticker": "KXNBA1QTOTAL-26NOV02PORDEN-62",
+   "fam": "1QTOTAL",
+   "game": "POR @ DEN",
+   "tip": "2026-11-03T02:00:00+00:00",
+   "label": "Over 61.5 points",
+   "side": "NO",
+   "price": 0.57,
+   "p": 0.6672,
+   "edge": 0.0772,
+   "contracts": 17,
+   "status": "abierta",
+   "opened": "2026-11-03T00:41:24.905344+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 2.4,
+    "total": 231.4,
+    "h1_total": 116.8,
+    "q1_total": 58.0
    }
   }
  ]
