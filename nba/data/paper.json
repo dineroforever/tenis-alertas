@@ -1309,6 +1309,28 @@
     "h1_total": 116.8,
     "q1_total": 58.0
    }
+  },
+  {
+   "id": "KXNBASPREAD-26NOV02PHXGSW-PHX2|NO",
+   "ticker": "KXNBASPREAD-26NOV02PHXGSW-PHX2",
+   "fam": "SPREAD",
+   "game": "PHX @ GSW",
+   "tip": "2026-11-03T03:00:00+00:00",
+   "label": "Phoenix wins by over 1.5 points",
+   "side": "NO",
+   "price": 0.6,
+   "p": 0.6683,
+   "edge": 0.0483,
+   "contracts": 16,
+   "status": "abierta",
+   "opened": "2026-11-03T01:45:25.184373+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 3.7,
+    "total": 229.0,
+    "h1_total": 115.7,
+    "q1_total": 57.5
+   }
   }
  ],
  "scanned": {
@@ -1334,7 +1356,10 @@
   "26NOV02SACDAL": "2026-11-02T23:25:50.427840+00:00",
   "26NOV02BOSHOU": "2026-11-02T23:55:43.141903+00:00",
   "26NOV02UTASAS": "2026-11-02T23:55:43.141903+00:00",
-  "26NOV02PORDEN": "2026-11-03T00:41:24.905344+00:00"
+  "26NOV02PORDEN": "2026-11-03T00:41:24.905344+00:00",
+  "26NOV02MIALAL": "2026-11-03T01:45:25.184373+00:00",
+  "26NOV02PHXGSW": "2026-11-03T01:45:25.184373+00:00",
+  "26NOV02TORLAC": "2026-11-03T01:45:25.184373+00:00"
  },
  "milestones": [
   25,
@@ -2937,7 +2962,7 @@
    "p": 0.5481,
    "edge": 0.0581,
    "contracts": 21,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-02T22:46:26.561875+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -2945,7 +2970,9 @@
     "total": 227.7,
     "h1_total": 115.0,
     "q1_total": 57.1
-   }
+   },
+   "pnl": -10.24,
+   "won": false
   },
   {
    "id": "KXNBA1QTOTAL-26NOV02OKCCLE-58|NO",
@@ -2959,7 +2986,7 @@
    "p": 0.5196,
    "edge": 0.0596,
    "contracts": 22,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-02T22:46:26.561875+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -2967,7 +2994,9 @@
     "total": 227.7,
     "h1_total": 115.0,
     "q1_total": 57.1
-   }
+   },
+   "pnl": 11.94,
+   "won": true
   },
   {
    "id": "KXNBA1HSPREAD-26NOV02ATLIND-ATL13|NO",
@@ -3047,7 +3076,7 @@
    "p": 0.8508,
    "edge": 0.0508,
    "contracts": 12,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-02T23:25:50.427840+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -3055,7 +3084,9 @@
     "total": 218.0,
     "h1_total": 110.1,
     "q1_total": 54.7
-   }
+   },
+   "pnl": 2.49,
+   "won": true
   },
   {
    "id": "KXNBA1QTOTAL-26NOV02BKNNYK-60|NO",
@@ -3069,7 +3100,7 @@
    "p": 0.7265,
    "edge": 0.0665,
    "contracts": 15,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-02T23:25:50.427840+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -3077,7 +3108,9 @@
     "total": 218.0,
     "h1_total": 110.1,
     "q1_total": 54.7
-   }
+   },
+   "pnl": 5.15,
+   "won": true
   },
   {
    "id": "KXNBA1HSPREAD-26NOV02CHIPHI-PHI13|NO",
@@ -3113,7 +3146,7 @@
    "p": 0.556,
    "edge": 0.076,
    "contracts": 21,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-02T23:25:50.427840+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -3121,7 +3154,9 @@
     "total": 224.7,
     "h1_total": 113.5,
     "q1_total": 56.4
-   }
+   },
+   "pnl": -10.03,
+   "won": false
   },
   {
    "id": "KXNBA1HTOTAL-26NOV02MILMIN-108|SI",
@@ -3297,6 +3332,116 @@
     "total": 231.4,
     "h1_total": 116.8,
     "q1_total": 58.0
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26NOV02MIALAL-129|NO",
+   "ticker": "KXNBA1HTOTAL-26NOV02MIALAL-129",
+   "fam": "1HTOTAL",
+   "game": "MIA @ LAL",
+   "tip": "2026-11-03T03:00:00+00:00",
+   "label": "Over 128.5 points",
+   "side": "NO",
+   "price": 0.68,
+   "p": 0.7658,
+   "edge": 0.0658,
+   "contracts": 14,
+   "status": "abierta",
+   "opened": "2026-11-03T01:45:25.184373+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 2.3,
+    "total": 237.3,
+    "h1_total": 119.8,
+    "q1_total": 59.5
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26NOV02MIALAL-65|NO",
+   "ticker": "KXNBA1QTOTAL-26NOV02MIALAL-65",
+   "fam": "1QTOTAL",
+   "game": "MIA @ LAL",
+   "tip": "2026-11-03T03:00:00+00:00",
+   "label": "Over 64.5 points",
+   "side": "NO",
+   "price": 0.62,
+   "p": 0.7335,
+   "edge": 0.0935,
+   "contracts": 16,
+   "status": "abierta",
+   "opened": "2026-11-03T01:45:25.184373+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 2.3,
+    "total": 237.3,
+    "h1_total": 119.8,
+    "q1_total": 59.5
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26NOV02PHXGSW-62|NO",
+   "ticker": "KXNBA1QTOTAL-26NOV02PHXGSW-62",
+   "fam": "1QTOTAL",
+   "game": "PHX @ GSW",
+   "tip": "2026-11-03T03:00:00+00:00",
+   "label": "Over 61.5 points",
+   "side": "NO",
+   "price": 0.61,
+   "p": 0.6934,
+   "edge": 0.0634,
+   "contracts": 16,
+   "status": "abierta",
+   "opened": "2026-11-03T01:45:25.184373+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 3.7,
+    "total": 229.0,
+    "h1_total": 115.7,
+    "q1_total": 57.5
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26NOV02TORLAC-109|SI",
+   "ticker": "KXNBA1HTOTAL-26NOV02TORLAC-109",
+   "fam": "1HTOTAL",
+   "game": "TOR @ LAC",
+   "tip": "2026-11-03T03:00:00+00:00",
+   "label": "Over 108.5 points",
+   "side": "SI",
+   "price": 0.43,
+   "p": 0.5966,
+   "edge": 0.1466,
+   "contracts": 23,
+   "status": "abierta",
+   "opened": "2026-11-03T01:45:25.184373+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -4.7,
+    "total": 220.7,
+    "h1_total": 111.4,
+    "q1_total": 55.4
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26NOV02TORLAC-55|SI",
+   "ticker": "KXNBA1QTOTAL-26NOV02TORLAC-55",
+   "fam": "1QTOTAL",
+   "game": "TOR @ LAC",
+   "tip": "2026-11-03T03:00:00+00:00",
+   "label": "Over 54.5 points",
+   "side": "SI",
+   "price": 0.47,
+   "p": 0.5428,
+   "edge": 0.0528,
+   "contracts": 21,
+   "status": "abierta",
+   "opened": "2026-11-03T01:45:25.184373+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -4.7,
+    "total": 220.7,
+    "h1_total": 111.4,
+    "q1_total": 55.4
    }
   }
  ]
