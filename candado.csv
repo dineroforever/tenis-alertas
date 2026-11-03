@@ -190,3 +190,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-11-03T16:52:12+00:00,sombra,KXATPCHALLENGERMATCH-26NOV03LADEL-LA,Juan Manuel La Serna,0.45,22,valor_justo,0.63,,,,
 2026-11-03T17:39:56+00:00,sombra,KXWTAMATCH-26NOV02FALLIN-FAL,Aliona Falei,0.54,18,liquidacion,0.0,,,,
 2026-11-03T17:55:44+00:00,real,KXATPMATCH-26NOV01MICLEH-MIC,Alex Michelsen,0.46,21,valor_justo,0.83,,,,
+2026-11-03T18:56:14+00:00,sombra,KXATPCHALLENGERMATCH-26NOV03CIGCAS-CIG,Thiago Cigarran,0.41,24,liquidacion,0.0,,,,
