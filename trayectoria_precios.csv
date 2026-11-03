@@ -258,3 +258,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-11-03T01:50:19+00:00,real,KXATPCHALLENGERMATCH-26NOV02SHEANT-ANT,Michael Antonius,0.48,20,liquidacion,1.0,0.52,0.38,2,44,no,no,no
 2026-11-03T01:50:19+00:00,sombra,KXATPCHALLENGERMATCH-26NOV02HEIJUS-HEI,Gustavo Heide,0.53,18,liquidacion,1.0,0.91,0.49,100,150,si,si,si
 2026-11-03T05:48:16+00:00,real,KXATPCHALLENGERMATCH-26NOV02HSUJAS-HSU,Yu Hsiou Hsu,0.27,37,valor_justo,0.12,0.28,0.1,1,4,no,no,no
+2026-11-03T08:01:58+00:00,real,KXWTAMATCH-26NOV01GIBOLI-OLI,Oleksandra Oliynykova,0.24,35,liquidacion,0.0,0.27,0.2,2,53,si,no,no
