@@ -276,3 +276,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-11-04T12:10:26+00:00,sombra,KXWTACHALLENGERMATCH-26NOV04LAMKRO-KRO,Kristina Kroitor,0.49,20,valor_justo,0.97,0.94,0.42,22,22,si,si,si
 2026-11-04T13:57:38+00:00,real,KXWTAMATCH-26NOV04JOISAK-JOI,Maya Joint,0.38,26,liquidacion,0.0,0.42,0.01,1,62,si,no,no
 2026-11-04T13:57:38+00:00,sombra,KXATPMATCH-26NOV04VANTIE-VAN,Luca Van Assche,0.59,16,liquidacion,1.0,0.63,0.57,4,52,no,no,no
+2026-11-04T15:08:53+00:00,real,KXATPCHALLENGERMATCH-26NOV03AGAMON-AGA,Franco Agamenone,0.55,18,valor_justo,0.49,0.54,0.43,1,17,no,no,no
