@@ -1387,6 +1387,116 @@
     "h1_total": 109.8,
     "q1_total": 54.4
    }
+  },
+  {
+   "id": "KXNBASPREAD-26NOV04CHABKN-CHA3|NO",
+   "ticker": "KXNBASPREAD-26NOV04CHABKN-CHA3",
+   "fam": "SPREAD",
+   "game": "CHA @ BKN",
+   "tip": "2026-11-05T00:30:00+00:00",
+   "label": "Charlotte wins by over 2.5 points",
+   "side": "NO",
+   "price": 0.44,
+   "p": 0.5135,
+   "edge": 0.0535,
+   "contracts": 22,
+   "status": "abierta",
+   "opened": "2026-11-04T23:23:11.484636+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -2.1,
+    "total": 212.2,
+    "h1_total": 107.2,
+    "q1_total": 53.1
+   }
+  },
+  {
+   "id": "KXNBATOTAL-26NOV04CHINYK-233|NO",
+   "ticker": "KXNBATOTAL-26NOV04CHINYK-233",
+   "fam": "TOTAL",
+   "game": "CHI @ NYK",
+   "tip": "2026-11-05T00:30:00+00:00",
+   "label": "Over 232.5 points",
+   "side": "NO",
+   "price": 0.46,
+   "p": 0.5212,
+   "edge": 0.0412,
+   "contracts": 21,
+   "status": "abierta",
+   "opened": "2026-11-04T23:23:11.484636+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 12.4,
+    "total": 231.5,
+    "h1_total": 117.0,
+    "q1_total": 57.9
+   }
+  },
+  {
+   "id": "KXNBAGAME-26NOV04INDMEM-MEM|SI",
+   "ticker": "KXNBAGAME-26NOV04INDMEM-MEM",
+   "fam": "GAME",
+   "game": "IND @ MEM",
+   "tip": "2026-11-05T01:00:00+00:00",
+   "label": "Memphis",
+   "side": "SI",
+   "price": 0.68,
+   "p": 0.743,
+   "edge": 0.043,
+   "contracts": 14,
+   "status": "abierta",
+   "opened": "2026-11-04T23:23:11.484636+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 7.8,
+    "total": 229.7,
+    "h1_total": 116.0,
+    "q1_total": 57.4
+   }
+  },
+  {
+   "id": "KXNBASPREAD-26NOV04INDMEM-IND2|NO",
+   "ticker": "KXNBASPREAD-26NOV04INDMEM-IND2",
+   "fam": "SPREAD",
+   "game": "IND @ MEM",
+   "tip": "2026-11-05T01:00:00+00:00",
+   "label": "Indiana wins by over 1.5 points",
+   "side": "NO",
+   "price": 0.7,
+   "p": 0.7816,
+   "edge": 0.0616,
+   "contracts": 14,
+   "status": "abierta",
+   "opened": "2026-11-04T23:23:11.484636+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 7.8,
+    "total": 229.7,
+    "h1_total": 116.0,
+    "q1_total": 57.4
+   }
+  },
+  {
+   "id": "KXNBASPREAD-26NOV04UTANOP-UTA3|NO",
+   "ticker": "KXNBASPREAD-26NOV04UTANOP-UTA3",
+   "fam": "SPREAD",
+   "game": "UTA @ NOP",
+   "tip": "2026-11-05T01:00:00+00:00",
+   "label": "Utah wins by over 2.5 points",
+   "side": "NO",
+   "price": 0.7,
+   "p": 0.7762,
+   "edge": 0.0562,
+   "contracts": 14,
+   "status": "abierta",
+   "opened": "2026-11-04T23:23:11.484636+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 6.6,
+    "total": 234.4,
+    "h1_total": 118.4,
+    "q1_total": 58.6
+   }
   }
  ],
  "scanned": {
@@ -1408,7 +1518,13 @@
   "26NOV02PHXGSW": "2026-11-03T01:45:25.184373+00:00",
   "26NOV02TORLAC": "2026-11-03T01:45:25.184373+00:00",
   "26NOV04ATLWAS": "2026-11-04T22:33:51.573702+00:00",
-  "26NOV04PHIDET": "2026-11-04T22:33:51.573702+00:00"
+  "26NOV04PHIDET": "2026-11-04T22:33:51.573702+00:00",
+  "26NOV04CHABKN": "2026-11-04T23:23:11.484636+00:00",
+  "26NOV04CHINYK": "2026-11-04T23:23:11.484636+00:00",
+  "26NOV04MILBOS": "2026-11-04T23:23:11.484636+00:00",
+  "26NOV04CLEOKC": "2026-11-04T23:23:11.484636+00:00",
+  "26NOV04INDMEM": "2026-11-04T23:23:11.484636+00:00",
+  "26NOV04UTANOP": "2026-11-04T23:23:11.484636+00:00"
  },
  "milestones": [
   25,
@@ -3635,6 +3751,182 @@
     "total": 217.4,
     "h1_total": 109.8,
     "q1_total": 54.4
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26NOV04CHABKN-59|NO",
+   "ticker": "KXNBA1QTOTAL-26NOV04CHABKN-59",
+   "fam": "1QTOTAL",
+   "game": "CHA @ BKN",
+   "tip": "2026-11-05T00:30:00+00:00",
+   "label": "Over 58.5 points",
+   "side": "NO",
+   "price": 0.67,
+   "p": 0.7515,
+   "edge": 0.0615,
+   "contracts": 14,
+   "status": "abierta",
+   "opened": "2026-11-04T23:23:11.484636+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -2.1,
+    "total": 212.2,
+    "h1_total": 107.2,
+    "q1_total": 53.1
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26NOV04CHINYK-116|SI",
+   "ticker": "KXNBA1HTOTAL-26NOV04CHINYK-116",
+   "fam": "1HTOTAL",
+   "game": "CHI @ NYK",
+   "tip": "2026-11-05T00:30:00+00:00",
+   "label": "Over 115.5 points",
+   "side": "SI",
+   "price": 0.45,
+   "p": 0.5483,
+   "edge": 0.0783,
+   "contracts": 22,
+   "status": "abierta",
+   "opened": "2026-11-04T23:23:11.484636+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 12.4,
+    "total": 231.5,
+    "h1_total": 117.0,
+    "q1_total": 57.9
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26NOV04MILBOS-105|SI",
+   "ticker": "KXNBA1HTOTAL-26NOV04MILBOS-105",
+   "fam": "1HTOTAL",
+   "game": "MIL @ BOS",
+   "tip": "2026-11-05T00:30:00+00:00",
+   "label": "Over 104.5 points",
+   "side": "SI",
+   "price": 0.59,
+   "p": 0.7543,
+   "edge": 0.1443,
+   "contracts": 16,
+   "status": "abierta",
+   "opened": "2026-11-04T23:23:11.484636+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 12.3,
+    "total": 223.2,
+    "h1_total": 112.8,
+    "q1_total": 55.8
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26NOV04CLEOKC-111|SI",
+   "ticker": "KXNBA1HTOTAL-26NOV04CLEOKC-111",
+   "fam": "1HTOTAL",
+   "game": "CLE @ OKC",
+   "tip": "2026-11-05T01:00:00+00:00",
+   "label": "Over 110.5 points",
+   "side": "SI",
+   "price": 0.49,
+   "p": 0.6216,
+   "edge": 0.1116,
+   "contracts": 20,
+   "status": "abierta",
+   "opened": "2026-11-04T23:23:11.484636+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 3.2,
+    "total": 226.1,
+    "h1_total": 114.2,
+    "q1_total": 56.5
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26NOV04INDMEM-112|SI",
+   "ticker": "KXNBA1HTOTAL-26NOV04INDMEM-112",
+   "fam": "1HTOTAL",
+   "game": "IND @ MEM",
+   "tip": "2026-11-05T01:00:00+00:00",
+   "label": "Over 111.5 points",
+   "side": "SI",
+   "price": 0.49,
+   "p": 0.6463,
+   "edge": 0.1363,
+   "contracts": 20,
+   "status": "abierta",
+   "opened": "2026-11-04T23:23:11.484636+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 7.8,
+    "total": 229.7,
+    "h1_total": 116.0,
+    "q1_total": 57.4
+   }
+  },
+  {
+   "id": "KXNBA1HSPREAD-26NOV04UTANOP-UTA6|NO",
+   "ticker": "KXNBA1HSPREAD-26NOV04UTANOP-UTA6",
+   "fam": "1HSPREAD",
+   "game": "UTA @ NOP",
+   "tip": "2026-11-05T01:00:00+00:00",
+   "label": "Utah wins by over 5.5 points",
+   "side": "NO",
+   "price": 0.78,
+   "p": 0.8535,
+   "edge": 0.0535,
+   "contracts": 12,
+   "status": "abierta",
+   "opened": "2026-11-04T23:23:11.484636+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 6.6,
+    "total": 234.4,
+    "h1_total": 118.4,
+    "q1_total": 58.6
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26NOV04UTANOP-111|SI",
+   "ticker": "KXNBA1HTOTAL-26NOV04UTANOP-111",
+   "fam": "1HTOTAL",
+   "game": "UTA @ NOP",
+   "tip": "2026-11-05T01:00:00+00:00",
+   "label": "Over 110.5 points",
+   "side": "SI",
+   "price": 0.59,
+   "p": 0.7445,
+   "edge": 0.1345,
+   "contracts": 16,
+   "status": "abierta",
+   "opened": "2026-11-04T23:23:11.484636+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 6.6,
+    "total": 234.4,
+    "h1_total": 118.4,
+    "q1_total": 58.6
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26NOV04UTANOP-56|SI",
+   "ticker": "KXNBA1QTOTAL-26NOV04UTANOP-56",
+   "fam": "1QTOTAL",
+   "game": "UTA @ NOP",
+   "tip": "2026-11-05T01:00:00+00:00",
+   "label": "Over 55.5 points",
+   "side": "SI",
+   "price": 0.58,
+   "p": 0.651,
+   "edge": 0.051,
+   "contracts": 17,
+   "status": "abierta",
+   "opened": "2026-11-04T23:23:11.484636+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 6.6,
+    "total": 234.4,
+    "h1_total": 118.4,
+    "q1_total": 58.6
    }
   }
  ]
