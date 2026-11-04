@@ -91,3 +91,4 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-04T12:55:32+00:00,real,compra,KXWTAMATCH-26NOV04JOISAK-JOI,Maya Joint,9,0.38,0.39,3.57,,66.8413,pedidos=9 estado=llenos=9.00 resto=0.00
 2026-11-04T13:57:37+00:00,real,liquidacion,KXWTAMATCH-26NOV04JOISAK-JOI,Maya Joint,9,,,0.0,-3.57,,no
 2026-11-04T14:52:16+00:00,real,omitida,KXATPCHALLENGERMATCH-26NOV03AGAMON-AGA,Franco Agamenone,,0.55,,,,,"volumen $115,192 < $300,000 (solo paper)"
+2026-11-04T15:55:25+00:00,real,omitida,KXATPMATCH-26NOV04MOLFRI-MOL,Alex Molčan,,0.22,,,,,bot detenido (8 operaciones negativas)
