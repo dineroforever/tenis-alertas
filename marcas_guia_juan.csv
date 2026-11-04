@@ -308,3 +308,4 @@ fecha_utc,estrategia,ticker,hora_miami,volumen,vol_500k,horario_2a8pm,sets,games
 2026-11-04T13:06:05+00:00,apify_sombra,KXATPMATCH-26NOV04VANTIE-VAN,08:06,1420189,si,no,1-0,2-2,no,no,inicio_set2,no
 2026-11-04T14:52:16+00:00,apify_senal,KXATPCHALLENGERMATCH-26NOV03AGAMON-AGA,09:52,115192,no,no,0-0,4-5,no,no,set1,no
 2026-11-04T15:55:25+00:00,apify_senal,KXATPMATCH-26NOV04MOLFRI-MOL,10:55,409480,no,no,0-0,5-5,no,no,set1,no
+2026-11-04T16:47:03+00:00,apify_sombra,KXATPMATCH-26NOV04MOLFRI-MOL,11:47,1909565,si,no,1-0,4-4,no,si,otro,no
