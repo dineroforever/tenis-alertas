@@ -200,3 +200,5 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-11-04T15:08:53+00:00,real,KXATPCHALLENGERMATCH-26NOV03AGAMON-AGA,Franco Agamenone,0.55,18,valor_justo,0.49,,,,
 2026-11-04T16:10:33+00:00,real,KXATPMATCH-26NOV04MOLFRI-MOL,Alex Molčan,0.22,45,valor_justo,0.26,0.21,0.21,0.21,0.21
 2026-11-04T17:10:05+00:00,sombra,KXATPMATCH-26NOV04MOLFRI-MOL,Alex Molčan,0.47,21,valor_justo,0.23,,,,
+2026-11-04T20:41:44+00:00,real,KXATPMATCH-26NOV04TIRSTR-TIR,Thiago Agustin Tirante,0.37,27,liquidacion,0.0,0.36,0.36,0.38,0.38
+2026-11-04T21:05:21+00:00,sombra,KXATPCHALLENGERMATCH-26NOV04GIRBOU-GIR,Marcos Giron,0.55,18,valor_justo,0.73,0.57,0.55,,

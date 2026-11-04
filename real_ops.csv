@@ -94,3 +94,4 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-04T15:55:25+00:00,real,omitida,KXATPMATCH-26NOV04MOLFRI-MOL,Alex Molčan,,0.22,,,,,bot detenido (8 operaciones negativas)
 2026-11-04T20:07:07+00:00,real,compra,KXATPMATCH-26NOV04TIRSTR-TIR,Thiago Agustin Tirante,9,0.37,0.38,3.48,,63.3644,pedidos=9 estado=llenos=9.00 resto=0.00
 2026-11-04T20:12:42+00:00,real,omitida,KXWTACHALLENGERMATCH-26NOV04PAPZAR-PAP,Despina Papamichail,,0.26,,,,,tope de pérdida diaria ($7.50)
+2026-11-04T20:41:42+00:00,real,liquidacion,KXATPMATCH-26NOV04TIRSTR-TIR,Thiago Agustin Tirante,9,,,0.0,-3.48,,no
