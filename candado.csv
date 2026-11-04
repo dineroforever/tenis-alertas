@@ -204,3 +204,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-11-04T21:05:21+00:00,sombra,KXATPCHALLENGERMATCH-26NOV04GIRBOU-GIR,Marcos Giron,0.55,18,valor_justo,0.73,0.57,0.55,,
 2026-11-04T21:39:26+00:00,real,KXWTACHALLENGERMATCH-26NOV04PAPZAR-PAP,Despina Papamichail,0.26,32,valor_justo,0.15,,,,
 2026-11-04T22:48:44+00:00,real,KXATPCHALLENGERMATCH-26NOV04MIDBAR-BAR,Tomás Barrios Vera,0.54,18,valor_justo,0.7,,,,0.58
+2026-11-04T23:32:16+00:00,sombra,KXATPCHALLENGERMATCH-26NOV04MIDBAR-BAR,Tomás Barrios Vera,0.55,18,liquidacion,0.0,0.54,0.54,0.53,0.53
