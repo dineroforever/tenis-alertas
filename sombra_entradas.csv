@@ -120,3 +120,4 @@ fecha_utc,match_id,ticker,jugador,rival,torneo,marcador,p_final,p_score,p_casa,a
 2026-11-03T16:47:32+00:00,17476989,KXATPCHALLENGERMATCH-26NOV03LADEL-LA,Juan Manuel La Serna,Mateo Del Pino,"Villa Maria, Argentina",4-6 6-0 3-4,0.5552,0.592,0.5,0.45,0.44,10.5,18.7,9.9,edge>10
 2026-11-03T17:02:53+00:00,17467966,KXWTAMATCH-26NOV02FALLIN-FAL,Aliona Falei,Magda Linette,Chennai,6-7 7-5 2-1,0.607,0.61,0.6025,0.54,0.53,6.7,8.8,9.72,reentrada
 2026-11-03T17:55:47+00:00,17456578,KXATPCHALLENGERMATCH-26NOV03CIGCAS-CIG,Thiago Cigarran,Hernan Casanova,"Villa Maria, Argentina",6-1 5-6,0.5897,0.6114,0.557,0.41,0.4,18.0,38.1,9.84,edge>10+set2
+2026-11-04T00:03:26+00:00,17456579,KXATPCHALLENGERMATCH-26NOV03SAIUGO-SAI,Nikolas Sanchez Izquierdo,Camilo Ugo Carabelli,"Costa do Sauipe, Brazil",7-6 0-1,0.5327,0.5544,0.5,0.44,0.43,9.3,16.5,9.68,set2
