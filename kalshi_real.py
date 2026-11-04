@@ -9,7 +9,7 @@ REAL_MODO:
 Reglas autorizadas:
   - apuesta = 5% del saldo real en cada operación (interés compuesto; ≈$2.50 al inicio), una orden por partido;
   - tope de pérdida diaria $7.50 (cuenta también lo que está en juego en posiciones abiertas);
-  - se detiene si pierde $15 desde el máximo o acumula 8 operaciones negativas;
+  - se detiene si pierde $15 desde el máximo o pierde 5 operaciones seguidas (antes: 8 acumuladas; cambiado el 4-nov);
   - se detiene al completar 25 operaciones.
 Las entradas y salidas siguen exactamente al paper (que sigue corriendo en paralelo).
 """
@@ -23,7 +23,7 @@ PCT = float(os.getenv("REAL_PCT", "0.05"))  # interés compuesto: 5% del saldo r
 APUESTA_MIN = 1.0
 TOPE_DIA = float(os.getenv("REAL_TOPE_DIA", "7.50"))
 FRENO_DD = float(os.getenv("REAL_FRENO_DD", "15"))
-MAX_NEG = int(os.getenv("REAL_MAX_NEG", "8"))
+MAX_RACHA = int(os.getenv("REAL_MAX_RACHA", "5"))  # freno: pérdidas SEGUIDAS (decisión de Roberto 4-nov)
 VOL_MIN = float(os.getenv("REAL_VOL_MIN", "300000"))  # real solo en partidos con ≥$300k de volumen (decisión de Roberto 26-oct)
 META_OPS = int(os.getenv("REAL_META_OPS", "25"))
 DESLIZ = 0.01  # se acepta pagar hasta 1¢ más que el ask del paper (o vender 1¢ bajo el bid)
@@ -177,7 +177,10 @@ def mercado(ticker):
 # ---------- estado y registro ----------
 def _estado(est):
     r = est.setdefault("real", {})
-    for k, v in (("pos", {}), ("ops", 0), ("neg", 0), ("pnl", 0.0), ("max_pnl", 0.0), ("dia", ""),
+    if r.get("parado") == "8 operaciones negativas":  # regla vieja (pérdidas acumuladas) reemplazada el 4-nov
+        r["parado"] = ""
+        r.setdefault("racha_neg", 1)  # la última operación (Maya Joint) fue negativa
+    for k, v in (("pos", {}), ("ops", 0), ("neg", 0), ("racha_neg", 0), ("pnl", 0.0), ("max_pnl", 0.0), ("dia", ""),
                  ("pnl_dia", 0.0), ("partidos", []), ("parado", ""), ("ensayo", {})):
         r.setdefault(k, v)
     hoy = datetime.now(MIAMI).date().isoformat()
@@ -206,13 +209,16 @@ def _cerrar(r, mid, g, aviso, texto):
     r["max_pnl"] = max(r["max_pnl"], r["pnl"])
     if g < 0:
         r["neg"] += 1
+        r["racha_neg"] = r.get("racha_neg", 0) + 1
+    else:
+        r["racha_neg"] = 0
     freno = ""
     if r["ops"] >= META_OPS:
         freno = f"meta de {META_OPS} operaciones completada"
     elif r["pnl"] <= r["max_pnl"] - FRENO_DD:
         freno = f"pérdida de ${FRENO_DD:.0f} desde el máximo"
-    elif r["neg"] >= MAX_NEG:
-        freno = f"{MAX_NEG} operaciones negativas"
+    elif r["racha_neg"] >= MAX_RACHA:
+        freno = f"{MAX_RACHA} operaciones negativas seguidas"
     if freno:
         r["parado"] = freno
     aviso(f"{texto}\nResultado: {'+' if g >= 0 else '−'}${abs(g):.2f} · Prueba: {r['ops']}/{META_OPS} ops, "
