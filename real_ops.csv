@@ -96,3 +96,4 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-04T20:12:42+00:00,real,omitida,KXWTACHALLENGERMATCH-26NOV04PAPZAR-PAP,Despina Papamichail,,0.26,,,,,tope de pérdida diaria ($7.50)
 2026-11-04T20:41:42+00:00,real,liquidacion,KXATPMATCH-26NOV04TIRSTR-TIR,Thiago Agustin Tirante,9,,,0.0,-3.48,,no
 2026-11-04T22:39:57+00:00,real,omitida,KXATPCHALLENGERMATCH-26NOV04MIDBAR-BAR,Tomás Barrios Vera,,0.54,,,,,tope de pérdida diaria ($7.50)
+2026-11-05T17:49:33+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV05MILREH-MIL,Daniel Milavsky,7,0.46,0.47,3.34,,60.4804,pedidos=7 estado=llenos=7.00 resto=0.00
