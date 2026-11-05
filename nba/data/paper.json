@@ -1548,7 +1548,7 @@
    "p": 0.6825,
    "edge": 0.0725,
    "contracts": 16,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-05T00:45:36.306259+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1556,7 +1556,9 @@
     "total": 228.2,
     "h1_total": 115.3,
     "q1_total": 57.1
-   }
+   },
+   "pnl": 6.28,
+   "won": true
   },
   {
    "id": "KXNBASPREAD-26NOV04TORDEN-DEN3|NO",
@@ -1594,7 +1596,7 @@
    "p": 0.5431,
    "edge": 0.0831,
    "contracts": 22,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-05T01:58:58.389662+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1602,7 +1604,9 @@
     "total": 233.5,
     "h1_total": 118.0,
     "q1_total": 58.4
-   }
+   },
+   "pnl": 11.94,
+   "won": true
   }
  ],
  "scanned": {
@@ -4269,7 +4273,7 @@
    "p": 0.8863,
    "edge": 0.0563,
    "contracts": 12,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-05T01:58:58.389662+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -4277,7 +4281,9 @@
     "total": 234.5,
     "h1_total": 118.4,
     "q1_total": 58.6
-   }
+   },
+   "pnl": 2.15,
+   "won": true
   },
   {
    "id": "KXNBA1QSPREAD-26NOV04LALSAC-LAL12|NO",
@@ -4339,7 +4345,7 @@
    "p": 0.8507,
    "edge": 0.0707,
    "contracts": 13,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-05T01:58:58.389662+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -4347,7 +4353,9 @@
     "total": 233.5,
     "h1_total": 118.0,
     "q1_total": 58.4
-   }
+   },
+   "pnl": 2.95,
+   "won": true
   },
   {
    "id": "KXNBA1QSPREAD-26NOV04MIALAC-MIA8|NO",
