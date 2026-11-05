@@ -1497,10 +1497,75 @@
     "h1_total": 118.4,
     "q1_total": 58.6
    }
+  },
+  {
+   "id": "KXNBAGAME-26NOV04PORPHX-POR|SI",
+   "ticker": "KXNBAGAME-26NOV04PORPHX-POR",
+   "fam": "GAME",
+   "game": "POR @ PHX",
+   "tip": "2026-11-05T02:00:00+00:00",
+   "label": "Portland",
+   "side": "SI",
+   "price": 0.57,
+   "p": 0.6368,
+   "edge": 0.0468,
+   "contracts": 17,
+   "status": "abierta",
+   "opened": "2026-11-05T00:45:36.306259+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -4.2,
+    "total": 228.2,
+    "h1_total": 115.3,
+    "q1_total": 57.1
+   }
+  },
+  {
+   "id": "KXNBASPREAD-26NOV04PORPHX-PHX2|NO",
+   "ticker": "KXNBASPREAD-26NOV04PORPHX-PHX2",
+   "fam": "SPREAD",
+   "game": "POR @ PHX",
+   "tip": "2026-11-05T02:00:00+00:00",
+   "label": "Phoenix wins by over 1.5 points",
+   "side": "NO",
+   "price": 0.59,
+   "p": 0.6825,
+   "edge": 0.0725,
+   "contracts": 16,
+   "status": "abierta",
+   "opened": "2026-11-05T00:45:36.306259+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -4.2,
+    "total": 228.2,
+    "h1_total": 115.3,
+    "q1_total": 57.1
+   }
+  },
+  {
+   "id": "KXNBASPREAD-26NOV04TORDEN-DEN3|NO",
+   "ticker": "KXNBASPREAD-26NOV04TORDEN-DEN3",
+   "fam": "SPREAD",
+   "game": "TOR @ DEN",
+   "tip": "2026-11-05T02:00:00+00:00",
+   "label": "Denver wins by over 2.5 points",
+   "side": "NO",
+   "price": 0.42,
+   "p": 0.4988,
+   "edge": 0.0588,
+   "contracts": 23,
+   "status": "abierta",
+   "opened": "2026-11-05T00:45:36.306259+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 2.5,
+    "total": 231.2,
+    "h1_total": 116.8,
+    "q1_total": 57.8
+   }
   }
  ],
  "scanned": {
-  "26NOV01TORLAL": "2026-11-02T00:40:53.997925+00:00",
   "26NOV02OKCCLE": "2026-11-02T22:46:26.561875+00:00",
   "26NOV02ATLIND": "2026-11-02T23:25:50.427840+00:00",
   "26NOV02BKNNYK": "2026-11-02T23:25:50.427840+00:00",
@@ -1524,7 +1589,9 @@
   "26NOV04CLEOKC": "2026-11-04T23:23:11.484636+00:00",
   "26NOV04INDMEM": "2026-11-04T23:23:11.484636+00:00",
   "26NOV04UTANOP": "2026-11-04T23:23:11.484636+00:00",
-  "26NOV04MINHOU": "2026-11-04T23:59:27.918164+00:00"
+  "26NOV04MINHOU": "2026-11-04T23:59:27.918164+00:00",
+  "26NOV04PORPHX": "2026-11-05T00:45:36.306259+00:00",
+  "26NOV04TORDEN": "2026-11-05T00:45:36.306259+00:00"
  },
  "milestones": [
   25,
@@ -3949,6 +4016,72 @@
     "total": 220.9,
     "h1_total": 111.6,
     "q1_total": 55.2
+   }
+  },
+  {
+   "id": "KXNBA1HSPREAD-26NOV04PORPHX-PHX9|NO",
+   "ticker": "KXNBA1HSPREAD-26NOV04PORPHX-PHX9",
+   "fam": "1HSPREAD",
+   "game": "POR @ PHX",
+   "tip": "2026-11-05T02:00:00+00:00",
+   "label": "Phoenix wins by over 8.5 points",
+   "side": "NO",
+   "price": 0.83,
+   "p": 0.8956,
+   "edge": 0.0556,
+   "contracts": 12,
+   "status": "abierta",
+   "opened": "2026-11-05T00:45:36.306259+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -4.2,
+    "total": 228.2,
+    "h1_total": 115.3,
+    "q1_total": 57.1
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26NOV04PORPHX-62|NO",
+   "ticker": "KXNBA1QTOTAL-26NOV04PORPHX-62",
+   "fam": "1QTOTAL",
+   "game": "POR @ PHX",
+   "tip": "2026-11-05T02:00:00+00:00",
+   "label": "Over 61.5 points",
+   "side": "NO",
+   "price": 0.62,
+   "p": 0.7106,
+   "edge": 0.0706,
+   "contracts": 16,
+   "status": "abierta",
+   "opened": "2026-11-05T00:45:36.306259+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -4.2,
+    "total": 228.2,
+    "h1_total": 115.3,
+    "q1_total": 57.1
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26NOV04TORDEN-114|SI",
+   "ticker": "KXNBA1HTOTAL-26NOV04TORDEN-114",
+   "fam": "1HTOTAL",
+   "game": "TOR @ DEN",
+   "tip": "2026-11-05T02:00:00+00:00",
+   "label": "Over 113.5 points",
+   "side": "SI",
+   "price": 0.47,
+   "p": 0.608,
+   "edge": 0.118,
+   "contracts": 21,
+   "status": "abierta",
+   "opened": "2026-11-05T00:45:36.306259+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 2.5,
+    "total": 231.2,
+    "h1_total": 116.8,
+    "q1_total": 57.8
    }
   }
  ]
