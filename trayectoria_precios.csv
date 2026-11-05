@@ -286,3 +286,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-11-04T23:32:16+00:00,sombra,KXATPCHALLENGERMATCH-26NOV04MIDBAR-BAR,Tomás Barrios Vera,0.55,18,liquidacion,0.0,0.67,0.04,4,41,si,si,no
 2026-11-05T05:48:46+00:00,sombra,KXATPCHALLENGERMATCH-26NOV04BROMUL-BRO,Charles Broom,0.39,25,liquidacion,0.0,,,,34,,,
 2026-11-05T10:28:25+00:00,sombra,KXWTAMATCH-26NOV05PRISHU-SHU,Alexandra Shubladze,0.41,24,liquidacion,1.0,0.48,0.37,18,205,si,no,no
+2026-11-05T12:42:37+00:00,sombra,KXWTAMATCH-26NOV05HONKUL-KUL,Zhibek Kulambayeva,0.39,25,valor_justo,0.15,0.35,0.06,10,78,no,no,no
