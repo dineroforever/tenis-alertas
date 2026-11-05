@@ -3891,7 +3891,7 @@
    "p": 0.5483,
    "edge": 0.0783,
    "contracts": 22,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-04T23:23:11.484636+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -3899,7 +3899,9 @@
     "total": 231.5,
     "h1_total": 117.0,
     "q1_total": 57.9
-   }
+   },
+   "pnl": 11.71,
+   "won": true
   },
   {
    "id": "KXNBA1HTOTAL-26NOV04MILBOS-105|SI",
@@ -3937,7 +3939,7 @@
    "p": 0.6216,
    "edge": 0.1116,
    "contracts": 20,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-04T23:23:11.484636+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -3945,7 +3947,9 @@
     "total": 226.1,
     "h1_total": 114.2,
     "q1_total": 56.5
-   }
+   },
+   "pnl": -10.15,
+   "won": false
   },
   {
    "id": "KXNBA1HTOTAL-26NOV04INDMEM-112|SI",
@@ -3959,7 +3963,7 @@
    "p": 0.6463,
    "edge": 0.1363,
    "contracts": 20,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-04T23:23:11.484636+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -3967,7 +3971,9 @@
     "total": 229.7,
     "h1_total": 116.0,
     "q1_total": 57.4
-   }
+   },
+   "pnl": -10.15,
+   "won": false
   },
   {
    "id": "KXNBA1HSPREAD-26NOV04UTANOP-UTA6|NO",
@@ -3981,7 +3987,7 @@
    "p": 0.8535,
    "edge": 0.0535,
    "contracts": 12,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-04T23:23:11.484636+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -3989,7 +3995,9 @@
     "total": 234.4,
     "h1_total": 118.4,
     "q1_total": 58.6
-   }
+   },
+   "pnl": 2.49,
+   "won": true
   },
   {
    "id": "KXNBA1HTOTAL-26NOV04UTANOP-111|SI",
@@ -4003,7 +4011,7 @@
    "p": 0.7445,
    "edge": 0.1345,
    "contracts": 16,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-04T23:23:11.484636+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -4011,7 +4019,9 @@
     "total": 234.4,
     "h1_total": 118.4,
     "q1_total": 58.6
-   }
+   },
+   "pnl": -9.72,
+   "won": false
   },
   {
    "id": "KXNBA1QTOTAL-26NOV04UTANOP-56|SI",
