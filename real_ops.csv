@@ -99,3 +99,4 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-05T17:49:33+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV05MILREH-MIL,Daniel Milavsky,7,0.46,0.47,3.34,,60.4804,pedidos=7 estado=llenos=7.00 resto=0.00
 2026-11-05T18:44:30+00:00,real,compra,KXWTACHALLENGERMATCH-26NOV05RIEZAR-ZAR,Renata Zarazua,5,0.56,0.57,2.89,,57.5941,pedidos=5 estado=llenos=5.00 resto=0.00
 2026-11-05T18:59:09+00:00,real,venta,KXATPCHALLENGERMATCH-26NOV05MILREH-MIL,Daniel Milavsky,7,0.61,0.6,4.15,,61.7475,quedan=0 estado=llenos=7.00 resto=0.00
+2026-11-05T19:42:41+00:00,real,liquidacion,KXWTACHALLENGERMATCH-26NOV05RIEZAR-ZAR,Renata Zarazua,5,,,0.0,-2.89,,no

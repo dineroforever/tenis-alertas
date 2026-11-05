@@ -211,3 +211,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-11-05T16:55:33+00:00,sombra,KXATPCHALLENGERMATCH-26NOV05HENCAN-CAN,Carlo Alberto Caniato,0.27,37,liquidacion,1.0,,,,
 2026-11-05T18:13:40+00:00,sombra,KXATPCHALLENGERMATCH-26NOV05SVRMPE-MPE,Giovanni Mpetshi Perricard,0.61,16,valor_justo,0.52,0.61,0.61,0.61,0.62
 2026-11-05T18:59:08+00:00,real,KXATPCHALLENGERMATCH-26NOV05MILREH-MIL,Daniel Milavsky,0.46,21,valor_justo,0.61,0.47,0.45,0.47,0.46
+2026-11-05T19:42:44+00:00,real,KXWTACHALLENGERMATCH-26NOV05RIEZAR-ZAR,Renata Zarazua,0.56,17,liquidacion,0.0,,,,
