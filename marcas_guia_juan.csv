@@ -314,3 +314,4 @@ fecha_utc,estrategia,ticker,hora_miami,volumen,vol_500k,horario_2a8pm,sets,games
 2026-11-04T20:47:31+00:00,apify_sombra,KXATPCHALLENGERMATCH-26NOV04GIRBOU-GIR,15:47,325549,no,si,0-1,0-0,no,no,inicio_set2,si
 2026-11-04T22:39:57+00:00,apify_senal,KXATPCHALLENGERMATCH-26NOV04MIDBAR-BAR,17:39,1036079,si,si,1-1,4-4,si,no,otro,no
 2026-11-04T22:51:39+00:00,apify_sombra,KXATPCHALLENGERMATCH-26NOV04MIDBAR-BAR,17:51,1254153,si,si,1-1,5-5,si,no,otro,no
+2026-11-05T05:15:15+00:00,apify_sombra,KXATPCHALLENGERMATCH-26NOV04BROMUL-BRO,00:15,2312059,si,no,1-1,1-1,si,no,otro,no
