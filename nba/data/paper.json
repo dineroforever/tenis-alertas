@@ -1649,7 +1649,9 @@
   "26NOV04LALSAC": "2026-11-05T01:58:58.389662+00:00",
   "26NOV04MIALAC": "2026-11-05T01:58:58.389662+00:00",
   "26NOV05ORLPHX": "2026-11-06T00:43:41.602077+00:00",
-  "26NOV05MIAGSW": "2026-11-06T01:52:46.716478+00:00"
+  "26NOV05MIAGSW": "2026-11-06T01:52:46.716478+00:00",
+  "26NOV06BOSCHA": "2026-11-06T22:22:44.254299+00:00",
+  "26NOV06WASATL": "2026-11-06T22:22:44.254299+00:00"
  },
  "milestones": [
   25,
@@ -4463,6 +4465,160 @@
    },
    "pnl": 4.26,
    "won": true
+  },
+  {
+   "id": "KXNBA1HSPREAD-26NOV06BOSCHA-BOS17|NO",
+   "ticker": "KXNBA1HSPREAD-26NOV06BOSCHA-BOS17",
+   "fam": "1HSPREAD",
+   "game": "BOS @ CHA",
+   "tip": "2026-11-07T00:00:00+00:00",
+   "label": "Boston wins by over 16.5 points",
+   "side": "NO",
+   "price": 0.84,
+   "p": 0.915,
+   "edge": 0.065,
+   "contracts": 11,
+   "status": "abierta",
+   "opened": "2026-11-06T22:22:44.254299+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -9.3,
+    "total": 209.4,
+    "h1_total": 105.7,
+    "q1_total": 52.4
+   }
+  },
+  {
+   "id": "KXNBA1QSPREAD-26NOV06BOSCHA-BOS9|NO",
+   "ticker": "KXNBA1QSPREAD-26NOV06BOSCHA-BOS9",
+   "fam": "1QSPREAD",
+   "game": "BOS @ CHA",
+   "tip": "2026-11-07T00:00:00+00:00",
+   "label": "Boston wins by over 8.5 points",
+   "side": "NO",
+   "price": 0.74,
+   "p": 0.8216,
+   "edge": 0.0616,
+   "contracts": 13,
+   "status": "abierta",
+   "opened": "2026-11-06T22:22:44.254299+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -9.3,
+    "total": 209.4,
+    "h1_total": 105.7,
+    "q1_total": 52.4
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26NOV06BOSCHA-61|NO",
+   "ticker": "KXNBA1QTOTAL-26NOV06BOSCHA-61",
+   "fam": "1QTOTAL",
+   "game": "BOS @ CHA",
+   "tip": "2026-11-07T00:00:00+00:00",
+   "label": "Over 60.5 points",
+   "side": "NO",
+   "price": 0.76,
+   "p": 0.8449,
+   "edge": 0.0649,
+   "contracts": 13,
+   "status": "abierta",
+   "opened": "2026-11-06T22:22:44.254299+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -9.3,
+    "total": 209.4,
+    "h1_total": 105.7,
+    "q1_total": 52.4
+   }
+  },
+  {
+   "id": "KXNBA1HSPREAD-26NOV06WASATL-ATL16|NO",
+   "ticker": "KXNBA1HSPREAD-26NOV06WASATL-ATL16",
+   "fam": "1HSPREAD",
+   "game": "WAS @ ATL",
+   "tip": "2026-11-07T00:00:00+00:00",
+   "label": "Atlanta wins by over 15.5 points",
+   "side": "NO",
+   "price": 0.85,
+   "p": 0.9168,
+   "edge": 0.0568,
+   "contracts": 11,
+   "status": "abierta",
+   "opened": "2026-11-06T22:22:44.254299+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 7.2,
+    "total": 226.9,
+    "h1_total": 114.6,
+    "q1_total": 56.8
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26NOV06WASATL-117|NO",
+   "ticker": "KXNBA1HTOTAL-26NOV06WASATL-117",
+   "fam": "1HTOTAL",
+   "game": "WAS @ ATL",
+   "tip": "2026-11-07T00:00:00+00:00",
+   "label": "Over 116.5 points",
+   "side": "NO",
+   "price": 0.45,
+   "p": 0.5623,
+   "edge": 0.0923,
+   "contracts": 22,
+   "status": "abierta",
+   "opened": "2026-11-06T22:22:44.254299+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 7.2,
+    "total": 226.9,
+    "h1_total": 114.6,
+    "q1_total": 56.8
+   }
+  },
+  {
+   "id": "KXNBA1QSPREAD-26NOV06WASATL-ATL12|NO",
+   "ticker": "KXNBA1QSPREAD-26NOV06WASATL-ATL12",
+   "fam": "1QSPREAD",
+   "game": "WAS @ ATL",
+   "tip": "2026-11-07T00:00:00+00:00",
+   "label": "Atlanta wins by over 11.5 points",
+   "side": "NO",
+   "price": 0.86,
+   "p": 0.9293,
+   "edge": 0.0593,
+   "contracts": 11,
+   "status": "abierta",
+   "opened": "2026-11-06T22:22:44.254299+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 7.2,
+    "total": 226.9,
+    "h1_total": 114.6,
+    "q1_total": 56.8
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26NOV06WASATL-61|NO",
+   "ticker": "KXNBA1QTOTAL-26NOV06WASATL-61",
+   "fam": "1QTOTAL",
+   "game": "WAS @ ATL",
+   "tip": "2026-11-07T00:00:00+00:00",
+   "label": "Over 60.5 points",
+   "side": "NO",
+   "price": 0.55,
+   "p": 0.6792,
+   "edge": 0.1092,
+   "contracts": 18,
+   "status": "abierta",
+   "opened": "2026-11-06T22:22:44.254299+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 7.2,
+    "total": 226.9,
+    "h1_total": 114.6,
+    "q1_total": 56.8
+   }
   }
  ]
 }
