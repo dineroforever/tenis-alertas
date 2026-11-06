@@ -1631,6 +1631,72 @@
    },
    "pnl": 5.3,
    "won": true
+  },
+  {
+   "id": "KXNBASPREAD-26NOV06OKCMEM-OKC3|NO",
+   "ticker": "KXNBASPREAD-26NOV06OKCMEM-OKC3",
+   "fam": "SPREAD",
+   "game": "OKC @ MEM",
+   "tip": "2026-11-07T01:00:00+00:00",
+   "label": "Oklahoma City wins by over 2.5 points",
+   "side": "NO",
+   "price": 0.43,
+   "p": 0.5276,
+   "edge": 0.0776,
+   "contracts": 23,
+   "status": "abierta",
+   "opened": "2026-11-06T23:42:25.378829+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -1.7,
+    "total": 223.9,
+    "h1_total": 113.1,
+    "q1_total": 56.0
+   }
+  },
+  {
+   "id": "KXNBAGAME-26NOV06TORMIL-MIL|NO",
+   "ticker": "KXNBAGAME-26NOV06TORMIL-MIL",
+   "fam": "GAME",
+   "game": "TOR @ MIL",
+   "tip": "2026-11-07T01:00:00+00:00",
+   "label": "Milwaukee",
+   "side": "NO",
+   "price": 0.6,
+   "p": 0.666,
+   "edge": 0.046,
+   "contracts": 16,
+   "status": "abierta",
+   "opened": "2026-11-06T23:42:25.378829+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -5.1,
+    "total": 228.8,
+    "h1_total": 115.5,
+    "q1_total": 57.2
+   }
+  },
+  {
+   "id": "KXNBASPREAD-26NOV06TORMIL-MIL2|NO",
+   "ticker": "KXNBASPREAD-26NOV06TORMIL-MIL2",
+   "fam": "SPREAD",
+   "game": "TOR @ MIL",
+   "tip": "2026-11-07T01:00:00+00:00",
+   "label": "Milwaukee wins by over 1.5 points",
+   "side": "NO",
+   "price": 0.63,
+   "p": 0.7102,
+   "edge": 0.0602,
+   "contracts": 15,
+   "status": "abierta",
+   "opened": "2026-11-06T23:42:25.378829+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -5.1,
+    "total": 228.8,
+    "h1_total": 115.5,
+    "q1_total": 57.2
+   }
   }
  ],
  "scanned": {
@@ -1652,7 +1718,11 @@
   "26NOV05MIAGSW": "2026-11-06T01:52:46.716478+00:00",
   "26NOV06BOSCHA": "2026-11-06T22:22:44.254299+00:00",
   "26NOV06WASATL": "2026-11-06T22:22:44.254299+00:00",
-  "26NOV06PHICLE": "2026-11-06T23:02:25.830581+00:00"
+  "26NOV06PHICLE": "2026-11-06T23:02:25.830581+00:00",
+  "26NOV06MINNOP": "2026-11-06T23:42:25.378829+00:00",
+  "26NOV06OKCMEM": "2026-11-06T23:42:25.378829+00:00",
+  "26NOV06TORMIL": "2026-11-06T23:42:25.378829+00:00",
+  "26NOV06UTADAL": "2026-11-06T23:42:25.378829+00:00"
  },
  "milestones": [
   25,
@@ -4707,6 +4777,248 @@
     "total": 229.6,
     "h1_total": 116.0,
     "q1_total": 57.4
+   }
+  },
+  {
+   "id": "KXNBA1HSPREAD-26NOV06MINNOP-NOP9|NO",
+   "ticker": "KXNBA1HSPREAD-26NOV06MINNOP-NOP9",
+   "fam": "1HSPREAD",
+   "game": "MIN @ NOP",
+   "tip": "2026-11-07T01:00:00+00:00",
+   "label": "New Orleans wins by over 8.5 points",
+   "side": "NO",
+   "price": 0.82,
+   "p": 0.8914,
+   "edge": 0.0514,
+   "contracts": 12,
+   "status": "abierta",
+   "opened": "2026-11-06T23:42:25.378829+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -3.8,
+    "total": 231.7,
+    "h1_total": 117.0,
+    "q1_total": 58.0
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26NOV06MINNOP-116|SI",
+   "ticker": "KXNBA1HTOTAL-26NOV06MINNOP-116",
+   "fam": "1HTOTAL",
+   "game": "MIN @ NOP",
+   "tip": "2026-11-07T01:00:00+00:00",
+   "label": "Over 115.5 points",
+   "side": "SI",
+   "price": 0.38,
+   "p": 0.5498,
+   "edge": 0.1498,
+   "contracts": 26,
+   "status": "abierta",
+   "opened": "2026-11-06T23:42:25.378829+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -3.8,
+    "total": 231.7,
+    "h1_total": 117.0,
+    "q1_total": 58.0
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26NOV06MINNOP-53|SI",
+   "ticker": "KXNBA1QTOTAL-26NOV06MINNOP-53",
+   "fam": "1QTOTAL",
+   "game": "MIN @ NOP",
+   "tip": "2026-11-07T01:00:00+00:00",
+   "label": "Over 52.5 points",
+   "side": "SI",
+   "price": 0.67,
+   "p": 0.7524,
+   "edge": 0.0624,
+   "contracts": 14,
+   "status": "abierta",
+   "opened": "2026-11-06T23:42:25.378829+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -3.8,
+    "total": 231.7,
+    "h1_total": 117.0,
+    "q1_total": 58.0
+   }
+  },
+  {
+   "id": "KXNBA1HSPREAD-26NOV06OKCMEM-OKC10|NO",
+   "ticker": "KXNBA1HSPREAD-26NOV06OKCMEM-OKC10",
+   "fam": "1HSPREAD",
+   "game": "OKC @ MEM",
+   "tip": "2026-11-07T01:00:00+00:00",
+   "label": "Oklahoma City wins by over 9.5 points",
+   "side": "NO",
+   "price": 0.75,
+   "p": 0.8451,
+   "edge": 0.0751,
+   "contracts": 13,
+   "status": "abierta",
+   "opened": "2026-11-06T23:42:25.378829+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -1.7,
+    "total": 223.9,
+    "h1_total": 113.1,
+    "q1_total": 56.0
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26NOV06OKCMEM-117|SI",
+   "ticker": "KXNBA1HTOTAL-26NOV06OKCMEM-117",
+   "fam": "1HTOTAL",
+   "game": "OKC @ MEM",
+   "tip": "2026-11-07T01:00:00+00:00",
+   "label": "Over 116.5 points",
+   "side": "SI",
+   "price": 0.26,
+   "p": 0.3884,
+   "edge": 0.1084,
+   "contracts": 38,
+   "status": "abierta",
+   "opened": "2026-11-06T23:42:25.378829+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -1.7,
+    "total": 223.9,
+    "h1_total": 113.1,
+    "q1_total": 56.0
+   }
+  },
+  {
+   "id": "KXNBA1QSPREAD-26NOV06OKCMEM-OKC8|NO",
+   "ticker": "KXNBA1QSPREAD-26NOV06OKCMEM-OKC8",
+   "fam": "1QSPREAD",
+   "game": "OKC @ MEM",
+   "tip": "2026-11-07T01:00:00+00:00",
+   "label": "Oklahoma City wins by over 7.5 points",
+   "side": "NO",
+   "price": 0.77,
+   "p": 0.8609,
+   "edge": 0.0709,
+   "contracts": 12,
+   "status": "abierta",
+   "opened": "2026-11-06T23:42:25.378829+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -1.7,
+    "total": 223.9,
+    "h1_total": 113.1,
+    "q1_total": 56.0
+   }
+  },
+  {
+   "id": "KXNBA1HSPREAD-26NOV06TORMIL-MIL9|NO",
+   "ticker": "KXNBA1HSPREAD-26NOV06TORMIL-MIL9",
+   "fam": "1HSPREAD",
+   "game": "TOR @ MIL",
+   "tip": "2026-11-07T01:00:00+00:00",
+   "label": "Milwaukee wins by over 8.5 points",
+   "side": "NO",
+   "price": 0.82,
+   "p": 0.9057,
+   "edge": 0.0657,
+   "contracts": 12,
+   "status": "abierta",
+   "opened": "2026-11-06T23:42:25.378829+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -5.1,
+    "total": 228.8,
+    "h1_total": 115.5,
+    "q1_total": 57.2
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26NOV06TORMIL-113|SI",
+   "ticker": "KXNBA1HTOTAL-26NOV06TORMIL-113",
+   "fam": "1HTOTAL",
+   "game": "TOR @ MIL",
+   "tip": "2026-11-07T01:00:00+00:00",
+   "label": "Over 112.5 points",
+   "side": "SI",
+   "price": 0.45,
+   "p": 0.6001,
+   "edge": 0.1301,
+   "contracts": 22,
+   "status": "abierta",
+   "opened": "2026-11-06T23:42:25.378829+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -5.1,
+    "total": 228.8,
+    "h1_total": 115.5,
+    "q1_total": 57.2
+   }
+  },
+  {
+   "id": "KXNBA1QSPREAD-26NOV06TORMIL-MIL6|NO",
+   "ticker": "KXNBA1QSPREAD-26NOV06TORMIL-MIL6",
+   "fam": "1QSPREAD",
+   "game": "TOR @ MIL",
+   "tip": "2026-11-07T01:00:00+00:00",
+   "label": "Milwaukee wins by over 5.5 points",
+   "side": "NO",
+   "price": 0.77,
+   "p": 0.8554,
+   "edge": 0.0654,
+   "contracts": 12,
+   "status": "abierta",
+   "opened": "2026-11-06T23:42:25.378829+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -5.1,
+    "total": 228.8,
+    "h1_total": 115.5,
+    "q1_total": 57.2
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26NOV06TORMIL-55|SI",
+   "ticker": "KXNBA1QTOTAL-26NOV06TORMIL-55",
+   "fam": "1QTOTAL",
+   "game": "TOR @ MIL",
+   "tip": "2026-11-07T01:00:00+00:00",
+   "label": "Over 54.5 points",
+   "side": "SI",
+   "price": 0.56,
+   "p": 0.6337,
+   "edge": 0.0537,
+   "contracts": 17,
+   "status": "abierta",
+   "opened": "2026-11-06T23:42:25.378829+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -5.1,
+    "total": 228.8,
+    "h1_total": 115.5,
+    "q1_total": 57.2
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26NOV06UTADAL-111|SI",
+   "ticker": "KXNBA1HTOTAL-26NOV06UTADAL-111",
+   "fam": "1HTOTAL",
+   "game": "UTA @ DAL",
+   "tip": "2026-11-07T01:00:00+00:00",
+   "label": "Over 110.5 points",
+   "side": "SI",
+   "price": 0.47,
+   "p": 0.6311,
+   "edge": 0.1411,
+   "contracts": 21,
+   "status": "abierta",
+   "opened": "2026-11-06T23:42:25.378829+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 7.5,
+    "total": 226.7,
+    "h1_total": 114.5,
+    "q1_total": 56.7
    }
   }
  ]
