@@ -4426,7 +4426,7 @@
    "p": 0.5259,
    "edge": 0.0659,
    "contracts": 22,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-06T00:43:41.602077+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -4434,7 +4434,9 @@
     "total": 223.9,
     "h1_total": 113.1,
     "q1_total": 56.0
-   }
+   },
+   "pnl": -10.06,
+   "won": false
   },
   {
    "id": "KXNBA1QTOTAL-26NOV05MIAGSW-66|NO",
