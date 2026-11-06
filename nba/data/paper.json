@@ -1607,12 +1607,31 @@
    },
    "pnl": 11.94,
    "won": true
+  },
+  {
+   "id": "KXNBASPREAD-26NOV05MIAGSW-MIA2|NO",
+   "ticker": "KXNBASPREAD-26NOV05MIAGSW-MIA2",
+   "fam": "SPREAD",
+   "game": "MIA @ GSW",
+   "tip": "2026-11-06T03:00:00+00:00",
+   "label": "Miami wins by over 1.5 points",
+   "side": "NO",
+   "price": 0.63,
+   "p": 0.702,
+   "edge": 0.052,
+   "contracts": 15,
+   "status": "abierta",
+   "opened": "2026-11-06T01:52:46.716478+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 4.9,
+    "total": 236.6,
+    "h1_total": 119.5,
+    "q1_total": 59.2
+   }
   }
  ],
  "scanned": {
-  "26NOV02MIALAL": "2026-11-03T01:45:25.184373+00:00",
-  "26NOV02PHXGSW": "2026-11-03T01:45:25.184373+00:00",
-  "26NOV02TORLAC": "2026-11-03T01:45:25.184373+00:00",
   "26NOV04ATLWAS": "2026-11-04T22:33:51.573702+00:00",
   "26NOV04PHIDET": "2026-11-04T22:33:51.573702+00:00",
   "26NOV04CHABKN": "2026-11-04T23:23:11.484636+00:00",
@@ -1627,7 +1646,8 @@
   "26NOV04DALSAS": "2026-11-05T01:58:58.389662+00:00",
   "26NOV04LALSAC": "2026-11-05T01:58:58.389662+00:00",
   "26NOV04MIALAC": "2026-11-05T01:58:58.389662+00:00",
-  "26NOV05ORLPHX": "2026-11-06T00:43:41.602077+00:00"
+  "26NOV05ORLPHX": "2026-11-06T00:43:41.602077+00:00",
+  "26NOV05MIAGSW": "2026-11-06T01:52:46.716478+00:00"
  },
  "milestones": [
   25,
@@ -4414,6 +4434,28 @@
     "total": 223.9,
     "h1_total": 113.1,
     "q1_total": 56.0
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26NOV05MIAGSW-66|NO",
+   "ticker": "KXNBA1QTOTAL-26NOV05MIAGSW-66",
+   "fam": "1QTOTAL",
+   "game": "MIA @ GSW",
+   "tip": "2026-11-06T03:00:00+00:00",
+   "label": "Over 65.5 points",
+   "side": "NO",
+   "price": 0.68,
+   "p": 0.786,
+   "edge": 0.086,
+   "contracts": 14,
+   "status": "abierta",
+   "opened": "2026-11-06T01:52:46.716478+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 4.9,
+    "total": 236.6,
+    "h1_total": 119.5,
+    "q1_total": 59.2
    }
   }
  ]
