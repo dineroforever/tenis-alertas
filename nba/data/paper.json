@@ -1644,7 +1644,7 @@
    "p": 0.5276,
    "edge": 0.0776,
    "contracts": 23,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-06T23:42:25.378829+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1652,7 +1652,9 @@
     "total": 223.9,
     "h1_total": 113.1,
     "q1_total": 56.0
-   }
+   },
+   "pnl": -10.29,
+   "won": false
   },
   {
    "id": "KXNBAGAME-26NOV06TORMIL-MIL|NO",
@@ -1666,7 +1668,7 @@
    "p": 0.666,
    "edge": 0.046,
    "contracts": 16,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-06T23:42:25.378829+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1674,7 +1676,9 @@
     "total": 228.8,
     "h1_total": 115.5,
     "q1_total": 57.2
-   }
+   },
+   "pnl": 6.13,
+   "won": true
   },
   {
    "id": "KXNBASPREAD-26NOV06TORMIL-MIL2|NO",
@@ -1688,7 +1692,7 @@
    "p": 0.7102,
    "edge": 0.0602,
    "contracts": 15,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-06T23:42:25.378829+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1696,7 +1700,9 @@
     "total": 228.8,
     "h1_total": 115.5,
     "q1_total": 57.2
-   }
+   },
+   "pnl": 5.3,
+   "won": true
   },
   {
    "id": "KXNBASPREAD-26NOV06SASSAC-SAS26|NO",
@@ -5145,7 +5151,7 @@
    "p": 0.8862,
    "edge": 0.0962,
    "contracts": 12,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-07T01:42:29.751736+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -5153,7 +5159,9 @@
     "total": 232.1,
     "h1_total": 117.2,
     "q1_total": 58.1
-   }
+   },
+   "pnl": 2.61,
+   "won": true
   },
   {
    "id": "KXNBA1QTOTAL-26NOV06PORLAL-65|NO",
@@ -5167,7 +5175,7 @@
    "p": 0.7894,
    "edge": 0.1194,
    "contracts": 15,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-07T01:42:29.751736+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -5175,7 +5183,9 @@
     "total": 232.1,
     "h1_total": 117.2,
     "q1_total": 58.1
-   }
+   },
+   "pnl": 5.01,
+   "won": true
   },
   {
    "id": "KXNBA1HSPREAD-26NOV06SASSAC-SAS19|NO",
@@ -5211,7 +5221,7 @@
    "p": 0.8649,
    "edge": 0.1049,
    "contracts": 13,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-07T01:42:29.751736+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -5219,7 +5229,9 @@
     "total": 230.7,
     "h1_total": 116.5,
     "q1_total": 57.7
-   }
+   },
+   "pnl": 3.2,
+   "won": true
   },
   {
    "id": "KXNBA1QTOTAL-26NOV06SASSAC-64|NO",
@@ -5233,7 +5245,7 @@
    "p": 0.765,
    "edge": 0.095,
    "contracts": 15,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-07T01:42:29.751736+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -5241,7 +5253,9 @@
     "total": 230.7,
     "h1_total": 116.5,
     "q1_total": 57.7
-   }
+   },
+   "pnl": -9.99,
+   "won": false
   }
  ]
 }
