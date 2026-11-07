@@ -297,3 +297,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-11-06T16:39:23+00:00,sombra,KXATPCHALLENGERMATCH-26NOV06GILCLA-GIL,Felix Gill,0.51,19,liquidacion,1.0,0.74,0.46,21,176,si,si,si
 2026-11-06T21:30:12+00:00,real,KXATPCHALLENGERMATCH-26NOV06KASAND-AND,Andres Andrade,0.39,25,valor_justo,0.67,0.67,0.15,95,95,si,si,si
 2026-11-06T22:11:34+00:00,sombra,KXATPCHALLENGERMATCH-26NOV06KASAND-AND,Andres Andrade,0.47,21,liquidacion,1.0,0.46,0.34,1,17,no,no,no
+2026-11-07T10:44:14+00:00,sombra,KXATPMATCH-26NOV07BASPAS-PAS,Francesco Passaro,0.33,30,valor_justo,0.12,0.33,0.11,1,14,no,no,no
