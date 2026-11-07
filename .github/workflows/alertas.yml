@@ -2,7 +2,7 @@ name: Alertas tenis Kalshi
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/30 0-3,11-23 * * *"  # pausa 11pm-6am hora Miami (EST); en horario de verano (marzo) mover 1 hora
   workflow_dispatch: {}
 
 concurrency:
