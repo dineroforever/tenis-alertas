@@ -105,3 +105,4 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-06T19:54:49+00:00,real,omitida,KXATPCHALLENGERMATCH-26NOV06KASAND-AND,Andres Andrade,,0.39,,,,,"volumen $139,011 < $300,000 (solo paper)"
 2026-11-07T11:16:44+00:00,real,compra,KXWTACHALLENGERMATCH-26NOV06BLIKAB-KAB,Yasmine Kabbaj,11,0.29,0.3,3.24,,61.5875,pedidos=11 estado=llenos=11.00 resto=0.00
 2026-11-07T12:21:54+00:00,real,liquidacion,KXWTACHALLENGERMATCH-26NOV06BLIKAB-KAB,Yasmine Kabbaj,11,,,0.0,-3.24,,no
+2026-11-07T21:52:59+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV07CHIKOZ-KOZ,Stefan Kozlov,8,0.39,0.4,3.25,,58.3342,pedidos=8 estado=llenos=8.00 resto=0.00
