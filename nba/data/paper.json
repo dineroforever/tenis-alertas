@@ -4741,7 +4741,7 @@
    "p": 0.8986,
    "edge": 0.0586,
    "contracts": 12,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-06T23:02:25.830581+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -4749,7 +4749,9 @@
     "total": 229.6,
     "h1_total": 116.0,
     "q1_total": 57.4
-   }
+   },
+   "pnl": 1.92,
+   "won": true
   },
   {
    "id": "KXNBA1HTOTAL-26NOV06PHICLE-119|NO",
@@ -4763,7 +4765,7 @@
    "p": 0.5837,
    "edge": 0.0837,
    "contracts": 20,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-06T23:02:25.830581+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -4771,7 +4773,9 @@
     "total": 229.6,
     "h1_total": 116.0,
     "q1_total": 57.4
-   }
+   },
+   "pnl": 10.05,
+   "won": true
   },
   {
    "id": "KXNBA1QSPREAD-26NOV06PHICLE-PHI10|NO",
@@ -4877,7 +4881,7 @@
    "p": 0.7524,
    "edge": 0.0624,
    "contracts": 14,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-06T23:42:25.378829+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -4885,7 +4889,9 @@
     "total": 231.7,
     "h1_total": 117.0,
     "q1_total": 58.0
-   }
+   },
+   "pnl": 4.4,
+   "won": true
   },
   {
    "id": "KXNBA1HSPREAD-26NOV06OKCMEM-OKC10|NO",
@@ -4943,7 +4949,7 @@
    "p": 0.8609,
    "edge": 0.0709,
    "contracts": 12,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-06T23:42:25.378829+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -4951,7 +4957,9 @@
     "total": 223.9,
     "h1_total": 113.1,
     "q1_total": 56.0
-   }
+   },
+   "pnl": 2.61,
+   "won": true
   },
   {
    "id": "KXNBA1HSPREAD-26NOV06TORMIL-MIL9|NO",
@@ -5009,7 +5017,7 @@
    "p": 0.8554,
    "edge": 0.0654,
    "contracts": 12,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-06T23:42:25.378829+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -5017,7 +5025,9 @@
     "total": 228.8,
     "h1_total": 115.5,
     "q1_total": 57.2
-   }
+   },
+   "pnl": 2.61,
+   "won": true
   },
   {
    "id": "KXNBA1QTOTAL-26NOV06TORMIL-55|SI",
@@ -5031,7 +5041,7 @@
    "p": 0.6337,
    "edge": 0.0537,
    "contracts": 17,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-06T23:42:25.378829+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -5039,7 +5049,9 @@
     "total": 228.8,
     "h1_total": 115.5,
     "q1_total": 57.2
-   }
+   },
+   "pnl": -9.82,
+   "won": false
   },
   {
    "id": "KXNBA1HTOTAL-26NOV06UTADAL-111|SI",
