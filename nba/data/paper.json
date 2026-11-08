@@ -1751,6 +1751,28 @@
    },
    "pnl": -10.06,
    "won": false
+  },
+  {
+   "id": "KXNBATOTAL-26NOV08PHICHI-226|NO",
+   "ticker": "KXNBATOTAL-26NOV08PHICHI-226",
+   "fam": "TOTAL",
+   "game": "PHI @ CHI",
+   "tip": "2026-11-08T20:30:00+00:00",
+   "label": "Over 225.5 points",
+   "side": "NO",
+   "price": 0.24,
+   "p": 0.3006,
+   "edge": 0.0406,
+   "contracts": 41,
+   "status": "abierta",
+   "opened": "2026-11-08T19:13:14.195918+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -9.4,
+    "total": 234.9,
+    "h1_total": 118.6,
+    "q1_total": 58.6
+   }
   }
  ],
  "scanned": {
@@ -1769,7 +1791,8 @@
   "26NOV07WASOKC": "2026-11-08T00:41:00.635491+00:00",
   "26NOV07ORLGSW": "2026-11-08T00:41:00.635491+00:00",
   "26NOV07HOUPHX": "2026-11-08T00:41:00.635491+00:00",
-  "26NOV07SASPOR": "2026-11-08T01:35:55.656354+00:00"
+  "26NOV07SASPOR": "2026-11-08T01:35:55.656354+00:00",
+  "26NOV08PHICHI": "2026-11-08T19:13:14.195918+00:00"
  },
  "milestones": [
   25,
@@ -5639,6 +5662,94 @@
    },
    "pnl": 4.4,
    "won": true
+  },
+  {
+   "id": "KXNBA1HSPREAD-26NOV08PHICHI-PHI13|NO",
+   "ticker": "KXNBA1HSPREAD-26NOV08PHICHI-PHI13",
+   "fam": "1HSPREAD",
+   "game": "PHI @ CHI",
+   "tip": "2026-11-08T20:30:00+00:00",
+   "label": "Philadelphia wins by over 12.5 points",
+   "side": "NO",
+   "price": 0.73,
+   "p": 0.8141,
+   "edge": 0.0641,
+   "contracts": 13,
+   "status": "abierta",
+   "opened": "2026-11-08T19:13:14.195918+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -9.4,
+    "total": 234.9,
+    "h1_total": 118.6,
+    "q1_total": 58.6
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26NOV08PHICHI-121|NO",
+   "ticker": "KXNBA1HTOTAL-26NOV08PHICHI-121",
+   "fam": "1HTOTAL",
+   "game": "PHI @ CHI",
+   "tip": "2026-11-08T20:30:00+00:00",
+   "label": "Over 120.5 points",
+   "side": "NO",
+   "price": 0.44,
+   "p": 0.5617,
+   "edge": 0.1017,
+   "contracts": 22,
+   "status": "abierta",
+   "opened": "2026-11-08T19:13:14.195918+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -9.4,
+    "total": 234.9,
+    "h1_total": 118.6,
+    "q1_total": 58.6
+   }
+  },
+  {
+   "id": "KXNBA1QSPREAD-26NOV08PHICHI-PHI11|NO",
+   "ticker": "KXNBA1QSPREAD-26NOV08PHICHI-PHI11",
+   "fam": "1QSPREAD",
+   "game": "PHI @ CHI",
+   "tip": "2026-11-08T20:30:00+00:00",
+   "label": "Philadelphia wins by over 10.5 points",
+   "side": "NO",
+   "price": 0.8,
+   "p": 0.8894,
+   "edge": 0.0694,
+   "contracts": 12,
+   "status": "abierta",
+   "opened": "2026-11-08T19:13:14.195918+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -9.4,
+    "total": 234.9,
+    "h1_total": 118.6,
+    "q1_total": 58.6
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26NOV08PHICHI-65|NO",
+   "ticker": "KXNBA1QTOTAL-26NOV08PHICHI-65",
+   "fam": "1QTOTAL",
+   "game": "PHI @ CHI",
+   "tip": "2026-11-08T20:30:00+00:00",
+   "label": "Over 64.5 points",
+   "side": "NO",
+   "price": 0.61,
+   "p": 0.768,
+   "edge": 0.138,
+   "contracts": 16,
+   "status": "abierta",
+   "opened": "2026-11-08T19:13:14.195918+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -9.4,
+    "total": 234.9,
+    "h1_total": 118.6,
+    "q1_total": 58.6
+   }
   }
  ]
 }
