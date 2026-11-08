@@ -4,6 +4,7 @@ Envía mensaje SOLO cuando un partido pasa el filtro completo del skill
 tennis-live-predictor-pro (versión "casa blanda + modelo").
 
 Fuentes:
+import extras  # cansancio/psicología/momentum: solo se anotan en paper (8-nov), no cambian decisiones
   - API pública de Kalshi: precios + marcador y estadísticas de saque en vivo (gratis)
   - Apify crawlstone/tennis-scraper (liveMatches = cuotas de la casa) SOLO cuando Kalshi
     muestra un partido candidato o hay posiciones que vigilar (modo ahorro, tope diario)
@@ -1304,6 +1305,7 @@ def ciclo(est):
             if sombra_libre:
                 log(s, LOG_SOMBRA, "+".join(motivos))
                 marcas_juan("apify_sombra", ev, cands[ev["event_ticker"]], s["ticker"], s["vol"])
+                extras.registrar(s, ev, cands[ev["event_ticker"]], "sombra")
                 ent_sombra[mid] = ent_sombra.get(mid, 0) + 1
                 sombra[mid] = dict(match_id=m["id"], ticker=s["ticker"], lado=s["lado"], ask=s["ask"],
                                    contratos=s["contratos"], jugador=s["jugador"], rival=s["rival"],
@@ -1318,6 +1320,7 @@ def ciclo(est):
                              contratos=s["contratos"], jugador=s["jugador"], rival=s["rival"],
                              ts=time.time())
         real.entrada(est, mid, abiertas[mid], telegram, vol=s.get("vol"))
+        extras.registrar(s, ev, cands[ev["event_ticker"]], "paper")
         n_ok += 1
     print(f"{datetime.now(timezone.utc):%H:%M:%S} vivos={len(vivos)} kalshi={len(eventos)} "
           f"entradas={n_ok} salidas={n_out} abiertas={len(abiertas)} "
