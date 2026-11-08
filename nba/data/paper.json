@@ -1773,6 +1773,28 @@
     "h1_total": 118.6,
     "q1_total": 58.6
    }
+  },
+  {
+   "id": "KXNBASPREAD-26NOV08UTAMIN-MIN13|SI",
+   "ticker": "KXNBASPREAD-26NOV08UTAMIN-MIN13",
+   "fam": "SPREAD",
+   "game": "UTA @ MIN",
+   "tip": "2026-11-09T00:00:00+00:00",
+   "label": "Minnesota wins by over 12.5 points",
+   "side": "SI",
+   "price": 0.47,
+   "p": 0.5373,
+   "edge": 0.0473,
+   "contracts": 21,
+   "status": "abierta",
+   "opened": "2026-11-08T22:52:29.285997+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 13.6,
+    "total": 224.8,
+    "h1_total": 113.6,
+    "q1_total": 56.1
+   }
   }
  ],
  "scanned": {
@@ -1792,7 +1814,9 @@
   "26NOV07ORLGSW": "2026-11-08T00:41:00.635491+00:00",
   "26NOV07HOUPHX": "2026-11-08T00:41:00.635491+00:00",
   "26NOV07SASPOR": "2026-11-08T01:35:55.656354+00:00",
-  "26NOV08PHICHI": "2026-11-08T19:13:14.195918+00:00"
+  "26NOV08PHICHI": "2026-11-08T19:13:14.195918+00:00",
+  "26NOV08UTAMIN": "2026-11-08T22:52:29.285997+00:00",
+  "26NOV08BKNDAL": "2026-11-08T22:52:29.285997+00:00"
  },
  "milestones": [
   25,
@@ -5675,7 +5699,7 @@
    "p": 0.8141,
    "edge": 0.0641,
    "contracts": 13,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-08T19:13:14.195918+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -5683,7 +5707,9 @@
     "total": 234.9,
     "h1_total": 118.6,
     "q1_total": 58.6
-   }
+   },
+   "pnl": 3.33,
+   "won": true
   },
   {
    "id": "KXNBA1HTOTAL-26NOV08PHICHI-121|NO",
@@ -5697,7 +5723,7 @@
    "p": 0.5617,
    "edge": 0.1017,
    "contracts": 22,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-08T19:13:14.195918+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -5705,7 +5731,9 @@
     "total": 234.9,
     "h1_total": 118.6,
     "q1_total": 58.6
-   }
+   },
+   "pnl": -10.06,
+   "won": false
   },
   {
    "id": "KXNBA1QSPREAD-26NOV08PHICHI-PHI11|NO",
@@ -5719,7 +5747,7 @@
    "p": 0.8894,
    "edge": 0.0694,
    "contracts": 12,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-08T19:13:14.195918+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -5727,7 +5755,9 @@
     "total": 234.9,
     "h1_total": 118.6,
     "q1_total": 58.6
-   }
+   },
+   "pnl": 2.26,
+   "won": true
   },
   {
    "id": "KXNBA1QTOTAL-26NOV08PHICHI-65|NO",
@@ -5741,7 +5771,7 @@
    "p": 0.768,
    "edge": 0.138,
    "contracts": 16,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-08T19:13:14.195918+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -5749,6 +5779,96 @@
     "total": 234.9,
     "h1_total": 118.6,
     "q1_total": 58.6
+   },
+   "pnl": -10.03,
+   "won": false
+  },
+  {
+   "id": "KXNBA1HTOTAL-26NOV08UTAMIN-109|SI",
+   "ticker": "KXNBA1HTOTAL-26NOV08UTAMIN-109",
+   "fam": "1HTOTAL",
+   "game": "UTA @ MIN",
+   "tip": "2026-11-09T00:00:00+00:00",
+   "label": "Over 108.5 points",
+   "side": "SI",
+   "price": 0.51,
+   "p": 0.6632,
+   "edge": 0.1332,
+   "contracts": 19,
+   "status": "abierta",
+   "opened": "2026-11-08T22:52:29.285997+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 13.6,
+    "total": 224.8,
+    "h1_total": 113.6,
+    "q1_total": 56.1
+   }
+  },
+  {
+   "id": "KXNBA1HSPREAD-26NOV08BKNDAL-DAL16|NO",
+   "ticker": "KXNBA1HSPREAD-26NOV08BKNDAL-DAL16",
+   "fam": "1HSPREAD",
+   "game": "BKN @ DAL",
+   "tip": "2026-11-09T00:30:00+00:00",
+   "label": "Dallas wins by over 15.5 points",
+   "side": "NO",
+   "price": 0.84,
+   "p": 0.9131,
+   "edge": 0.0631,
+   "contracts": 11,
+   "status": "abierta",
+   "opened": "2026-11-08T22:52:29.285997+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 7.6,
+    "total": 223.0,
+    "h1_total": 112.6,
+    "q1_total": 55.7
+   }
+  },
+  {
+   "id": "KXNBA1QSPREAD-26NOV08BKNDAL-DAL11|NO",
+   "ticker": "KXNBA1QSPREAD-26NOV08BKNDAL-DAL11",
+   "fam": "1QSPREAD",
+   "game": "BKN @ DAL",
+   "tip": "2026-11-09T00:30:00+00:00",
+   "label": "Dallas wins by over 10.5 points",
+   "side": "NO",
+   "price": 0.82,
+   "p": 0.9033,
+   "edge": 0.0633,
+   "contracts": 12,
+   "status": "abierta",
+   "opened": "2026-11-08T22:52:29.285997+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 7.6,
+    "total": 223.0,
+    "h1_total": 112.6,
+    "q1_total": 55.7
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26NOV08BKNDAL-62|NO",
+   "ticker": "KXNBA1QTOTAL-26NOV08BKNDAL-62",
+   "fam": "1QTOTAL",
+   "game": "BKN @ DAL",
+   "tip": "2026-11-09T00:30:00+00:00",
+   "label": "Over 61.5 points",
+   "side": "NO",
+   "price": 0.66,
+   "p": 0.7668,
+   "edge": 0.0868,
+   "contracts": 15,
+   "status": "abierta",
+   "opened": "2026-11-08T22:52:29.285997+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 7.6,
+    "total": 223.0,
+    "h1_total": 112.6,
+    "q1_total": 55.7
    }
   }
  ]
