@@ -301,3 +301,5 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-11-07T12:21:56+00:00,real,KXWTACHALLENGERMATCH-26NOV06BLIKAB-KAB,Yasmine Kabbaj,0.29,34,liquidacion,0.0,0.39,0.0,22,65,si,si,si
 2026-11-07T15:10:22+00:00,sombra,KXATPMATCH-26NOV07VANASHE-SHE,Ben Shelton,0.5,20,valor_justo,0.7,0.72,0.45,32,36,si,si,si
 2026-11-08T01:12:30+00:00,real,KXATPCHALLENGERMATCH-26NOV07CHIKOZ-KOZ,Stefan Kozlov,0.39,25,liquidacion,1.0,0.89,0.4,9,200,si,si,si
+2026-11-08T17:07:20+00:00,sombra,KXATPCHALLENGERMATCH-26NOV08HUDBOU-BOU,Justin Boulais,0.78,12,valor_justo,0.69,0.77,0.58,1,6,no,no,no
+2026-11-08T17:22:29+00:00,real,KXATPCHALLENGERMATCH-26NOV08DLFMON-DLF,Santiago De la Fuente,0.51,19,valor_justo,0.51,0.59,0.31,4,15,si,no,no
