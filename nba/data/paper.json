@@ -1727,11 +1727,31 @@
    },
    "pnl": 3.45,
    "won": true
+  },
+  {
+   "id": "KXNBASPREAD-26NOV07SASPOR-SAS4|NO",
+   "ticker": "KXNBASPREAD-26NOV07SASPOR-SAS4",
+   "fam": "SPREAD",
+   "game": "SAS @ POR",
+   "tip": "2026-11-08T03:00:00+00:00",
+   "label": "San Antonio wins by over 3.5 points",
+   "side": "NO",
+   "price": 0.42,
+   "p": 0.4961,
+   "edge": 0.0561,
+   "contracts": 23,
+   "status": "abierta",
+   "opened": "2026-11-08T01:35:55.656354+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -3.6,
+    "total": 229.3,
+    "h1_total": 115.8,
+    "q1_total": 57.3
+   }
   }
  ],
  "scanned": {
-  "26NOV04PORPHX": "2026-11-05T00:45:36.306259+00:00",
-  "26NOV04TORDEN": "2026-11-05T00:45:36.306259+00:00",
   "26NOV04DALSAS": "2026-11-05T01:58:58.389662+00:00",
   "26NOV04LALSAC": "2026-11-05T01:58:58.389662+00:00",
   "26NOV04MIALAC": "2026-11-05T01:58:58.389662+00:00",
@@ -1749,7 +1769,8 @@
   "26NOV07NYKCLE": "2026-11-08T00:41:00.635491+00:00",
   "26NOV07WASOKC": "2026-11-08T00:41:00.635491+00:00",
   "26NOV07ORLGSW": "2026-11-08T00:41:00.635491+00:00",
-  "26NOV07HOUPHX": "2026-11-08T00:41:00.635491+00:00"
+  "26NOV07HOUPHX": "2026-11-08T00:41:00.635491+00:00",
+  "26NOV07SASPOR": "2026-11-08T01:35:55.656354+00:00"
  },
  "milestones": [
   25,
@@ -5522,6 +5543,72 @@
     "total": 224.7,
     "h1_total": 113.5,
     "q1_total": 56.2
+   }
+  },
+  {
+   "id": "KXNBA1HSPREAD-26NOV07SASPOR-SAS11|NO",
+   "ticker": "KXNBA1HSPREAD-26NOV07SASPOR-SAS11",
+   "fam": "1HSPREAD",
+   "game": "SAS @ POR",
+   "tip": "2026-11-08T03:00:00+00:00",
+   "label": "San Antonio wins by over 10.5 points",
+   "side": "NO",
+   "price": 0.76,
+   "p": 0.8447,
+   "edge": 0.0647,
+   "contracts": 13,
+   "status": "abierta",
+   "opened": "2026-11-08T01:35:55.656354+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -3.6,
+    "total": 229.3,
+    "h1_total": 115.8,
+    "q1_total": 57.3
+   }
+  },
+  {
+   "id": "KXNBA1QSPREAD-26NOV07SASPOR-SAS8|NO",
+   "ticker": "KXNBA1QSPREAD-26NOV07SASPOR-SAS8",
+   "fam": "1QSPREAD",
+   "game": "SAS @ POR",
+   "tip": "2026-11-08T03:00:00+00:00",
+   "label": "San Antonio wins by over 7.5 points",
+   "side": "NO",
+   "price": 0.75,
+   "p": 0.8422,
+   "edge": 0.0722,
+   "contracts": 13,
+   "status": "abierta",
+   "opened": "2026-11-08T01:35:55.656354+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -3.6,
+    "total": 229.3,
+    "h1_total": 115.8,
+    "q1_total": 57.3
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26NOV07SASPOR-64|NO",
+   "ticker": "KXNBA1QTOTAL-26NOV07SASPOR-64",
+   "fam": "1QTOTAL",
+   "game": "SAS @ POR",
+   "tip": "2026-11-08T03:00:00+00:00",
+   "label": "Over 63.5 points",
+   "side": "NO",
+   "price": 0.67,
+   "p": 0.7795,
+   "edge": 0.0895,
+   "contracts": 14,
+   "status": "abierta",
+   "opened": "2026-11-08T01:35:55.656354+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -3.6,
+    "total": 229.3,
+    "h1_total": 115.8,
+    "q1_total": 57.3
    }
   }
  ]
