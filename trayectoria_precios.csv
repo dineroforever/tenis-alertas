@@ -300,3 +300,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-11-07T10:44:14+00:00,sombra,KXATPMATCH-26NOV07BASPAS-PAS,Francesco Passaro,0.33,30,valor_justo,0.12,0.33,0.11,1,14,no,no,no
 2026-11-07T12:21:56+00:00,real,KXWTACHALLENGERMATCH-26NOV06BLIKAB-KAB,Yasmine Kabbaj,0.29,34,liquidacion,0.0,0.39,0.0,22,65,si,si,si
 2026-11-07T15:10:22+00:00,sombra,KXATPMATCH-26NOV07VANASHE-SHE,Ben Shelton,0.5,20,valor_justo,0.7,0.72,0.45,32,36,si,si,si
+2026-11-08T01:12:30+00:00,real,KXATPCHALLENGERMATCH-26NOV07CHIKOZ-KOZ,Stefan Kozlov,0.39,25,liquidacion,1.0,0.89,0.4,9,200,si,si,si
