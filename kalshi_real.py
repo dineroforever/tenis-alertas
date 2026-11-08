@@ -26,6 +26,7 @@ FRENO_DD = float(os.getenv("REAL_FRENO_DD", "15"))
 MAX_RACHA = int(os.getenv("REAL_MAX_RACHA", "5"))  # freno: pérdidas SEGUIDAS (decisión de Roberto 4-nov)
 VOL_MIN = float(os.getenv("REAL_VOL_MIN", "300000"))  # real solo en partidos con ≥$300k de volumen (decisión de Roberto 26-oct)
 META_OPS = int(os.getenv("REAL_META_OPS", "25"))
+PRUEBA = os.getenv("REAL_PRUEBA", "1")  # número de prueba; cambiarlo reinicia el contador si la anterior llegó a la meta
 DESLIZ = 0.01  # se acepta pagar hasta 1¢ más que el ask del paper (o vender 1¢ bajo el bid)
 BASE = "https://api.elections.kalshi.com/trade-api/v2"
 LOG = os.getenv("LOG_REAL", "real_ops.csv")
@@ -183,6 +184,13 @@ def _estado(est):
     for k, v in (("pos", {}), ("ops", 0), ("neg", 0), ("racha_neg", 0), ("pnl", 0.0), ("max_pnl", 0.0), ("dia", ""),
                  ("pnl_dia", 0.0), ("partidos", []), ("parado", ""), ("ensayo", {})):
         r.setdefault(k, v)
+    # Nueva prueba (REAL_PRUEBA): al cambiar el número, si la anterior terminó por meta, se archiva y se reinicia
+    # el contador (ops, P&L, máximo, frenos). Prueba 2 autorizada por Roberto el 8-nov-2026.
+    if str(r.get("prueba", "1")) != PRUEBA and r["parado"].startswith("meta"):
+        r.setdefault("historial", []).append({k: r[k] for k in ("ops", "neg", "pnl", "max_pnl")}
+                                             | {"prueba": str(r.get("prueba", "1"))})
+        r.update(ops=0, neg=0, racha_neg=0, pnl=0.0, max_pnl=0.0, parado="", prueba=PRUEBA)
+        _log("reinicio", nota=f"inicia prueba {PRUEBA} de {META_OPS} operaciones")
     hoy = datetime.now(MIAMI).date().isoformat()
     if r["dia"] != hoy:
         r["dia"], r["pnl_dia"] = hoy, 0.0
