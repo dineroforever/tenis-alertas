@@ -4,7 +4,6 @@ Envía mensaje SOLO cuando un partido pasa el filtro completo del skill
 tennis-live-predictor-pro (versión "casa blanda + modelo").
 
 Fuentes:
-import extras  # cansancio/psicología/momentum: solo se anotan en paper (8-nov), no cambian decisiones
   - API pública de Kalshi: precios + marcador y estadísticas de saque en vivo (gratis)
   - Apify crawlstone/tennis-scraper (liveMatches = cuotas de la casa) SOLO cuando Kalshi
     muestra un partido candidato o hay posiciones que vigilar (modo ahorro, tope diario)
@@ -21,6 +20,7 @@ import requests
 from tenis_prob import prob
 import seguimiento as segui
 import kalshi_real as real  # modo dinero real (REAL_MODO: off / ensayo / real)
+import extras  # cansancio/psicología/momentum: solo se anotan en paper (8-nov), no cambian decisiones
 
 # ───────────── Parámetros del filtro (skill PRO) ─────────────
 MIN_VOL_CONTRATOS = float(os.getenv("MIN_VOL_CONTRATOS", "300000"))  # ≈ $100K en la web de Kalshi
