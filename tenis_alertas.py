@@ -1328,6 +1328,12 @@ def ciclo(est):
           f"apify_hoy=${gasto_hoy():.2f}/{APIFY_TOPE_DIA:.2f}")
 
 
+def pausa_nocturna():
+    """Pausa de 11 p. m. a 6 a. m. hora Miami (decisión de Roberto 7-nov, ahorro de Apify). Cambia sola con el horario de verano."""
+    h = datetime.now(ZoneInfo("America/New_York")).hour
+    return h >= 23 or h < 6
+
+
 def main():
     if not APIFY_TOKEN and MODO != "kalshi":
         sys.exit("Falta APIFY_TOKEN")
@@ -1342,6 +1348,9 @@ def main():
     est["seguir"] = {k: v for k, v in est.get("seguir", {}).items() if v.get("origen") != "bot"}
     fallos = 0
     real.comprobar(telegram)
+    if pausa_nocturna():
+        print("Pausa nocturna (11 p. m. - 6 a. m. Miami): no vigilo.")
+        return
     if os.getenv("PRUEBA_SENAL") == "1":
         ej = dict(jugador="Jugador Ejemplo", rival="Rival Ejemplo", torneo="PRUEBA", superficie="Dura",
                   sets_txt="6-4 3-3", saca="Rival Ejemplo", P=0.62, p_score=0.64, Pb=0.60, ask=0.55,
@@ -1381,7 +1390,7 @@ def main():
             if fallos == 5:
                 telegram("⚠️ Bot de tenis: 5 errores seguidos leyendo datos (Apify/Kalshi). Revisa GitHub Actions.")
         guardar_estado(est)
-        if time.time() + pausa > fin:
+        if time.time() + pausa > fin or pausa_nocturna():
             break
         time.sleep(pausa)
 
