@@ -1788,7 +1788,7 @@
    "p": 0.5373,
    "edge": 0.0473,
    "contracts": 21,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-08T22:52:29.285997+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1796,7 +1796,9 @@
     "total": 224.8,
     "h1_total": 113.6,
     "q1_total": 56.1
-   }
+   },
+   "pnl": 10.76,
+   "won": true
   }
  ],
  "scanned": {
@@ -5819,7 +5821,7 @@
    "p": 0.9131,
    "edge": 0.0631,
    "contracts": 11,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-08T22:52:29.285997+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -5827,7 +5829,9 @@
     "total": 223.0,
     "h1_total": 112.6,
     "q1_total": 55.7
-   }
+   },
+   "pnl": -9.35,
+   "won": false
   },
   {
    "id": "KXNBA1QSPREAD-26NOV08BKNDAL-DAL11|NO",
