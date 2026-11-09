@@ -1799,12 +1799,31 @@
    },
    "pnl": 10.76,
    "won": true
+  },
+  {
+   "id": "KXNBASPREAD-26NOV09MEMTOR-MEM3|NO",
+   "ticker": "KXNBASPREAD-26NOV09MEMTOR-MEM3",
+   "fam": "SPREAD",
+   "game": "MEM @ TOR",
+   "tip": "2026-11-10T00:30:00+00:00",
+   "label": "Memphis wins by over 2.5 points",
+   "side": "NO",
+   "price": 0.53,
+   "p": 0.5923,
+   "edge": 0.0423,
+   "contracts": 18,
+   "status": "abierta",
+   "opened": "2026-11-09T23:37:32.764024+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 0.3,
+    "total": 227.1,
+    "h1_total": 114.7,
+    "q1_total": 56.7
+   }
   }
  ],
  "scanned": {
-  "26NOV06BOSCHA": "2026-11-06T22:22:44.254299+00:00",
-  "26NOV06WASATL": "2026-11-06T22:22:44.254299+00:00",
-  "26NOV06PHICLE": "2026-11-06T23:02:25.830581+00:00",
   "26NOV06MINNOP": "2026-11-06T23:42:25.378829+00:00",
   "26NOV06OKCMEM": "2026-11-06T23:42:25.378829+00:00",
   "26NOV06TORMIL": "2026-11-06T23:42:25.378829+00:00",
@@ -1818,7 +1837,12 @@
   "26NOV07SASPOR": "2026-11-08T01:35:55.656354+00:00",
   "26NOV08PHICHI": "2026-11-08T19:13:14.195918+00:00",
   "26NOV08UTAMIN": "2026-11-08T22:52:29.285997+00:00",
-  "26NOV08BKNDAL": "2026-11-08T22:52:29.285997+00:00"
+  "26NOV08BKNDAL": "2026-11-08T22:52:29.285997+00:00",
+  "26NOV09CLECHA": "2026-11-09T23:37:32.764024+00:00",
+  "26NOV09LALATL": "2026-11-09T23:37:32.764024+00:00",
+  "26NOV09WASDET": "2026-11-09T23:37:32.764024+00:00",
+  "26NOV09MEMTOR": "2026-11-09T23:37:32.764024+00:00",
+  "26NOV09INDDAL": "2026-11-09T23:37:32.764024+00:00"
  },
  "milestones": [
   25,
@@ -5880,6 +5904,358 @@
    },
    "pnl": 4.86,
    "won": true
+  },
+  {
+   "id": "KXNBA1HSPREAD-26NOV09CLECHA-CLE17|NO",
+   "ticker": "KXNBA1HSPREAD-26NOV09CLECHA-CLE17",
+   "fam": "1HSPREAD",
+   "game": "CLE @ CHA",
+   "tip": "2026-11-10T00:00:00+00:00",
+   "label": "Cleveland wins by over 16.5 points",
+   "side": "NO",
+   "price": 0.86,
+   "p": 0.9255,
+   "edge": 0.0555,
+   "contracts": 11,
+   "status": "abierta",
+   "opened": "2026-11-09T23:37:32.764024+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -8.1,
+    "total": 216.4,
+    "h1_total": 109.3,
+    "q1_total": 54.0
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26NOV09CLECHA-107|SI",
+   "ticker": "KXNBA1HTOTAL-26NOV09CLECHA-107",
+   "fam": "1HTOTAL",
+   "game": "CLE @ CHA",
+   "tip": "2026-11-10T00:00:00+00:00",
+   "label": "Over 106.5 points",
+   "side": "SI",
+   "price": 0.48,
+   "p": 0.5917,
+   "edge": 0.0917,
+   "contracts": 20,
+   "status": "abierta",
+   "opened": "2026-11-09T23:37:32.764024+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -8.1,
+    "total": 216.4,
+    "h1_total": 109.3,
+    "q1_total": 54.0
+   }
+  },
+  {
+   "id": "KXNBA1QSPREAD-26NOV09CLECHA-CLE11|NO",
+   "ticker": "KXNBA1QSPREAD-26NOV09CLECHA-CLE11",
+   "fam": "1QSPREAD",
+   "game": "CLE @ CHA",
+   "tip": "2026-11-10T00:00:00+00:00",
+   "label": "Cleveland wins by over 10.5 points",
+   "side": "NO",
+   "price": 0.83,
+   "p": 0.8993,
+   "edge": 0.0593,
+   "contracts": 12,
+   "status": "abierta",
+   "opened": "2026-11-09T23:37:32.764024+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": -8.1,
+    "total": 216.4,
+    "h1_total": 109.3,
+    "q1_total": 54.0
+   }
+  },
+  {
+   "id": "KXNBA1HSPREAD-26NOV09LALATL-ATL13|NO",
+   "ticker": "KXNBA1HSPREAD-26NOV09LALATL-ATL13",
+   "fam": "1HSPREAD",
+   "game": "LAL @ ATL",
+   "tip": "2026-11-10T00:00:00+00:00",
+   "label": "Atlanta wins by over 12.5 points",
+   "side": "NO",
+   "price": 0.84,
+   "p": 0.9099,
+   "edge": 0.0599,
+   "contracts": 11,
+   "status": "abierta",
+   "opened": "2026-11-09T23:37:32.764024+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 2.1,
+    "total": 235.1,
+    "h1_total": 118.7,
+    "q1_total": 58.7
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26NOV09LALATL-130|NO",
+   "ticker": "KXNBA1HTOTAL-26NOV09LALATL-130",
+   "fam": "1HTOTAL",
+   "game": "LAL @ ATL",
+   "tip": "2026-11-10T00:00:00+00:00",
+   "label": "Over 129.5 points",
+   "side": "NO",
+   "price": 0.74,
+   "p": 0.8151,
+   "edge": 0.0551,
+   "contracts": 13,
+   "status": "abierta",
+   "opened": "2026-11-09T23:37:32.764024+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 2.1,
+    "total": 235.1,
+    "h1_total": 118.7,
+    "q1_total": 58.7
+   }
+  },
+  {
+   "id": "KXNBA1QSPREAD-26NOV09LALATL-LAL10|NO",
+   "ticker": "KXNBA1QSPREAD-26NOV09LALATL-LAL10",
+   "fam": "1QSPREAD",
+   "game": "LAL @ ATL",
+   "tip": "2026-11-10T00:00:00+00:00",
+   "label": "Los Angeles L wins by over 9.5 points",
+   "side": "NO",
+   "price": 0.87,
+   "p": 0.9394,
+   "edge": 0.0594,
+   "contracts": 11,
+   "status": "abierta",
+   "opened": "2026-11-09T23:37:32.764024+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 2.1,
+    "total": 235.1,
+    "h1_total": 118.7,
+    "q1_total": 58.7
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26NOV09LALATL-66|NO",
+   "ticker": "KXNBA1QTOTAL-26NOV09LALATL-66",
+   "fam": "1QTOTAL",
+   "game": "LAL @ ATL",
+   "tip": "2026-11-10T00:00:00+00:00",
+   "label": "Over 65.5 points",
+   "side": "NO",
+   "price": 0.68,
+   "p": 0.8031,
+   "edge": 0.1031,
+   "contracts": 14,
+   "status": "abierta",
+   "opened": "2026-11-09T23:37:32.764024+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 2.1,
+    "total": 235.1,
+    "h1_total": 118.7,
+    "q1_total": 58.7
+   }
+  },
+  {
+   "id": "KXNBA1HSPREAD-26NOV09WASDET-DET16|NO",
+   "ticker": "KXNBA1HSPREAD-26NOV09WASDET-DET16",
+   "fam": "1HSPREAD",
+   "game": "WAS @ DET",
+   "tip": "2026-11-10T00:00:00+00:00",
+   "label": "Detroit wins by over 15.5 points",
+   "side": "NO",
+   "price": 0.83,
+   "p": 0.8917,
+   "edge": 0.0517,
+   "contracts": 12,
+   "status": "abierta",
+   "opened": "2026-11-09T23:37:32.764024+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 9.6,
+    "total": 218.2,
+    "h1_total": 110.2,
+    "q1_total": 54.5
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26NOV09WASDET-113|NO",
+   "ticker": "KXNBA1HTOTAL-26NOV09WASDET-113",
+   "fam": "1HTOTAL",
+   "game": "WAS @ DET",
+   "tip": "2026-11-10T00:00:00+00:00",
+   "label": "Over 112.5 points",
+   "side": "NO",
+   "price": 0.48,
+   "p": 0.5765,
+   "edge": 0.0765,
+   "contracts": 20,
+   "status": "abierta",
+   "opened": "2026-11-09T23:37:32.764024+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 9.6,
+    "total": 218.2,
+    "h1_total": 110.2,
+    "q1_total": 54.5
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26NOV09WASDET-61|NO",
+   "ticker": "KXNBA1QTOTAL-26NOV09WASDET-61",
+   "fam": "1QTOTAL",
+   "game": "WAS @ DET",
+   "tip": "2026-11-10T00:00:00+00:00",
+   "label": "Over 60.5 points",
+   "side": "NO",
+   "price": 0.64,
+   "p": 0.7752,
+   "edge": 0.1152,
+   "contracts": 15,
+   "status": "abierta",
+   "opened": "2026-11-09T23:37:32.764024+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 9.6,
+    "total": 218.2,
+    "h1_total": 110.2,
+    "q1_total": 54.5
+   }
+  },
+  {
+   "id": "KXNBA1HSPREAD-26NOV09MEMTOR-MEM7|NO",
+   "ticker": "KXNBA1HSPREAD-26NOV09MEMTOR-MEM7",
+   "fam": "1HSPREAD",
+   "game": "MEM @ TOR",
+   "tip": "2026-11-10T00:30:00+00:00",
+   "label": "Memphis wins by over 6.5 points",
+   "side": "NO",
+   "price": 0.7,
+   "p": 0.7832,
+   "edge": 0.0632,
+   "contracts": 14,
+   "status": "abierta",
+   "opened": "2026-11-09T23:37:32.764024+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 0.3,
+    "total": 227.1,
+    "h1_total": 114.7,
+    "q1_total": 56.7
+   }
+  },
+  {
+   "id": "KXNBA1QSPREAD-26NOV09MEMTOR-MEM9|NO",
+   "ticker": "KXNBA1QSPREAD-26NOV09MEMTOR-MEM9",
+   "fam": "1QSPREAD",
+   "game": "MEM @ TOR",
+   "tip": "2026-11-10T00:30:00+00:00",
+   "label": "Memphis wins by over 8.5 points",
+   "side": "NO",
+   "price": 0.83,
+   "p": 0.9066,
+   "edge": 0.0666,
+   "contracts": 12,
+   "status": "abierta",
+   "opened": "2026-11-09T23:37:32.764024+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 0.3,
+    "total": 227.1,
+    "h1_total": 114.7,
+    "q1_total": 56.7
+   }
+  },
+  {
+   "id": "KXNBA1QTOTAL-26NOV09MEMTOR-63|NO",
+   "ticker": "KXNBA1QTOTAL-26NOV09MEMTOR-63",
+   "fam": "1QTOTAL",
+   "game": "MEM @ TOR",
+   "tip": "2026-11-10T00:30:00+00:00",
+   "label": "Over 62.5 points",
+   "side": "NO",
+   "price": 0.66,
+   "p": 0.7669,
+   "edge": 0.0869,
+   "contracts": 15,
+   "status": "abierta",
+   "opened": "2026-11-09T23:37:32.764024+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 0.3,
+    "total": 227.1,
+    "h1_total": 114.7,
+    "q1_total": 56.7
+   }
+  },
+  {
+   "id": "KXNBA1HSPREAD-26NOV09INDDAL-IND9|NO",
+   "ticker": "KXNBA1HSPREAD-26NOV09INDDAL-IND9",
+   "fam": "1HSPREAD",
+   "game": "IND @ DAL",
+   "tip": "2026-11-10T01:00:00+00:00",
+   "label": "Indiana wins by over 8.5 points",
+   "side": "NO",
+   "price": 0.83,
+   "p": 0.9017,
+   "edge": 0.0617,
+   "contracts": 12,
+   "status": "abierta",
+   "opened": "2026-11-09T23:37:32.764024+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 4.8,
+    "total": 225.4,
+    "h1_total": 113.9,
+    "q1_total": 56.3
+   }
+  },
+  {
+   "id": "KXNBA1HTOTAL-26NOV09INDDAL-114|SI",
+   "ticker": "KXNBA1HTOTAL-26NOV09INDDAL-114",
+   "fam": "1HTOTAL",
+   "game": "IND @ DAL",
+   "tip": "2026-11-10T01:00:00+00:00",
+   "label": "Over 113.5 points",
+   "side": "SI",
+   "price": 0.38,
+   "p": 0.5117,
+   "edge": 0.1117,
+   "contracts": 26,
+   "status": "abierta",
+   "opened": "2026-11-09T23:37:32.764024+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 4.8,
+    "total": 225.4,
+    "h1_total": 113.9,
+    "q1_total": 56.3
+   }
+  },
+  {
+   "id": "KXNBA1QSPREAD-26NOV09INDDAL-IND9|NO",
+   "ticker": "KXNBA1QSPREAD-26NOV09INDDAL-IND9",
+   "fam": "1QSPREAD",
+   "game": "IND @ DAL",
+   "tip": "2026-11-10T01:00:00+00:00",
+   "label": "Indiana wins by over 8.5 points",
+   "side": "NO",
+   "price": 0.87,
+   "p": 0.9339,
+   "edge": 0.0539,
+   "contracts": 11,
+   "status": "abierta",
+   "opened": "2026-11-09T23:37:32.764024+00:00",
+   "line_src": "Pinnacle",
+   "proj": {
+    "margin": 4.8,
+    "total": 225.4,
+    "h1_total": 113.9,
+    "q1_total": 56.3
+   }
   }
  ]
 }
