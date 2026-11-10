@@ -4,6 +4,8 @@ on:
   schedule:
     - cron: "17,47 * * * *"  # cada 30 min fuera de la hora en punto; la pausa 11pm-6am Miami la hace el bot (9-nov)
   workflow_dispatch: {}
+  repository_dispatch:
+    types: [continuar]  # cada ronda arranca la siguiente al terminar (9-nov: GitHub salta las programadas)
 
 concurrency:
   group: alertas-tenis
@@ -34,6 +36,7 @@ jobs:
           R=$(curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" -d chat_id="${TELEGRAM_CHAT_ID}" --data-urlencode "text=✅ Bot de tenis conectado. Estoy vigilando los partidos en vivo; solo te escribo cuando haya una apuesta con edge o cuando toque vender.")
           if echo "$R" | grep -q '"ok":true'; then echo "Telegram OK"; else echo "Telegram FALLO: $R"; exit 1; fi
       - name: Vigilar partidos y avisar por Telegram
+        id: bot
         env:
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -83,3 +86,8 @@ jobs:
             if git commit -q -m "Registro de senales" && git push -q; then break; fi
             sleep 5
           done
+      - name: Encadenar la siguiente ronda
+        if: always() && steps.bot.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api repos/${{ github.repository }}/dispatches -f event_type=continuar
