@@ -1349,8 +1349,7 @@ def main():
     fallos = 0
     real.comprobar(telegram)
     if pausa_nocturna():
-        print("Pausa nocturna (11 p. m. - 6 a. m. Miami): no vigilo.")
-        return
+        print("Pausa nocturna (11 p. m. - 6 a. m. Miami): solo vigilo posiciones, sin buscar entradas.")
     if os.getenv("PRUEBA_SENAL") == "1":
         ej = dict(jugador="Jugador Ejemplo", rival="Rival Ejemplo", torneo="PRUEBA", superficie="Dura",
                   sets_txt="6-4 3-3", saca="Rival Ejemplo", P=0.62, p_score=0.64, Pb=0.60, ask=0.55,
@@ -1368,7 +1367,8 @@ def main():
         except Exception as e:
             print("Real error:", repr(e))
         try:
-            ciclo(est)
+            if not pausa_nocturna():  # 11 pm - 6 am Miami: sin buscar entradas ni gastar Apify
+                ciclo(est)
             fallos = 0
         except SinPresupuesto:
             fallos = 0
@@ -1390,7 +1390,7 @@ def main():
             if fallos == 5:
                 telegram("⚠️ Bot de tenis: 5 errores seguidos leyendo datos (Apify/Kalshi). Revisa GitHub Actions.")
         guardar_estado(est)
-        if time.time() + pausa > fin or pausa_nocturna():
+        if time.time() + pausa > fin:
             break
         time.sleep(pausa)
 
