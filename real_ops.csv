@@ -109,3 +109,11 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-08T01:12:29+00:00,real,liquidacion,KXATPCHALLENGERMATCH-26NOV07CHIKOZ-KOZ,Stefan Kozlov,8,,,8.0,4.75,,yes
 2026-11-08T16:56:58+00:00,real,reinicio,,,,,,,,,inicia prueba 2 de 25 operaciones
 2026-11-08T17:07:20+00:00,real,omitida,KXATPCHALLENGERMATCH-26NOV08DLFMON-DLF,Santiago De la Fuente,,0.51,,,,,"volumen $143,881 < $300,000 (solo paper)"
+2026-11-10T14:13:20+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV10PALBRA-BRA,Raul Brancaccio,6,0.54,0.55,3.34,,62.9898,pedidos=6 estado=llenos=6.00 resto=0.00
+2026-11-10T14:16:10+00:00,real,venta,KXATPCHALLENGERMATCH-26NOV10PALBRA-BRA,Raul Brancaccio,6,0.4,0.39,2.3,,65.289,quedan=0 estado=llenos=6.00 resto=0.00
+2026-11-10T15:20:35+00:00,real,compra,KXATPMATCH-26NOV09RINKEC-KEC,Miomir Kecmanović,9,0.36,0.37,3.39,,61.9038,pedidos=9 estado=llenos=9.00 resto=0.00
+2026-11-10T16:24:40+00:00,real,omitida,KXATPCHALLENGERMATCH-26NOV10ECHOUA-ECH,John Echeverria,,0.48,,,,,tope de pérdida diaria ($7.50)
+2026-11-10T16:43:05+00:00,real,venta,KXATPMATCH-26NOV09RINKEC-KEC,Miomir Kecmanović,9,0.8,0.79,7.1,,69.003,quedan=0 estado=llenos=9.00 resto=0.00
+2026-11-10T16:58:37+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV10MAXBAR-BAR,Hynek Barton,11,0.3,0.31,3.46,,65.5413,pedidos=11 estado=llenos=11.00 resto=0.00
+2026-11-10T17:51:35+00:00,real,liquidacion,KXATPCHALLENGERMATCH-26NOV10MAXBAR-BAR,Hynek Barton,11,,,0.0,-3.46,,no
+2026-11-10T18:06:00+00:00,real,omitida,KXATPCHALLENGERMATCH-26NOV10MOCHEM-MOC,Shintaro Mochizuki,,0.53,,,,,"volumen $266,437 < $300,000 (solo paper)"
