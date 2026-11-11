@@ -1884,7 +1884,7 @@
    "p": 0.4771,
    "edge": 0.0471,
    "contracts": 24,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-11T01:12:53.623549+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1892,7 +1892,9 @@
     "total": 230.6,
     "h1_total": 116.4,
     "q1_total": 57.5
-   }
+   },
+   "pnl": 13.75,
+   "won": true
   },
   {
    "id": "KXNBATOTAL-26NOV10MIAUTA-235|SI",
@@ -1906,7 +1908,7 @@
    "p": 0.4139,
    "edge": 0.0539,
    "contracts": 29,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-11T01:12:53.623549+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1914,7 +1916,9 @@
     "total": 230.6,
     "h1_total": 116.4,
     "q1_total": 57.5
-   }
+   },
+   "pnl": -10.32,
+   "won": false
   },
   {
    "id": "KXNBATEAMTOTAL-26NOV10MIAUTA-UTA112|SI",
@@ -1928,7 +1932,7 @@
    "p": 0.5069,
    "edge": 0.0569,
    "contracts": 23,
-   "status": "abierta",
+   "status": "cerrada",
    "opened": "2026-11-11T01:12:53.623549+00:00",
    "line_src": "Pinnacle",
    "proj": {
@@ -1936,7 +1940,9 @@
     "total": 230.6,
     "h1_total": 116.4,
     "q1_total": 57.5
-   }
+   },
+   "pnl": -10.29,
+   "won": false
   }
  ],
  "scanned": {
