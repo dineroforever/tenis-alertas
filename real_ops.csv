@@ -119,3 +119,9 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-10T18:06:00+00:00,real,omitida,KXATPCHALLENGERMATCH-26NOV10MOCHEM-MOC,Shintaro Mochizuki,,0.53,,,,,"volumen $266,437 < $300,000 (solo paper)"
 2026-11-10T18:43:17+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV10SAIJAR-SAI,Nikolas Sanchez Izquierdo,7,0.47,0.48,3.41,,62.1292,pedidos=7 estado=llenos=7.00 resto=0.00
 2026-11-10T19:20:35+00:00,real,venta,KXATPCHALLENGERMATCH-26NOV10SAIJAR-SAI,Nikolas Sanchez Izquierdo,7,0.67,0.66,4.58,,66.7108,quedan=0 estado=llenos=7.00 resto=0.00
+2026-11-11T12:47:51+00:00,real,compra,KXATPMATCH-26NOV11SONTAB-TAB,Alejandro Tabilo,8,0.4,0.41,3.33,,63.3764,pedidos=8 estado=llenos=8.00 resto=0.00
+2026-11-11T13:18:42+00:00,real,omitida,KXATPCHALLENGERMATCH-26NOV11FELPER-PER,Tiago Pereira,,0.29,,,,,"volumen $183,988 < $300,000 (solo paper)"
+2026-11-11T14:04:09+00:00,real,venta,KXATPMATCH-26NOV11SONTAB-TAB,Alejandro Tabilo,2,0.63,0.62,1.49,,64.8709,quedan=6 estado=llenos=2.44 resto=0.00
+2026-11-11T14:04:13+00:00,real,venta,KXATPMATCH-26NOV11SONTAB-TAB,Alejandro Tabilo,0,0.63,0.62,0.0,,64.8709,quedan=6 estado=llenos=0.00 resto=0.00
+2026-11-11T14:04:45+00:00,real,venta,KXATPMATCH-26NOV11SONTAB-TAB,Alejandro Tabilo,6,0.63,0.67,3.7,,68.567,quedan=0 estado=llenos=5.56 resto=0.00
+2026-11-11T15:42:54+00:00,real,omitida,KXWTACHALLENGERMATCH-26NOV11MARTUB-MAR,Tatjana Maria,,0.41,,,,,"volumen $283,442 < $300,000 (solo paper)"
