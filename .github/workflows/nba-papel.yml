@@ -1,8 +1,7 @@
 name: NBA papel Kalshi
 on:
-  schedule:
-    - cron: "*/15 15-23 * * *"
-    - cron: "*/15 0-4 * * *"
+  # Horario APAGADO a pedido de Roberto (12-nov-2026): el NBA no mostró edge (backtest -3.6%, paper -9.6%).
+  # Para reactivarlo, restaurar:  schedule: - cron: "*/15 15-23 * * *" y - cron: "*/15 0-4 * * *"
   workflow_dispatch:
 concurrency:
   group: nba-papel
