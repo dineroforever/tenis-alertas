@@ -1330,9 +1330,10 @@ def ciclo(est):
 
 
 def pausa_nocturna():
-    """Pausa de 11 p. m. a 6 a. m. hora Miami (decisión de Roberto 7-nov, ahorro de Apify). Cambia sola con el horario de verano."""
+    """Pausa de 9 p. m. a 12 a. m. y de 2 a. m. a 5 a. m. hora Miami (Roberto 11-nov: la franja 12-2 a. m.
+    de Asia daba 8 señales en 11 días y la de 9 p. m.-12 a. m. solo 1). Ahorra Apify. Cambia sola con el horario de verano."""
     h = datetime.now(ZoneInfo("America/New_York")).hour
-    return h >= 23 or h < 6
+    return h >= 21 or 2 <= h < 5
 
 
 def main():
@@ -1350,7 +1351,7 @@ def main():
     fallos = 0
     real.comprobar(telegram)
     if pausa_nocturna():
-        print("Pausa nocturna (11 p. m. - 6 a. m. Miami): solo vigilo posiciones, sin buscar entradas.")
+        print("Pausa nocturna (9 p. m. - 12 a. m. y 2 - 5 a. m. Miami): solo vigilo posiciones, sin buscar entradas.")
     if os.getenv("PRUEBA_SENAL") == "1":
         ej = dict(jugador="Jugador Ejemplo", rival="Rival Ejemplo", torneo="PRUEBA", superficie="Dura",
                   sets_txt="6-4 3-3", saca="Rival Ejemplo", P=0.62, p_score=0.64, Pb=0.60, ask=0.55,
@@ -1368,7 +1369,7 @@ def main():
         except Exception as e:
             print("Real error:", repr(e))
         try:
-            if not pausa_nocturna():  # 11 pm - 6 am Miami: sin buscar entradas ni gastar Apify
+            if not pausa_nocturna():  # 9 pm - 12 am y 2 - 5 am Miami: sin buscar entradas ni gastar Apify
                 ciclo(est)
             fallos = 0
         except SinPresupuesto:
