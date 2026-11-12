@@ -1350,6 +1350,16 @@ def main():
     est["seguir"] = {k: v for k, v in est.get("seguir", {}).items() if v.get("origen") != "bot"}
     fallos = 0
     real.comprobar(telegram)
+    try:  # diagnóstico del token de Apify sin revelarlo (12-nov, tras el incidente de seguridad de Apify)
+        rr = requests.get("https://api.apify.com/v2/users/me", params={"token": APIFY_TOKEN}, timeout=15)
+        print(f"Apify token: {len(APIFY_TOKEN)} caracteres · empieza por apify_api_: "
+              f"{'sí' if APIFY_TOKEN.startswith('apify_api_') else 'NO'} · /users/me -> {rr.status_code}")
+        if rr.status_code == 401:
+            telegram("⚠️ Bot de tenis: Apify rechaza el token (401). Revisa el secreto APIFY_TOKEN en GitHub: "
+                     f"tiene {len(APIFY_TOKEN)} caracteres y {'sí' if APIFY_TOKEN.startswith('apify_api_') else 'NO'} "
+                     "empieza por apify_api_.")
+    except Exception as e:
+        print("Diagnóstico Apify falló:", repr(e)[:100])
     if pausa_nocturna():
         print("Pausa nocturna (9 p. m. - 12 a. m. y 2 - 5 a. m. Miami): solo vigilo posiciones, sin buscar entradas.")
     if os.getenv("PRUEBA_SENAL") == "1":
