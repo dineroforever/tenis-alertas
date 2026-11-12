@@ -125,3 +125,4 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-11T14:04:13+00:00,real,venta,KXATPMATCH-26NOV11SONTAB-TAB,Alejandro Tabilo,0,0.63,0.62,0.0,,64.8709,quedan=6 estado=llenos=0.00 resto=0.00
 2026-11-11T14:04:45+00:00,real,venta,KXATPMATCH-26NOV11SONTAB-TAB,Alejandro Tabilo,6,0.63,0.67,3.7,,68.567,quedan=0 estado=llenos=5.56 resto=0.00
 2026-11-11T15:42:54+00:00,real,omitida,KXWTACHALLENGERMATCH-26NOV11MARTUB-MAR,Tatjana Maria,,0.41,,,,,"volumen $283,442 < $300,000 (solo paper)"
+2026-11-12T23:02:50+00:00,real,error,KXWTAMATCH-26NOV12PEGNOS-PEG,Jessica Pegula,,,,,,,"RuntimeError('Kalshi POST /portfolio/events/orders -> 403: {""error"":{""code"":""Your_location_attestation_for_API_trading_is_missing_or_expired._Please_verify_your_location_in_the_Kalshi_app_or_website,_"
