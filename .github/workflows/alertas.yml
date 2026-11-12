@@ -43,7 +43,7 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           BANKROLL: ${{ vars.BANKROLL || '500' }}
           PYTHONUNBUFFERED: "1"
-          PRUEBA_SENAL: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
+          PRUEBA_SENAL: "0"  # sin señal de ejemplo en corridas manuales (confundía; 12-nov). El "✅ Bot conectado" sigue
           LOOP_MINUTES: "345"  # cada ronda vigila hasta 5 h 45 min (GitHub salta rondas programadas; 9-nov)
           POLL_SECONDS: "30"
           APIFY_TOPE_DIA: "1.50"  # entre semana (aprobado 3-nov); Claude lo sube a 1.75 los fines de semana si hace falta
