@@ -3,9 +3,11 @@ Señales de clima Kalshi -> Telegram (PAPER TRADING).
 Estrategia "FAV-VÍSPERA-MAX" (la misma de la tarea programada de Claude):
 en la víspera (~17:10 ET), por cada mercado de temperatura MÁXIMA de ciudades de EE.UU.
 con evento MAÑANA, toma el rango favorito y da señal YES solo si:
-  ask 40-60¢ · spread ≤ 2¢ · volumen ≥ 500 · edge neto > 0 con prob. calibrada
-  (ask 40-49¢ → 49,6% · ask 50-60¢ → 55,0%; coste = ask + 1¢ + 0,07·P·(1−P)).
-Clase A = ask ≤ 49¢, spread ≤ 1¢, volumen ≥ 1.000. Clase B = resto. Máx. 5/día, una por ciudad.
+  ask 40-60¢ · spread ≤ 2¢ (REGLA SIMPLE desde el 12-nov-2026: sin filtro de volumen ni de edge
+  y sin tope diario, porque en el backtest ago-oct esos filtros empeoraban el resultado; la regla
+  simple dio ≈ +4% en 798 ops, estable en ambos periodos). Una por ciudad. Solo PAPER.
+  (prob. de referencia: ask 40-49¢ → 49,6% · ask 50-60¢ → 55,0%; coste = ask + 1¢ + 0,07·P·(1−P)).
+Clase A = ask ≤ 49¢, spread ≤ 1¢, volumen ≥ 1.000. Clase B = resto (solo informativo).
 También liquida las señales pendientes y lleva la estadística real en clima_senales.csv.
 """
 import csv, math, os, re, sys
@@ -21,7 +23,8 @@ DRY_RUN = os.getenv("DRY_RUN", "0") == "1"
 FORZAR = os.getenv("FORZAR", "0") == "1"          # correr aunque no sean las 17 h ET
 LOG = os.getenv("LOG_CLIMA", "clima_senales.csv")
 BANK, RIESGO = 1000.0, 0.01
-MAX_DIA = 5
+MAX_DIA = 30  # sin tope práctico (regla simple 12-nov)
+AVISAR = os.getenv("CLIMA_AVISAR", "0") == "1"  # 0 = sin mensaje por señal, solo resumen diario
 US_ICAO_OK = {"SATX", "NOLA", "PHIL"}            # sufijos de 4 letras que sí son de EE.UU.
 CAMPOS = ["id", "fecha_senal", "fecha_evento", "ciudad", "ticker", "rango", "bid", "ask", "spread",
           "volumen", "prob_est", "edge", "clase", "contratos", "coste_unit", "estado", "temp_real", "pl"]
@@ -148,13 +151,11 @@ def escanear(manana):
             fav = max(mks, key=lambda m: (f(m["yes_ask_dollars"]) + f(m["yes_bid_dollars"])) / 2)
             ask, bid, vol = f(fav["yes_ask_dollars"]), f(fav["yes_bid_dollars"]), f(fav.get("volume_fp")) or 0
             spread = round(ask - bid, 2)
-            if not (0.40 <= ask <= 0.60) or spread > 0.02 or vol < 500:
+            if not (0.40 <= ask <= 0.60) or spread > 0.02:
                 continue
             p = 0.496 if ask < 0.50 else 0.55
             cu = coste(ask)
-            edge = p - cu
-            if edge <= 0:
-                continue
+            edge = p - cu  # solo informativo: ya no filtra (regla simple)
             clase = "A" if ask <= 0.49 and spread <= 0.01 and vol >= 1000 else "B"
             cierre = datetime.fromisoformat(fav["close_time"].replace("Z", "+00:00"))
             cands.append(dict(ciudad=ciudad_de(s.get("title", "")), ticker=fav["ticker"], serie=s["ticker"],
@@ -208,13 +209,16 @@ def main():
     for c in senales:
         ident = f"CLIMA-{manana:%Y%m%d}-{re.sub(r'[^A-Z]', '', c['ciudad'].upper())[:6]}"
         txt, n = mensaje(c, manana, acum, ident)
-        telegram(txt)
+        if AVISAR:
+            telegram(txt)
         filas.append(dict(id=ident, fecha_senal=ahora.isoformat(timespec="minutes"), fecha_evento=manana.isoformat(),
                           ciudad=c["ciudad"], ticker=c["ticker"], rango=c["rango"], bid=round(c["bid"] * 100),
                           ask=round(c["ask"] * 100), spread=round(c["spread"] * 100), volumen=round(c["vol"]),
                           prob_est=c["p"] * 100, edge=round(c["edge"] * 100, 1), clase=c["clase"], contratos=n,
                           coste_unit=f"{c['cu']:.4f}", estado="pendiente", temp_real="", pl=""))
-    if senales and liq:
+    if senales and not AVISAR:
+        telegram(f"🌡️ <b>Clima (paper, regla simple)</b>: {len(senales)} señales para mañana registradas.\n{acum}")
+    if liq:
         lineas = "\n".join(f"{r['id']} · {'GANÓ ✅' if r['estado'] == 'gano' else 'PERDIÓ ❌'} · "
                            f"temp. real {r['temp_real']} · P/L ${float(r['pl']):+.2f}" for r in liq)
         telegram(f"📋 <b>Resultados liquidados (clima, paper)</b>\n{lineas}\n\n{acumulado(filas)}")
