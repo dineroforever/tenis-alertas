@@ -1300,7 +1300,8 @@ def ciclo(est):
         motivos = ((["edge>10"] if s["edge"] > EDGE_MODELO_MAX else []) + (["reentrada"] if reentrada else [])
                    + (["set2"] if len((m.get("score") or {}).get("sets", [])) == 2 else [])  # 2.º set: perdió en las 100 ops
                    + (["precio>60"] if s["ask"] > PRECIO_REAL_MAX else [])
-                   + (["p>65"] if s["P"] >= 0.65 else []))  # favorito claro: −5% en las 100 ops (F1 y F2)
+                   + (["p>65"] if s["P"] >= 0.65 else [])  # favorito claro: −5% en las 100 ops (F1 y F2)
+                   + (["vol<300k"] if s.get("vol") is not None and float(s["vol"]) < real.VOL_MIN else []))  # igual que el real (Roberto 11-nov)
         if motivos:
             if sombra_libre:
                 log(s, LOG_SOMBRA, "+".join(motivos))
