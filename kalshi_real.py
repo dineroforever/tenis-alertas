@@ -386,6 +386,22 @@ def mantener(est, aviso):
             _log("error", p.get("ticker", ""), p.get("jugador", ""), nota=repr(e)[:200])
 
 
+def vence_ubicacion():
+    """Fecha (Unix) en que vence la verificación de ubicación de la API key (Kalshi la exige desde ago-2026
+    para operar Deportes por API). None si la cuenta nunca la hizo o no se pudo leer."""
+    d = _api("GET", "/api_keys")
+    kid = os.getenv("KALSHI_KEY_ID", "").strip()
+    tss = []
+    for k in d.get("api_keys", []) or []:
+        ts = _num(k, "api_key_region_expiration_ts")
+        if ts is None:
+            continue
+        if kid and kid in (k.get("api_key_id"), k.get("id"), k.get("key_id")):
+            return ts
+        tss.append(ts)
+    return max(tss) if tss else None
+
+
 def comprobar(aviso):
     """Al arrancar: verifica la clave leyendo el saldo (una vez por corrida)."""
     if MODO not in ("ensayo", "real"):
@@ -393,6 +409,20 @@ def comprobar(aviso):
     try:
         s = saldo()
         print(f"Kalshi real ({MODO}): saldo ${s:.2f}")
+        try:  # aviso de la verificación de ubicación (12-nov: una orden falló por tenerla vencida)
+            ts = vence_ubicacion()
+            if ts is None:
+                print("Kalshi: verificación de ubicación sin dato (nunca hecha o no disponible)")
+            else:
+                h = (ts - time.time()) / 3600
+                print(f"Kalshi: verificación de ubicación vence en {h:.1f} h")
+                if h < 12:
+                    aviso("📍 Bot real: tu verificación de ubicación en Kalshi "
+                          + ("está VENCIDA" if h <= 0 else f"vence en {h:.0f} h")
+                          + ". Sin ella Kalshi rechaza las compras de tenis. Abre la app de Kalshi en tu celular "
+                            "(con ubicación activada) y vuelve a verificar tu ubicación.")
+        except Exception as e:
+            print("Kalshi: no pude leer la verificación de ubicación:", repr(e)[:120])
         return s
     except Exception as e:
         print("Kalshi real: no pude leer el saldo:", repr(e))
