@@ -46,7 +46,7 @@ SERIES = ["KXATPMATCH", "KXWTAMATCH", "KXATPCHALLENGERMATCH", "KXCHALLENGERMATCH
 FEMENINO = {"KXWTAMATCH", "KXWTACHALLENGERMATCH", "KXITFWMATCH"}
 APIFY_ACTOR = "crawlstone~tennis-scraper"
 
-APIFY_TOKEN = os.getenv("APIFY_TOKEN", "")
+APIFY_TOKEN = os.getenv("APIFY_TOKEN", "").strip().strip('"').strip("'").strip()  # tolera espacios/saltos/comillas al pegar el secreto
 # Modo ahorro: Apify cobra ~$0.00736 por llamada. Primero se filtra con Kalshi (gratis)
 # y solo se llama a Apify cuando hay un partido candidato o una posición que vigilar.
 APIFY_COSTO = float(os.getenv("APIFY_COSTO", "0.00736"))
