@@ -2,7 +2,7 @@ name: Alertas tenis Kalshi
 
 on:
   schedule:
-    - cron: "17,47 * * * *"  # cada 30 min fuera de la hora en punto; la pausa 11pm-6am Miami la hace el bot (9-nov)
+    - cron: "17,47 * * * *"  # respaldo cada 30 min; la pausa (9pm-12am y 2-5am Miami) la hace el bot (11-nov)
   workflow_dispatch: {}
   repository_dispatch:
     types: [continuar]  # cada ronda arranca la siguiente al terminar (9-nov: GitHub salta las programadas)
@@ -87,7 +87,7 @@ jobs:
             sleep 5
           done
       - name: Encadenar la siguiente ronda
-        if: always() && steps.bot.outcome == 'success'
+        if: always() && (steps.bot.outcome == 'success' || steps.bot.outcome == 'cancelled')  # también tras cancelar a mano (12-nov)
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh api repos/${{ github.repository }}/dispatches -f event_type=continuar
