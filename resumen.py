@@ -92,7 +92,10 @@ def main():
     sal = leer("senales_salidas.csv")
     hoy = [s for s in sal if (a_miami(s["fecha_utc"]) or ahora).date() == ahora.date()]
     f2 = [s for s in sal[INICIO_FASE2:] if s["fecha_utc"] < INICIO_FASE3]
-    f3 = [s for s in sal if s["fecha_utc"] >= INICIO_FASE3]
+    # Fase 3 limpia: sin partidos de <$300k de volumen (los que el real omite; desde el 11-nov ya no entran al paper)
+    bajo_vol = {r["ticker"] for r in leer("real_ops.csv")
+                if r.get("evento") == "omitida" and "volumen" in (r.get("nota") or "")}
+    f3 = [s for s in sal if s["fecha_utc"] >= INICIO_FASE3 and s["ticker"] not in bajo_vol]
 
     lineas = [f"📊 <b>Resumen bot de tenis (paper)</b> · {ahora:%d-%m-%Y}", ""]
     lineas.append("🗓 " + linea("Hoy", hoy))
@@ -100,7 +103,7 @@ def main():
         lineas.append(f"   • {html.escape(s['jugador'])} {num(s['entrada']) * 100:.0f}¢ → {usd(num(s['ganancia_usd']))}")
     lineas += ["", "📈 " + linea("Acumulado", sal), "   " + linea("Fase 1", sal[:INICIO_FASE2]),
                "   " + linea("Fase 2", f2),
-               "   " + (linea("Fase 3 · precios reales", f3) if f3 else "Fase 3 · precios reales: aún sin operaciones"),
+               "   " + (linea("Fase 3 · precios reales (≥$300k)", f3) if f3 else "Fase 3 · precios reales: aún sin operaciones"),
                evaluar_f3(f3)]
 
     # Interés compuesto: cada ganancia se suma a la banca y la siguiente apuesta crece en proporción
