@@ -1,7 +1,6 @@
 name: NBA backtest Kalshi
 on:
-  schedule:
-    - cron: "23 */6 * * *"   # retoma solo si quedó incompleto; si ya terminó, sale en segundos
+  # Horario APAGADO 12-nov-2026 (NBA sin edge). Para reactivarlo: schedule: - cron: "23 */6 * * *"
   workflow_dispatch:
     inputs:
       desde:
