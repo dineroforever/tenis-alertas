@@ -19,6 +19,16 @@ from zoneinfo import ZoneInfo
 import requests
 
 MODO = os.getenv("REAL_MODO", "off")
+GEO_BLOQUEO = False  # 13-nov: el servidor de GitHub de esta ronda está en Washington (Kalshi no deja operar deportes ahí)
+
+
+def _geo(e):
+    """Marca la ronda para reiniciarse en otro servidor si Kalshi rechazó por estar en Washington."""
+    global GEO_BLOQUEO
+    if "Washington" in repr(e):
+        GEO_BLOQUEO = True
+        return True
+    return False
 PCT = float(os.getenv("REAL_PCT", "0.05"))  # interés compuesto: 5% del saldo real (≈$2.50 con $49)
 APUESTA_MIN = 1.0
 TOPE_DIA = float(os.getenv("REAL_TOPE_DIA", "7.50"))
@@ -295,7 +305,11 @@ def entrada(est, mid, pos, aviso, vol=None):
     except Exception as e:
         print("Real entrada error:", repr(e))
         _log("error", pos.get("ticker", ""), pos.get("jugador", ""), nota=repr(e)[:200])
-        aviso(f"⚠️ Bot real: error al comprar {pos.get('jugador', '')}: {repr(e)[:150]}")
+        if _geo(e):
+            aviso(f"📍 Bot real: no se compró {pos.get('jugador', '')} porque esta ronda cayó en un servidor de GitHub "
+                  "ubicado en Washington, donde Kalshi no permite deportes. No se gastó nada. Reinicio la ronda en otro servidor.")
+        else:
+            aviso(f"⚠️ Bot real: error al comprar {pos.get('jugador', '')}: {repr(e)[:150]}")
 
 
 def salida(est, mid, bid, aviso):
@@ -384,6 +398,7 @@ def mantener(est, aviso):
         except Exception as e:
             print("Real mantener error:", repr(e))
             _log("error", p.get("ticker", ""), p.get("jugador", ""), nota=repr(e)[:200])
+            _geo(e)
 
 
 def vence_ubicacion():
