@@ -7,6 +7,7 @@ Cada cambio se anota aquí: fecha · qué · por qué · quién aprobó.
 
 ## Noviembre 2026
 
+- **12-nov** · Los registros públicos de GitHub ya no muestran saldo, posiciones ni gasto de Apify (`kalshi_real.py`, `tenis_alertas.py`, `prueba-orden.yml`); el detalle sigue llegando por Telegram · el repo es público · técnico, aprobado por Roberto.
 - **12-nov** · Aviso por Telegram cuando la verificación de ubicación de Kalshi está por vencer o vencida (`kalshi_real.py`) · una compra falló por tenerla vencida · técnico.
 - **12-nov** · La siguiente ronda se encadena también tras cancelar una a mano (`alertas.yml`) · antes el bot quedaba parado · técnico.
 - **12-nov** · El token de Apify se limpia de espacios/saltos/comillas y se diagnostica al arrancar (`tenis_alertas.py`) · incidente de seguridad de Apify, el token nuevo daba 401 · técnico.
