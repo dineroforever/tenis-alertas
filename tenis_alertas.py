@@ -1401,6 +1401,19 @@ def main():
             print("Error:", repr(e))
             if fallos == 5:
                 telegram("⚠️ Bot de tenis: 5 errores seguidos leyendo datos (Apify/Kalshi). Revisa GitHub Actions.")
+        if real.GEO_BLOQUEO:  # 13-nov: servidor en Washington -> terminar y encadenar una ronda nueva en otro servidor
+            ahora = time.time()
+            geo = [t for t in est.get("geo_reinicios", []) if ahora - t < 3600]
+            if len(geo) < 3:
+                est["geo_reinicios"] = geo + [ahora]
+                guardar_estado(est)
+                print("Servidor en Washington: termino la ronda para reiniciar en otro servidor.")
+                break
+            real.GEO_BLOQUEO = False
+            if not est.get("geo_aviso") or ahora - est["geo_aviso"] > 3600:
+                est["geo_aviso"] = ahora
+                telegram("📍 Bot real: 3 servidores seguidos en Washington en la última hora. Sigo esta ronda "
+                         "(el paper funciona; las compras reales pueden fallar). Reintento cambiar en la próxima.")
         guardar_estado(est)
         if time.time() + pausa > fin:
             break
