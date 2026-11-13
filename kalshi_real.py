@@ -408,7 +408,7 @@ def comprobar(aviso):
         return
     try:
         s = saldo()
-        print(f"Kalshi real ({MODO}): saldo ${s:.2f}")
+        print(f"Kalshi real ({MODO}): saldo leído OK")  # sin montos: el repo y sus registros son públicos
         try:  # aviso de la verificación de ubicación (12-nov: una orden falló por tenerla vencida)
             ts = vence_ubicacion()
             if ts is None:
