@@ -245,3 +245,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-11-11T16:51:36+00:00,real,KXWTACHALLENGERMATCH-26NOV11MARTUB-MAR,Tatjana Maria,0.41,24,liquidacion,0.0,,,,
 2026-11-12T21:18:38+00:00,sombra,KXATPCHALLENGERMATCH-26NOV12RONCOM-RON,Franco Roncadelli,0.35,28,valor_justo,0.69,,,,
 2026-11-12T23:20:20+00:00,real,KXWTAMATCH-26NOV12PEGNOS-PEG,Jessica Pegula,0.5,20,valor_justo,0.66,,,,
+2026-11-13T05:00:22+00:00,sombra,KXATPCHALLENGERMATCH-26NOV12OLIVAR-OLI,Genaro Alberto Olivieri,0.41,24,liquidacion,1.0,0.42,0.38,0.42,0.44

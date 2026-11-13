@@ -149,3 +149,4 @@ fecha_utc,match_id,ticker,jugador,rival,torneo,marcador,p_final,p_score,p_casa,a
 2026-11-11T13:15:21+00:00,17514492,KXATPCHALLENGERMATCH-26NOV11FELPER-PER,Tiago Pereira,Kilian Feldbausch,"Monastir, Tunisia",6-3 4-5,0.5923,0.6228,0.5467,0.51,0.5,8.2,12.2,9.69,set2
 2026-11-11T14:07:44+00:00,17488898,KXATPCHALLENGERMATCH-26NOV11GADALT-GAD,Buvaysar Gadamauri,Daniel Altmaier,"Orleans, France",6-3 5-5,0.7551,0.7585,0.75,0.6,0.59,15.5,22.4,9.6,edge>10+set2+p>65
 2026-11-12T21:11:54+00:00,17489786,KXATPCHALLENGERMATCH-26NOV12RONCOM-RON,Franco Roncadelli,Francisco Comesaña,"Lima, Peru",6-7 6-4 0-1,0.4523,0.4205,0.5,0.35,0.34,10.2,23.5,9.8,edge>10
+2026-11-13T01:18:24+00:00,17489789,KXATPCHALLENGERMATCH-26NOV12OLIVAR-OLI,Genaro Alberto Olivieri,Juan Pablo Varillas,"Lima, Peru",2-2,0.4828,0.5024,0.4533,0.41,0.4,7.3,13.0,9.84,vol<300k
