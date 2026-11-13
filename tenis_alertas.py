@@ -1388,7 +1388,7 @@ def main():
             if not GASTO.get("aviso_tope"):
                 GASTO["aviso_tope"] = True
                 telegram(f"💤 Bot de tenis: llegué al tope diario de Apify (${APIFY_TOPE_DIA:.2f}) para no gastar "
-                         f"de más. Pauso las señales nuevas hasta las 8 p. m. (Miami), cuando se reinicia el día.")
+                         f"de más. Pauso las señales nuevas hasta las 7 p. m. (Miami; 8 p. m. en horario de verano), cuando se reinicia el día.")
         except SinSaldo:
             fallos = 0
             print("Apify sin saldo (402).")
