@@ -1384,7 +1384,7 @@ def main():
             fallos = 0
         except SinPresupuesto:
             fallos = 0
-            print(f"Tope diario de Apify alcanzado (${gasto_hoy():.2f}).")
+            print("Tope diario de Apify alcanzado.")
             if not GASTO.get("aviso_tope"):
                 GASTO["aviso_tope"] = True
                 telegram(f"💤 Bot de tenis: llegué al tope diario de Apify (${APIFY_TOPE_DIA:.2f}) para no gastar "
