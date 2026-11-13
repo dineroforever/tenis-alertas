@@ -49,8 +49,6 @@ jobs:
                               for p in pos.get("market_positions", []) or []]
               except Exception as e:
                   abiertas = f"error: {repr(e)[:80]}"
-              print("BALANCE:", bal)
-              print("POSICIONES:", abiertas)
               elegido = None
               for serie in ("KXATPMATCH", "KXWTAMATCH", "KXATPCHALLENGERMATCH"):
                   d = requests.get(f"{k.BASE}/markets", params={"series_ticker": serie, "status": "open", "limit": 200},
@@ -79,8 +77,7 @@ jobs:
                      + f"\nMercado: {tk} (ask {ask * 100:.0f}¢)\nOrden: 1 contrato a 1¢, {o.get('status')}"
                      + f"\nSaldo antes ${s:.2f} / después ${s2:.2f}"
                      + f"\nBalance completo: {str(bal)[:300]}\nPosiciones abiertas: {str(abiertas)[:400]}")
-              print(msg)
-              print("Respuesta completa:", o)
+              print("Prueba de orden:", "OK" if ok else "respuesta inesperada", "| estado:", o.get("status"), "(detalle en Telegram; el registro es público)")
               tg(msg)
               if not ok:
                   raise SystemExit(1)
