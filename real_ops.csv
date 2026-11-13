@@ -128,3 +128,5 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-12T23:02:50+00:00,real,error,KXWTAMATCH-26NOV12PEGNOS-PEG,Jessica Pegula,,,,,,,"RuntimeError('Kalshi POST /portfolio/events/orders -> 403: {""error"":{""code"":""Your_location_attestation_for_API_trading_is_missing_or_expired._Please_verify_your_location_in_the_Kalshi_app_or_website,_"
 2026-11-13T12:07:23+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV13MAENAG-MAE,Francesco Maestrelli,6,0.55,0.56,3.46,,64.8067,pedidos=6 estado=llenos=6.00 resto=0.00
 2026-11-13T12:21:06+00:00,real,venta,KXATPCHALLENGERMATCH-26NOV13MAENAG-MAE,Francesco Maestrelli,6,0.81,0.8,4.8,,69.602,quedan=0 estado=llenos=6.00 resto=0.00
+2026-11-13T20:41:38+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV13REHMIL-MIL,Daniel Milavsky,8,0.42,0.43,3.5,,66.1055,pedidos=8 estado=llenos=8.00 resto=0.00
+2026-11-13T21:24:24+00:00,real,venta,KXATPCHALLENGERMATCH-26NOV13REHMIL-MIL,Daniel Milavsky,8,0.52,0.51,4.02,,70.1257,quedan=0 estado=llenos=8.00 resto=0.00
