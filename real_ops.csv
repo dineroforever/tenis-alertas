@@ -133,3 +133,11 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-13T22:56:30+00:00,real,error,KXWTAMATCH-26NOV13SABSVI-SVI,Elina Svitolina,,,,,,,"RuntimeError('Kalshi POST /portfolio/events/orders -> 403: {""error"":{""code"":""Trading_is_not_currently_allowed_in_Washington_on_markets_in_Sports,_Elections,_Politics,_Culture,_Tech_and_Science,_and_Me"
 2026-11-15T12:48:25+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV15CLANOR-NOR,Arvid Nordquist,13,0.25,0.26,3.42,,66.705,pedidos=13 estado=llenos=13.00 resto=0.00
 2026-11-15T13:10:05+00:00,real,venta,KXATPCHALLENGERMATCH-26NOV15CLANOR-NOR,Arvid Nordquist,13,0.6,0.59,7.58,,74.2866,quedan=0 estado=llenos=13.00 resto=0.00
+2026-11-15T16:44:05+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV15RIBCIG-CIG,Thiago Cigarran,7,0.55,0.56,4.04,,70.2458,pedidos=7 estado=llenos=7.00 resto=0.00
+2026-11-15T16:55:09+00:00,real,venta,KXATPCHALLENGERMATCH-26NOV15RIBCIG-CIG,Thiago Cigarran,7,0.22,0.21,1.39,,71.6369,quedan=0 estado=llenos=7.00 resto=0.00
+2026-11-15T18:13:01+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV15MROMIT-MRO,William Mroz,10,0.36,0.37,3.76,,67.8756,pedidos=10 estado=llenos=10.00 resto=0.00
+2026-11-15T18:33:32+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV15MORCOU-COU,Eliakim Coulibaly,9,0.37,0.38,3.29,,64.5822,pedidos=9 estado=llenos=9.00 resto=0.00
+2026-11-15T18:40:26+00:00,real,venta,KXATPCHALLENGERMATCH-26NOV15MROMIT-MRO,William Mroz,10,0.2,0.19,3.34,,67.9229,quedan=0 estado=llenos=10.00 resto=0.00
+2026-11-15T19:36:35+00:00,real,liquidacion,KXATPCHALLENGERMATCH-26NOV15MORCOU-COU,Eliakim Coulibaly,9,,,0.0,-3.29,,no
+2026-11-15T19:40:33+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV15MORCAT-CAT,Robin Catry,9,0.38,0.39,3.57,,64.3544,pedidos=9 estado=llenos=9.00 resto=0.00
+2026-11-15T20:18:46+00:00,real,venta,KXATPCHALLENGERMATCH-26NOV15MORCAT-CAT,Robin Catry,9,0.55,0.54,4.79,,69.1484,quedan=0 estado=llenos=9.00 resto=0.00
