@@ -7,6 +7,7 @@ Cada cambio se anota aquí: fecha · qué · por qué · quién aprobó.
 
 ## Noviembre 2026
 
+- **16-nov** · Tope diario de Apify se queda en $1,75 también entre semana (no vuelve a $1,50) · con $1,50 el presupuesto se acabaría ~5 pm y se perdería parte de la mejor franja (3–8 pm); diciembre se espera de poca actividad y en enero se revisa según la actividad y el capital · aprobado por Roberto.
 - **16-nov** · Pausa nocturna: de 9 pm a 7 am (antes 9 pm–12 am y 2–5 am) (`tenis_alertas.py`) · en real, las entradas de 12–7 am llevaban 10 ops, 2 ganadas, −$11,21; el tope de Apify se agotaba ~3 pm y se perdía la tarde (3–8 pm: 9 ops, 7 ganadas, +$14,62) · aprobado por Roberto.
 - **13-nov** · Si Kalshi rechaza una orden porque el servidor de GitHub está en Washington, el bot avisa, termina la ronda y arranca otra en otro servidor (máx. 3 por hora) (`kalshi_real.py`, `tenis_alertas.py`) · segunda vez en 10 días (3-nov y 13-nov), cada vez se perdían hasta 6 h de compras reales · técnico, aprobado por Roberto.
 - **13-nov** · Tope diario de Apify a $1,75 para el fin de semana (vuelve a $1,50 el lunes) · el sábado y domingo anteriores se llegó al tope; el mes cabe en los $47 · aprobado por Roberto.
