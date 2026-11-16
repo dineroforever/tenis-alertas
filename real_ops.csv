@@ -141,3 +141,7 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-15T19:36:35+00:00,real,liquidacion,KXATPCHALLENGERMATCH-26NOV15MORCOU-COU,Eliakim Coulibaly,9,,,0.0,-3.29,,no
 2026-11-15T19:40:33+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV15MORCAT-CAT,Robin Catry,9,0.38,0.39,3.57,,64.3544,pedidos=9 estado=llenos=9.00 resto=0.00
 2026-11-15T20:18:46+00:00,real,venta,KXATPCHALLENGERMATCH-26NOV15MORCAT-CAT,Robin Catry,9,0.55,0.54,4.79,,69.1484,quedan=0 estado=llenos=9.00 resto=0.00
+2026-11-16T05:19:40+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV15IMATAK-TAK,Yusuke Takahashi,9,0.37,0.38,3.48,,65.6715,pedidos=9 estado=llenos=9.00 resto=0.00
+2026-11-16T05:49:31+00:00,real,venta,KXATPCHALLENGERMATCH-26NOV15IMATAK-TAK,Yusuke Takahashi,9,0.09,0.08,0.84,,66.5148,quedan=0 estado=llenos=9.00 resto=0.00
+2026-11-16T06:26:18+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV15ISOJUN-ISO,Kokoro Isomura,8,0.43,0.44,3.58,,62.9375,pedidos=8 estado=llenos=8.00 resto=0.00
+2026-11-16T07:11:50+00:00,real,liquidacion,KXATPCHALLENGERMATCH-26NOV15ISOJUN-ISO,Kokoro Isomura,8,,,8.0,4.42,,yes
