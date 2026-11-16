@@ -262,3 +262,5 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-11-15T19:36:36+00:00,real,KXATPCHALLENGERMATCH-26NOV15MORCOU-COU,Eliakim Coulibaly,0.37,27,liquidacion,0.0,0.33,0.33,0.33,0.4
 2026-11-15T20:18:45+00:00,real,KXATPCHALLENGERMATCH-26NOV15MORCAT-CAT,Robin Catry,0.38,26,valor_justo,0.55,0.39,0.36,0.36,0.4
 2026-11-15T20:51:54+00:00,sombra,KXWTACHALLENGERMATCH-26NOV15KULSTR-STR,Valeriya Strakhova,0.67,14,liquidacion,1.0,,,,
+2026-11-15T23:43:01+00:00,sombra,KXATPCHALLENGERMATCH-26NOV15VANCHA-CHA,Joshua Charlton,0.73,13,valor_justo,0.68,,,,
+2026-11-15T23:52:14+00:00,sombra,KXATPCHALLENGERMATCH-26NOV15VANCHA-CHA,Joshua Charlton,0.73,13,valor_justo,0.8,,,,
