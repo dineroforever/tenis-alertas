@@ -147,3 +147,7 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-16T07:11:50+00:00,real,liquidacion,KXATPCHALLENGERMATCH-26NOV15ISOJUN-ISO,Kokoro Isomura,8,,,8.0,4.42,,yes
 2026-11-16T11:27:48+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV16NARLAT-LAT,Stefan Latinovic,7,0.47,0.48,3.41,,67.5254,pedidos=7 estado=llenos=7.00 resto=0.00
 2026-11-16T12:01:45+00:00,real,liquidacion,KXATPCHALLENGERMATCH-26NOV16NARLAT-LAT,Stefan Latinovic,7,,,0.0,-3.41,,no
+2026-11-17T14:33:07+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV17SVRBOR-BOR,Leo Borg,13,0.26,0.27,3.56,,63.9703,pedidos=13 estado=llenos=13.00 resto=0.00
+2026-11-17T15:06:24+00:00,real,liquidacion,KXATPCHALLENGERMATCH-26NOV17SVRBOR-BOR,Leo Borg,13,,,0.0,-3.56,,no
+2026-11-17T16:02:22+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV17NEURIT-NEU,Lukas Neumayer,9,0.35,0.36,3.29,,60.6769,pedidos=9 estado=llenos=9.00 resto=0.00
+2026-11-17T16:10:24+00:00,real,venta,KXATPCHALLENGERMATCH-26NOV17NEURIT-NEU,Lukas Neumayer,9,0.3,0.29,2.66,,63.3321,quedan=0 estado=llenos=9.00 resto=0.00

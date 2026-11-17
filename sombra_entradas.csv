@@ -170,3 +170,4 @@ fecha_utc,match_id,ticker,jugador,rival,torneo,marcador,p_final,p_score,p_casa,a
 2026-11-16T18:33:46+00:00,17563591,KXWTACHALLENGERMATCH-26NOV16JIMMON-JIM,Victoria Jimenez Kasintseva,Carole Monnet,"Santiago, Chile",5-6,0.302,0.3097,0.2904,0.25,0.24,5.2,14.7,8.5,vol<300k
 2026-11-17T00:58:59+00:00,17569386,KXATPCHALLENGERMATCH-26NOV16DELKUB-KUB,Jason Kubler,Matthew Dellavedova,"Sydney, Australia",7-6 2-3,0.7489,0.7658,0.7234,0.55,0.54,19.9,31.9,9.9,edge>10+set2+p>65
 2026-11-17T13:10:24+00:00,17573609,KXATPCHALLENGERMATCH-26NOV17HEMPAS-PAS,Francesco Passaro,Calvin Hemery,"Metz, France",6-7 6-5,0.4913,0.4721,0.52,0.44,0.43,5.1,7.4,9.68,set2
+2026-11-17T18:30:21+00:00,17561358,KXATPCHALLENGERMATCH-26NOV17BONGUE-GUE,Sascha Gueymard Wayenburg,Benjamin Bonzi,"Metz, France",4-6 6-3 0-0,0.5324,0.5407,0.52,0.47,0.46,6.2,9.2,9.87,vol<300k
