@@ -275,3 +275,5 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-11-16T15:41:22+00:00,sombra,KXATPCHALLENGERMATCH-26NOV16GHIBLA-GHI,Antoine Ghibaudo,0.39,25,liquidacion,1.0,0.38,0.38,0.38,0.38
 2026-11-16T16:26:52+00:00,sombra,KXATPCHALLENGERMATCH-26NOV16BUDBRU-BUD,Nicolai Budkov Kjaer,0.52,19,valor_justo,0.58,0.54,0.51,0.54,
 2026-11-16T18:53:31+00:00,sombra,KXWTACHALLENGERMATCH-26NOV16JIMMON-JIM,Victoria Jimenez Kasintseva,0.25,34,valor_justo,0.13,,,,
+2026-11-17T12:00:12+00:00,sombra,KXATPCHALLENGERMATCH-26NOV16DELKUB-KUB,Jason Kubler,0.55,18,liquidacion,1.0,0.52,0.52,0.52,0.58
+2026-11-17T13:14:51+00:00,sombra,KXATPCHALLENGERMATCH-26NOV17HEMPAS-PAS,Francesco Passaro,0.44,22,valor_justo,0.6,,,,
