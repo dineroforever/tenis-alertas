@@ -168,3 +168,4 @@ fecha_utc,match_id,ticker,jugador,rival,torneo,marcador,p_final,p_score,p_casa,a
 2026-11-16T15:15:01+00:00,17566480,KXATPCHALLENGERMATCH-26NOV16GHIBLA-GHI,Antoine Ghibaudo,Ugo Blanchet,"Metz, France",6-3 2-3,0.5262,0.5303,0.52,0.39,0.38,13.6,29.3,9.75,edge>10+set2
 2026-11-16T16:09:37+00:00,17561571,KXATPCHALLENGERMATCH-26NOV16BUDBRU-BUD,Nicolai Budkov Kjaer,Mika Brunold,"Helsinki, Finland",4-4,0.5739,0.5852,0.557,0.52,0.51,5.4,6.7,9.88,vol<300k
 2026-11-16T18:33:46+00:00,17563591,KXWTACHALLENGERMATCH-26NOV16JIMMON-JIM,Victoria Jimenez Kasintseva,Carole Monnet,"Santiago, Chile",5-6,0.302,0.3097,0.2904,0.25,0.24,5.2,14.7,8.5,vol<300k
+2026-11-17T00:58:59+00:00,17569386,KXATPCHALLENGERMATCH-26NOV16DELKUB-KUB,Jason Kubler,Matthew Dellavedova,"Sydney, Australia",7-6 2-3,0.7489,0.7658,0.7234,0.55,0.54,19.9,31.9,9.9,edge>10+set2+p>65
