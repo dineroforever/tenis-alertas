@@ -151,3 +151,8 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-17T15:06:24+00:00,real,liquidacion,KXATPCHALLENGERMATCH-26NOV17SVRBOR-BOR,Leo Borg,13,,,0.0,-3.56,,no
 2026-11-17T16:02:22+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV17NEURIT-NEU,Lukas Neumayer,9,0.35,0.36,3.29,,60.6769,pedidos=9 estado=llenos=9.00 resto=0.00
 2026-11-17T16:10:24+00:00,real,venta,KXATPCHALLENGERMATCH-26NOV17NEURIT-NEU,Lukas Neumayer,9,0.3,0.29,2.66,,63.3321,quedan=0 estado=llenos=9.00 resto=0.00
+2026-11-17T20:51:15+00:00,real,compra,KXWTACHALLENGERMATCH-26NOV17CARERJ-ERJ,Veronika Erjavec,9,0.33,0.34,3.11,,60.2228,pedidos=9 estado=llenos=9.00 resto=0.00
+2026-11-17T20:55:59+00:00,real,venta,KXWTACHALLENGERMATCH-26NOV17CARERJ-ERJ,Veronika Erjavec,9,0.49,0.48,4.25,,64.4753,quedan=0 estado=llenos=9.00 resto=0.00
+2026-11-17T23:10:54+00:00,real,compra,KXWTACHALLENGERMATCH-26NOV17GATLAZ-GAT,Barbara Gatica,15,0.2,0.21,3.17,,61.3073,pedidos=15 estado=llenos=15.00 resto=0.00
+2026-11-17T23:55:59+00:00,real,liquidacion,KXWTACHALLENGERMATCH-26NOV17GATLAZ-GAT,Barbara Gatica,15,,,0.0,-3.17,,no
+2026-11-18T00:04:43+00:00,real,omitida,KXATPCHALLENGERMATCH-26NOV17ZAHTUD-TUD,Alvin Nicholas Tudorica,,0.38,,,,,tope de pérdida diaria ($7.50)
