@@ -156,3 +156,5 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-17T23:10:54+00:00,real,compra,KXWTACHALLENGERMATCH-26NOV17GATLAZ-GAT,Barbara Gatica,15,0.2,0.21,3.17,,61.3073,pedidos=15 estado=llenos=15.00 resto=0.00
 2026-11-17T23:55:59+00:00,real,liquidacion,KXWTACHALLENGERMATCH-26NOV17GATLAZ-GAT,Barbara Gatica,15,,,0.0,-3.17,,no
 2026-11-18T00:04:43+00:00,real,omitida,KXATPCHALLENGERMATCH-26NOV17ZAHTUD-TUD,Alvin Nicholas Tudorica,,0.38,,,,,tope de pérdida diaria ($7.50)
+2026-11-18T15:33:17+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV18RIBBUT-RIB,Michele Ribecai,7,0.4,0.41,2.92,,58.3897,pedidos=7 estado=llenos=7.00 resto=0.00
+2026-11-18T15:51:21+00:00,real,liquidacion,KXATPCHALLENGERMATCH-26NOV18RIBBUT-RIB,Michele Ribecai,7,,,0.0,-2.92,,no
