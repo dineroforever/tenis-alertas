@@ -160,3 +160,4 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-18T15:51:21+00:00,real,liquidacion,KXATPCHALLENGERMATCH-26NOV18RIBBUT-RIB,Michele Ribecai,7,,,0.0,-2.92,,no
 2026-11-18T20:11:37+00:00,real,omitida,KXATPCHALLENGERMATCH-26NOV18KINBOU-BOU,Justin Boulais,,0.39,,,,,bot detenido (pérdida de $15 desde el máximo)
 2026-11-18T21:45:17+00:00,real,omitida,KXATPCHALLENGERMATCH-26NOV18MELBAR-BAR,Alex Barrena,,0.31,,,,,bot detenido (pérdida de $15 desde el máximo)
+2026-11-19T18:46:06+00:00,real,omitida,KXATPCHALLENGERMATCH-26NOV19MAYGAS-MAY,Harold Mayot,,0.36,,,,,bot detenido (pérdida de $15 desde el máximo)
