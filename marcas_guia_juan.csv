@@ -402,3 +402,4 @@ fecha_utc,estrategia,ticker,hora_miami,volumen,vol_500k,horario_2a8pm,sets,games
 2026-11-18T20:11:37+00:00,apify_senal,KXATPCHALLENGERMATCH-26NOV18KINBOU-BOU,15:11,2878874,si,si,1-1,4-4,si,no,otro,no
 2026-11-18T21:45:17+00:00,apify_senal,KXATPCHALLENGERMATCH-26NOV18MELBAR-BAR,16:45,2158127,si,si,1-1,4-5,si,no,otro,no
 2026-11-18T22:45:31+00:00,apify_sombra,KXATPCHALLENGERMATCH-26NOV18KENMAX-MAX,17:45,743365,si,si,0-1,0-0,no,no,inicio_set2,si
+2026-11-19T16:37:17+00:00,apify_sombra,KXWTACHALLENGERMATCH-26NOV19BROMON-MON,11:37,1753730,si,no,1-1,2-1,si,no,otro,no

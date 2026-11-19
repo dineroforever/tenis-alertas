@@ -293,3 +293,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-11-18T21:35:34+00:00,sombra,KXATPCHALLENGERMATCH-26NOV18MELBAR-BAR,Alex Barrena,0.36,27,valor_justo,0.26,0.35,0.35,0.35,0.38
 2026-11-18T21:51:25+00:00,real,KXATPCHALLENGERMATCH-26NOV18MELBAR-BAR,Alex Barrena,0.31,31,liquidacion,0.0,,,,
 2026-11-19T00:00:36+00:00,sombra,KXATPCHALLENGERMATCH-26NOV18KENMAX-MAX,Lui Maxted,0.38,26,valor_justo,0.98,0.38,0.38,0.38,0.41
+2026-11-19T17:25:58+00:00,sombra,KXWTACHALLENGERMATCH-26NOV19BROMON-MON,Carole Monnet,0.73,13,liquidacion,0.0,,,,
