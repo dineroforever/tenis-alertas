@@ -183,3 +183,4 @@ fecha_utc,match_id,ticker,jugador,rival,torneo,marcador,p_final,p_score,p_casa,a
 2026-11-19T18:11:25+00:00,17537233,KXWTACHALLENGERMATCH-26NOV19STRERJ-STR,Valeriya Strakhova,Veronika Erjavec,"Santiago, Chile",4-3,0.4072,0.4286,0.375,0.33,0.32,7.7,17.8,9.9,vol<300k
 2026-11-19T18:56:02+00:00,17537919,KXATPCHALLENGERMATCH-26NOV19MAYGAS-MAY,Harold Mayot,Hugo Gaston,"Metz, France",7-5 4-6 1-1,0.4471,0.4712,0.411,0.34,0.33,10.7,25.7,9.86,edge>10+reentrada
 2026-11-19T20:28:45+00:00,17537331,KXATPCHALLENGERMATCH-26NOV19WENBLA-BLA,Geoffrey Blancaneaux,Harry Wendelken,"Champaign, USA",6-0 6-7 0-0,0.5539,0.5898,0.5,0.39,0.38,16.4,36.2,9.75,edge>10
+2026-11-20T00:36:32+00:00,17537277,KXATPCHALLENGERMATCH-26NOV19MILDRA-MIL,Daniel Milavsky,Liam Draxl,"Drummondville, Canada",6-3 2-3,0.6683,0.683,0.6462,0.6,0.59,6.8,8.3,9.6,set2+p>65
