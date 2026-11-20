@@ -382,3 +382,6 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-11-20T01:37:25+00:00,sombra,KXATPCHALLENGERMATCH-26NOV19MILDRA-MIL,Daniel Milavsky,0.6,16,valor_justo,0.1,0.83,0.09,32,61,si,si,si
 2026-11-20T12:23:53+00:00,real,KXATPCHALLENGERMATCH-26NOV20BUDDJE-DJE,Laslo Djere,0.44,22,valor_justo,0.64,0.64,0.4,3,3,si,si,si
 2026-11-20T14:41:12+00:00,sombra,KXATPCHALLENGERMATCH-26NOV20KWONPRI-KWON,Soonwoo Kwon,0.44,22,liquidacion,1.0,0.85,0.43,37,41,si,si,si
+2026-11-20T16:31:54+00:00,sombra,KXATPCHALLENGERMATCH-26NOV20SVRVIR-SVR,Dalibor Svrčina,0.35,28,valor_justo,0.3,0.37,0.14,6,25,no,no,no
+2026-11-20T17:59:47+00:00,sombra,KXATPCHALLENGERMATCH-26NOV20MOLBOY-MOL,Elmer Moller,0.73,13,valor_justo,0.88,0.88,0.63,11,11,si,si,no
+2026-11-20T19:11:22+00:00,sombra,KXWTACHALLENGERMATCH-26NOV20BROSTR-BRO,Lucia Bronzetti,0.79,12,liquidacion,1.0,0.94,0.68,37,79,si,no,no
