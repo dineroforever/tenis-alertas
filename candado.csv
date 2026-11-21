@@ -307,3 +307,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo,precio_salida,candado_10_
 2026-11-20T17:59:47+00:00,sombra,KXATPCHALLENGERMATCH-26NOV20MOLBOY-MOL,Elmer Moller,0.73,13,valor_justo,0.88,,,,
 2026-11-20T19:11:22+00:00,sombra,KXWTACHALLENGERMATCH-26NOV20BROSTR-BRO,Lucia Bronzetti,0.79,12,liquidacion,1.0,,,,
 2026-11-21T01:23:52+00:00,real,KXATPCHALLENGERMATCH-26NOV20JUSRON-JUS,Guido Ivan Justo,0.47,21,valor_justo,0.98,0.46,0.46,,
+2026-11-21T16:39:36+00:00,real,KXATPCHALLENGERMATCH-26NOV21KWONGUE-GUE,Sascha Gueymard Wayenburg,0.49,20,valor_justo,0.31,0.5,0.45,0.5,0.52
