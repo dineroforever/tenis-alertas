@@ -188,3 +188,4 @@ fecha_utc,match_id,ticker,jugador,rival,torneo,marcador,p_final,p_score,p_casa,a
 2026-11-20T16:07:07+00:00,17537879,KXATPCHALLENGERMATCH-26NOV20SVRVIR-SVR,Dalibor Svrčina,Otto Virtanen,"Helsinki, Finland",2-3,0.4545,0.4622,0.443,0.35,0.34,10.4,24.2,9.8,edge>10
 2026-11-20T17:48:43+00:00,17537964,KXATPCHALLENGERMATCH-26NOV20MOLBOY-MOL,Elmer Moller,Tristan Boyer,"Montevideo, Uruguay",2-6 6-0 1-0,0.7859,0.799,0.7663,0.73,0.72,5.6,5.7,9.49,precio>60+p>65
 2026-11-20T17:52:37+00:00,17537228,KXWTACHALLENGERMATCH-26NOV20BROSTR-BRO,Lucia Bronzetti,Valeriya Strakhova,"Santiago, Chile",3-2,0.8809,0.8987,0.8541,0.79,0.78,9.1,9.9,9.48,precio>60+p>65+vol<300k
+2026-11-21T21:34:36+00:00,17537227,KXWTACHALLENGERMATCH-26NOV21ROMBRO-BRO,Lucia Bronzetti,Leyre Romero Gormaz,"Santiago, Chile",3-6 6-3 0-0,0.5579,0.5458,0.5759,0.48,0.47,7.8,12.1,9.6,vol<300k
