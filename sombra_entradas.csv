@@ -191,3 +191,4 @@ fecha_utc,match_id,ticker,jugador,rival,torneo,marcador,p_final,p_score,p_casa,a
 2026-11-21T21:34:36+00:00,17537227,KXWTACHALLENGERMATCH-26NOV21ROMBRO-BRO,Lucia Bronzetti,Leyre Romero Gormaz,"Santiago, Chile",3-6 6-3 0-0,0.5579,0.5458,0.5759,0.48,0.47,7.8,12.1,9.6,vol<300k
 2026-11-22T13:51:23+00:00,17607484,KXATPCHALLENGERMATCH-26NOV22AUNNEU-NEU,Maximilian Neuchrist,Pablo Aunion,"Monastir 2, Tunisia",5-6,0.5696,0.6027,0.52,0.49,0.48,8.0,12.2,9.8,vol<300k
 2026-11-22T14:47:10+00:00,17607480,KXATPCHALLENGERMATCH-26NOV22HAMKAR-KAR,Jack Karlsson Wistrand,Samir Hamza Reguig,"Monastir 2, Tunisia",6-3 2-3,0.6003,0.6291,0.557,0.52,0.51,8.0,11.6,9.88,set2+vol<300k
+2026-11-23T12:58:00+00:00,17612615,KXATPCHALLENGERMATCH-26NOV23HEMSCH-SCH,Niklas Schell,Calvin Hemery,"Monastir 2, Tunisia",6-3 1-1,0.6692,0.6987,0.625,0.54,0.53,12.9,20.0,9.72,edge>10+set2+p>65

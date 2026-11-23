@@ -394,3 +394,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-11-22T16:09:08+00:00,real,KXATPCHALLENGERMATCH-26NOV22HAMKAR-KAR,Jack Karlsson Wistrand,0.43,23,valor_justo,0.07,0.43,0.01,1,14,no,no,no
 2026-11-22T19:06:34+00:00,real,KXATPCHALLENGERMATCH-26NOV22WEIGUR-GUR,Volodymyr Gurenko,0.23,43,liquidacion,0.0,0.31,0.01,7,37,si,si,si
 2026-11-23T01:37:45+00:00,real,KXATPCHALLENGERMATCH-26NOV22PADDEL-DEL,Jesse Delaney,0.57,17,valor_justo,0.98,0.98,0.53,25,25,si,si,si
+2026-11-23T13:06:04+00:00,sombra,KXATPCHALLENGERMATCH-26NOV23HEMSCH-SCH,Niklas Schell,0.54,18,valor_justo,0.99,0.99,0.56,8,8,si,si,si
