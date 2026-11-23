@@ -7,6 +7,7 @@ Cada cambio se anota aquí: fecha · qué · por qué · quién aprobó.
 
 ## Noviembre 2026
 
+- **22-nov** · Edge mínimo para operar (paper y real): 7 pp (antes 5 pp); las señales de 5–7 pp pasan a sombra con el motivo "edge<7" para seguir midiéndolas (`tenis_alertas.py`, `resumen.py`) · tras comisiones (~3,5 pp por operación) la franja 5–7 pp casi no gana: fase 3 +4,5% (44 ops) vs 7–10 pp +19,4% (35 ops); en todo el paper +12,4% vs +23,8% · aprobado por Roberto.
 - **22-nov** · Real: arranca la prueba 3 de 25 ops con las mismas reglas (5% del saldo, tope diario $7,50, freno $15 desde el máximo o 5 pérdidas seguidas); el contador ahora también se reinicia si la prueba anterior terminó por freno (`kalshi_real.py`, `alertas.yml`) · la prueba 2 se detuvo el 18-nov por el freno de $15 (20 ops, −$7,65); desde entonces el paper lleva 11 ops, 6 ganadas, +26,4% · aprobado por Roberto.
 - **16-nov** · Tope diario de Apify se queda en $1,75 también entre semana (no vuelve a $1,50) · con $1,50 el presupuesto se acabaría ~5 pm y se perdería parte de la mejor franja (3–8 pm); diciembre se espera de poca actividad y en enero se revisa según la actividad y el capital · aprobado por Roberto.
 - **16-nov** · Pausa nocturna: de 9 pm a 7 am (antes 9 pm–12 am y 2–5 am) (`tenis_alertas.py`) · en real, las entradas de 12–7 am llevaban 10 ops, 2 ganadas, −$11,21; el tope de Apify se agotaba ~3 pm y se perdía la tarde (3–8 pm: 9 ops, 7 ganadas, +$14,62) · aprobado por Roberto.
