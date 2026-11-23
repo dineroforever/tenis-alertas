@@ -51,7 +51,7 @@ jobs:
           AVISAR: "0"
           PREFILTRO_EDGE: "0.0"
           REAL_MODO: "real"   # off / ensayo / real (prueba de 25 ops autorizada por Roberto)
-          REAL_PRUEBA: "2"    # prueba 2 de 25 ops (autorizada por Roberto 8-nov)
+          REAL_PRUEBA: "3"    # prueba 3 de 25 ops, mismas reglas (autorizada por Roberto 22-nov, tras el freno de la prueba 2)
           KALSHI_KEY_ID: ${{ secrets.KALSHI_KEY_ID }}
           KALSHI_PRIVATE_KEY: ${{ secrets.KALSHI_PRIVATE_KEY }}
         run: python tenis_alertas.py
