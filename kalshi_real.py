@@ -194,9 +194,9 @@ def _estado(est):
     for k, v in (("pos", {}), ("ops", 0), ("neg", 0), ("racha_neg", 0), ("pnl", 0.0), ("max_pnl", 0.0), ("dia", ""),
                  ("pnl_dia", 0.0), ("partidos", []), ("parado", ""), ("ensayo", {})):
         r.setdefault(k, v)
-    # Nueva prueba (REAL_PRUEBA): al cambiar el número, si la anterior terminó por meta, se archiva y se reinicia
-    # el contador (ops, P&L, máximo, frenos). Prueba 2 autorizada por Roberto el 8-nov-2026.
-    if str(r.get("prueba", "1")) != PRUEBA and r["parado"].startswith("meta"):
+    # Nueva prueba (REAL_PRUEBA): al cambiar el número, si la anterior terminó (por meta o por freno), se archiva y se
+    # reinicia el contador (ops, P&L, máximo, frenos). Prueba 2 autorizada el 8-nov; prueba 3 (tras freno) el 22-nov-2026.
+    if str(r.get("prueba", "1")) != PRUEBA and r["parado"]:
         r.setdefault("historial", []).append({k: r[k] for k in ("ops", "neg", "pnl", "max_pnl")}
                                              | {"prueba": str(r.get("prueba", "1"))})
         r.update(ops=0, neg=0, racha_neg=0, pnl=0.0, max_pnl=0.0, parado="", prueba=PRUEBA)
