@@ -31,6 +31,7 @@ SPREAD_MAX = 0.03
 EDGE_MODELO_MIN = 0.05      # P_final − ask
 EDGE_CASA_MIN = 0.03        # P_book − ask
 EDGE_MODELO_MAX = 0.10      # edge mayor = probable error del modelo (no entrar)
+EDGE_OPERAR_MIN = 0.07      # 5–7 pp va a sombra: tras comisiones casi no gana (F3 +4,5% vs 7–10 pp +19%); Roberto 22-nov
 CONTRADICCION_MAX = 0.10    # |P_score − P_book|
 MAX_ENTRADAS = 1            # sin reentradas: las 2 reentradas registradas perdieron (−$12.05)
 W_BOOK, W_SCORE = 0.40, 0.60  # casa blanda
@@ -1298,6 +1299,7 @@ def ciclo(est):
         if not s:
             continue
         motivos = ((["edge>10"] if s["edge"] > EDGE_MODELO_MAX else []) + (["reentrada"] if reentrada else [])
+                   + (["edge<7"] if s["edge"] < EDGE_OPERAR_MIN else [])
                    + (["set2"] if len((m.get("score") or {}).get("sets", [])) == 2 else [])  # 2.º set: perdió en las 100 ops
                    + (["precio>60"] if s["ask"] > PRECIO_REAL_MAX else [])
                    + (["p>65"] if s["P"] >= 0.65 else [])  # favorito claro: −5% en las 100 ops (F1 y F2)
