@@ -403,3 +403,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-11-23T21:02:17+00:00,sombra,KXWTACHALLENGERMATCH-26NOV23PAPRIE-RIE,Julia Riera,0.64,15,liquidacion,1.0,0.73,0.73,14,29,si,no,no
 2026-11-23T21:18:55+00:00,real,KXATPCHALLENGERMATCH-26NOV23STRBOL-STR,Elijah Strode,0.54,18,valor_justo,0.5,0.63,0.5,7,10,si,no,no
 2026-11-24T00:11:47+00:00,real,KXATPCHALLENGERMATCH-26NOV23BICGOI-GOI,Segundo Goity Zapico,0.2,50,liquidacion,0.0,0.29,0.01,13,46,si,si,si
+2026-11-24T12:00:09+00:00,sombra,KXATPCHALLENGERMATCH-26NOV23DURFLO-FLO,Jesse Flores,0.35,28,liquidacion,0.0,0.4,0.01,4,642,si,no,no
