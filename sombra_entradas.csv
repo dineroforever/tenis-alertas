@@ -198,3 +198,4 @@ fecha_utc,match_id,ticker,jugador,rival,torneo,marcador,p_final,p_score,p_casa,a
 2026-11-23T18:43:54+00:00,17607458,KXATPCHALLENGERMATCH-26NOV23DEBKOP-DEB,Gabriel Debru,Sandro Kopp,"Monastir 2, Tunisia",5-6,0.4956,0.4927,0.5,0.42,0.41,7.6,13.3,9.66,vol<300k
 2026-11-23T19:31:11+00:00,17607458,KXATPCHALLENGERMATCH-26NOV23DEBKOP-KOP,Sandro Kopp,Gabriel Debru,"Monastir 2, Tunisia",7-5 3-6 0-0,0.3923,0.4038,0.375,0.34,0.33,5.2,10.2,9.86,edge<7
 2026-11-23T20:32:56+00:00,17614342,KXWTACHALLENGERMATCH-26NOV23PAPRIE-RIE,Julia Riera,Despina Papamichail,"Buenos Aires, Argentina",6-2 4-3,0.9524,0.9635,0.9357,0.64,0.63,31.2,45.0,9.6,edge>10+set2+precio>60+p>65
+2026-11-24T01:18:34+00:00,17610457,KXATPCHALLENGERMATCH-26NOV23DURFLO-FLO,Jesse Flores,Diego Duran,"San Salvador, El Salvador",6-7 0-0,0.4778,0.4408,0.5333,0.35,0.33,12.8,30.5,9.8,edge>10+set2+vol<300k
