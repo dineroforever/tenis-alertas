@@ -170,3 +170,6 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-22T18:29:09+00:00,real,omitida,KXATPCHALLENGERMATCH-26NOV22WEIGUR-GUR,Volodymyr Gurenko,,0.23,,,,,bot detenido (pérdida de $15 desde el máximo)
 2026-11-23T01:13:08+00:00,real,omitida,KXATPCHALLENGERMATCH-26NOV22PADDEL-DEL,Jesse Delaney,,0.57,,,,,bot detenido (pérdida de $15 desde el máximo)
 2026-11-23T13:30:20+00:00,real,reinicio,,,,,,,,,inicia prueba 3 de 25 operaciones
+2026-11-23T21:08:42+00:00,real,error,KXATPCHALLENGERMATCH-26NOV23STRBOL-STR,Elijah Strode,,,,,,,"RuntimeError('Kalshi POST /portfolio/events/orders -> 403: {""error"":{""code"":""Your_location_attestation_for_API_trading_is_missing_or_expired._Please_verify_your_location_in_the_Kalshi_app_or_website,_"
+2026-11-23T23:25:33+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV23BICGOI-GOI,Segundo Goity Zapico,14,0.2,0.21,2.96,,55.4329,pedidos=14 estado=llenos=14.00 resto=0.00
+2026-11-24T00:11:45+00:00,real,liquidacion,KXATPCHALLENGERMATCH-26NOV23BICGOI-GOI,Segundo Goity Zapico,14,,,0.0,-2.96,,no
