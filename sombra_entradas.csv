@@ -206,3 +206,5 @@ fecha_utc,match_id,ticker,jugador,rival,torneo,marcador,p_final,p_score,p_casa,a
 2026-11-24T16:13:38+00:00,17606557,KXATPCHALLENGERMATCH-26NOV24XILFOM-FOM,Sergey Fomin,Ioannis Xilas,"Hersonissos 4, Greece",4-5,0.3188,0.3377,0.2904,0.2,0.19,11.9,50.8,10.0,edge>10+vol<300k
 2026-11-24T21:46:02+00:00,17623567,KXATPCHALLENGERMATCH-26NOV24NEFRUB-RUB,Alan Fernando Rubio Fierros,Axel Nefve,"San Salvador, El Salvador",4-4,0.5213,0.4849,0.5759,0.47,0.46,5.1,6.9,9.87,edge<7+vol<300k
 2026-11-25T01:44:17+00:00,17605027,KXATPCHALLENGERMATCH-26NOV23CUIHAS-HAS,Benjamin Hassan,Jie Cui,"Yokohama, Japan",6-3 3-6 1-0,0.6809,0.7181,0.625,0.51,0.5,17.1,29.0,9.69,edge>10+p>65
+2026-11-25T17:19:20+00:00,17609588,KXATPCHALLENGERMATCH-26NOV24PDAZAR-ZAR,Carlos Maria Zarate,Matheus Pucinelli de Almeida,"Florianopolis, Brazil",6-3 3-6 2-2,0.3814,0.3857,0.375,0.27,0.26,11.1,34.3,9.99,edge>10
+2026-11-25T18:34:19+00:00,17584244,KXATPCHALLENGERMATCH-26NOV25BICDEA-BIC,Blaise Bicknell,Theodore Dean,"San Salvador, El Salvador",6-7 0-0,0.4944,0.4684,0.5333,0.39,0.38,10.4,21.5,9.75,edge>10+set2

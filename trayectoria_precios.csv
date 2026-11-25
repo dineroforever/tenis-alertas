@@ -412,3 +412,4 @@ fecha_utc,tipo,ticker,jugador,entrada,contratos,motivo_salida,precio_salida,max_
 2026-11-24T22:41:33+00:00,sombra,KXATPCHALLENGERMATCH-26NOV24NEFRUB-RUB,Alan Fernando Rubio Fierros,0.47,21,liquidacion,0.0,0.49,0.01,1,56,no,no,no
 2026-11-25T12:00:05+00:00,sombra,KXATPCHALLENGERMATCH-26NOV23CUIHAS-HAS,Benjamin Hassan,0.51,19,liquidacion,1.0,0.63,0.45,6,616,si,si,no
 2026-11-25T13:45:54+00:00,real,KXATPCHALLENGERMATCH-26NOV25DEDPRI-PRI,Oleg Prihodko,0.36,27,liquidacion,0.0,0.61,0.02,49,62,si,si,si
+2026-11-25T17:35:20+00:00,sombra,KXATPCHALLENGERMATCH-26NOV24PDAZAR-ZAR,Carlos Maria Zarate,0.27,37,valor_justo,0.96,0.92,0.3,12,16,si,si,si
