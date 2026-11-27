@@ -217,3 +217,5 @@ fecha_utc,match_id,ticker,jugador,rival,torneo,marcador,p_final,p_score,p_casa,a
 2026-11-26T21:03:36+00:00,17584142,KXWTACHALLENGERMATCH-26NOV26COSLEP-COS,Sofia Costoulas,Varvara Lepchenko,"Buenos Aires, Argentina",3-6 7-6 4-3,0.792,0.7918,0.7923,0.71,0.7,8.2,9.2,9.94,precio>60+p>65
 2026-11-26T22:03:45+00:00,17584245,KXATPCHALLENGERMATCH-26NOV25ANDDUR-DUR,Diego Duran,Lucas Andrade Da Silva,"San Salvador, El Salvador",7-6 3-3,0.5086,0.5366,0.4667,0.28,0.27,22.9,72.8,9.8,edge>10+set2
 2026-11-26T22:45:24+00:00,17584245,KXATPCHALLENGERMATCH-26NOV25ANDDUR-DUR,Diego Duran,Lucas Andrade Da Silva,"San Salvador, El Salvador",7-6 6-7 0-0,0.2748,0.2914,0.25,0.21,0.2,6.5,24.0,9.87,edge<7
+2026-11-27T00:27:37+00:00,17584248,KXATPCHALLENGERMATCH-26NOV26LEGPOL-POL,Karl Poling,Timo Legout,"San Salvador, El Salvador",7-6 2-3,0.4995,0.5372,0.443,0.41,0.4,8.9,17.0,9.84,set2
+2026-11-27T00:55:15+00:00,17584248,KXATPCHALLENGERMATCH-26NOV26LEGPOL-POL,Karl Poling,Timo Legout,"San Salvador, El Salvador",7-6 5-6,0.5867,0.6064,0.557,0.52,0.51,6.7,9.1,9.88,edge<7+set2
