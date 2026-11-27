@@ -31,7 +31,7 @@ SPREAD_MAX = 0.03
 EDGE_MODELO_MIN = 0.05      # P_final − ask
 EDGE_CASA_MIN = 0.03        # P_book − ask
 EDGE_MODELO_MAX = 0.10      # edge mayor = probable error del modelo (no entrar)
-EDGE_OPERAR_MIN = 0.07      # 5–7 pp va a sombra: tras comisiones casi no gana (F3 +4,5% vs 7–10 pp +19%); Roberto 22-nov
+EDGE_OPERAR_MIN = 0.05      # vuelve a 5 pp (Roberto 27-nov): en real la franja 5–7 pp ganó (21 ops, +$12,19) y la de 7–10 pp perdió (27 ops, −$8,12); reglas congeladas hasta 100 ops reales
 CONTRADICCION_MAX = 0.10    # |P_score − P_book|
 MAX_ENTRADAS = 1            # sin reentradas: las 2 reentradas registradas perdieron (−$12.05)
 W_BOOK, W_SCORE = 0.40, 0.60  # casa blanda
