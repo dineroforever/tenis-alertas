@@ -178,3 +178,5 @@ fecha_utc,modo,evento,ticker,jugador,contratos,precio_paper,precio_limite,dinero
 2026-11-25T18:42:26+00:00,real,error,KXATPCHALLENGERMATCH-26NOV24KICMOL-KIC,Nicolas Kicker,,,,,,,"RuntimeError('Kalshi POST /portfolio/events/orders -> 403: {""error"":{""code"":""Trading_is_not_currently_allowed_in_Washington_on_markets_in_Sports,_Elections,_Politics,_Culture,_Tech_and_Science,_and_Me"
 2026-11-25T20:03:23+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV25BICDEA-BIC,Blaise Bicknell,5,0.52,0.53,2.69,,50.1126,pedidos=5 estado=llenos=5.00 resto=0.00
 2026-11-25T20:04:51+00:00,real,venta,KXATPCHALLENGERMATCH-26NOV25BICDEA-BIC,Blaise Bicknell,5,0.66,0.65,3.22,,53.334,quedan=0 estado=llenos=5.00 resto=0.00
+2026-11-27T12:54:16+00:00,real,compra,KXATPCHALLENGERMATCH-26NOV27ARNPIE-PIE,Benjamin Pietri,11,0.23,0.24,2.67,,50.6676,pedidos=11 estado=llenos=11.00 resto=0.00
+2026-11-27T14:11:05+00:00,real,liquidacion,KXATPCHALLENGERMATCH-26NOV27ARNPIE-PIE,Benjamin Pietri,11,,,0.0,-2.67,,no
