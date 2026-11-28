@@ -219,3 +219,4 @@ fecha_utc,match_id,ticker,jugador,rival,torneo,marcador,p_final,p_score,p_casa,a
 2026-11-26T22:45:24+00:00,17584245,KXATPCHALLENGERMATCH-26NOV25ANDDUR-DUR,Diego Duran,Lucas Andrade Da Silva,"San Salvador, El Salvador",7-6 6-7 0-0,0.2748,0.2914,0.25,0.21,0.2,6.5,24.0,9.87,edge<7
 2026-11-27T00:27:37+00:00,17584248,KXATPCHALLENGERMATCH-26NOV26LEGPOL-POL,Karl Poling,Timo Legout,"San Salvador, El Salvador",7-6 2-3,0.4995,0.5372,0.443,0.41,0.4,8.9,17.0,9.84,set2
 2026-11-27T00:55:15+00:00,17584248,KXATPCHALLENGERMATCH-26NOV26LEGPOL-POL,Karl Poling,Timo Legout,"San Salvador, El Salvador",7-6 5-6,0.5867,0.6064,0.557,0.52,0.51,6.7,9.1,9.88,edge<7+set2
+2026-11-27T22:43:00+00:00,17584145,KXWTACHALLENGERMATCH-26NOV27HERRIE-HER,Alicia Herrero Linana,Julia Riera,"Buenos Aires, Argentina",3-4,0.4661,0.494,0.4241,0.36,0.35,10.6,23.9,9.72,edge>10+vol<300k
